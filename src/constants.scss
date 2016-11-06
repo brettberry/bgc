@@ -1,0 +1,33 @@
+$main-font-family: sans-serif;
+
+@mixin header-font {
+  font-family: $main-font-family;
+  font-weight: 100;
+  font-size: 2em;
+  color: rgba(black, 0.5);
+  font-smoothing: antialiased;
+}
+
+@mixin subheader-font {
+  font-family: $main-font-family;
+  font-weight: lighter;
+  font-size: 1.1em;
+  color: white;
+  font-smoothing: antialiased;
+}
+
+@mixin title-font {
+  font-family: $main-font-family;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgba(black, 0.5);
+  font-smoothing: antialiased;
+}
+
+@mixin default-font {
+  font-family: $main-font-family;
+  font-weight: 100;
+  font-size: 1em;
+  color: rgba(black, 0.5);
+  font-smoothing: antialiased;
+}

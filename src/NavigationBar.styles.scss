@@ -1,0 +1,137 @@
+@import './constants';
+
+html, body, main {
+  min-height: 100%;
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 99px;
+  background-color: white;
+  top: 0;
+}
+
+.header {
+  margin: 0;
+}
+
+.bgcContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.bgc {
+  @include header-font;
+  text-align: left;
+  margin: 2px;
+  padding-left: 50px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.menuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 37px;
+  padding-bottom: 37px;
+
+  .item {
+    @include default-font;
+    margin: 5px;
+  }
+
+  .underline {
+    width: 85px;
+    height: 1.5px;
+    background-color: rgba(black, 0.5);
+    opacity: 0;
+  }
+
+  &:hover {
+    .underline {
+      opacity: 1;
+    }
+
+    .item {
+      color: black;
+      cursor: pointer;
+    }
+
+    .products {
+      opacity: 1;
+      pointer-events: all;
+
+    }
+  }
+}
+
+.iconContainer {
+  display: flex;
+  align-content: flex-end;
+  justify-content: flex-end;
+}
+
+.search {
+  fill: rgba(black, 0.4);
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+  cursor: pointer;
+
+  &:hover {
+    fill: black;
+  }
+}
+
+.cart {
+  fill: rgba(black, 0.4);
+  width: 25px;
+  height: 25px;
+  margin-right: 40px;
+  cursor: pointer;
+
+  &:hover {
+    fill: black;
+  }
+}
+
+.alertBar {
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 36px;
+  background-color: #ebb052;
+  box-shadow: 0px 2px 0px hsla(0,0%,96%,1), 0 10px 20px hsla(0,0%,96%,1);
+}
+
+.alertMessage {
+  @include subheader-font;
+  margin: 7px;
+  cursor: pointer;
+}
+
+.chevron {
+  display: flex;
+  align-self: center;
+  fill: white;
+  width: 20px;
+  height: 20px;
+  margin-right: 30px;
+  cursor: pointer;
+}

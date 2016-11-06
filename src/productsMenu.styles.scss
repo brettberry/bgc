@@ -1,0 +1,49 @@
+@import './constants';
+
+.dropdown {
+  position: fixed;
+  width: 100%;
+  height: 425px;
+  background-color: white;
+  top: 99px;
+  left: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ddd;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 425px;
+  justify-content: space-around;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.bugles {
+  display: flex;
+  flex-direction: column;
+}
+
+.columnTitle {
+  @include title-font;
+
+  &:hover {
+    color: black;
+    cursor: pointer;
+  }
+}
+
+.productNames {
+  @include default-font;
+  margin-top: 8px;
+  margin-bottom: 8px;
+
+  &:hover {
+    color: black;
+    cursor: pointer;
+  }
+}
