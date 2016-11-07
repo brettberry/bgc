@@ -46,7 +46,7 @@ function ElkReeds() {
       <p className="productNames">X-Series Herd Bull</p>
       <p className="productNames">X-Series Satellite Bull</p>
       <p className="productNames">X-Series Roosevelt</p>
-      <p className="productNames">Classic Medium Bull Single Reed</p>
+      <p className="productNames">Classic Small Bull Single Reed</p>
       <p className="productNames">Classic Medium Bull Double Reed</p>
       <p className="productNames">Classic Large Bull Double Reed</p>
       <p className="productNames">Berry Deceiver Reed</p>

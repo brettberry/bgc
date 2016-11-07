@@ -3,8 +3,12 @@ import NavigationBar from './NavigationBar';
 
 class Home extends Component {
   render() {
+    const { children } = this.props;
     return (
-      <NavigationBar />
+      <div>
+        <NavigationBar />
+        {children}
+      </div>
     );
   }
 }

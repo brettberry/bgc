@@ -3,6 +3,7 @@ import ProductsMenu from './ProductsMenu';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import FaSearch from 'react-icons/lib/fa/search';
 import FaChevronRight from 'react-icons/lib/fa/chevron-right';
+import { Link } from 'react-router';
 
 import './NavigationBar.styles.scss';
 
@@ -11,7 +12,9 @@ class NavigationBar extends Component {
     return (
       <div>
         <div className="navBar">
-          <h1 className="bgc">Berry Game Calls</h1>
+          <Link to="/">
+            <h1 className="bgc">Berry Game Calls</h1>
+          </Link>
           <Menu />
           <div className="iconContainer">
             <FaSearch className="search" />
