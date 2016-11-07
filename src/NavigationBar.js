@@ -12,8 +12,9 @@ class NavigationBar extends Component {
     return (
       <div>
         <div className="navBar">
-          <Link to="/">
+          <Link to="/" className="link">
             <h1 className="bgc">Berry Game Calls</h1>
+            {/* <h2 className="slogan">sound like the real thing</h2> */}
           </Link>
           <Menu />
           <div className="iconContainer">
@@ -68,8 +69,8 @@ function Menu() {
 function Alert() {
   return (
     <div className="alertBar">
-      <h3 className="alertMessage">Check out our online specials!</h3>
-      <FaChevronRight className="chevron" />
+      {/* <h3 className="alertMessage">Check out our online specials!</h3> */}
+      {/* <FaChevronRight className="chevron" /> */}
     </div>
   );
 }

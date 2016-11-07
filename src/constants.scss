@@ -1,33 +1,44 @@
-$main-font-family: sans-serif;
+$main-font-family: Source Sans Pro, Avenir Next, Avenir, Helvetica, "sans-serif";
 
 @mixin header-font {
   font-family: $main-font-family;
-  font-weight: 100;
-  font-size: 2em;
-  color: rgba(black, 0.5);
+  font-weight: 200;
+  font-size: 34pt;
+  margin: 0;
+  color: #263238;
+  letter-spacing: 3px;
   font-smoothing: antialiased;
 }
 
 @mixin subheader-font {
   font-family: $main-font-family;
   font-weight: lighter;
-  font-size: 1.1em;
-  color: white;
+  font-size: 1.5em;
+  color: #263238;
+  font-smoothing: antialiased;
+}
+
+@mixin menu-font {
+  font-family: $main-font-family;
+  font-weight: 400;
+  font-size: 1em;
+  margin: 0;
+  color: #546e7a;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   font-smoothing: antialiased;
 }
 
 @mixin title-font {
   font-family: $main-font-family;
   font-weight: bold;
-  font-size: 1em;
-  color: rgba(black, 0.5);
+  font-size: 1.1em;
+  color: #546e7a;
   font-smoothing: antialiased;
 }
 
 @mixin default-font {
   font-family: $main-font-family;
-  font-weight: 100;
-  font-size: 1em;
-  color: rgba(black, 0.5);
+  color: #546e7a;
   font-smoothing: antialiased;
 }

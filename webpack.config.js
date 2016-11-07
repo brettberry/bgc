@@ -66,6 +66,10 @@ module.exports = {
             {
                 test: /(\.css)$/,
                 loader: ExtractTextPlugin.extract('style', 'css')
+            },
+            {
+              test: /\.(eot|svg|ttf|woff|woff2|otf)$/,
+              loader: 'file?name=[name].[ext]'
             }
         ]
     },

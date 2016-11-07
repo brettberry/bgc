@@ -1,3 +1,60 @@
+.dropdown {
+  position: fixed;
+  width: 100%;
+  height: 425px;
+  background-color: white;
+  top: 99px;
+  left: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ddd;
+  pointer-events: none;
+  opacity: 0; }
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 425px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 15px;
+  padding-bottom: 15px; }
+
+.bugles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.columnTitle {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.5);
+  font-smoothing: antialiased; }
+  .columnTitle:hover {
+    color: black;
+    cursor: pointer; }
+
+.productNames {
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.5);
+  font-smoothing: antialiased;
+  margin-top: 8px;
+  margin-bottom: 8px; }
+  .productNames:hover {
+    color: black;
+    cursor: pointer; }
 html, body, main {
   min-height: 100%;
   margin: 0;
@@ -7,6 +64,15 @@ html, body, main {
   box-sizing: border-box; }
 
 .navBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 99px;
   background-color: white;
@@ -14,3 +80,273 @@ html, body, main {
 
 .header {
   margin: 0; }
+
+.bgcContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.link {
+  text-decoration: none; }
+
+.bgc {
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 2em;
+  color: rgba(0, 0, 0, 0.5);
+  font-smoothing: antialiased;
+  text-align: left;
+  margin: 2px;
+  padding-left: 50px; }
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 40%; }
+
+.menuItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 37px;
+  padding-bottom: 37px; }
+  .menuItem .item {
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.5);
+    font-smoothing: antialiased;
+    margin: 5px; }
+  .menuItem .underline {
+    width: 85px;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0; }
+  .menuItem:hover {
+    cursor: pointer; }
+    .menuItem:hover .underline {
+      opacity: 1;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+    .menuItem:hover .item {
+      color: black;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+    .menuItem:hover .products {
+      opacity: 1;
+      pointer-events: all;
+      -webkit-transition: all 0.25s ease;
+      transition: all 0.25s ease; }
+
+.iconContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+
+.search {
+  fill: rgba(0, 0, 0, 0.4);
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+  cursor: pointer; }
+  .search:hover {
+    fill: black; }
+
+.cart {
+  fill: rgba(0, 0, 0, 0.4);
+  width: 25px;
+  height: 25px;
+  margin-right: 40px;
+  cursor: pointer; }
+  .cart:hover {
+    fill: black; }
+
+.alertBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+  height: 36px;
+  background-color: #ebb052;
+  box-shadow: 0px 2px 0px whitesmoke, 0 10px 20px whitesmoke; }
+
+.alertMessage {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 1.1em;
+  color: white;
+  font-smoothing: antialiased;
+  margin: 7px;
+  cursor: pointer; }
+
+.chevron {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  fill: white;
+  width: 20px;
+  height: 20px;
+  margin-right: 30px;
+  cursor: pointer; }
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    src: url(/public/SourceSansPro-ExtraLight.eot) format('embedded-opentype'),
+         url(/public/SourceSansPro-ExtraLight.otf.woff) format('woff'),
+         url(/public/SourceSansPro-ExtraLight.otf) format('opentype'),
+         url(/public/SourceSansPro-ExtraLight.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 200;
+    font-style: italic;
+    font-stretch: normal;
+    src: url(/public/SourceSansPro-ExtraLightIt.eot) format('embedded-opentype'),
+         url(/public/SourceSansPro-ExtraLightIt.otf.woff) format('woff'),
+         url(/public/SourceSansPro-ExtraLightIt.otf) format('opentype'),
+         url(/public/SourceSansPro-ExtraLightIt.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    src: url(/public/SourceSansPro-Light.eot) format('embedded-opentype'),
+         url(/public/SourceSansPro-Light.otf.woff) format('woff'),
+         url(/public/SourceSansPro-Light.otf) format('opentype'),
+         url(/public/SourceSansPro-Light.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 300;
+    font-style: italic;
+    font-stretch: normal;
+    src: url(/public/SourceSansPro-LightIt.eot) format('embedded-opentype'),
+         url(/public/SourceSansPro-LightIt.otf.woff) format('woff'),
+         url(/public/SourceSansPro-LightIt.otf) format('opentype'),
+         url(/public/SourceSansPro-LightIt.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    src: url(/public/SourceSansPro-Regular.eot) format('embedded-opentype'),
+         url(/public/SourceSansPro-Regular.otf.woff) format('woff'),
+         url(/public/SourceSansPro-Regular.otf) format('opentype'),
+         url(/public/SourceSansPro-Regular.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: normal;
+    src: url(/public/SourceSansPro-It.eot) format('embedded-opentype'),
+         url(/public/SourceSansPro-It.otf.woff) format('woff'),
+         url(/public/SourceSansPro-It.otf) format('opentype'),
+         url(/public/SourceSansPro-It.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    src: url(/public/SourceSansPro-Semibold.eot) format('embedded-opentype'),
+         url(/public/SourceSansPro-Semibold.otf.woff) format('woff'),
+         url(/public/SourceSansPro-Semibold.otf) format('opentype'),
+         url(/public/SourceSansPro-Semibold.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+    font-style: italic;
+    font-stretch: normal;
+    src: url(/public/SourceSansPro-SemiboldIt.eot) format('embedded-opentype'),
+         url(/public/SourceSansPro-SemiboldIt.otf.woff) format('woff'),
+         url(/public/SourceSansPro-SemiboldIt.otf) format('opentype'),
+         url(/public/SourceSansPro-SemiboldIt.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    src: url(/public/SourceSansPro-Bold.eot) format('embedded-opentype'),
+         url(/public/SourceSansPro-Bold.otf.woff) format('woff'),
+         url(/public/SourceSansPro-Bold.otf) format('opentype'),
+         url(/public/SourceSansPro-Bold.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: normal;
+    src: url(/public/SourceSansPro-BoldIt.eot) format('embedded-opentype'),
+         url(/public/SourceSansPro-BoldIt.otf.woff) format('woff'),
+         url(/public/SourceSansPro-BoldIt.otf) format('opentype'),
+         url(/public/SourceSansPro-BoldIt.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    src: url(/public/SourceSansPro-Black.eot) format('embedded-opentype'),
+         url(/public/SourceSansPro-Black.otf.woff) format('woff'),
+         url(/public/SourceSansPro-Black.otf) format('opentype'),
+         url(/public/SourceSansPro-Black.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 900;
+    font-style: italic;
+    font-stretch: normal;
+    src: url(/public/SourceSansPro-BlackIt.eot) format('embedded-opentype'),
+         url(/public/SourceSansPro-BlackIt.otf.woff) format('woff'),
+         url(/public/SourceSansPro-BlackIt.otf) format('opentype'),
+         url(/public/SourceSansPro-BlackIt.ttf) format('truetype');
+}

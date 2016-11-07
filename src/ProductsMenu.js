@@ -9,7 +9,7 @@ class ProductsMenu extends Component {
       <div className={classnames('dropdown', className)}>
         <div className="container">
           <Bugles />
-          <ElkReeds />
+          <Reeds />
           <DVDs />
           <Other />
         </div>
@@ -21,24 +21,25 @@ class ProductsMenu extends Component {
 function Bugles() {
   return (
     <div>
-      <p className="columnTitle">Thunder Bugles & Replacement Reeds</p>
+      <p className="columnTitle">Thunder Bugles</p>
       <p className="productNames">Original Berry Thunder Bugle</p>
       <p className="productNames">Thunder Bugle Pro</p>
       <p className="productNames">Mini Thunder Bugle</p>
       <p className="productNames">Golden Tone Grunt Tube</p>
       <p className="productNames">Golden Tone Shorty</p>
-      <p className="productNames">Thunder Bugle Replacement White</p>
-      <p className="productNames">Thunder Bugle Replacement Black</p>
-      <p className="productNames">Thunder Bugle Replacement Green</p>
-      <p className="productNames">Thunder Bugle Replacement Red</p>
+      <p className="columnTitle">Thunder Bugle Replacement Reeds</p>
+      <p className="productNames">White Replacement Reed</p>
+      <p className="productNames">Black Replacement Reed</p>
+      <p className="productNames">Green Replacement Reed</p>
+      <p className="productNames">Red Replacement Reed</p>
     </div>
   );
 }
 
-function ElkReeds() {
+function Reeds() {
   return (
     <div>
-      <p className="columnTitle">Elk Reeds</p>
+      <p className="columnTitle">Elk Mouth Reeds</p>
       <p className="productNames">Golden Dome Large Bull</p>
       <p className="productNames">Golden Dome Medium Bull</p>
       <p className="productNames">Golden Dome Small Bull</p>
@@ -58,6 +59,9 @@ function ElkReeds() {
 function DVDs() {
   return (
     <div>
+      <h3 className="columnTitle">Cow Calls</h3>
+      <p className="productNames">Sleazy Cow Call</p>
+      <p className="productNames">Fatal Attraction</p>
       <h3 className="columnTitle">Hunting DVDs</h3>
       <p className="productNames">Elk Hunter's Training Day 2</p>
       <p className="productNames">Elk Hunter's Training Day</p>
@@ -75,9 +79,6 @@ function DVDs() {
 function Other() {
   return (
     <div>
-      <h3 className="columnTitle">Cow Calls</h3>
-      <p className="productNames">Sleazy Cow Call</p>
-      <p className="productNames">Fatal Attraction</p>
       <h3 className="columnTitle">Other</h3>
       <p className="productNames">Buck Grunt and Bleat Call</p>
       <p className="productNames">Predator Call</p>
@@ -85,14 +86,6 @@ function Other() {
       <p className="productNames">Berry Wind Detector</p>
       <p className="productNames">Power Arrow Gripper</p>
       <p className="productNames">Berry Fanny Pack</p>
-    </div>
-  );
-}
-
-function MiscItems() {
-  return (
-    <div>
-      <h3 className="columnTitle">Accessories</h3>
     </div>
   );
 }
