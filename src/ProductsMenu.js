@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import './productsMenu.styles.scss';
 
 class ProductsMenu extends Component {
+
+  static propTypes = {
+    className: PropTypes.string
+  }
+
   render() {
     const { className } = this.props;
     return (

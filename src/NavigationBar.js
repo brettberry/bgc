@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import ProductsMenu from './ProductsMenu';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import FaSearch from 'react-icons/lib/fa/search';
@@ -8,7 +8,13 @@ import { Link } from 'react-router';
 import './NavigationBar.styles.scss';
 
 class NavigationBar extends Component {
+
+static propTypes = {
+  className: PropTypes.string
+}
+
   render() {
+    const { className } = this.props;
     return (
       <div>
         <div className="navBar">
@@ -16,13 +22,13 @@ class NavigationBar extends Component {
             <h1 className="bgc">Berry Game Calls</h1>
             {/* <h2 className="slogan">sound like the real thing</h2> */}
           </Link>
+          <Alert />
           <Menu />
           <div className="iconContainer">
             <FaSearch className="search" />
             <FaShoppingCart className="cart" />
           </div>
         </div>
-        <Alert />
       </div>
     );
   }

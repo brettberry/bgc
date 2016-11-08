@@ -1,11 +1,15 @@
 $main-font-family: Source Sans Pro, Avenir Next, Avenir, Helvetica, "sans-serif";
+$bgc-background-color: #f9f9f9;
+$bgc-dark-grey: #263238;
+$bgc-medium-grey: #546e7a;
+$bgc-orange: #ebb052;
 
 @mixin header-font {
   font-family: $main-font-family;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 34pt;
   margin: 0;
-  color: #263238;
+  color: $bgc-dark-grey;
   letter-spacing: 3px;
   font-smoothing: antialiased;
 }
@@ -14,7 +18,7 @@ $main-font-family: Source Sans Pro, Avenir Next, Avenir, Helvetica, "sans-serif"
   font-family: $main-font-family;
   font-weight: lighter;
   font-size: 1.5em;
-  color: #263238;
+  color: $bgc-dark-grey;
   font-smoothing: antialiased;
 }
 
@@ -23,7 +27,7 @@ $main-font-family: Source Sans Pro, Avenir Next, Avenir, Helvetica, "sans-serif"
   font-weight: 400;
   font-size: 1em;
   margin: 0;
-  color: #546e7a;
+  color: $bgc-medium-grey;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-smoothing: antialiased;
@@ -33,12 +37,12 @@ $main-font-family: Source Sans Pro, Avenir Next, Avenir, Helvetica, "sans-serif"
   font-family: $main-font-family;
   font-weight: bold;
   font-size: 1.1em;
-  color: #546e7a;
+  color: $bgc-medium-grey;
   font-smoothing: antialiased;
 }
 
 @mixin default-font {
   font-family: $main-font-family;
-  color: #546e7a;
+  color: $bgc-medium-grey;
   font-smoothing: antialiased;
 }
