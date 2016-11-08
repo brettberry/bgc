@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import FaChevronLeft from 'react-icons/lib/fa/chevron-left';
+import FaChevronRight from 'react-icons/lib/fa/chevron-right';
 import NavigationBar from './NavigationBar';
 import './home.styles.scss';
 
@@ -12,6 +14,7 @@ class Home extends Component {
         <Featured />
         <DemoSection />
         <ShopCategories />
+        <Footer />
       </div>
     );
   }
@@ -28,7 +31,19 @@ function Button({ text }) {
 function FirstSection() {
   return (
     <div className="firstContainer">
-      <div className="firstSec"></div>
+      <div className="firstSec">
+        <div className="chevronContainer">
+          <FaChevronLeft className= "chevron"/>
+        </div>
+        <div className="chevronContainer">
+          <FaChevronRight className="chevron" />
+        </div>
+      </div>
+      <div className="dotContainer">
+        <div className="dot1"/>
+        <div className="dot"/>
+        <div className="dot"/>
+      </div>
     </div>
   );
 }
@@ -56,8 +71,8 @@ function Featured() {
 
 function DemoSection() {
   return (
-    <div className="categoryContainer">
-      <span className="title">How To Demonstration</span>
+    <div className="demoContainer">
+      <span className="demoTitle">How To Demonstration</span>
       <div className="demoSection">
         <div className="demo"></div>
         <div className="demoInfo">
@@ -83,6 +98,14 @@ function ShopCategories() {
           <p className="categoryTitle">Movies</p>
         </div>
       </div>
+    </div>
+  );
+}
+
+function Footer() {
+  return (
+    <div className="footer">
+
     </div>
   );
 }

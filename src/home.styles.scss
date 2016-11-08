@@ -40,19 +40,69 @@
 .firstContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .firstSec {
   display: flex;
-  margin-top: 175px;
+  margin-top: 135px;
   background-color: white;
-  width: 90%;
-  height: 600px;
+  width: 100%;
+  height: 550px;
   border-radius: 2px;
+  justify-content: space-between;
+  align-items: center;
+
+  .chevronContainer {
+    width: 50px;
+    height: 150px;
+    margin: 25px;
+  }
+
+  .chevron {
+    width: 50px;
+    height: 150px;
+    fill: $bgc-medium-grey;
+    opacity: 0;
+  }
 
   &:hover {
     box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+
+    .chevron {
+      opacity: 0.2;
+      transition: all 0.5s ease;
+    }
   }
+}
+
+
+
+.dotContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 20px;
+  justify-content: center;
+  margin-top: 25px;
+
+  .dot {
+    height: 9px;
+    width: 9px;
+    background-color: rgba($bgc-medium-grey, 0.4);
+    border-radius: 50%;
+    margin: 8px;
+  }
+
+  .dot1 {
+    height: 9px;
+    width: 9px;
+    background-color: $bgc-orange;
+    border-radius: 50%;
+    margin: 8px;
+  }
+
 }
 
 .featuredItems {
@@ -67,6 +117,8 @@
   align-items: center;
   width: 90%;
   justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 25px;
 }
 
 .title {
@@ -106,10 +158,12 @@
   }
 }
 
-.categoryContainer {
+.demoContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 50px;
+  width: 100%;
 }
 
 .demoSection {
@@ -117,6 +171,7 @@
   flex-direction: row;
   justify-content: space-around;
   padding: 25px;
+  padding-bottom: 75px;
 }
 
 .demo {
@@ -125,10 +180,27 @@
   background-color: white;
 }
 
+.demoTitle {
+  display: flex;
+  @include subheader-font;
+  margin-top: 75px;
+  margin: 30px;
+  font-size: 2em;
+  color: $bgc-medium-grey;
+}
+
 .demoInfo {
   width: 600px;
   height: 400px;
   background-color: transparent;
+}
+
+.categoryContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  width: 100%;
 }
 
 .categories {
@@ -158,7 +230,7 @@
 
   &:hover {
     box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
-    transform: scale(1.05);
+    transform: scale(1.02);
     transition: all 0.2s ease;
     cursor: pointer;
 
@@ -166,4 +238,11 @@
       font-weight: 300;
     }
   }
+}
+
+.footer {
+  width: 100%;
+  height: 450px;
+  background-color: $bgc-dark-grey;
+  margin-top: 75px;
 }
