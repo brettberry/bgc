@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import FaChevronLeft from 'react-icons/lib/fa/chevron-left';
 import FaChevronRight from 'react-icons/lib/fa/chevron-right';
-import NavigationBar from './NavigationBar';
+import Button from './Buttons';
+import './buttons.styles.scss';
 import './home.styles.scss';
 
 
@@ -9,7 +10,6 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <NavigationBar className="navBar"/>
         <FirstSection />
         <Featured />
         <DemoSection />
@@ -20,14 +20,6 @@ class Home extends Component {
   }
 }
 
-function Button({ text }) {
-  return (
-    <div className="button">
-      <span className="buttonText">{text}</span>
-    </div>
-  );
-}
-
 function FirstSection() {
   return (
     <div className="firstContainer">
@@ -35,14 +27,15 @@ function FirstSection() {
         <div className="chevronContainer">
           <FaChevronLeft className= "chevron"/>
         </div>
+        <div className="dotContainer">
+          <div className="dot1"/>
+          <div className="dot"/>
+          <div className="dot"/>
+        </div>
         <div className="chevronContainer">
           <FaChevronRight className="chevron" />
         </div>
-      </div>
-      <div className="dotContainer">
-        <div className="dot1"/>
-        <div className="dot"/>
-        <div className="dot"/>
+
       </div>
     </div>
   );
@@ -76,7 +69,6 @@ function DemoSection() {
       <div className="demoSection">
         <div className="demo"></div>
         <div className="demoInfo">
-          <p></p>
         </div>
       </div>
     </div>
@@ -89,12 +81,15 @@ function ShopCategories() {
       <span className="title">Shop Now</span>
       <div className="categories">
         <div className="category">
+          <img src="/fulldraw.jpg" className="bkgrdimg" />
           <p className="categoryTitle">Bugles</p>
         </div>
         <div className="category">
+          <img src="/fulldraw.jpg" className="bkgrdimg" />
           <p className="categoryTitle">Mouth Reeds</p>
         </div>
         <div className="category">
+          <img src="/fulldraw.jpg" className="bkgrdimg" />
           <p className="categoryTitle">Movies</p>
         </div>
       </div>
@@ -104,9 +99,7 @@ function ShopCategories() {
 
 function Footer() {
   return (
-    <div className="footer">
-
-    </div>
+    <div className="footer" />
   );
 }
 

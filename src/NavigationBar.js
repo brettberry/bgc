@@ -1,33 +1,50 @@
 import React, { Component, PropTypes } from 'react';
+import $ from 'jquery';
 import ProductsMenu from './ProductsMenu';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import FaSearch from 'react-icons/lib/fa/search';
 import FaChevronRight from 'react-icons/lib/fa/chevron-right';
 import { Link } from 'react-router';
-
-import './NavigationBar.styles.scss';
+import './navigationBar.styles.scss';
+import Waypoint from 'react-waypoint';
+import classnames from 'classnames';
 
 class NavigationBar extends Component {
 
-static propTypes = {
-  className: PropTypes.string
-}
+  static propTypes = {
+    className: PropTypes.string
+  }
+
+  state = {
+    showResponsiveNavBar: false
+  }
+
+  componentDidMount() {
+    const scrollTop = $(window).scrollTop();
+    if (scrollTop >= 140) {
+      this.setState({ showResponsiveNavBar: true });
+    }
+  }
 
   render() {
     const { className } = this.props;
+    const { showResponsiveNavBar } = this.state;
     return (
       <div>
         <div className="navBar">
           <Link to="/" className="link">
             <h1 className="bgc">Berry Game Calls</h1>
           </Link>
-          <Alert />
           <Menu />
           <div className="iconContainer">
             <FaSearch className="search" />
             <FaShoppingCart className="cart" />
           </div>
         </div>
+        <Alert />
+        <Waypoint onLeave={() => this.setState({ showResponsiveNavBar: true })}
+                  onEnter={() => this.setState({ showResponsiveNavBar: false })} />
+        <div className={classnames('responsiveNavBar', showResponsiveNavBar && 'showNav')}/>
       </div>
     );
   }
@@ -47,7 +64,9 @@ function Menu() {
   return (
     <div className="menu">
       <div className="menuItem">
-        <h3 className="item">Products</h3>
+        <Link to="/products" className="menuLink">
+          <h3 className="item">Products</h3>
+        </Link>
         <div className="underline" />
         <ProductsMenu className="products" />
       </div>

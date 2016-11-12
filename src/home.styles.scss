@@ -4,39 +4,6 @@
   z-index: 1000;
 }
 
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 5px;
-  border-color: $bgc-medium-grey;
-  width: 150px;
-  height: 50px;
-  margin: 30px;
-
-  .buttonText {
-    @include default-font;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 1em;
-    letter-spacing: 2px;
-  }
-
-  &:hover {
-    border-color: $bgc-orange;
-    background-color: $bgc-orange;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
-    transition: all 0.2s ease;
-
-    .buttonText {
-      color: white;
-    }
-  }
-}
-
 .firstContainer {
   display: flex;
   justify-content: center;
@@ -49,7 +16,7 @@
   margin-top: 135px;
   background-color: white;
   width: 100%;
-  height: 550px;
+  height: 600px;
   border-radius: 2px;
   justify-content: space-between;
   align-items: center;
@@ -67,43 +34,47 @@
     opacity: 0;
   }
 
-  &:hover {
-    box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+  .dotContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 25px;
+    opacity: 0;
 
+    .dot {
+      height: 9px;
+      width: 9px;
+      background-color: rgba($bgc-medium-grey, 0.4);
+      border-radius: 50%;
+      margin: 8px;
+    }
+
+    .dot1 {
+      height: 9px;
+      width: 9px;
+      background-color: $bgc-orange;
+      border-radius: 50%;
+      margin: 8px;
+    }
+  }
+
+  &:hover {
     .chevron {
       opacity: 0.2;
+      transition: all 0.5s ease;
+    }
+
+    .dotContainer {
+      opacity: 1;
       transition: all 0.5s ease;
     }
   }
 }
 
 
-
-.dotContainer {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 20px;
-  justify-content: center;
-  margin-top: 25px;
-
-  .dot {
-    height: 9px;
-    width: 9px;
-    background-color: rgba($bgc-medium-grey, 0.4);
-    border-radius: 50%;
-    margin: 8px;
-  }
-
-  .dot1 {
-    height: 9px;
-    width: 9px;
-    background-color: $bgc-orange;
-    border-radius: 50%;
-    margin: 8px;
-  }
-
-}
 
 .featuredItems {
   display: flex;
@@ -208,7 +179,6 @@
   flex-direction: row;
   justify-content: space-around;
   width: 90%;
-
 }
 
 .category {
@@ -217,15 +187,28 @@
   align-items: center;
   width: 30%;
   height: 350px;
-  background-color: white;
+  background-color: black;
   border-radius: 2px;
   margin: 25px;
   margin-top: 0;
 
   .categoryTitle {
     @include subheader-font;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 4px;
     padding: 25px;
     margin: 0;
+    position: absolute;
+    color: white;
+    font-weight: 400;
+  }
+
+  .bkgrdimg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    border-radius: 2px;
   }
 
   &:hover {
@@ -235,7 +218,8 @@
     cursor: pointer;
 
     .categoryTitle {
-      font-weight: 300;
+      transform: scale(1.1);
+      transition: all 0.2s ease;
     }
   }
 }
