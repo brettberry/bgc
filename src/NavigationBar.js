@@ -7,14 +7,10 @@ import { Link } from 'react-router';
 import Waypoint from 'react-waypoint';
 
 import ProductsMenu from './ProductsMenu';
-import MiniNavBar from './MiniNavBar';
+import MiniNavBar, { ShoppingCenter } from './MiniNavBar';
 import './navigationBar.styles.scss';
 
 class NavigationBar extends Component {
-
-  static propTypes = {
-    className: PropTypes.string
-  }
 
   state = {
     showResponsiveNavBar: false
@@ -28,7 +24,6 @@ class NavigationBar extends Component {
   }
 
   render() {
-    // const { className } = this.props;
     return (
       <div>
         <div className="navBar">
@@ -36,10 +31,7 @@ class NavigationBar extends Component {
             <h1 className="bgc">Berry Game Calls</h1>
           </Link>
           <Menu />
-          <div className="iconContainer">
-            <FaSearch className="search" />
-            <FaShoppingCart className="cart" />
-          </div>
+          <ShoppingCenter className="dark" />
         </div>
         <Waypoint onLeave={() => this.setState({ showResponsiveNavBar: true })}
                   onEnter={() => this.setState({ showResponsiveNavBar: false })} />
