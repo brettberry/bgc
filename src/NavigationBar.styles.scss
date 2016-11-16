@@ -101,36 +101,6 @@ html, body, main {
   }
 }
 
-.iconContainer {
-  display: flex;
-  align-content: flex-end;
-  justify-content: flex-end;
-}
-
-.search {
-  fill: $bgc-medium-grey;
-  width: 20px;
-  height: 20px;
-  margin-right: 20px;
-  cursor: pointer;
-
-  &:hover {
-    fill: black;
-  }
-}
-
-.cart {
-  fill: $bgc-medium-grey;
-  width: 20px;
-  height: 20px;
-  margin-right: 40px;
-  cursor: pointer;
-
-  &:hover {
-    fill: black;
-  }
-}
-
 .alertBar {
   top: 99px;
   display: flex;

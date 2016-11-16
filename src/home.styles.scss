@@ -42,6 +42,7 @@
     align-items: flex-end;
     padding-bottom: 25px;
     opacity: 0;
+    pointer-events: none;
 
     .dot {
       height: 9px;
