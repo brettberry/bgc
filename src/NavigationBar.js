@@ -1,13 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import $ from 'jquery';
-import ProductsMenu from './ProductsMenu';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import FaSearch from 'react-icons/lib/fa/search';
-import FaChevronRight from 'react-icons/lib/fa/chevron-right';
+// import FaChevronRight from 'react-icons/lib/fa/chevron-right';
 import { Link } from 'react-router';
-import './navigationBar.styles.scss';
 import Waypoint from 'react-waypoint';
-import classnames from 'classnames';
+
+import ProductsMenu from './ProductsMenu';
+import MiniNavBar from './MiniNavBar';
+import './navigationBar.styles.scss';
 
 class NavigationBar extends Component {
 
@@ -27,8 +28,7 @@ class NavigationBar extends Component {
   }
 
   render() {
-    const { className } = this.props;
-    const { showResponsiveNavBar } = this.state;
+    // const { className } = this.props;
     return (
       <div>
         <div className="navBar">
@@ -41,23 +41,13 @@ class NavigationBar extends Component {
             <FaShoppingCart className="cart" />
           </div>
         </div>
-        <Alert />
         <Waypoint onLeave={() => this.setState({ showResponsiveNavBar: true })}
                   onEnter={() => this.setState({ showResponsiveNavBar: false })} />
-        <div className={classnames('responsiveNavBar', showResponsiveNavBar && 'showNav')}/>
+        <Alert />
+        <MiniNavBar showResponsiveNavBar={this.state.showResponsiveNavBar} />
       </div>
     );
   }
-}
-
-function bgcSmall() {
-  return (
-    <div className="bgcContainer">
-      <h3 className="bgc">Berry</h3>
-      <h3 className="bgc">Game</h3>
-      <h3 className="bgc">Calls</h3>
-    </div>
-  );
 }
 
 function Menu() {
