@@ -35,7 +35,6 @@ function FirstSection() {
         <div className="chevronContainer">
           <FaChevronRight className="chevron" />
         </div>
-
       </div>
     </div>
   );
@@ -49,14 +48,34 @@ function Featured() {
         <Button text="view all"/>
       </div>
       <div className="featured">
-        <div className="featuredItem"></div>
-        <div className="featuredItem"></div>
-        <div className="featuredItem"></div>
+        <FeaturedItem title="Thunder Bugle Pro"
+                      price="$49.95" />
+        <FeaturedItem title="Golden Tone Grunt Tube"
+                      price="$24.95" />
+        <FeaturedItem title="Elk Hunters Training Day 2"
+                      price="$14.95" />
       </div>
       <div className="featured">
-        <div className="featuredItem"></div>
-        <div className="featuredItem"></div>
-        <div className="featuredItem"></div>
+      <FeaturedItem title="Sleazy Cow Call"
+                    price="$14.95" />
+      <FeaturedItem title="Golden Dome Large Bull"
+                    price="$6.95" />
+      <FeaturedItem title="Original Thunder Bugle"
+                    price="$34.50" />
+      </div>
+    </div>
+  );
+}
+
+export function FeaturedItem({ title, price }) {
+  return (
+    <div className="featuredItem">
+    {/* <Button text="Add to cart" /> */}
+      <div className="detailsContainer">
+        <div className="infoContainer">
+          <h2 className="smallProductTitle">{title}</h2>
+          <h3 className="smallProductPrice">{price}</h3>
+        </div>
       </div>
     </div>
   );

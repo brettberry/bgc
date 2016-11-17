@@ -12,6 +12,7 @@
   border-color: #ddd;
   pointer-events: none;
   opacity: 0;
+  z-index: 100;
 }
 
 .container {
@@ -19,8 +20,7 @@
   flex-direction: row;
   height: 425px;
   justify-content: space-around;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px;
 }
 
 .bugles {
@@ -41,11 +41,11 @@
 
 .productNames {
   @include default-font;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin: 6px;
 
   &:hover {
-    color: black;
+    color: $bgc-dark-grey;
     cursor: pointer;
+    font-weight: 600;
   }
 }

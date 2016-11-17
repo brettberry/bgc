@@ -10,6 +10,11 @@ html, body, main {
   box-sizing: border-box;
 }
 
+.mainNavContainer {
+  position: relative;
+  z-index: 1000;
+}
+
 .navBar {
   display: flex;
   justify-content: space-around;

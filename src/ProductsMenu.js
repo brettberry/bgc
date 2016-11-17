@@ -52,9 +52,9 @@ function Reeds() {
       <p className="productNames">X-Series Herd Bull</p>
       <p className="productNames">X-Series Satellite Bull</p>
       <p className="productNames">X-Series Roosevelt</p>
-      <p className="productNames">Classic Small Bull Single Reed</p>
-      <p className="productNames">Classic Medium Bull Double Reed</p>
-      <p className="productNames">Classic Large Bull Double Reed</p>
+      <p className="productNames">Small Bull Single Reed</p>
+      <p className="productNames">Medium Bull Double Reed</p>
+      <p className="productNames">Large Bull Double Reed</p>
       <p className="productNames">Berry Deceiver Reed</p>
       <p className="productNames">Sleazy Cow Call Reed</p>
     </div>
@@ -84,13 +84,20 @@ function DVDs() {
 function Other() {
   return (
     <div>
-      <h3 className="columnTitle">Other</h3>
-      <p className="productNames">Buck Grunt and Bleat Call</p>
-      <p className="productNames">Predator Call</p>
-      <p className="productNames">Reed Holder</p>
-      <p className="productNames">Berry Wind Detector</p>
-      <p className="productNames">Power Arrow Gripper</p>
-      <p className="productNames">Berry Fanny Pack</p>
+      <div>
+        <h3 className="columnTitle">Other</h3>
+        <p className="productNames">Buck Grunt and Bleat Call</p>
+        <p className="productNames">Predator Call</p>
+        <p className="productNames">Reed Holder</p>
+        <p className="productNames">Berry Wind Detector</p>
+        <p className="productNames">Power Arrow Gripper</p>
+        <p className="productNames">Berry Fanny Pack</p>
+      </div>
+      <div>
+        <h3 className="columnTitle">Online Specials</h3>
+        <p className="productNames">Elk Hunters Package</p>
+        <p className="productNames">Clearance</p>
+      </div>
     </div>
   );
 }

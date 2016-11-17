@@ -1,7 +1,8 @@
 @import '../constants';
 
 .sidebarContainer {
-  position: absolute;
+  position: fixed;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -9,6 +10,10 @@
   border-radius: 3px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   width: 20%;
+  height: 100%;
+  top: 0;
+  padding-top: 90px;
+  padding-bottom: 75px;
 
   .categoryContainer {
     display: flex;
@@ -23,6 +28,10 @@
       .downArrow {
         transform: rotate(90deg);
         transition: all 0.3s ease;
+      }
+
+      .callType {
+        font-weight: 400;
       }
     }
 
@@ -39,8 +48,37 @@
       @include default-font;
       margin: 0;
       font-weight: 300;
-      text-align: left;
-      padding: 20px;
+      padding-left: 20px;
     }
+  }
+}
+
+.gridContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  left: 20%;
+  position: relative;
+  width: 80%;
+  padding: 25px;
+}
+
+.gridRow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.gridBox {
+  display: flex;
+  width: 47%;
+  height: 500px;
+  background-color: white;
+  margin: 3%;
+
+  &:hover {
+    box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+    transform: scale(1.02);
+    transition: all 0.2s ease;
   }
 }

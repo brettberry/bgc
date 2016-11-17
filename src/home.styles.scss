@@ -1,9 +1,5 @@
 @import './constants';
 
-.navBar {
-  z-index: 1000;
-}
-
 .firstContainer {
   display: flex;
   justify-content: center;
@@ -116,6 +112,10 @@
 }
 
 .featuredItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
   width: 30%;
   background-color: white;
   border-radius: 2px;

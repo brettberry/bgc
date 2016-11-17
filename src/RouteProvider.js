@@ -9,7 +9,9 @@ export default function RouteProvider() {
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
-        <Route path="products" component={Products} />
+        <Route path="products" component={Products}>
+          <Route path=":productName" component={Product} />
+        </Route>
       </Route>
     </Router>
   );

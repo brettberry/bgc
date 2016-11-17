@@ -1,8 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import $ from 'jquery';
-import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import FaSearch from 'react-icons/lib/fa/search';
-// import FaChevronRight from 'react-icons/lib/fa/chevron-right';
 import { Link } from 'react-router';
 import Waypoint from 'react-waypoint';
 
@@ -25,7 +23,7 @@ class NavigationBar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="mainNavContainer">
         <div className="navBar">
           <Link to="/" className="link">
             <h1 className="bgc">Berry Game Calls</h1>
