@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import FaChevronCircleUp from 'react-icons/lib/fa/chevron-circle-up';
 import './products.styles.scss';
-import { FeaturedItem } from '../Home';
 
 export default class Product extends Component {
   render() {
@@ -55,7 +54,11 @@ function Sidebar() {
       </div>
       <div className="categoryContainer">
         <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Other</h3>
+        <h3 className="callType">Accessories</h3>
+      </div>
+      <div className="categoryContainer">
+        <FaChevronCircleUp className="downArrow"/>
+        <h3 className="callType">Clearance</h3>
       </div>
     </div>
   );

@@ -94,6 +94,10 @@
   color: $bgc-medium-grey;
 }
 
+.viewAllLink {
+  text-decoration: none;
+}
+
 .thumbnailIcon {
   width: 25px;
   height: 25px;
@@ -118,13 +122,40 @@
   justify-content: space-between;
   width: 30%;
   background-color: white;
-  border-radius: 2px;
+  border-radius: 3px;
 
   &:hover {
     box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
     transform: scale(1.02);
     transition: all 0.2s ease;
   }
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  align-items: flex-end;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.smallProductTitle {
+  @include subheader-font;
+  font-weight: 400;
+  margin: 0;
+  color: $bgc-medium-grey;
+}
+
+.smallProductPrice {
+  @include default-font;
+  font-weight: 400;
+  margin: 0;
 }
 
 .demoContainer {

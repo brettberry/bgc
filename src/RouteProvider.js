@@ -16,16 +16,3 @@ export default function RouteProvider() {
     </Router>
   );
 }
-
-
-// export default function RouteProvider() {
-//   return (
-//     <Router history={browserHistory}>
-//       <Route path="/" component={Home}>
-//         <Route path="products" component={Products}>
-//           <Route path=":productName" component={Product} />
-//         </Route>
-//       </Route>
-//     </Router>
-//   );
-// }

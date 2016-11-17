@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FaChevronLeft from 'react-icons/lib/fa/chevron-left';
 import FaChevronRight from 'react-icons/lib/fa/chevron-right';
+import { Link } from 'react-router';
 import Button from './Buttons';
 import './buttons.styles.scss';
 import './home.styles.scss';
@@ -45,7 +46,9 @@ function Featured() {
     <div className="featuredItems">
       <div className="titleContainer">
         <span className="title">Featured Items</span>
-        <Button text="view all"/>
+          <Link to="/products" className="viewAllLink">
+            <Button text="view all" />
+          </Link>
       </div>
       <div className="featured">
         <FeaturedItem title="Thunder Bugle Pro"
@@ -67,10 +70,9 @@ function Featured() {
   );
 }
 
-export function FeaturedItem({ title, price }) {
+function FeaturedItem({ title, price }) {
   return (
     <div className="featuredItem">
-    {/* <Button text="Add to cart" /> */}
       <div className="detailsContainer">
         <div className="infoContainer">
           <h2 className="smallProductTitle">{title}</h2>
@@ -87,8 +89,7 @@ function DemoSection() {
       <span className="demoTitle">How To Demonstration</span>
       <div className="demoSection">
         <div className="demo"></div>
-        <div className="demoInfo">
-        </div>
+        <div className="demoInfo"></div>
       </div>
     </div>
   );
