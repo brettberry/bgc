@@ -12,7 +12,7 @@ html, body, main {
 
 .navBar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   height: 99px;
@@ -30,7 +30,6 @@ html, body, main {
 
 .link {
   text-decoration: none;
-  padding-left: 40px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
