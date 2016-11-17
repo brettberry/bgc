@@ -1,0 +1,226 @@
+@import './constants';
+
+.responsiveNavBar {
+  position: fixed;
+  width: 100%;
+  height: 36px;
+  top: 99px;
+  background-color: $bgc-orange;;
+  opacity: 0;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  pointer-events: none;
+
+  &.showNav {
+    top: 0;
+    height: 65px;
+    opacity: 1;
+    z-index: 1000;
+    pointer-events: all;
+    transition: height 0.3s ease-in;
+
+    .navBarContents {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
+
+.navBarContents {
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: opacity 0.2s 0.3s ease-in;
+}
+
+.bgcLink {
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.bgcMini {
+  @include header-font;
+  margin: 0;
+  color: white;
+  font-size: 2em;
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.searchDiv {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  width: 100%;
+}
+
+.allButton {
+  @include default-font;
+  font-size: 1em;
+  background-color: $bgc-light-grey;
+  width: 65px;
+  height: 40px;
+  border-radius: 22.5px 0 0 22.5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .allText {
+    margin: 0;
+
+    &:hover {
+      color: $bgc-dark-grey;
+      cursor: pointer;
+    }
+  }
+}
+
+.allContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+
+.allTop {
+  position: absolute;
+  width: 65px;
+  height: 40px;
+  border-radius: 22.5px 0 0 0;
+  background-color: white;
+  left: 200px;
+}
+
+.allMenu {
+  @include default-font;
+  position: absolute;
+  padding: 10px 30px 10px 30px;
+  background-color: white;
+  border-radius: 0 0 2px 2px;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+}
+
+.searchBar {
+  @include default-font;
+  appearance: none;
+  outline: 0;
+  border: none;
+  border-color: $bgc-orange;
+  font-size: 1.2em;
+  text-align: left;
+  height: 40px;
+  display: flex;
+  z-index: 100;
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+
+  &::placeholder {
+    opacity: 0.6;
+  }
+}
+
+.searchButton {
+  @include default-font;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bgc-yellow;
+  width: 65px;
+  height: 40px;
+  border-radius: 0 22.5px 22.5px 0;
+}
+
+.searchIcon {
+  fill: $bgc-medium-grey;
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+
+  &:hover {
+    fill: $bgc-dark-grey;
+  }
+}
+
+.shoppingContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  &.dark {
+    .accountText {
+      color: $bgc-medium-grey;
+    }
+
+    .divider {
+      background-color: rgba($bgc-medium-grey, 0.5);
+    }
+
+    .cartIcon {
+      fill: $bgc-medium-grey;
+    }
+  }
+
+  &.light {
+    .accountText {
+      color: white;
+    }
+
+    .divider {
+      background-color: rgba(white, 0.5);
+    }
+
+    .cartIcon {
+      fill: white;
+    }
+  }
+}
+
+.accountText {
+  @include default-font;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+
+  &:hover {
+    fill: $bgc-light-grey;
+    cursor: pointer;
+  }
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  background-color: rgba(white, 0.5);
+  border: none;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.cartIcon {
+  fill: white;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+
+  &:hover {
+    fill: $bgc-light-grey;
+  }
+}

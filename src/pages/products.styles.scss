@@ -1,0 +1,46 @@
+@import '../constants';
+
+.sidebarContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  width: 20%;
+
+  .categoryContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+
+    &:hover {
+      margin-left: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      .downArrow {
+        transform: rotate(90deg);
+        transition: all 0.3s ease;
+      }
+    }
+
+    .downArrow {
+      fill: $bgc-orange;
+      width: 25px;
+      height: 25px;
+      transform: rotate(180deg);
+      margin-left: 25px;
+      opacity: 0.75;
+    }
+
+    .callType {
+      @include default-font;
+      margin: 0;
+      font-weight: 300;
+      text-align: left;
+      padding: 20px;
+    }
+  }
+}
