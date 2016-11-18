@@ -14,19 +14,6 @@
   text-align: center;
   margin: 30px 0 30px 0;
   border-right: 0;
-
-  // &:hover {
-  //   border-color: $bgc-medium-grey;
-  //   transition: all 0.2s ease;
-  //
-  //   .upButton {
-  //     border-color: $bgc-medium-grey;
-  //   }
-  //
-  //   .downButton {
-  //     border-color: $bgc-medium-grey;
-  //   }
-  // }
 }
 
 .up {
@@ -46,11 +33,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  // &:hover {
-  //   border-color: $bgc-medium-grey;
-  //   transition: all 0.2s ease;
-  // }
 }
 
 .down {
@@ -69,11 +51,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  // &:hover {
-  //   border-color: $bgc-medium-grey;
-  //   transition: all 0.2s ease;
-  // }
 }
 
 .pickerContainer {
@@ -88,11 +65,13 @@
 
     .up {
       border-color: $bgc-medium-grey;
+      cursor: pointer;
       transition: all 0.3s ease;
     }
 
     .down {
       border-color: $bgc-medium-grey;
+      cursor: pointer;
       transition: all 0.3s ease;
     }
   }

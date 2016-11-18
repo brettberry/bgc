@@ -1,0 +1,67 @@
+@import '../constants';
+
+.demosContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.demoVideoContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  min-height: 300px;
+  background-color: white;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 40px;
+
+  &:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.videoThumbnail {
+  width: 350px;
+  height: 220px;
+  background-color: lighten(grey, 25);
+  margin-right: 40px;
+}
+
+.vidDetailsContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.videoTitle {
+  @include subheader-font;
+  font-size: 2.25em;
+  font-weight: 300;
+  margin: 0;
+}
+
+.videoDescription {
+  @include default-font;
+  font-weight: 300;
+  font-size: 1.1em;
+  padding: 0;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.demoButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 350px;
+}
+
+.watchButton {
+  margin-right: 30px;
+}

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 import classnames from 'classnames';
 import './productsMenu.styles.scss';
 
@@ -27,7 +28,9 @@ function Bugles() {
   return (
     <div>
       <p className="columnTitle">Thunder Bugles</p>
-      <p className="productNames">Original Berry Thunder Bugle</p>
+      <Link to="/products/:productName" className="link">
+        <p className="productNames">Original Berry Thunder Bugle</p>
+      </Link>
       <p className="productNames">Thunder Bugle Pro</p>
       <p className="productNames">Mini Thunder Bugle</p>
       <p className="productNames">Golden Tone Grunt Tube</p>

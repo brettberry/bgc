@@ -15,6 +15,10 @@ $bgc-yellow: #ffdc85;
   color: $bgc-dark-grey;
   letter-spacing: 3px;
   font-smoothing: antialiased;
+
+  &::selection {
+    background-color: rgba($bgc-orange, 0.4);
+  }
 }
 
 @mixin subheader-font {
@@ -23,6 +27,10 @@ $bgc-yellow: #ffdc85;
   font-size: 1.5em;
   color: $bgc-dark-grey;
   font-smoothing: antialiased;
+
+  &::selection {
+    background-color: rgba($bgc-orange, 0.4);
+  }
 }
 
 @mixin menu-font {
@@ -42,10 +50,18 @@ $bgc-yellow: #ffdc85;
   font-size: 1.1em;
   color: $bgc-medium-grey;
   font-smoothing: antialiased;
+
+  &::selection {
+    background-color: rgba($bgc-orange, 0.4);
+  }
 }
 
 @mixin default-font {
   font-family: $main-font-family;
   color: $bgc-medium-grey;
   font-smoothing: antialiased;
+
+  &::selection {
+    background-color: rgba($bgc-orange, 0.4);
+  }
 }

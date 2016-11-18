@@ -63,21 +63,24 @@ function Featured() {
       <FeaturedItem title="Golden Dome Large Bull"
                     price="$6.95" />
       <FeaturedItem title="Original Thunder Bugle"
-                    price="$34.50" />
+                    price="$34.50"
+                    link="/products/:productName"/>
       </div>
     </div>
   );
 }
 
-function FeaturedItem({ title, price }) {
+function FeaturedItem({ title, price, link }) {
   return (
     <div className="featuredItem">
+    <Link to={link} className="link">
       <div className="detailsContainer">
         <div className="infoContainer">
           <h2 className="smallProductTitle">{title}</h2>
           <h3 className="smallProductPrice">{price}</h3>
         </div>
       </div>
+      </Link>
     </div>
   );
 }

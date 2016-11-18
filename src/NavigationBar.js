@@ -51,7 +51,9 @@ function Menu() {
         <ProductsMenu className="products" />
       </div>
       <div className="menuItem">
-        <h3 className="item">Demos</h3>
+        <Link to="/demos" className="menuLink">
+          <h3 className="item">Demos</h3>
+        </Link>
         <div className="underline" />
       </div>
       <div className="menuItem">
