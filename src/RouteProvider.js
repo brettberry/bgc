@@ -10,8 +10,8 @@ export default function RouteProvider() {
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
         <Route path="products" component={Products}>
-          <Route path=":productName" component={Product} />
         </Route>
+        <Route path="products/:productName" component={Product} />
       </Route>
     </Router>
   );

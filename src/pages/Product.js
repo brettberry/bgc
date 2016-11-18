@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
+import './product.styles.scss';
 
 export default class Product extends Component {
   render() {
-    const { routeParams } = this.props;
+    // const { routeParams } = this.props;
     return (
-      <div>
-        {routeParams.productName}
+      <div className="productView">
+        <div className="productContainer">
+          <h1 className="largeProductName">The Original Berry Thunder Bugle</h1>
+          <div className="imgContainer">
+            <div className="thumbnailsContainer">
+              <div className="thumbnail"></div>
+              <div className="thumbnail"></div>
+              <div className="thumbnail"></div>
+            </div>
+            <div className="imgDivLarge"></div>
+            <div className="orderDiv"></div>
+          </div>
+          <div className="descriptionContainer">
+            <h3 className="descriptionHeader">Description</h3>
+            <p className="itemDescription">The revolutionary Thunder Bugle is one of the best external elk calls ever made. The thin replaceable RT-Reeds snap into the mouthpiece in seconds.  With four different types of RT-Reeds you can produce a variety of sounds quickly.  Simply blow a breath of air through the call and apply top lip, bottom lip, or even tongue pressure and you will be producing tones so easily.  With a little practice you will be sounding like the real thing in no time.  The Thunder Bugle comes with two RT-Reeds, a camo cover, and a cap to protect the reed.</p>
+          </div>
+        </div>
       </div>
     );
   }
