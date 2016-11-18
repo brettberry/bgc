@@ -6,7 +6,6 @@ import Button from './Buttons';
 import './buttons.styles.scss';
 import './home.styles.scss';
 
-
 class Home extends Component {
   render() {
     return (
