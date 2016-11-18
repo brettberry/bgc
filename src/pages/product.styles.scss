@@ -77,6 +77,11 @@
   margin-top: 10px;
 }
 
+.buttonPickerContainer {
+  display: flex;
+  flex-direction: row;
+}
+
 .descriptionContainer {
   display: flex;
   flex-direction: column;

@@ -29,9 +29,10 @@ function ProductView() {
           <div className="orderDiv">
             <h2 className="priceHeader">$34.50</h2>
             <h3 className="priceSubHeader">+ Flatrate shipping: $2.95</h3>
-            {/* <input></input> */}
-            <Button text="Add To Cart" />
-            <QuantityPicker />
+            <div className="buttonPickerContainer">
+              <QuantityPicker />
+              <Button text="Add To Cart" />
+            </div>
             <div className="descriptionContainer">
               <h3 className="descriptionHeader">Description</h3>
               <p className="itemDescription">The revolutionary Thunder Bugle is one of the best external elk calls ever made. The thin replaceable RT-Reeds snap into the mouthpiece in seconds.  With four different types of RT-Reeds you can produce a variety of sounds quickly.  Simply blow a breath of air through the call and apply top lip, bottom lip, or even tongue pressure and you will be producing tones so easily.  With a little practice you will be sounding like the real thing in no time.  The Thunder Bugle comes with two RT-Reeds, a camo cover, and a cap to protect the reed.</p>
