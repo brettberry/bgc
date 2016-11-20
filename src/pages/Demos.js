@@ -20,7 +20,6 @@ class Demos extends Component {
                     description="Glen Berry of Berry Game Calls bowhunts for merriam turkey in Washington state. Watch this exciting call in with 2 camera angles." />
         <DemoObject title="Turkey Hunt with Chad Berry"
                     description="Chad Berry bowhunts for turkey in Washington state." />
-
       </div>
     );
   }
