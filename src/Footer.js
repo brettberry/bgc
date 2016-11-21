@@ -4,6 +4,9 @@ import FaEnvelope from 'react-icons/lib/fa/envelope';
 import FaEnvelopeO from 'react-icons/lib/fa/envelope-o';
 import FaComment from 'react-icons/lib/fa/comment-o';
 import FaUser from 'react-icons/lib/fa/user';
+import FaFacebook from 'react-icons/lib/fa/facebook-official';
+import FaYoutube from 'react-icons/lib/fa/youtube-play';
+import FaCopyright from 'react-icons/lib/fa/copyright';
 import Button from './Buttons';
 import './buttons.styles.scss';
 import './footer.styles.scss';
@@ -18,6 +21,7 @@ class Footer extends Component {
           <LeftSide />
           <RightSide />
         </div>
+        <Copyright />
       </div>
     );
   }
@@ -38,6 +42,14 @@ function LeftSide() {
         <p className="contactText">PO Box 416 / 219 S. Lefevre</p>
       </div>
       <p className="addressText">Medical Lake, WA 99022</p>
+      <div className="callDiv">
+        <FaFacebook className="phoneIcon" />
+        <p className="contactText">Follow us on Facebook</p>
+      </div>
+      <div className="callDiv">
+        <FaYoutube className="phoneIcon" />
+        <p className="contactText">Subscribe to our Youtube Channel</p>
+      </div>
     </div>
   );
 }
@@ -64,6 +76,15 @@ function RightSide() {
       <div className="sendDiv">
         <Button text="send"/>
       </div>
+    </div>
+  );
+}
+
+function Copyright() {
+  return (
+    <div className="copyrightContainer">
+      <FaCopyright className="copyrightIcon" />
+      <p className="copyright">2016 Brett Berry</p>
     </div>
   );
 }

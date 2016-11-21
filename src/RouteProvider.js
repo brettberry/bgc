@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 import Home from './Home';
 import App from './App';
-import { Products, Product, Demos } from './pages';
+import { Products, Product, Demos, About, Gallery, Events } from './pages';
 
 export default function RouteProvider() {
   return (
@@ -14,6 +14,9 @@ export default function RouteProvider() {
         <Route path="products" component={Products} />
         <Route path="products/:productName" component={Product} />
         <Route path="demos" component={Demos} />
+        <Route path="about" component={About} />
+        <Route path="gallery" component={Gallery} />
+        <Route path="events" component={Events} />
       </Route>
     </Router>
   );

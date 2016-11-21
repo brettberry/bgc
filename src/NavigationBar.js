@@ -3,7 +3,6 @@ import $ from 'jquery';
 // import FaSearch from 'react-icons/lib/fa/search';
 import { Link } from 'react-router';
 import Waypoint from 'react-waypoint';
-
 import ProductsMenu from './ProductsMenu';
 import MiniNavBar, { ShoppingCenter } from './MiniNavBar';
 import './navigationBar.styles.scss';
@@ -43,31 +42,67 @@ class NavigationBar extends Component {
 function Menu() {
   return (
     <div className="menu">
-      <div className="menuItem">
-        <Link to="/products" className="menuLink">
-          <h3 className="item">Products</h3>
-        </Link>
+      <ProductsItem />
+      <DemosItem />
+      <AboutItem />
+      <GalleryItem />
+      <EventsItem />
+    </div>
+  );
+}
+
+function ProductsItem() {
+  return (
+    <div className="menuItem">
+      <Link to="/products" className="menuLink">
+        <h3 className="item">Products</h3>
+      </Link>
         <div className="underline" />
-        <ProductsMenu className="products" />
-      </div>
-      <div className="menuItem">
-        <Link to="/demos" className="menuLink">
-          <h3 className="item">Demos</h3>
-        </Link>
-        <div className="underline" />
-      </div>
-      <div className="menuItem">
+      <ProductsMenu className="products" />
+    </div>
+  );
+}
+
+function DemosItem() {
+  return (
+    <div className="menuItem">
+      <Link to="/demos" className="menuLink">
+        <h3 className="item">Demos</h3>
+      </Link>
+      <div className="underline" />
+    </div>
+  );
+}
+
+function AboutItem() {
+  return (
+    <div className="menuItem">
+      <Link to="/about" className="menuLink">
         <h3 className="item">About</h3>
-        <div className="underline" />
-      </div>
-      <div className="menuItem">
+      </Link>
+      <div className="underline" />
+    </div>
+  );
+}
+
+function GalleryItem() {
+  return (
+    <div className="menuItem">
+      <Link to="/gallery" className="menuLink">
         <h3 className="item">Gallery</h3>
-        <div className="underline" />
-      </div>
-      <div className="menuItem">
-        <h3 className="item">Seminars</h3>
-        <div className="underline" />
-      </div>
+      </Link>
+      <div className="underline" />
+    </div>
+  );
+}
+
+function EventsItem() {
+  return (
+    <div className="menuItem">
+      <Link to="/events" className="menuLink">
+        <h3 className="item">Events</h3>
+      </Link>
+      <div className="underline" />
     </div>
   );
 }

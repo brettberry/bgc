@@ -31,7 +31,7 @@
   font-weight: 200;
   color: rgba($bgc-background-color, 0.7);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   margin: 0 0 20px 16px;
 }
 
@@ -40,7 +40,7 @@
   font-size: 1.25em;
   font-weight: 200;
   color: rgba($bgc-background-color, 0.5);
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   margin: 15px;
   display: flex;
   align-self: flex-start;
@@ -51,7 +51,7 @@
   font-size: 1.25em;
   font-weight: 200;
   color: rgba($bgc-background-color, 0.5);
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   margin: 0 0 20px 41px;
   display: flex;
   align-self: flex-start;
@@ -143,4 +143,30 @@
   justify-content: flex-end;
   width: 100%;
   padding-right: 25px;
+}
+
+.copyrightContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 25px;
+}
+
+.copyrightIcon {
+  fill: rgba($bgc-background-color, 0.5);
+  margin: 16px 0 16px 0;
+  width: 15px;
+  height: 15px;
+}
+
+.copyright {
+  @include subheader-font;
+  font-size: 1em;
+  font-weight: 200;
+  color: rgba($bgc-background-color, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-left: 8px;
 }
