@@ -5,10 +5,23 @@ class Events extends Component {
   render() {
     return (
       <div>
-        <h3>Test Events</h3>
+        <NewEvent />
+        <NewEvent />
+        <NewEvent />
+        <NewEvent />
+        <NewEvent />
+        <NewEvent />
       </div>
     );
   }
+}
+
+function NewEvent() {
+  return (
+    <div className="eventsContainer">
+      <div className="eventContainer" />
+    </div>
+  );
 }
 
 export default Events;

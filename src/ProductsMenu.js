@@ -28,7 +28,7 @@ function Bugles() {
   return (
     <div>
       <p className="columnTitle">Thunder Bugles</p>
-      <Link to="/products/:productName" className="link">
+      <Link to="/products/thunder-bugle" className="link">
         <p className="productNames">Original Berry Thunder Bugle</p>
       </Link>
       <p className="productNames">Thunder Bugle Pro</p>

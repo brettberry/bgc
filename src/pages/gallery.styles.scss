@@ -1,1 +1,75 @@
 @import '../constants';
+
+.photoCategories {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  padding: 0 250px 0 250px;
+}
+
+.animal {
+  @include default-font;
+  font-size: 1em;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  &:hover {
+    cursor: pointer;
+    color: $bgc-orange;
+  }
+}
+
+.galleryRow {
+  display: flex;
+}
+
+.imageContainer {
+  width: 25%;
+  height: 400px;
+  background-color: white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $bgc-light-grey;
+
+  .overlayContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(black, 0.75);
+    opacity: 0;
+    padding: 20px;
+  }
+
+  .hunter {
+    @include subheader-font;
+    font-size: 1.5em;
+    font-weight: 100;
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .details {
+    @include subheader-font;
+    font-size: 1em;
+    font-weight: 100;
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  &:hover {
+    .overlayContainer {
+      opacity: 1;
+    }
+  }
+}
