@@ -1,6 +1,7 @@
 import { List } from 'immutable';
 import map from 'lodash/map';
 import find from 'lodash/find';
+import filter from 'lodash/filter';
 
 export default class Collection {
 
@@ -19,5 +20,13 @@ export default class Collection {
 
   find(predicate) {
     return find(this.toArray(), predicate);
+  }
+
+  filter(predicate) {
+    return new this.constructor(filter(this.toArray(), predicate));
+  }
+
+  toJS() {
+    return this.data.toJS();
   }
 }

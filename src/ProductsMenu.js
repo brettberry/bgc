@@ -2,6 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import classnames from 'classnames';
 import './productsMenu.styles.scss';
+import data from './data.json';
+import { ProductCollection } from './models';
+import map from 'lodash/map';
+
+const products = new ProductCollection(data.products);
 
 class ProductsMenu extends Component {
 
@@ -11,96 +16,79 @@ class ProductsMenu extends Component {
 
   render() {
     const { className } = this.props;
+    const bugles = products.filterByCategory('bugles');
+    const reeds = products.filterByCategory('reeds');
+    const cowCalls = products.filterByCategory('cow-calls');
+    const dvds = products.filterByCategory('dvds');
+    const other = products.filterByCategory('other');
+
     return (
       <div className={classnames('dropdown', className)}>
         <div className="container">
-          <Bugles />
-          <Reeds />
-          <DVDs />
-          <Other />
+          <Bugles bugles={bugles} />
+          <Reeds reeds={reeds} />
+          <DVDs dvds={dvds} />
+          <Other cowCalls={cowCalls} other={other} />
         </div>
       </div>
     );
   }
 }
 
-function Bugles() {
+function Bugles({ bugles }) {
   return (
     <div>
-      <p className="columnTitle">Thunder Bugles</p>
-      <Link to="/products/thunder-bugle" className="link">
-        <p className="productNames">Original Berry Thunder Bugle</p>
-      </Link>
-      <p className="productNames">Thunder Bugle Pro</p>
-      <p className="productNames">Mini Thunder Bugle</p>
-      <p className="productNames">Golden Tone Grunt Tube</p>
-      <p className="productNames">Golden Tone Shorty</p>
-      <p className="columnTitle">Thunder Bugle Replacement Reeds</p>
-      <p className="productNames">White Replacement Reed</p>
-      <p className="productNames">Black Replacement Reed</p>
-      <p className="productNames">Green Replacement Reed</p>
-      <p className="productNames">Red Replacement Reed</p>
+      <p className="columnTitle">Bugles and Accessories</p>
+        <div>{map(bugles.toArray(), (bugle, key) =>
+          <Link key={key} to={`/products/${bugle.getPathName()}`} className="link">
+            <p className="productNames">{bugle.getFullName()}</p>
+          </Link>)
+        }</div>
     </div>
   );
 }
 
-function Reeds() {
+function Reeds({ reeds }) {
   return (
     <div>
       <p className="columnTitle">Elk Mouth Reeds</p>
-      <p className="productNames">Golden Dome Large Bull</p>
-      <p className="productNames">Golden Dome Medium Bull</p>
-      <p className="productNames">Golden Dome Small Bull</p>
-      <p className="productNames">X-Series Young Hot Bull</p>
-      <p className="productNames">X-Series Herd Bull</p>
-      <p className="productNames">X-Series Satellite Bull</p>
-      <p className="productNames">X-Series Roosevelt</p>
-      <p className="productNames">Small Bull Single Reed</p>
-      <p className="productNames">Medium Bull Double Reed</p>
-      <p className="productNames">Large Bull Double Reed</p>
-      <p className="productNames">Berry Deceiver Reed</p>
-      <p className="productNames">Sleazy Cow Call Reed</p>
+      <div>{map(reeds.toArray(), (reed, key) =>
+        <Link key={key} to={`/products/${reed.getPathName()}`} className="link">
+          <p className="productNames">{reed.getFullName()}</p>
+        </Link>)
+      }</div>
     </div>
   );
 }
 
-function DVDs() {
+function DVDs({ dvds }) {
+  return (
+    <div>
+      <h3 className="columnTitle">Hunting DVDs</h3>
+      <div>{map(dvds.toArray(), (dvd, key) =>
+        <Link key={key} to={`/products/${dvd.getPathName()}`} className="link">
+          <p className="productNames">{dvd.getFullName()}</p>
+        </Link>)
+      }</div>
+    </div>
+  );
+}
+
+function Other({ cowCalls, other }) {
   return (
     <div>
       <h3 className="columnTitle">Cow Calls</h3>
-      <p className="productNames">Sleazy Cow Call</p>
-      <p className="productNames">Fatal Attraction</p>
-      <h3 className="columnTitle">Hunting DVDs</h3>
-      <p className="productNames">Elk Hunter's Training Day 2</p>
-      <p className="productNames">Elk Hunter's Training Day</p>
-      <p className="productNames">Hot Bulls 4</p>
-      <p className="productNames">Hot Bulls 3</p>
-      <p className="productNames">Bear Action 4</p>
-      <p className="productNames">Bear Action 3</p>
-      <p className="productNames">Speedgoats</p>
-      <p className="productNames">Northwest Gobblers</p>
-      <p className="productNames">Whitetail Extreme 2</p>
-    </div>
-  );
-}
-
-function Other() {
-  return (
-    <div>
-      <div>
-        <h3 className="columnTitle">Other</h3>
-        <p className="productNames">Buck Grunt and Bleat Call</p>
-        <p className="productNames">Predator Call</p>
-        <p className="productNames">Reed Holder</p>
-        <p className="productNames">Berry Wind Detector</p>
-        <p className="productNames">Power Arrow Gripper</p>
-        <p className="productNames">Berry Fanny Pack</p>
-      </div>
-      <div>
-        <h3 className="columnTitle">Online Specials</h3>
-        <p className="productNames">Elk Hunters Package</p>
-        <p className="productNames">Clearance</p>
-      </div>
+      <div>{map(cowCalls.toArray(), (cowCall, key) =>
+        <Link key={key} to={`/products/${cowCall.getPathName()}`} className="link">
+          <p className="productNames">{cowCall.getFullName()}</p>
+        </Link>)
+      }</div>
+      <h3 className="columnTitle">Other</h3>
+      <div>{map(other.toArray(), (otherItem, key) =>
+        <Link key={key} to={`/products/${otherItem.getPathName()}`} className="link">
+          <p className="productNames">{otherItem.getFullName()}</p>
+        </Link>)
+      }</div>
     </div>
   );
 }

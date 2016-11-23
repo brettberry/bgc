@@ -27,4 +27,8 @@ export default class ProductModel extends Model {
   getMedia() {
     return this.get('media');
   }
+
+  getCategory() {
+    return this.get('category');
+  }
 }

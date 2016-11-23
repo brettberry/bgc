@@ -41,7 +41,7 @@
 
 .productNames {
   @include default-font;
-  margin: 6px;
+  margin: 2px 0 2px 6px;
 
   &:hover {
     color: $bgc-dark-grey;
