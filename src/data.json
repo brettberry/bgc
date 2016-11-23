@@ -21,7 +21,7 @@
       },
       "description": "Designed by world champion elk caller Glen Berry. Thunder Bugle Pro Includes stretchy cord lanyard, camo cover a cap to protect the RT- REED it has a white RT-REED install in the mouthpiece, black RT-REED, green RT-REED and red RT-REED included in the Package.",
       "media": [],
-      "category": ["bugles", "sale"]
+      "category": ["bugles", "sale", "featured"]
     },
     {
       "fullName": "Mini Thunder Bugle",
@@ -43,7 +43,7 @@
       },
       "description": "The Golden Tone Grunt Tube is a revolutionary design. The flex point gives you the opportunity to easily access the call with little movement. The accelerated air helps produces those perfect tones, sounding like the real thing! The echo chamber gets that bottom end, guttural sound of a bull elk. Sound like a world champion elk caller with the new Golden Tone Grunt Tube. You can easily convert the Golden Tone Grunt Tube into a Thunder Bugle Pro by Removing the TB mouthpiece from your Thunder Bugle And sliding it over the end of the Golden Tone Grunt Tube. Comes with Predator Green Deception tight stretch camo cover, and easy carry elastic lanyard. Size: 4 inches at Bell end and 1 inch at mouthpiece end 24 inches long.",
       "Media": [],
-      "category": ["bugles", "popular"]
+      "category": ["bugles", "popular", "featured"]
     },
     {
       "fullName": "Golden Tone Shorty",
@@ -55,7 +55,7 @@
       },
       "description": "Big sound out of a short grunt tube.  with a  4 inch echo chamber you will get that bottom end deep sound,  with a 1 inch opening at the mouth end perfect for putting your lips inside. Promoted by world champion Joel Turner.",
       "media": [],
-      "category": ["bugles", "sale"]
+      "category": ["bugles", "sale", "featured"]
     },
     {
       "fullName": "Thunder Bugle White Replacement Reed",
@@ -248,7 +248,7 @@
       },
       "description": "Join Glen and Chad Berry on there exciting do-it-yourself and over the counter elk tags for rocky mountain elk in the Northwest. In this 60 minute entertaining and instructional DVD. With each encounter, Glen will teach the techniques he uses to coax these bulls into close range. With the camera over-the-shoulder, watch as these bowhunters arrows 4 bulls! This is an entertaining and instructional DVD that will help make you a better elk hunter. 60 Minutes – DVD",
       "media": [],
-      "category": ["dvds", "sale", "popular"]
+      "category": ["dvds", "sale", "popular", "featured"]
     },
     {
       "fullName": "Elk Hunters Training Day",
@@ -354,7 +354,7 @@
       },
       "description": "The Sleazy Cow Call produces a raspy cow-in-estrus call that drives bulls crazy. This call is great for locating bulls at long distances or bulls that become call shy. The Sleazy Cow Call was used in our DVD’s, “Hot Bulls Classics” and “Hot Bulls III” with great success.",
       "media": [],
-      "category": ["cow-calls", "popular"]
+      "category": ["cow-calls", "popular", "featured"]
     },
     {
       "fullName": "Fatal Attraction",
@@ -365,7 +365,7 @@
       },
       "description": " Unmatched Versatility – The open reed design allows the caller to produce a range of sounds from high pitched cow and calf sounds to bull mews and even cow-in-estrus calls.  The Fatal Attraction Cow Call was used during the making of “Hot Bulls 4” and “Elk Hunters Training Day” wih great success!",
       "media": [],
-      "category": ["cow-calls"]
+      "category": ["cow-calls", "featured"]
     },
     {
       "fullName": "Buck Grunt & Bleat Call",

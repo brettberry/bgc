@@ -6,13 +6,20 @@ import Button from './Buttons';
 import Footer from './Footer';
 import './buttons.styles.scss';
 import './home.styles.scss';
+import data from './data.json';
+import { ProductCollection } from './models';
+import map from 'lodash/map';
+
+const products = new ProductCollection(data.products);
 
 class Home extends Component {
+
   render() {
+    const featured = products.filterByCategory('featured');
     return (
       <div>
         <FirstSection />
-        <Featured />
+        <Featured featured={featured} />
         <DemoSection />
         <ShopCategories />
         <Footer />
@@ -41,50 +48,20 @@ function FirstSection() {
   );
 }
 
-function Featured() {
+function Featured({ featured }) {
   return (
-    <div className="featuredItems">
-      <div className="titleContainer">
-        <span className="title">Featured Items</span>
-          <Link to="/products" className="viewAllLink">
-            <Button text="view all" />
-          </Link>
-      </div>
-      <div className="featured">
-        <FeaturedItem title="Thunder Bugle Pro"
-                      price="$49.95" />
-        <FeaturedItem title="Golden Tone Grunt Tube"
-                      price="$24.95" />
-        <FeaturedItem title="Elk Hunters Training Day 2"
-                      price="$14.95" />
-      </div>
-      <div className="featured">
-      <FeaturedItem title="Sleazy Cow Call"
-                    price="$14.95" />
-      <FeaturedItem title="Golden Dome Large Bull"
-                    price="$6.95" />
-      <FeaturedItem title="Original Thunder Bugle"
-                    price="$34.50"
-                    link="/products/:productName"/>
-      </div>
-    </div>
+      <div className="featured">{map(featured.toArray(), (feature, key) =>
+          <div className="featuredContainer">
+            <Link key={key} to={`/products/${feature.getPathName()}`} className="link">
+              <div className="featuredItem">
+                <h3 className="title">{feature.getFullName()}</h3>
+              </div>
+            </Link>
+          </div>)
+      }</div>
   );
 }
 
-function FeaturedItem({ title, price, link }) {
-  return (
-    <div className="featuredItem">
-    <Link to={link} className="link">
-      <div className="detailsContainer">
-        <div className="infoContainer">
-          <h2 className="smallProductTitle">{title}</h2>
-          <h3 className="smallProductPrice">{price}</h3>
-        </div>
-      </div>
-      </Link>
-    </div>
-  );
-}
 
 function DemoSection() {
   return (
