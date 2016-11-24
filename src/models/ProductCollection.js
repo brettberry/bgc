@@ -13,4 +13,8 @@ export default class ProductCollection extends Collection {
   filterByCategory(category) {
     return this.filter(item => includes(item.getCategory(), category));
   }
+
+  filterByTag(tag) {
+    return this.filter(item => includes(item.getTags(), tag));
+  }
 }

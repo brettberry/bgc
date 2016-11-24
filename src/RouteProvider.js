@@ -12,7 +12,9 @@ export default function RouteProvider() {
       <Route path="/" component={App} onChange={changeRoute}>
         <IndexRoute component={Home} />
         <Route path="products" component={Products} />
-        <Route path="products/:productName" component={Product} />
+        <Route path="products/tags/:tagName" />
+        <Route path="products/:group/:productName" component={Product} />
+        <Route path="products/:group" />
         <Route path="demos" component={Demos} />
         <Route path="about" component={About} />
         <Route path="gallery" component={Gallery} />

@@ -31,4 +31,8 @@ export default class ProductModel extends Model {
   getCategory() {
     return this.get('category');
   }
+
+  getTags() {
+    return this.get('tags');
+  }
 }

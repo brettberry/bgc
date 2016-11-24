@@ -16,7 +16,7 @@ const products = new ProductCollection(data.products);
 class Home extends Component {
 
   render() {
-    const featured = products.filterByCategory('featured');
+    const featured = products.filterByTag('featured');
     return (
       <div>
         <FirstSection />
@@ -74,7 +74,7 @@ function FeaturedItem({ feature, key }) {
   const priceClasses = classnames('smallProductPrice', showDiscount && 'strike');
   return (
     <div className="featuredContainer">
-      <Link key={key} to={`/products/${feature.getPathName()}`} className="featuredItemLink">
+      <Link key={key} to={`/products/${feature.getCategory()}/${feature.getPathName()}`} className="featuredItemLink">
         <div className="featuredItem">
           <h3 className="smallProductTitle">{feature.getFullName()}</h3>
           <div className="priceContainer">
