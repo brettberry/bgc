@@ -62,11 +62,29 @@
   width: 30%;
 }
 
+.priceContainer {
+  display: flex;
+  flex-direction: row;
+}
+
 .priceHeader {
   @include subheader-font;
   font-size: 2.25em;
   font-weight: 300;
   margin: 0;
+
+  &.strike {
+    text-decoration: line-through;
+  }
+}
+
+.discountHeader {
+  @include subheader-font;
+  font-size: 2.25em;
+  font-weight: 300;
+  margin: 0;
+  margin-left: 10px;
+  color: red;
 }
 
 .priceSubHeader {

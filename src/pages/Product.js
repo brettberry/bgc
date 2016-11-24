@@ -4,6 +4,7 @@ import Button from '../Buttons';
 import './product.styles.scss';
 import data from '../data.json';
 import { ProductCollection } from '../models';
+import classnames from 'classnames';
 
 const products = new ProductCollection(data.products);
 
@@ -21,10 +22,14 @@ export default class Product extends Component {
 }
 
 function ProductView({ product }) {
+  const productName = product.getFullName();
+  const price = product.getPrice().getAmount();
+  const discount = product.getPrice().getDiscount();
+  const showDiscount = !!discount;
   return (
     <div className="productView">
       <div className="productContainer">
-        <h1 className="largeProductName">{product.getFullName()}</h1>
+        <h1 className="largeProductName">{productName}</h1>
         <div className="imgContainer">
           <div className="thumbnailsContainer">
             <div className="thumbnail"></div>
@@ -33,7 +38,10 @@ function ProductView({ product }) {
           </div>
           <div className="imgDivLarge"></div>
           <div className="orderDiv">
-            <h2 className="priceHeader">${product.getPrice().getAmount()}</h2>
+            <div className="priceContainer">
+              <h2 className={classnames('priceHeader', showDiscount && 'strike')}>${price}</h2>
+              {showDiscount && <h2 className="discountHeader">${discount}</h2>}
+            </div>
             <h3 className="priceSubHeader">+ Flatrate shipping: $2.95</h3>
             <div className="buttonPickerContainer">
               <QuantityPicker />
