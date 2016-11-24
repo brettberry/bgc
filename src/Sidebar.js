@@ -1,54 +1,77 @@
 import React from 'react';
 import './sidebar.styles.scss';
 import FaChevronCircleUp from 'react-icons/lib/fa/chevron-circle-up';
+import { Link } from 'react-router';
 
 export default function Sidebar() {
   return (
     <div className="sidebarContainer">
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">All Products</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Most Popular</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Online Specials</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Thunder Bugles</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Golden Dome</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">X-Series</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Big Bull Reeds</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Cow Calls</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Hunting Movies</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Accessories</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Clearance</h3>
-      </div>
+      <Link to="/products" className="sidebarLink">
+        <div className="categoryContainer">
+          <FaChevronCircleUp className="downArrow"/>
+          <h3 className="callType">All Products</h3>
+        </div>
+      </Link>
+      <Link to="/products/tags/popular" className="sidebarLink">
+        <div className="categoryContainer">
+          <FaChevronCircleUp className="downArrow"/>
+          <h3 className="callType">Most Popular</h3>
+        </div>
+      </Link>
+      <Link to="/products/tags/online-specials" className="sidebarLink">
+        <div className="categoryContainer">
+          <FaChevronCircleUp className="downArrow"/>
+          <h3 className="callType">Online Specials</h3>
+        </div>
+      </Link>
+      <Link to="/products/tags/bugles" className="sidebarLink">
+        <div className="categoryContainer">
+          <FaChevronCircleUp className="downArrow"/>
+          <h3 className="callType">Thunder Bugles</h3>
+        </div>
+      </Link>
+      <Link to="/products/tags/golden-dome" className="sidebarLink">
+        <div className="categoryContainer">
+          <FaChevronCircleUp className="downArrow"/>
+          <h3 className="callType">Golden Dome</h3>
+        </div>
+      </Link>
+      <Link to="/products/tags/x-series" className="sidebarLink">
+        <div className="categoryContainer">
+          <FaChevronCircleUp className="downArrow"/>
+          <h3 className="callType">X-Series</h3>
+        </div>
+      </Link>
+      <Link to="/products/tags/big-bull" className="sidebarLink">
+        <div className="categoryContainer">
+          <FaChevronCircleUp className="downArrow"/>
+          <h3 className="callType">Big Bull Reeds</h3>
+        </div>
+      </Link>
+      <Link to="/products/tags/cow-calls" className="sidebarLink">
+        <div className="categoryContainer">
+          <FaChevronCircleUp className="downArrow"/>
+          <h3 className="callType">Cow Calls</h3>
+        </div>
+      </Link>
+      <Link to="/products/tags/dvds" className="sidebarLink">
+        <div className="categoryContainer">
+          <FaChevronCircleUp className="downArrow"/>
+          <h3 className="callType">Hunting Movies</h3>
+        </div>
+      </Link>
+      <Link to="/products/tags/other" className="sidebarLink">
+        <div className="categoryContainer">
+          <FaChevronCircleUp className="downArrow"/>
+          <h3 className="callType">Accessories</h3>
+        </div>
+      </Link>
+      <Link to="/products/tags/sale" className="sidebarLink">
+        <div className="categoryContainer">
+          <FaChevronCircleUp className="downArrow"/>
+          <h3 className="callType">Clearance</h3>
+        </div>
+      </Link>
     </div>
   );
 }

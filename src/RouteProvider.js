@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 import Home from './Home';
 import App from './App';
-import { Products, Product, Demos, About, Gallery, Events } from './pages';
+import { Products, Product, Demos, About, Gallery, Events, Tags } from './pages';
 
 export default function RouteProvider() {
   return (
@@ -12,7 +12,7 @@ export default function RouteProvider() {
       <Route path="/" component={App} onChange={changeRoute}>
         <IndexRoute component={Home} />
         <Route path="products" component={Products} />
-        <Route path="products/tags/:tagName" />
+        <Route path="products/tags/:tagName" component={Tags} />
         <Route path="products/:group/:productName" component={Product} />
         <Route path="products/:group" />
         <Route path="demos" component={Demos} />
