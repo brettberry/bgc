@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
-import FaChevronCircleUp from 'react-icons/lib/fa/chevron-circle-up';
 import './products.styles.scss';
+import data from '../data.json';
+import { ProductCollection } from '../models';
+import map from 'lodash/map';
+import classnames from 'classnames';
+import Sidebar from '../Sidebar';
+
+const products = new ProductCollection(data.products);
 
 export default class Product extends Component {
   render() {
+    const bugles = products.filterByCategory('bugles');
+    const reeds = products.filterByCategory('reeds');
+    const goldenDome = products.filterByCategory('golden-dome');
+    const xSeries = products.filterByCategory('x-series');
+    const bigBull = products.filterByCategory('big-bull');
+    const cowCalls = products.filterByCategory('cow-calls');
+    const dvds = products.filterByCategory('dvds');
+    const other = products.filterByCategory('other');
+    const sale = products.filterByCategory('sale');
+    const popular = products.filterByCategory('popular');
     return (
       <div>
         <Sidebar />
@@ -11,57 +27,6 @@ export default class Product extends Component {
       </div>
     );
   }
-}
-
-function Sidebar() {
-  return (
-    <div className="sidebarContainer">
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">All Products</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Most Popular</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Online Specials</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Thunder Bugles</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Golden Dome</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">X-Series</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Big Bull Reeds</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Cow Calls</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Hunting Movies</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Accessories</h3>
-      </div>
-      <div className="categoryContainer">
-        <FaChevronCircleUp className="downArrow"/>
-        <h3 className="callType">Clearance</h3>
-      </div>
-    </div>
-  );
 }
 
 function ProductGrid() {

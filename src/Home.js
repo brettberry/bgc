@@ -9,6 +9,7 @@ import './home.styles.scss';
 import data from './data.json';
 import { ProductCollection } from './models';
 import map from 'lodash/map';
+import classnames from 'classnames';
 
 const products = new ProductCollection(data.products);
 
@@ -50,23 +51,46 @@ function FirstSection() {
 
 function Featured({ featured }) {
   return (
-      <div className="featured">{map(featured.toArray(), (feature, key) =>
-          <div className="featuredContainer">
-            <Link key={key} to={`/products/${feature.getPathName()}`} className="link">
-              <div className="featuredItem">
-                <h3 className="title">{feature.getFullName()}</h3>
-              </div>
-            </Link>
-          </div>)
-      }</div>
+    <div>
+      <div className="titleContainer">
+        <h1 className="sectionTitle">Featured Products</h1>
+        <Link to="/products" className="viewAllLink">
+          <Button text="view all" />
+        </Link>
+      </div>
+      <div className="featured">
+        {map(featured.toArray(), (feature, key) =>
+          <FeaturedItem feature={feature} key={key} />
+        )}
+      </div>
+    </div>
   );
 }
 
+function FeaturedItem({ feature, key }) {
+  const price = feature.getPrice().getAmount();
+  const discount = feature.getPrice().getDiscount();
+  const showDiscount = !!discount;
+  const priceClasses = classnames('smallProductPrice', showDiscount && 'strike');
+  return (
+    <div className="featuredContainer">
+      <Link key={key} to={`/products/${feature.getPathName()}`} className="featuredItemLink">
+        <div className="featuredItem">
+          <h3 className="smallProductTitle">{feature.getFullName()}</h3>
+          <div className="priceContainer">
+            <p className={priceClasses}>${price}</p>
+            {showDiscount && <p className="smallDiscountPrice">${discount}</p>}
+          </div>
+        </div>
+      </Link>
+    </div>
+  );
+}
 
 function DemoSection() {
   return (
     <div className="demoContainer">
-      <span className="demoTitle">How To Demonstration</span>
+      <span className="sectionTitle">How To Demonstration</span>
       <div className="demoSection">
         <div className="demo"></div>
         <div className="demoInfo"></div>
@@ -78,7 +102,7 @@ function DemoSection() {
 function ShopCategories() {
   return (
     <div className="categoryContainer">
-      <span className="title">Shop Now</span>
+      <span className="sectionTitle">Shop Now</span>
       <div className="categories">
         <div className="category">
           <img src="/fulldraw.jpg" className="bkgrdimg" />

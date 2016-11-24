@@ -3,7 +3,7 @@ import QuantityPicker from '../QuantityPicker';
 import Button from '../Buttons';
 import './product.styles.scss';
 import data from '../data.json';
-import { ProductCollection, ProductModel } from '../models';
+import { ProductCollection } from '../models';
 
 const products = new ProductCollection(data.products);
 

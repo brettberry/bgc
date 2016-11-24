@@ -75,21 +75,22 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 90%;
+  align-self: center;
+  width: 100%;
   justify-content: space-between;
-  margin-top: 50px;
-  margin-bottom: 25px;
+  padding: 50px 50px 0 50px;
 }
 
 .viewAllLink {
   text-decoration: none;
 }
 
-.thumbnailIcon {
-  width: 25px;
-  height: 25px;
+.sectionTitle {
+  @include subheader-font;
+  font-size: 2em;
+  font-weight: bold;
+  color: $bgc-dark-grey;
   margin: 25px;
-  fill: $bgc-medium-grey;
 }
 
 .featured {
@@ -97,11 +98,10 @@
   flex: 1;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 50px;
+  padding: 0 50px 0 50px;
 
   .featuredContainer {
     display: flex;
-    flex: 0.33;
     flex-basis: 33%;
     height: 500px;
     justify-content: center;
@@ -123,18 +123,17 @@
       transform: scale(1.02);
       transition: all 0.2s ease;
     }
-
-    .title {
-      display: flex;
-      @include subheader-font;
-      margin: 0;
-      font-size: 2em;
-      color: $bgc-medium-grey;
-    }
   }
 }
 
-
+.featuredItemLink {
+  display: flex;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
 
 .detailsContainer {
   display: flex;
@@ -145,24 +144,38 @@
   align-items: flex-end;
 }
 
-.infoContainer {
+.priceContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .smallProductTitle {
   @include subheader-font;
   font-size: 1.75em;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
 }
 
 .smallProductPrice {
   @include subheader-font;
   font-size: 1.25em;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
   margin-top: 10px;
+
+  &.strike {
+    text-decoration: line-through;
+  }
+}
+
+.smallDiscountPrice {
+  @include subheader-font;
+  font-size: 1.25em;
+  font-weight: 400;
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: red;
 }
 
 .demoContainer {

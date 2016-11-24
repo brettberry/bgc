@@ -1,59 +1,5 @@
 @import '../constants';
 
-.sidebarContainer {
-  position: fixed;
-  z-index: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  background-color: white;
-  border-radius: 3px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-  width: 17%;
-  min-width: 225px;
-  height: 100%;
-  top: 0;
-  padding-top: 90px;
-  padding-bottom: 35px;
-
-  .categoryContainer {
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-
-    &:hover {
-      margin-left: 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      .downArrow {
-        transform: rotate(90deg);
-        transition: all 0.3s ease;
-      }
-
-      .callType {
-        font-weight: 400;
-      }
-    }
-
-    .downArrow {
-      fill: $bgc-orange;
-      width: 25px;
-      height: 25px;
-      transform: rotate(180deg);
-      margin-left: 25px;
-      opacity: 0.75;
-    }
-
-    .callType {
-      @include default-font;
-      margin: 0;
-      font-weight: 300;
-      padding-left: 20px;
-    }
-  }
-}
-
 .gridContainer {
   display: flex;
   flex-direction: column;
