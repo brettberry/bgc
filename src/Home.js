@@ -104,18 +104,24 @@ function ShopCategories() {
     <div className="categoryContainer">
       <span className="sectionTitle">Shop Now</span>
       <div className="categories">
-        <div className="category">
-          <img src="/fulldraw.jpg" className="bkgrdimg" />
-          <p className="categoryTitle">Bugles</p>
-        </div>
-        <div className="category">
-          <img src="/fulldraw.jpg" className="bkgrdimg" />
-          <p className="categoryTitle">Mouth Reeds</p>
-        </div>
-        <div className="category">
-          <img src="/fulldraw.jpg" className="bkgrdimg" />
-          <p className="categoryTitle">Movies</p>
-        </div>
+        <Link to="/products/tags/bugles" className="categoryLink">
+          <div className="category">
+            {/* <img src="/fulldraw.jpg" className="bkgrdimg" /> */}
+            <p className="categoryTitle">Bugles</p>
+          </div>
+        </Link>
+        <Link to="/products/tags/reeds" className="categoryLink">
+          <div className="category">
+            {/* <img src="/fulldraw.jpg" className="bkgrdimg" /> */}
+            <p className="categoryTitle">Mouth Reeds</p>
+          </div>
+        </Link>
+        <Link to="/products/tags/dvds" className="categoryLink">
+          <div className="category">
+            {/* <img src="/fulldraw.jpg" className="bkgrdimg" /> */}
+            <p className="categoryTitle">Movies</p>
+          </div>
+        </Link>
       </div>
     </div>
   );

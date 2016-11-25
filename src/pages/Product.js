@@ -5,6 +5,7 @@ import './product.styles.scss';
 import data from '../data.json';
 import { ProductCollection } from '../models';
 import classnames from 'classnames';
+import map from 'lodash/map';
 
 const products = new ProductCollection(data.products);
 
@@ -15,7 +16,7 @@ export default class Product extends Component {
     return (
       <div>
         <ProductView product={product} />
-        <RelatedProducts />
+        <RelatedProducts product={product} />
       </div>
     );
   }
@@ -58,15 +59,17 @@ function ProductView({ product }) {
   );
 }
 
-function RelatedProducts() {
+function RelatedProducts({ product }) {
+  const category = product.getCategory();
+  const items = products.filterByCategory(category);
   return (
     <div className="relatedProductsContainer">
       <h2 className="priceSubHeader">Related Items</h2>
-      <div className="relatedInnerDiv">
-        <div className="relatedItem"></div>
-        <div className="relatedItem"></div>
-        <div className="relatedItem"></div>
-        <div className="relatedItem"></div>
+      <div className="relatedInnerDiv">{map(items.toArray(), (item, key) =>
+        <div className="relatedItem">
+          <h3>{item.getFullName()}</h3>
+        </div>
+      )}
       </div>
     </div>
   );

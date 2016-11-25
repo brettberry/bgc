@@ -132,19 +132,19 @@
 
 .relatedInnerDiv {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: flex-start;
   width: 95%;
   height: 100%;
 }
 
 .relatedItem {
   display: flex;
-  width: 24%;
-  height: 100%;
+  width: 300px;
+  height: 400px;
   background-color: white;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
-  margin-top: 30px;
-  margin-bottom: 50px;
+  margin: 30px;
 
   &:hover {
     box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
