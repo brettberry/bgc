@@ -6,6 +6,8 @@ import data from '../data.json';
 import { ProductCollection } from '../models';
 import classnames from 'classnames';
 import map from 'lodash/map';
+import slice from 'lodash/slice';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const products = new ProductCollection(data.products);
 
@@ -59,18 +61,62 @@ function ProductView({ product }) {
   );
 }
 
-function RelatedProducts({ product }) {
-  const category = product.getCategory();
-  const items = products.filterByCategory(category);
-  return (
-    <div className="relatedProductsContainer">
-      <h2 className="priceSubHeader">Related Items</h2>
-      <div className="relatedInnerDiv">{map(items.toArray(), (item, key) =>
-        <div className="relatedItem">
-          <h3>{item.getFullName()}</h3>
+class RelatedProducts extends Component {
+
+  state = {
+    offset: 0
+  }
+
+  pageLeft() {
+    const { offset } = this.state;
+    const length = this.getItems().length;
+    this.setState({
+      offset: (offset - 3) % length
+    });
+  }
+
+  pageRight() {
+    const { offset } = this.state;
+    const length = this.getItems().length;
+    this.setState({
+      offset: (offset + 3) % length
+    });
+  }
+
+  getItems() {
+    const { product } = this.props;
+    const category = product.getCategory();
+    const items = products.filterByCategory(category);
+    return items.toArray();
+  }
+
+  render() {
+    const length = this.getItems().length;
+    const showButtons = length > 3;
+    return (
+      <div className="relatedProductsContainer">
+        <h2 className="priceSubHeader">Related Items</h2>
+        <div className="relatedInnerDiv">
+          { showButtons && <button className="paginationButton left" onClick={this.pageLeft.bind(this)} /> }
+          <ReactCSSTransitionGroup className="carousel"
+                                   transitionName="carousel"
+                                   transitionEnterTimeout={300}
+                                   transitionLeaveTimeout={300} >
+            {this.renderItems()}
+          </ReactCSSTransitionGroup>
+          { showButtons && <button className="paginationButton right" onClick={this.pageRight.bind(this)} /> }
         </div>
-      )}
       </div>
-    </div>
-  );
+    );
+  }
+
+  renderItems() {
+    const offset = Math.abs(this.state.offset);
+    const itemsArray = slice(this.getItems(), offset, offset + 3);
+    return map(itemsArray, (item) =>
+      <div key={item.getPathName()} className="relatedItem">
+        <h3 className="itemDescription">{item.getFullName()}</h3>
+      </div>
+    );
+  }
 }

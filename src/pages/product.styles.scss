@@ -126,29 +126,71 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 300px;
 }
 
 .relatedInnerDiv {
   display: flex;
+  position: relative;
   flex-direction: row;
-  justify-content: flex-start;
-  width: 95%;
-  height: 100%;
+  justify-content: center;
+  width: 85%;
 }
 
 .relatedItem {
   display: flex;
-  width: 300px;
-  height: 400px;
+  justify-content: center;
+  width: 350px;
+  height: 350px;
   background-color: white;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
-  margin: 30px;
+  margin: 20px;
+  padding: 20px;
+  white-space: nowrap;
 
   &:hover {
     box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
     transform: scale(1.02);
     transition: all 0.2s ease;
+  }
+}
+
+.paginationButton {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: calc(50% - 25px);
+
+  &.left {
+    left: -50px;
+  }
+
+  &.right {
+    right: -50px;
+  }
+}
+
+.carousel {
+  display: flex;
+
+  .carousel-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+
+    &.carousel-enter-active {
+      opacity: 1;
+      transform: translateX(0);
+      transition: all 300ms linear;
+    }
+  }
+
+  .carousel-leave {
+    opacity: 1;
+    transform: translateX(0);
+
+    &.carousel-leave-active {
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 300ms linear;
+    }
   }
 }
