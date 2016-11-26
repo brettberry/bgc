@@ -64,14 +64,16 @@ function ProductView({ product }) {
 class RelatedProducts extends Component {
 
   state = {
-    offset: 0
+    offset: 0,
+    reverse: false
   }
 
   pageLeft() {
     const { offset } = this.state;
     const length = this.getItems().length;
     this.setState({
-      offset: (offset - 3) % length
+      offset: (offset - 3) % length,
+      reverse: true
     });
   }
 
@@ -79,7 +81,8 @@ class RelatedProducts extends Component {
     const { offset } = this.state;
     const length = this.getItems().length;
     this.setState({
-      offset: (offset + 3) % length
+      offset: (offset + 3) % length,
+      reverse: false
     });
   }
 
@@ -93,16 +96,19 @@ class RelatedProducts extends Component {
   render() {
     const length = this.getItems().length;
     const showButtons = length > 3;
+    const transitionClasses = classnames("carousel", this.state.reverse ? "left" : "right")
     return (
       <div className="relatedProductsContainer">
         <h2 className="priceSubHeader">Related Items</h2>
         <div className="relatedInnerDiv">
           { showButtons && <button className="paginationButton left" onClick={this.pageLeft.bind(this)} /> }
-          <ReactCSSTransitionGroup className="carousel"
+          <ReactCSSTransitionGroup className={transitionClasses}
                                    transitionName="carousel"
-                                   transitionEnterTimeout={300}
-                                   transitionLeaveTimeout={300} >
-            {this.renderItems()}
+                                   transitionEnterTimeout={500}
+                                   transitionLeaveTimeout={500} >
+            <div className="transitionContainer" key={this.state.offset}>
+              {this.renderItems()}
+            </div>
           </ReactCSSTransitionGroup>
           { showButtons && <button className="paginationButton right" onClick={this.pageRight.bind(this)} /> }
         </div>
