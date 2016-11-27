@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Button from '../Buttons';
 import './demos.styles.scss';
 import { Link } from 'react-router';
+import Modal from 'simple-react-modal';
+import clickOutside from 'react-click-outside';
+import $ from 'jquery';
 
 class Demos extends Component {
   render() {
@@ -33,22 +36,78 @@ class Demos extends Component {
   }
 }
 
-function DemoObject({ title, description, link }) {
-  return (
-    <div className="demoVideoContainer">
-      <div className="videoThumbnail" />
-      <div className="vidDetailsContainer">
-        <h3 className="videoTitle">{title}</h3>
-        <p className="videoDescription">{description}</p>
-        <div className="demoButtonsContainer">
-          <Button text="Watch" />
-          <Link to={link} className="link">
-            <Button text="Shop" />
-          </Link>
+class DemoObject extends Component {
+
+  state = {
+    showModal: false
+  }
+
+  render() {
+    const { title, description, link } = this.props;
+    const { showModal } = this.state;
+    const ModalComponent = clickOutside(ModalContents);
+    return (
+      <div className="demoVideoContainer">
+        <div className="videoThumbnail" />
+        <div className="vidDetailsContainer">
+          <h3 className="videoTitle">{title}</h3>
+          <p className="videoDescription">{description}</p>
+          <div className="demoButtonsContainer">
+            <Button text="Watch" onClick={() => this.setState({ showModal: !showModal })} />
+            <Modal show={showModal}
+                   containerClassName="videoModal">
+              <ModalComponent closeModal={() => this.setState({ showModal: false })} />
+            </Modal>
+            <Link to={link} className="link">
+              <Button text="Shop" />
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
+}
+
+class ModalContents extends Component {
+
+  state = {
+    frameWidth: 0,
+    frameHeight: 0
+  }
+
+  constructor(props) {
+    super(props);
+    this._updateDimensions = this.updateDimensions.bind(this);
+  }
+
+  handleClickOutside() {
+    this.props.closeModal();
+  }
+
+  componentDidMount() {
+    this.updateDimensions();
+    $(window).on('resize', this._updateDimensions);
+  }
+
+  componentWillUnmount() {
+    $(window).off('resize', this._updateDimensions);
+  }
+
+  updateDimensions() {
+    const screenWidth = $(window).width();
+    const frameWidth = screenWidth * 0.6;
+    const frameHeight = frameWidth * 0.5625;
+    this.setState({ frameWidth, frameHeight });
+  }
+
+  render() {
+    const { frameWidth, frameHeight } = this.state;
+    return (
+      <div>
+        <iframe height={frameHeight} width={frameWidth} src="https://www.youtube.com/embed/O7yGVo6pqm0" frameBorder="0" allowFullScreen></iframe>
+      </div>
+    );
+  }
 }
 
 export default Demos;

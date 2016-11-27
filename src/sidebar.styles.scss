@@ -21,7 +21,7 @@
     flex-direction: row;
     margin: 0;
 
-    &:hover {
+    &:hover, &.active {
       margin-left: 20px;
       cursor: pointer;
       transition: all 0.3s ease;
