@@ -48,7 +48,8 @@ class DemoObject extends Component {
     const ModalComponent = clickOutside(ModalContents);
     return (
       <div className="demoVideoContainer">
-        <div className="videoThumbnail" />
+        <div className="videoThumbnail"
+             style={this.getThumbnailStyle()} />
         <div className="vidDetailsContainer">
           <h3 className="videoTitle">{title}</h3>
           <p className="videoDescription">{description}</p>
@@ -65,6 +66,12 @@ class DemoObject extends Component {
         </div>
       </div>
     );
+  }
+
+  getThumbnailStyle() {
+    return {
+      backgroundImage: 'url(https://img.youtube.com/vi/O7yGVo6pqm0/maxresdefault.jpg)'
+    };
   }
 }
 
