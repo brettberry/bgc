@@ -8,6 +8,9 @@ import classnames from 'classnames';
 import map from 'lodash/map';
 import slice from 'lodash/slice';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Link } from 'react-router';
+import FaChevronRight from 'react-icons/lib/fa/chevron-right';
+import FaChevronLeft from 'react-icons/lib/fa/chevron-left';
 
 const products = new ProductCollection(data.products);
 
@@ -96,12 +99,14 @@ class RelatedProducts extends Component {
   render() {
     const length = this.getItems().length;
     const showButtons = length > 3;
-    const transitionClasses = classnames("carousel", this.state.reverse ? "left" : "right")
+    const transitionClasses = classnames('carousel', this.state.reverse ? 'left' : 'right');
     return (
       <div className="relatedProductsContainer">
         <h2 className="priceSubHeader">Related Items</h2>
         <div className="relatedInnerDiv">
-          { showButtons && <button className="paginationButton left" onClick={this.pageLeft.bind(this)} /> }
+          { showButtons && <button className="paginationButton left" onClick={this.pageLeft.bind(this)}>
+            <FaChevronLeft className="paginationChevron" />
+          </button> }
           <ReactCSSTransitionGroup className={transitionClasses}
                                    transitionName="carousel"
                                    transitionEnterTimeout={500}
@@ -110,7 +115,9 @@ class RelatedProducts extends Component {
               {this.renderItems()}
             </div>
           </ReactCSSTransitionGroup>
-          { showButtons && <button className="paginationButton right" onClick={this.pageRight.bind(this)} /> }
+          { showButtons && <button className="paginationButton right" onClick={this.pageRight.bind(this)}>
+            <FaChevronRight className="paginationChevron" />
+          </button> }
         </div>
       </div>
     );
@@ -121,7 +128,9 @@ class RelatedProducts extends Component {
     const itemsArray = slice(this.getItems(), offset, offset + 3);
     return map(itemsArray, (item) =>
       <div key={item.getPathName()} className="relatedItem">
-        <h3 className="itemDescription">{item.getFullName()}</h3>
+        <Link to={`/products/${item.getCategory()}/${item.getPathName()}`} className="link">
+          <h3 className="title">{item.getFullName()}</h3>
+        </Link>
       </div>
     );
   }
