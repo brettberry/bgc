@@ -43,9 +43,9 @@ function Menu() {
     <div className="menu">
       <ProductsItem />
       <DemosItem />
-      <AboutItem />
       <GalleryItem />
       <EventsItem />
+      <AboutItem />
     </div>
   );
 }

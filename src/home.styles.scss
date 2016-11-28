@@ -87,8 +87,8 @@
 
 .sectionTitle {
   @include subheader-font;
-  font-size: 2em;
-  font-weight: bold;
+  font-size: 2.1em;
+  font-weight: 400;
   color: $bgc-dark-grey;
   margin: 25px;
 }
@@ -184,21 +184,22 @@
   align-items: center;
   margin-top: 50px;
   width: 100%;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  padding-top: 25px;
 }
 
 .demoSection {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  padding: 25px;
-  padding-bottom: 75px;
+  justify-content: center;
+  padding: 20px 50px 50px 50px;
 }
 
 .demo {
-  width: 700px;
-  height: 500px;
-  background-color: white;
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .demoTitle {
@@ -211,9 +212,19 @@
 }
 
 .demoInfo {
-  width: 600px;
-  height: 400px;
   background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .buttonContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 75%;
+  }
 }
 
 .categoryContainer {
@@ -279,4 +290,13 @@
       transition: all 0.2s ease;
     }
   }
+}
+
+.info {
+  @include default-font;
+  font-weight: 300;
+  font-size: 1.1em;
+  padding: 0 0 25px 50px;
+  line-height: 1.5;
+  margin: 0;
 }
