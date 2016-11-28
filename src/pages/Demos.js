@@ -7,6 +7,7 @@ import clickOutside from 'react-click-outside';
 import $ from 'jquery';
 import data from '../data.json';
 import { DemosCollection } from '../models';
+import MdClose from 'react-icons/lib/md/close';
 
 const videos = new DemosCollection(data.demos);
 
@@ -138,6 +139,7 @@ class ModalContents extends Component {
     const { frameWidth, frameHeight } = this.state;
     return (
       <div>
+        <MdClose className="exit" />
         <iframe height={frameHeight} width={frameWidth} src={this.props.video} frameBorder="0" allowFullScreen></iframe>
       </div>
     );

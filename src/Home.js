@@ -32,8 +32,8 @@ class Home extends Component {
 
 function FirstSection() {
   return (
-    <div className="firstContainer">
-      <div className="firstSec">
+    <div className="sliderContainer">
+      <div className="slider">
         <div className="chevronContainer">
           <FaChevronLeft className= "chevron"/>
         </div>
@@ -54,8 +54,8 @@ function Featured({ featured }) {
   return (
     <div>
       <div className="titleContainer">
-        <h1 className="sectionTitle">Featured Products</h1>
-        <Link to="/products" className="viewAllLink">
+        <h1 className="title">Featured Products</h1>
+        <Link to="/products" className="link">
           <Button text="view all" />
         </Link>
       </div>
@@ -72,15 +72,15 @@ function FeaturedItem({ feature, key }) {
   const price = feature.getPrice().getAmount();
   const discount = feature.getPrice().getDiscount();
   const showDiscount = !!discount;
-  const priceClasses = classnames('smallProductPrice', showDiscount && 'strike');
+  const priceClasses = classnames('price', showDiscount && 'strike');
   return (
     <div className="featuredContainer">
-      <Link key={key} to={`/products/${feature.getCategory()}/${feature.getPathName()}`} className="featuredItemLink">
-        <div className="featuredItem">
-          <h3 className="smallProductTitle">{feature.getFullName()}</h3>
+      <Link key={key} to={`/products/${feature.getCategory()}/${feature.getPathName()}`} className="link">
+        <div className="featuredDiv">
+          <h3 className="title">{feature.getFullName()}</h3>
           <div className="priceContainer">
             <p className={priceClasses}>${price}</p>
-            {showDiscount && <p className="smallDiscountPrice">${discount}</p>}
+            {showDiscount && <p className="discount">${discount}</p>}
           </div>
         </div>
       </Link>
@@ -124,7 +124,7 @@ class DemoSection extends Component {
         <span className="sectionTitle">The Revolutionary Berry Thunder Bugle</span>
         <div className="demoSection">
           <div className="demo">
-            <iframe height={frameHeight} width={frameWidth} src={"https://www.youtube.com/embed/bLAz_kbihLE"} frameBorder="0" allowFullScreen></iframe>
+            <iframe height={frameHeight} width={frameWidth} src={"https://www.youtube.com/embed/bLAz_kbihLE"} frameBorder="0" allowFullScreen />
           </div>
           <div className="demoInfo">
             <p className="info">{thunderBugle.getDescription()}</p>
