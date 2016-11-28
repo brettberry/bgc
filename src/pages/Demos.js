@@ -16,7 +16,7 @@ class Demos extends Component {
     const bugleDemo = videos.findByTitle('bugle-demo');
     const trainingDay2Demo = videos.findByTitle('training-day-2-demo');
     const trainingDayDemo = videos.findByTitle('training-day-demo');
-    const speedgoatsDemo = videos.findByTitle('speedgoats-demo');
+    // const speedgoatsDemo = videos.findByTitle('speedgoats-demo');
     const turkeyDemo1 = videos.findByTitle('turkey-demo-1');
     const turkeyDemo2 = videos.findByTitle('turkey-demo-2');
 
@@ -75,7 +75,8 @@ class DemoObject extends Component {
     return (
       <div className="demoVideoContainer">
         <div className="videoThumbnail"
-             style={this.getThumbnailStyle()} />
+             style={this.getThumbnailStyle()}
+             onClick={() => this.setState({ showModal: !showModal })} />
         <div className="vidDetailsContainer">
           <h3 className="videoTitle">{title}</h3>
           <p className="videoDescription">{description}</p>
