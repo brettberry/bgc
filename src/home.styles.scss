@@ -229,56 +229,75 @@
   background-color: white;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
   padding: 25px 0;
-}
 
-.demoSection {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 20px 50px 50px 50px;
-
-  @include tabletLandscape {
-    flex-direction: column;
-    padding: 20px;
+  .title {
+    display: flex;
+    @include subheader-font;
+    margin-top: 75px;
+    margin: 30px;
+    font-size: 2em;
+    color: $bgc-medium-grey;
   }
 
-  @include tablet {
-    flex-direction: column;
-    padding: 20px;
+  .demoSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px 50px 50px 50px;
+
+    @include tabletLandscape {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    @include phone {
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    @include smallPhone {
+      flex-direction: column;
+      padding: 10px;
+    }
   }
 
-  @include phone {
-    flex-direction: column;
-    padding: 10px;
+  .demo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  @include smallPhone {
+  .demoInfo {
+    background-color: transparent;
+    display: flex;
     flex-direction: column;
-    padding: 10px;
+    justify-content: center;
+    align-items: center;
+
+    .info {
+      @include default-font;
+      font-weight: 300;
+      font-size: 1.1em;
+      padding: 25px 50px;
+      line-height: 1.5;
+      margin: 0;
+
+      @include phone {
+        padding: 15px;
+        font-size: 1em;
+      }
+
+      @include smallPhone {
+        padding: 15px;
+        font-size: 1em;
+      }
+    }
   }
-}
-
-.demo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.demoTitle {
-  display: flex;
-  @include subheader-font;
-  margin-top: 75px;
-  margin: 30px;
-  font-size: 2em;
-  color: $bgc-medium-grey;
-}
-
-.demoInfo {
-  background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   .buttonContainer {
     display: flex;
@@ -286,6 +305,10 @@
     align-items: flex-start;
     justify-content: space-around;
     width: 75%;
+
+    .link {
+      text-decoration: none;
+    }
 
     @include tabletLandscape {
       width: 40%;
@@ -305,26 +328,6 @@
       height: 125px;
       justify-content: space-around;
     }
-
-  }
-
-  .info {
-    @include default-font;
-    font-weight: 300;
-    font-size: 1.1em;
-    padding: 25px 50px;
-    line-height: 1.5;
-    margin: 0;
-
-    @include phone {
-      padding: 15px;
-      font-size: 1em;
-    }
-
-    @include smallPhone {
-      padding: 15px;
-      font-size: 1em;
-    }
   }
 }
 
@@ -334,52 +337,73 @@
   align-items: center;
   margin-top: 50px;
   width: 100%;
-}
 
-.categories {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 90%;
+  .categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
 
-  @include tabletLandscape {
-    flex-direction: column;
+    @include tabletLandscape {
+      flex-direction: column;
+    }
+
+    @include tablet {
+      flex-direction: column;
+    }
+
+    @include phone {
+      flex-direction: column;
+    }
+
+    @include smallPhone {
+      flex-direction: column;
+    }
   }
 
-  @include tablet {
-    flex-direction: column;
-  }
-
-  @include phone {
-    flex-direction: column;
-  }
-
-  @include smallPhone {
-    flex-direction: column;
-  }
-}
-
-.category {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 350px;
-  min-height: 350px;
-  background-color: white;
-  border-radius: 2px;
-  margin: 25px;
-  margin-top: 0;
-  box-shadow: 0 0 2px rgba(0,0,0,0.1);
-
-  .categoryTitle {
+  .header {
+    display: flex;
     @include subheader-font;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    padding: 25px;
-    margin: 0;
-    position: absolute;
-    font-weight: 400;
+    margin-top: 75px;
+    margin: 30px;
+    font-size: 2em;
+    color: $bgc-medium-grey;
+  }
+
+  .category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 350px;
+    min-height: 350px;
+    background-color: white;
+    border-radius: 2px;
+    margin: 25px;
+    margin-top: 0;
+    box-shadow: 0 0 2px rgba(0,0,0,0.1);
+
+    .title {
+      @include subheader-font;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      padding: 25px;
+      margin: 0;
+      position: absolute;
+      font-weight: 400;
+    }
+
+    &:hover {
+      box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+      transform: scale(1.02);
+      transition: all 0.2s ease;
+      cursor: pointer;
+
+      .categoryTitle {
+        transform: scale(1.1);
+        transition: all 0.2s ease;
+      }
+    }
   }
 
   .bkgrdimg {
@@ -390,21 +414,9 @@
     border-radius: 2px;
   }
 
-  .categoryLink {
+  .link {
     width: 100%;
     height: 100%;
     text-decoration: none;
-  }
-
-  &:hover {
-    box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
-    transform: scale(1.02);
-    transition: all 0.2s ease;
-    cursor: pointer;
-
-    .categoryTitle {
-      transform: scale(1.1);
-      transition: all 0.2s ease;
-    }
   }
 }

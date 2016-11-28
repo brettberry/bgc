@@ -121,7 +121,7 @@ class DemoSection extends Component {
     const thunderBugle = products.findByPathName('thunder-bugle');
     return (
       <div className="demoContainer">
-        <span className="sectionTitle">The Revolutionary Berry Thunder Bugle</span>
+        <span className="title">The Revolutionary Berry Thunder Bugle</span>
         <div className="demoSection">
           <div className="demo">
             <iframe height={frameHeight} width={frameWidth} src={"https://www.youtube.com/embed/bLAz_kbihLE"} frameBorder="0" allowFullScreen />
@@ -129,10 +129,10 @@ class DemoSection extends Component {
           <div className="demoInfo">
             <p className="info">{thunderBugle.getDescription()}</p>
             <div className="buttonContainer">
-              <Link to="/products/bugles/thunder-bugle" className="viewAllLink">
+              <Link to="/products/bugles/thunder-bugle" className="link">
                 <Button text="Details" />
               </Link>
-              <Link className="viewAllLink">
+              <Link className="link">
                 <Button text="Add To Cart" />
               </Link>
             </div>
@@ -146,24 +146,24 @@ class DemoSection extends Component {
 function ShopCategories() {
   return (
     <div className="categoryContainer">
-      <span className="sectionTitle">Shop Now</span>
+      <span className="header">Shop Now</span>
       <div className="categories">
-        <Link to="/products/tags/bugles" className="categoryLink">
+        <Link to="/products/tags/bugles" className="link">
           <div className="category">
             {/* <img src="/fulldraw.jpg" className="bkgrdimg" /> */}
-            <p className="categoryTitle">Bugles</p>
+            <p className="title">Bugles</p>
           </div>
         </Link>
-        <Link to="/products/tags/reeds" className="categoryLink">
+        <Link to="/products/tags/reeds" className="link">
           <div className="category">
             {/* <img src="/fulldraw.jpg" className="bkgrdimg" /> */}
-            <p className="categoryTitle">Mouth Reeds</p>
+            <p className="title">Mouth Reeds</p>
           </div>
         </Link>
-        <Link to="/products/tags/dvds" className="categoryLink">
+        <Link to="/products/tags/dvds" className="link">
           <div className="category">
             {/* <img src="/fulldraw.jpg" className="bkgrdimg" /> */}
-            <p className="categoryTitle">Movies</p>
+            <p className="title">Movies</p>
           </div>
         </Link>
       </div>
