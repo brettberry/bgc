@@ -5,32 +5,58 @@ import { Link } from 'react-router';
 import Modal from 'simple-react-modal';
 import clickOutside from 'react-click-outside';
 import $ from 'jquery';
+import data from '../data.json';
+import { DemosCollection } from '../models';
+
+const videos = new DemosCollection(data.demos);
 
 class Demos extends Component {
   render() {
+    const xSeriesDemo = videos.findByTitle('reeds-demo');
+    const bugleDemo = videos.findByTitle('bugle-demo');
+    const trainingDay2Demo = videos.findByTitle('training-day-2-demo');
+    const trainingDayDemo = videos.findByTitle('training-day-demo');
+    const speedgoatsDemo = videos.findByTitle('speedgoats-demo');
+    const turkeyDemo1 = videos.findByTitle('turkey-demo-1');
+    const turkeyDemo2 = videos.findByTitle('turkey-demo-2');
+
     return (
       <div className="demosContainer">
-        <DemoObject title="How to Call Elk with the X-Series Mouth Reeds"
-                    description="Glen Berry shows how to make bull and cow elk sounds with the new X-Series mouth reeds from Berry Game Calls. This is a short clip from the Elk Hunters Training Day DVD."
-                    link="products/tags/x-series" />
-        <DemoObject title="How to Use the Berry Thunder Bugle"
-                    description="Glen Berry demonstrates how to use the Berry Thunder Bugle Elk Call."
-                    link="products/bugles/thunder-bugle" />
-        <DemoObject title="Elk Hunters Training Day 2: Against the Odds Trailer"
-                    description="“Elk Hunters Training Day 2: Against the Odds” is the 2nd in a series of DVD’s by Berry Game Calls. Here are a few highlights from the DVD. Chad and Glen Berry take 4 bulls in this action packed DVD while bowhunting in the Northwest’s backcountry. Glen will also share tips on calling elk in the wild! A must have, entertaining instructional DVD! "
-                    link="products/dvds/training-day-2" />
-        <DemoObject title="Elk Hunters Training Day Trailer"
-                    description="Join Glen Berry on exciting do-it-yourself bowhunts for rocky mountain elk in Oregon, Idaho and Wyoming in this 60 minute instructional DVD. With each encounter, Glen will teach the techniques he uses to coax these bulls into close range. With the camera over-the-shoulder, watch as Glen arrows a giant herd bull! This is an entertaining and instructional DVD that will help make you a better elk hunter. 60 Minutes – DVD"
-                    link="products/dvds/training-day" />
-        <DemoObject title="Speedgoats Trailer"
-                    description="Watch as Ray Bunney and Glen Berry archery hunt for big antelope bucks in Montana on a do-it-yourself Bow hunt. This segment is from the DVD Speed Goats by Berry game calls."
-                    link="products/dvds/speedgoats" />
-        <DemoObject title="Bowhunting Turkey in Washington"
-                    description="Glen Berry of Berry Game Calls bowhunts for merriam turkey in Washington state. Watch this exciting call in with 2 camera angles."
-                    link="products/dvds/northwest-gobblers" />
-        <DemoObject title="Turkey Hunt with Chad Berry"
-                    description="Chad Berry bowhunts for turkey in Washington state."
-                    link="products/dvds/northwest-gobblers" />
+        <DemoObject title={xSeriesDemo.getTitle()}
+                    description={xSeriesDemo.getDescription()}
+                    link={xSeriesDemo.getPath()}
+                    image={xSeriesDemo.getImage()}
+                    video={xSeriesDemo.getUrl()} />
+        <DemoObject title={bugleDemo.getTitle()}
+                    description={bugleDemo.getDescription()}
+                    link={bugleDemo.getPath()}
+                    image={bugleDemo.getImage()}
+                    video={bugleDemo.getUrl()} />
+        <DemoObject title={trainingDay2Demo.getTitle()}
+                    description={trainingDay2Demo.getDescription()}
+                    link={trainingDay2Demo.getPath()}
+                    image={trainingDay2Demo.getImage()}
+                    video={trainingDay2Demo.getUrl()} />
+        <DemoObject title={trainingDayDemo.getTitle()}
+                    description={trainingDayDemo.getDescription()}
+                    link={trainingDayDemo.getPath()}
+                    image={trainingDayDemo.getImage()}
+                    video={trainingDayDemo.getUrl()} />
+        {/* <DemoObject title={speedgoatsDemo.getTitle()}
+                    description={speedgoatsDemo.getDescription()}
+                    link={speedgoatsDemo.getPath()}
+                    image={speedgoatsDemo.getImage()}
+                    video={speedgoatsDemo.getUrl()} /> */}
+        <DemoObject title={turkeyDemo1.getTitle()}
+                    description={turkeyDemo1.getDescription()}
+                    link={turkeyDemo1.getPath()}
+                    image={turkeyDemo1.getImage()}
+                    video={turkeyDemo1.getUrl()} />
+        <DemoObject title={turkeyDemo2.getTitle()}
+                    description={turkeyDemo2.getDescription()}
+                    link={turkeyDemo2.getPath()}
+                    image={turkeyDemo2.getImage()}
+                    video={turkeyDemo2.getUrl()} />
       </div>
     );
   }
@@ -43,7 +69,7 @@ class DemoObject extends Component {
   }
 
   render() {
-    const { title, description, link } = this.props;
+    const { title, description, link, video } = this.props;
     const { showModal } = this.state;
     const ModalComponent = clickOutside(ModalContents);
     return (
@@ -57,7 +83,7 @@ class DemoObject extends Component {
             <Button text="Watch" onClick={() => this.setState({ showModal: !showModal })} />
             <Modal show={showModal}
                    containerClassName="videoModal">
-              <ModalComponent closeModal={() => this.setState({ showModal: false })} />
+              <ModalComponent video={video} closeModal={() => this.setState({ showModal: false })} />
             </Modal>
             <Link to={link} className="link">
               <Button text="Shop" />
@@ -70,7 +96,7 @@ class DemoObject extends Component {
 
   getThumbnailStyle() {
     return {
-      backgroundImage: 'url(https://img.youtube.com/vi/O7yGVo6pqm0/maxresdefault.jpg)'
+      backgroundImage: `url(${this.props.image})`
     };
   }
 }
@@ -111,7 +137,7 @@ class ModalContents extends Component {
     const { frameWidth, frameHeight } = this.state;
     return (
       <div>
-        <iframe height={frameHeight} width={frameWidth} src="https://www.youtube.com/embed/O7yGVo6pqm0" frameBorder="0" allowFullScreen></iframe>
+        <iframe height={frameHeight} width={frameWidth} src={this.props.video} frameBorder="0" allowFullScreen></iframe>
       </div>
     );
   }

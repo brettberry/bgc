@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-// import FaSearch from 'react-icons/lib/fa/search';
 import { Link } from 'react-router';
 import Waypoint from 'react-waypoint';
 import ProductsMenu from './ProductsMenu';
