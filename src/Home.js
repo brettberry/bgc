@@ -150,19 +150,16 @@ function ShopCategories() {
       <div className="categories">
         <Link to="/products/tags/bugles" className="link">
           <div className="category">
-            {/* <img src="/fulldraw.jpg" className="bkgrdimg" /> */}
             <p className="title">Bugles</p>
           </div>
         </Link>
         <Link to="/products/tags/reeds" className="link">
           <div className="category">
-            {/* <img src="/fulldraw.jpg" className="bkgrdimg" /> */}
             <p className="title">Mouth Reeds</p>
           </div>
         </Link>
         <Link to="/products/tags/dvds" className="link">
           <div className="category">
-            {/* <img src="/fulldraw.jpg" className="bkgrdimg" /> */}
             <p className="title">Movies</p>
           </div>
         </Link>
