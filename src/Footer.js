@@ -30,25 +30,25 @@ class Footer extends Component {
 function LeftSide() {
   return (
     <div className="leftContents">
-      <h3 className="contactSubheader">Berry Game Calls</h3>
-      <div className="callDiv">
-        <FaPhone className="phoneIcon"/>
-        <p className="contactText">Monday-Friday 9am-5pm PST</p>
+      <h3 className="subheader">Berry Game Calls</h3>
+      <div className="itemContainer">
+        <FaPhone className="icon" />
+        <p className="item">Monday-Friday 9am-5pm PST</p>
       </div>
-      <p className="addressText">1 (800) 434-2855 </p>
-      <p className="addressText">1 (509) 299-5524 </p>
-      <div className="callDiv">
-        <FaEnvelope className="phoneIcon" />
-        <p className="contactText">PO Box 416 / 219 S. Lefevre</p>
+      <p className="text">1 (800) 434-2855 </p>
+      <p className="text">1 (509) 299-5524 </p>
+      <div className="itemContainer">
+        <FaEnvelope className="icon" />
+        <p className="item">PO Box 416 / 219 S. Lefevre</p>
       </div>
-      <p className="addressText">Medical Lake, WA 99022</p>
-      <div className="callDiv">
-        <FaFacebook className="phoneIcon" />
-        <p className="contactText">Follow us on Facebook</p>
+      <p className="text">Medical Lake, WA 99022</p>
+      <div className="itemContainer">
+        <FaFacebook className="icon" />
+        <p className="item">Follow us on Facebook</p>
       </div>
-      <div className="callDiv">
-        <FaYoutube className="phoneIcon" />
-        <p className="contactText">Subscribe to our Youtube Channel</p>
+      <div className="itemContainer">
+        <FaYoutube className="icon" />
+        <p className="item">Subscribe to our Youtube Channel</p>
       </div>
     </div>
   );
@@ -57,23 +57,23 @@ function LeftSide() {
 function RightSide() {
   return (
     <div className="rightContents">
-      <h3 className="contactSubheader">Send us a message</h3>
-      <div className="callDiv">
-        <FaUser className="phoneIcon" />
-        <input className="singleLineInput"
+      <h3 className="subheader">Send us a message</h3>
+      <div className="itemContainer">
+        <FaUser className="icon" />
+        <input className="input"
                placeholder="Name"/>
       </div>
-      <div className="callDiv">
-        <FaEnvelopeO className="phoneIcon" />
-        <input className="singleLineInput"
+      <div className="itemContainer">
+        <FaEnvelopeO className="icon" />
+        <input className="input"
                placeholder="Email"/>
       </div>
-      <div className="callDiv">
-        <FaComment className="phoneIcon" />
+      <div className="itemContainer">
+        <FaComment className="icon" />
         <textarea className="textArea"
                   placeholder="Message"/>
       </div>
-      <div className="sendDiv">
+      <div className="sendContainer">
         <Button text="send"/>
       </div>
     </div>
@@ -83,7 +83,7 @@ function RightSide() {
 function Copyright() {
   return (
     <div className="copyrightContainer">
-      <FaCopyright className="copyrightIcon" />
+      <FaCopyright className="icon" />
       <p className="copyright">2016 Brett Berry</p>
     </div>
   );

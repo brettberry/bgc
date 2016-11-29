@@ -25,37 +25,6 @@
   background-color: rgba($bgc-background-color, 0.3);
 }
 
-.contactSubheader {
-  @include subheader-font;
-  font-size: 1.3em;
-  font-weight: 200;
-  color: rgba($bgc-background-color, 0.7);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 0 0 20px 16px;
-}
-
-.contactText {
-  @include subheader-font;
-  font-size: 1.25em;
-  font-weight: 200;
-  color: rgba($bgc-background-color, 0.5);
-  letter-spacing: 1px;
-  margin: 15px;
-  display: flex;
-  align-self: flex-start;
-}
-
-.addressText {
-  @include subheader-font;
-  font-size: 1.25em;
-  font-weight: 200;
-  color: rgba($bgc-background-color, 0.5);
-  letter-spacing: 1px;
-  margin: 0 0 20px 41px;
-  display: flex;
-  align-self: flex-start;
-}
 .contactInfoContainer {
   display: flex;
   flex-direction: row;
@@ -69,6 +38,56 @@
   flex-direction: column;
   padding:  41px 0 0 75px;
   width: 50%;
+
+  .subheader {
+    @include subheader-font;
+    font-size: 1.3em;
+    font-weight: 200;
+    color: rgba($bgc-background-color, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 20px 16px;
+  }
+
+  .itemContainer {
+    display: flex;
+    flex-direction: row;
+
+    &:hover {
+      .icon {
+        fill: $bgc-orange;
+      }
+    }
+  }
+
+  .item {
+    @include subheader-font;
+    font-size: 1.25em;
+    font-weight: 200;
+    color: rgba($bgc-background-color, 0.5);
+    letter-spacing: 1px;
+    margin: 15px;
+    display: flex;
+    align-self: flex-start;
+  }
+
+  .icon {
+    fill: rgba($bgc-background-color, 0.5);
+    margin: 16px 0 16px 0;
+    width: 25px;
+    height: 25px;
+  }
+
+  .text {
+    @include subheader-font;
+    font-size: 1.25em;
+    font-weight: 200;
+    color: rgba($bgc-background-color, 0.5);
+    letter-spacing: 1px;
+    margin: 0 0 20px 41px;
+    display: flex;
+    align-self: flex-start;
+  }
 }
 
 .rightContents {
@@ -76,73 +95,83 @@
   flex-direction: column;
   padding:  41px 50px 0 0;
   width: 50%;
-}
 
-.callDiv {
-  display: flex;
-  flex-direction: row;
+  .subheader {
+    @include subheader-font;
+    font-size: 1.3em;
+    font-weight: 200;
+    color: rgba($bgc-background-color, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 20px 16px;
+  }
 
-  &:hover {
-    .phoneIcon {
-      fill: $bgc-orange;
+  .itemContainer {
+    display: flex;
+    flex-direction: row;
+
+    &:hover {
+      .icon {
+        fill: $bgc-orange;
+      }
     }
   }
-}
 
-.phoneIcon {
-  fill: rgba($bgc-background-color, 0.5);
-  margin: 16px 0 16px 0;
-  width: 25px;
-  height: 25px;
-}
-
-.singleLineInput {
-  @include subheader-font;
-  font-size: 1.25em;
-  appearance: none;
-  outline: 0;
-  border: solid;
-  border-width: 2px;
-  border-radius: 5px;
-  border-color: $bgc-light-grey;
-  background: $bgc-light-grey;
-  width: 90%;
-  margin: 8px;
-  margin-left: 16px;
-  padding: 5px;
-
-  &:focus {
-    border-color: $bgc-orange;
+  .icon {
+    fill: rgba($bgc-background-color, 0.5);
+    margin: 16px 0 16px 0;
+    width: 25px;
+    height: 25px;
   }
-}
 
-.textArea {
-  @include subheader-font;
-  font-size: 1.25em;
-  appearance: none;
-  outline: 0;
-  border: solid;
-  border-width: 2px;
-  border-radius: 5px;
-  border-color: $bgc-light-grey;
-  background: $bgc-light-grey;
-  width: 90%;
-  margin: 8px 0 0 16px;
-  padding: 5px;
-  min-height: 200px;
+  .input {
+    @include subheader-font;
+    font-size: 1.25em;
+    appearance: none;
+    outline: 0;
+    border: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: $bgc-light-grey;
+    background: $bgc-light-grey;
+    width: 90%;
+    margin: 8px;
+    margin-left: 16px;
+    padding: 5px;
 
-  &:focus {
-    border-color: $bgc-orange;
+    &:focus {
+      border-color: $bgc-orange;
+    }
   }
-}
 
-.sendDiv {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-end;
-  width: 100%;
-  padding-right: 25px;
+  .textArea {
+    @include subheader-font;
+    font-size: 1.25em;
+    appearance: none;
+    outline: 0;
+    border: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: $bgc-light-grey;
+    background: $bgc-light-grey;
+    width: 90%;
+    margin: 8px 0 16px 16px;
+    padding: 5px;
+    min-height: 200px;
+
+    &:focus {
+      border-color: $bgc-orange;
+    }
+  }
+
+  .sendContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 25px;
+  }
 }
 
 .copyrightContainer {
@@ -152,21 +181,21 @@
   justify-content: center;
   width: 100%;
   padding-bottom: 25px;
-}
 
-.copyrightIcon {
-  fill: rgba($bgc-background-color, 0.5);
-  margin: 16px 0 16px 0;
-  width: 15px;
-  height: 15px;
-}
+  .icon {
+    fill: rgba($bgc-background-color, 0.5);
+    margin: 16px 0 16px 0;
+    width: 15px;
+    height: 15px;
+  }
 
-.copyright {
-  @include subheader-font;
-  font-size: 1em;
-  font-weight: 200;
-  color: rgba($bgc-background-color, 0.4);
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  margin-left: 8px;
+  .copyright {
+    @include subheader-font;
+    font-size: 1em;
+    font-weight: 200;
+    color: rgba($bgc-background-color, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-left: 8px;
+  }
 }
