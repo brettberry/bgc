@@ -14,7 +14,7 @@ export default class Products extends Component {
     return (
       <div>
         <Sidebar />
-        <div className="grid">{map(products.toArray(), (product, key) =>
+        <div className="productGrid">{map(products.toArray(), (product, key) =>
           <ProductGrid product={product} key={key} />
         )}
         </div>
@@ -29,9 +29,9 @@ function ProductGrid({ product, key }) {
   const discount = product.getPrice().getDiscount();
   const showDiscount = !!discount;
   return (
-    <div className="gridContainer">
-      <Link key={key} to={`/products/${product.getCategory()}/${product.getPathName()}`} className="gridLink">
-          <div className="gridBox">
+    <div className="container">
+      <Link key={key} to={`/products/${product.getCategory()}/${product.getPathName()}`} className="link">
+          <div className="product">
             <h3 className="title">{name}</h3>
             <div className="priceContainer">
               <p className={classnames('price', showDiscount && 'strike')}>${price}</p>

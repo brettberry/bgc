@@ -111,7 +111,7 @@ class DemoSection extends Component {
 
   updateDimensions() {
     const screenWidth = $(window).width();
-    const frameWidth = screenWidth * 0.55;
+    const frameWidth = screenWidth * 0.75;
     const frameHeight = frameWidth * 0.5625;
     this.setState({ frameWidth, frameHeight });
   }

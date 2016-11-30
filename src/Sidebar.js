@@ -35,9 +35,9 @@ class SidebarMenuComponent extends Component {
     const { item, path } = this.props;
     const isActive = router.isActive(path);
 
-    return(
+    return (
       <div>
-        <Link to={path} className="sidebarLink">
+        <Link to={path} className="categoryLink">
           <div className={classnames('categoryContainer', isActive && 'active')}>
             <FaChevronCircleUp className="downArrow"/>
             <h3 className="callType">{item}</h3>

@@ -73,22 +73,23 @@ class DemoObject extends Component {
     const { title, description, link, video } = this.props;
     const { showModal } = this.state;
     const ModalComponent = clickOutside(ModalContents);
+
     return (
-      <div className="demoVideoContainer">
-        <div className="videoThumbnail"
+      <div className="videoContainer">
+        <div className="thumbnail"
              style={this.getThumbnailStyle()}
              onClick={() => this.setState({ showModal: !showModal })} />
-        <div className="vidDetailsContainer">
-          <h3 className="videoTitle">{title}</h3>
-          <p className="videoDescription">{description}</p>
-          <div className="demoButtonsContainer">
-            <Button text="Watch" onClick={() => this.setState({ showModal: !showModal })} />
+        <div className="detailsContainer">
+          <h3 className="title">{title}</h3>
+          <p className="description">{description}</p>
+          <div className="buttonContainer">
+            <Button text="Watch" onClick={() => this.setState({ showModal: !showModal })} className="watchButton" />
             <Modal show={showModal}
                    containerClassName="videoModal">
               <ModalComponent video={video} closeModal={() => this.setState({ showModal: false })} />
             </Modal>
             <Link to={link} className="link">
-              <Button text="Shop" />
+              <Button text="Shop" className="shopButton" />
             </Link>
           </div>
         </div>
@@ -140,7 +141,7 @@ class ModalContents extends Component {
     return (
       <div>
         <MdClose className="exit" />
-        <iframe height={frameHeight} width={frameWidth} src={this.props.video} frameBorder="0" allowFullScreen></iframe>
+        <iframe height={frameHeight} width={frameWidth} src={this.props.video} frameBorder="0" allowFullScreen />
       </div>
     );
   }
