@@ -240,6 +240,14 @@
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
   padding: 25px 0;
 
+  @include phone {
+    padding: 10px 0;
+  }
+
+  @include smallPhone {
+    padding: 10px 0;
+  }
+
   .title {
     display: flex;
     @include subheader-font;
@@ -247,6 +255,7 @@
     margin: 30px;
     font-size: 2em;
     color: $bgc-medium-grey;
+    text-align: center;
   }
 
   .demoSection {
@@ -316,27 +325,69 @@
     justify-content: space-around;
     width: 75%;
 
-    .link {
-      text-decoration: none;
-    }
-
     @include tabletLandscape {
       width: 40%;
     }
 
     @include tablet {
-      width: 55%;
+      width: 90%;
     }
 
     @include phone {
+      flex-direction: column;
       width: 100%;
     }
 
     @include smallPhone {
       flex-direction: column;
-      align-items: center;
-      height: 125px;
-      justify-content: space-around;
+      width: 100%;
+    }
+
+    .link {
+      text-decoration: none;
+
+      @include tablet {
+        width: 50%;
+        margin: 10px;
+      }
+
+      @include phone {
+        width: 100%;
+      }
+
+      @include smallPhone {
+        width: 100%;
+      }
+    }
+
+    .detailsButton {
+      @include tablet {
+        width: 100%;
+      }
+
+      @include phone {
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      @include smallPhone {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+
+    .cartButton {
+      @include tablet {
+        width: 100%;
+      }
+
+      @include phone {
+        width: 100%;
+      }
+
+      @include smallPhone {
+        width: 100%;
+      }
     }
   }
 }

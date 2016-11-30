@@ -262,6 +262,10 @@
       border-color: $bgc-orange;
     }
 
+    @include tablet {
+      margin-right: 0;
+    }
+
     @include phone {
       margin-right: 0;
     }
@@ -299,6 +303,11 @@
     width: 100%;
     padding-right: 25px;
 
+    @include tablet {
+      justify-content: center;
+      padding: 0;
+    }
+
     @include phone {
       justify-content: center;
       padding: 0;
@@ -310,6 +319,10 @@
     }
 
     .sendButton {
+      @include tablet {
+        width: 100%;
+      }
+
       @include phone {
         width: 100%;
       }

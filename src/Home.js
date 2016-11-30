@@ -130,10 +130,10 @@ class DemoSection extends Component {
             <p className="info">{thunderBugle.getDescription()}</p>
             <div className="buttonContainer">
               <Link to="/products/bugles/thunder-bugle" className="link">
-                <Button text="Details" />
+                <Button text="Details" className="detailsButton" />
               </Link>
               <Link className="link">
-                <Button text="Add To Cart" />
+                <Button text="Add To Cart" className="cartButton" />
               </Link>
             </div>
           </div>
