@@ -6,31 +6,49 @@
   background-color: $bgc-dark-grey;
   margin-top: 75px;
   align-items: center;
-}
 
-.contactHeader {
-  @include subheader-font;
-  font-size: 1.5em;
-  font-weight: 200;
-  padding: 35px 0 35px 0;
-  color: rgba($bgc-background-color, 0.7);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 0;
-}
+  .header {
+    @include subheader-font;
+    font-size: 1.5em;
+    font-weight: 200;
+    padding: 35px 0 35px 0;
+    color: rgba($bgc-background-color, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+  }
 
-.horizontalRule {
-  height: 1px;
-  width: 95%;
-  background-color: rgba($bgc-background-color, 0.3);
-}
+  .horizontalRule {
+    height: 1px;
+    width: 95%;
+    background-color: rgba($bgc-background-color, 0.3);
+  }
 
-.contactInfoContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  width: 100%;
-  height: 100%;
+  .contactContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include phone {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include smallPhone {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
 }
 
 .leftContents {
@@ -38,6 +56,29 @@
   flex-direction: column;
   padding:  41px 0 0 75px;
   width: 50%;
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 50px;
+    padding-bottom: 0;
+  }
+
+  @include phone {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-left: 30px;
+  }
+
+  @include smallPhone {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+  }
 
   .subheader {
     @include subheader-font;
@@ -47,46 +88,103 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     margin: 0 0 20px 16px;
-  }
 
-  .itemContainer {
-    display: flex;
-    flex-direction: row;
+    @include tablet {
+      text-align: center;
+      margin-left: 0;
+    }
 
-    &:hover {
-      .icon {
-        fill: $bgc-orange;
-      }
+    @include phone {
+      text-align: center;
+      margin: 0;
+      width: 100%;
+      padding-right: 30px;
+      padding-bottom: 20px;
+      font-size: 1em;
+    }
+
+    @include smallPhone {
+      text-align: center;
+      margin: 0;
+      width: 100%;
+      font-size: 1em;
     }
   }
 
-  .item {
-    @include subheader-font;
-    font-size: 1.25em;
-    font-weight: 200;
-    color: rgba($bgc-background-color, 0.5);
-    letter-spacing: 1px;
-    margin: 15px;
-    display: flex;
-    align-self: flex-start;
-  }
+  .section {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
 
-  .icon {
-    fill: rgba($bgc-background-color, 0.5);
-    margin: 16px 0 16px 0;
-    width: 25px;
-    height: 25px;
-  }
+    .itemContainer {
+      display: flex;
+      flex-direction: row;
 
-  .text {
-    @include subheader-font;
-    font-size: 1.25em;
-    font-weight: 200;
-    color: rgba($bgc-background-color, 0.5);
-    letter-spacing: 1px;
-    margin: 0 0 20px 41px;
-    display: flex;
-    align-self: flex-start;
+      &:hover {
+        .icon {
+          fill: $bgc-orange;
+        }
+      }
+    }
+
+    .item {
+      @include subheader-font;
+      font-size: 1.25em;
+      font-weight: 200;
+      color: rgba($bgc-background-color, 0.5);
+      letter-spacing: 1px;
+      margin: 15px;
+      display: flex;
+      align-self: flex-start;
+
+      &:hover {
+        color: $bgc-orange;
+      }
+
+      @include phone {
+        font-size: 1.1em;
+      }
+
+      @include smallPhone {
+        font-size: 1em;
+      }
+    }
+
+    .icon {
+      fill: rgba($bgc-background-color, 0.5);
+      margin: 16px 0 16px 0;
+      width: 25px;
+      height: 25px;
+    }
+
+    .text {
+      @include subheader-font;
+      font-size: 1.25em;
+      font-weight: 200;
+      color: rgba($bgc-background-color, 0.5);
+      letter-spacing: 1px;
+      margin: 0 0 20px 41px;
+      display: flex;
+      align-self: flex-start;
+
+      &:hover {
+        color: $bgc-orange;
+      }
+
+      @include tablet {
+        margin: 15px;
+      }
+
+      @include phone {
+        font-size: 1.1em;
+      }
+
+      @include smallPhone {
+        font-size: 1em;
+      }
+    }
   }
 }
 
@@ -95,6 +193,27 @@
   flex-direction: column;
   padding:  41px 50px 0 0;
   width: 50%;
+
+  @include tablet {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 50px;
+  }
+
+  @include phone {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+  }
+
+  @include smallPhone {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+  }
 
   .subheader {
     @include subheader-font;
@@ -142,6 +261,14 @@
     &:focus {
       border-color: $bgc-orange;
     }
+
+    @include phone {
+      margin-right: 0;
+    }
+
+    @include smallPhone {
+      margin-right: 0;
+    }
   }
 
   .textArea {
@@ -171,6 +298,26 @@
     justify-content: flex-end;
     width: 100%;
     padding-right: 25px;
+
+    @include phone {
+      justify-content: center;
+      padding: 0;
+    }
+
+    @include smallPhone {
+      justify-content: center;
+      padding: 0;
+    }
+
+    .sendButton {
+      @include phone {
+        width: 100%;
+      }
+
+      @include smallPhone {
+        width: 100%;
+      }
+    }
   }
 }
 

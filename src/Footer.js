@@ -15,9 +15,9 @@ class Footer extends Component {
   render() {
     return (
       <div className="footer">
-        <h3 className="contactHeader">Contact us</h3>
+        <h3 className="header">Contact us</h3>
         <div className="horizontalRule"/>
-        <div className="contactInfoContainer">
+        <div className="contactContainer">
           <LeftSide />
           <RightSide />
         </div>
@@ -31,24 +31,32 @@ function LeftSide() {
   return (
     <div className="leftContents">
       <h3 className="subheader">Berry Game Calls</h3>
-      <div className="itemContainer">
-        <FaPhone className="icon" />
-        <p className="item">Monday-Friday 9am-5pm PST</p>
+      <div className="section">
+        <div className="itemContainer">
+          <FaPhone className="icon" />
+          <p className="item">Monday-Friday 9am-5pm PST</p>
+        </div>
+        <p className="text">1 (800) 434-2855 </p>
+        <p className="text">1 (509) 299-5524 </p>
       </div>
-      <p className="text">1 (800) 434-2855 </p>
-      <p className="text">1 (509) 299-5524 </p>
-      <div className="itemContainer">
-        <FaEnvelope className="icon" />
-        <p className="item">PO Box 416 / 219 S. Lefevre</p>
+      <div className="section">
+        <div className="itemContainer">
+          <FaEnvelope className="icon" />
+          <p className="item">PO Box 416 / 219 S. Lefevre</p>
+        </div>
+        <p className="text">Medical Lake, WA 99022</p>
       </div>
-      <p className="text">Medical Lake, WA 99022</p>
-      <div className="itemContainer">
-        <FaFacebook className="icon" />
-        <p className="item">Follow us on Facebook</p>
+      <div className="section">
+        <div className="itemContainer">
+          <FaFacebook className="icon" />
+          <p className="item">Follow us on Facebook</p>
+        </div>
       </div>
-      <div className="itemContainer">
-        <FaYoutube className="icon" />
-        <p className="item">Subscribe to our Youtube Channel</p>
+      <div className="section">
+        <div className="itemContainer">
+          <FaYoutube className="icon" />
+          <p className="item">Subscribe to our Youtube Channel</p>
+        </div>
       </div>
     </div>
   );
@@ -74,7 +82,7 @@ function RightSide() {
                   placeholder="Message"/>
       </div>
       <div className="sendContainer">
-        <Button text="send"/>
+        <Button text="send" className="sendButton"/>
       </div>
     </div>
   );

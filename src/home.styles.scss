@@ -95,6 +95,7 @@
     margin: 30px;
     font-size: 2em;
     color: $bgc-medium-grey;
+
     @include tablet {
       font-size: 1.75em;
     }
@@ -113,6 +114,16 @@
 
 .link {
   text-decoration: none;
+}
+
+.viewAllButton {
+  @include smallPhone {
+    margin: 20px;
+  }
+
+  @include phone {
+    margin: 20px;
+  }
 }
 
 .featured {

@@ -56,7 +56,7 @@ function Featured({ featured }) {
       <div className="titleContainer">
         <h1 className="title">Featured Products</h1>
         <Link to="/products" className="link">
-          <Button text="view all" />
+          <Button text="view all" className="viewAllButton" />
         </Link>
       </div>
       <div className="featured">
