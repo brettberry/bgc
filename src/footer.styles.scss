@@ -321,14 +321,17 @@
     .sendButton {
       @include tablet {
         width: 100%;
+        @include touchscreenButton;
       }
 
       @include phone {
         width: 100%;
+        @include touchscreenButton;
       }
 
       @include smallPhone {
         width: 100%;
+        @include touchscreenButton;
       }
     }
   }

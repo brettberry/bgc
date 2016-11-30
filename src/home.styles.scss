@@ -78,7 +78,11 @@
   align-self: center;
   width: 100%;
   justify-content: space-between;
-  padding: 50px 50px 0 50px;
+  padding-top: 50px;
+
+  @include tablet {
+    flex-direction: column;
+  }
 
   @include phone {
     flex-direction: column;
@@ -92,37 +96,71 @@
     display: flex;
     @include subheader-font;
     margin-top: 75px;
-    margin: 30px;
+    margin: 50px;
     font-size: 2em;
     color: $bgc-medium-grey;
 
     @include tablet {
       font-size: 1.75em;
+      margin: 25px;
     }
 
     @include phone {
       font-size: 1.5em;
-      margin: 10px;
+      margin: 25px;
     }
 
     @include smallPhone {
       font-size: 1.5em;
-      margin: 10px;
+      margin: 25px;
     }
   }
 }
 
 .link {
   text-decoration: none;
-}
 
-.viewAllButton {
-  @include smallPhone {
-    margin: 20px;
+  @include tablet {
+    width: 50%;
+    margin-bottom: 25px;
   }
 
   @include phone {
-    margin: 20px;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  @include smallPhone {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+}
+
+.viewAllButton {
+  margin: 50px;
+
+  @include tabletLandscape {
+    @include touchscreenButton;
+  }
+
+  @include tablet {
+    @include touchscreenButton;
+    margin: 0;
+    width: 100%;
+  }
+
+  @include phone {
+    @include touchscreenButton;
+    margin: 0;
+    width: 90%;
+    align-self: center;
+  }
+
+  @include smallPhone {
+    @include touchscreenButton;
+    margin: 0;
+    width: 90%;
+    align-self: center;
   }
 }
 
@@ -363,30 +401,36 @@
     .detailsButton {
       @include tablet {
         width: 100%;
+        @include touchscreenButton;
       }
 
       @include phone {
         width: 100%;
         margin: 10px 0;
+        @include touchscreenButton;
       }
 
       @include smallPhone {
         width: 100%;
         margin: 10px 0;
+        @include touchscreenButton;
       }
     }
 
     .cartButton {
       @include tablet {
         width: 100%;
+        @include touchscreenButton;
       }
 
       @include phone {
         width: 100%;
+        @include touchscreenButton;
       }
 
       @include smallPhone {
         width: 100%;
+        @include touchscreenButton;
       }
     }
   }
