@@ -27,14 +27,14 @@ class QuantityPicker extends Component {
         <input onChange={e => this.changeNumber(e.target.value)}
                value={number}
                className="input" />
-        <div className="buttonContainer">
+        <div className="pickerButtonContainer">
           <button onClick={() => this.changeNumber(number + 1)}
                   className="up">
-            <FaChevronUp className="chevron"/>
+            <FaChevronUp className="pickerChevron"/>
           </button>
           <button onClick={() => this.changeNumber(number - 1)}
                   className="down">
-            <FaChevronDown className="chevron" />
+            <FaChevronDown className="pickerChevron" />
           </button>
         </div>
       </div>

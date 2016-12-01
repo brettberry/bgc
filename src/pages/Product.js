@@ -29,43 +29,54 @@ export default class Product extends Component {
 
 function ProductView({ product }) {
   const productName = product.getFullName();
+  return (
+    <div className="productView">
+      <h1 className="name">{productName}</h1>
+      <div className="contentContainer">
+        <Images />
+        <Details product={product}/>
+      </div>
+    </div>
+  );
+}
+
+function Images() {
+  return (
+    <div className="imgContainer">
+      <div className="thumbnailsContainer">
+        <div className="thumbnail" />
+        <div className="thumbnail" />
+        <div className="thumbnail" />
+      </div>
+      <div className="mainImg" />
+    </div>
+  );
+}
+
+function Details({ product }) {
   const price = product.getPrice().getAmount();
   const discount = product.getPrice().getDiscount();
   const showDiscount = !!discount;
   return (
-    <div className="productView">
-      <div className="container">
-        <h1 className="name">{productName}</h1>
-        <div className="imgContainer">
-          <div className="thumbnailsContainer">
-            <div className="thumbnail"></div>
-            <div className="thumbnail"></div>
-            <div className="thumbnail"></div>
-          </div>
-          <div className="mainImg"></div>
-          <div className="details">
-            <div className="priceContainer">
-              <h2 className={classnames('price', showDiscount && 'strike')}>${price}</h2>
-              {showDiscount && <h2 className="discount">${discount}</h2>}
-            </div>
-            <h3 className="shipping">+ Flatrate shipping: $2.95</h3>
-            <div className="buttonContainer">
-              <QuantityPicker />
-              <Button text="Add To Cart" />
-            </div>
-            <div className="descriptionContainer">
-              <h3 className="descriptionTitle">Description</h3>
-              <p className="description">{product.getDescription()}</p>
-            </div>
-          </div>
-        </div>
+    <div className="details">
+      <div className="priceContainer">
+        <h2 className={classnames('price', showDiscount && 'strike')}>${price}</h2>
+        {showDiscount && <h2 className="discount">${discount}</h2>}
+      </div>
+      <h3 className="shipping">+ Flatrate shipping: $2.95</h3>
+      <div className="buttonContainer">
+        <QuantityPicker />
+        <Button text="Add To Cart" className="cartButton" />
+      </div>
+      <div className="descriptionContainer">
+        <h3 className="descriptionTitle">Description</h3>
+        <p className="description">{product.getDescription()}</p>
       </div>
     </div>
   );
 }
 
 class RelatedProducts extends Component {
-
   state = {
     offset: 0,
     reverse: false
