@@ -113,7 +113,7 @@ class RelatedProducts extends Component {
     const transitionClasses = classnames('carousel', this.state.reverse ? 'left' : 'right');
     return (
       <div className="relatedProductsContainer">
-        <h2 className="priceSubHeader">Related Items</h2>
+        <h2 className="subheader">Related Items</h2>
         <div className="relatedInnerDiv">
           { showButtons && <button className="paginationButton left" onClick={this.pageLeft.bind(this)}>
             <FaChevronLeft className="paginationChevron" />
