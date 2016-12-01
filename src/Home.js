@@ -128,13 +128,16 @@ class DemoSection extends Component {
           </div>
           <div className="demoInfo">
             <p className="info">{thunderBugle.getDescription()}</p>
-            <div className="buttonContainer">
-              <Link to="/products/bugles/thunder-bugle" className="link">
-                <Button text="Details" className="detailsButton" />
-              </Link>
-              <Link className="link">
-                <Button text="Add To Cart" className="cartButton" />
-              </Link>
+            <div className="productContainer">
+              <div className="tbImg"></div>
+              <div className="buttonContainer">
+                <Link to="/products/bugles/thunder-bugle" className="link">
+                  <Button text="Details" className="detailsButton" />
+                </Link>
+                <Link className="link">
+                  <Button text="Add To Cart" className="cartButton" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

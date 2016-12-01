@@ -34,28 +34,28 @@ function ProductView({ product }) {
   const showDiscount = !!discount;
   return (
     <div className="productView">
-      <div className="productContainer">
-        <h1 className="largeProductName">{productName}</h1>
+      <div className="container">
+        <h1 className="name">{productName}</h1>
         <div className="imgContainer">
           <div className="thumbnailsContainer">
             <div className="thumbnail"></div>
             <div className="thumbnail"></div>
             <div className="thumbnail"></div>
           </div>
-          <div className="imgDivLarge"></div>
-          <div className="orderDiv">
+          <div className="mainImg"></div>
+          <div className="details">
             <div className="priceContainer">
-              <h2 className={classnames('priceHeader', showDiscount && 'strike')}>${price}</h2>
-              {showDiscount && <h2 className="discountHeader">${discount}</h2>}
+              <h2 className={classnames('price', showDiscount && 'strike')}>${price}</h2>
+              {showDiscount && <h2 className="discount">${discount}</h2>}
             </div>
-            <h3 className="priceSubHeader">+ Flatrate shipping: $2.95</h3>
-            <div className="buttonPickerContainer">
+            <h3 className="shipping">+ Flatrate shipping: $2.95</h3>
+            <div className="buttonContainer">
               <QuantityPicker />
               <Button text="Add To Cart" />
             </div>
             <div className="descriptionContainer">
-              <h3 className="descriptionHeader">Description</h3>
-              <p className="itemDescription">{product.getDescription()}</p>
+              <h3 className="descriptionTitle">Description</h3>
+              <p className="description">{product.getDescription()}</p>
             </div>
           </div>
         </div>

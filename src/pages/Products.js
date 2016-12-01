@@ -6,6 +6,7 @@ import map from 'lodash/map';
 import classnames from 'classnames';
 import Sidebar from '../Sidebar';
 import { Link } from 'react-router';
+import MobileSidebar from '../MobileSidebar';
 
 const products = new ProductCollection(data.products);
 
@@ -13,7 +14,8 @@ export default class Products extends Component {
   render() {
     return (
       <div>
-        <Sidebar />
+        {/* <Sidebar /> */}
+        <MobileSidebar />
         <div className="productGrid">{map(products.toArray(), (product, key) =>
           <ProductGrid product={product} key={key} />
         )}

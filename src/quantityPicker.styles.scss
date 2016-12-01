@@ -1,64 +1,11 @@
 @import './constants';
 
-.qtyInput {
-  @include subheader-font;
-  font-size: 1.25em;
-  appearance: none;
-  outline: 0;
-  border: solid;
-  border-width: 2px;
-  border-radius: 5px 0 0 5px;
-  border-color: $bgc-light-grey;
-  background: none;
-  width: 50px;
-  text-align: center;
-  margin: 30px 0 30px 0;
-  border-right: 0;
-}
-
-.up {
-  @include subheader-font;
-  font-size: 1em;
-  appearance: none;
-  outline: 0;
-  border: solid;
-  border-width: 2px;
-  border-color: $bgc-light-grey;
-  background: none;
-  height: 25px;
-  width: 25px;
-  margin: 30px 30px 0 0;
-  border-bottom: 0;
-  border-radius: 0 5px 0 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.down {
-  @include subheader-font;
-  font-size: 1em;
-  appearance: none;
-  outline: 0;
-  border: solid;
-  border-width: 2px;
-  border-color: $bgc-light-grey;
-  background: none;
-  height: 25px;
-  width: 25px;
-  margin-bottom: 0 30px 30px 0;
-  border-radius: 0 0 5px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .pickerContainer {
   display: flex;
   flex-direction: row;
 
   &:hover {
-    .qtyInput {
+    .input {
       border-color: $bgc-medium-grey;
       transition: all 0.3s ease;
     }
@@ -75,13 +22,67 @@
       transition: all 0.3s ease;
     }
   }
-}
 
-.buttonContainer {
-  display: flex;
-  flex-direction: column;
-}
+  .input {
+    @include subheader-font;
+    font-size: 1.25em;
+    appearance: none;
+    outline: 0;
+    border: solid;
+    border-width: 2px;
+    border-radius: 5px 0 0 5px;
+    border-color: $bgc-light-grey;
+    background: none;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin: 30px 0 30px 0;
+    border-right: 0;
+  }
 
-.chevronButton {
-  fill: $bgc-dark-grey;
+  .buttonContainer {
+    display: flex;
+    flex-direction: row;
+
+    .up {
+      @include subheader-font;
+      font-size: 1em;
+      appearance: none;
+      outline: 0;
+      border: solid;
+      border-width: 2px;
+      border-color: $bgc-light-grey;
+      background: none;
+      height: 25px;
+      width: 25px;
+      margin: 30px 30px 0 0;
+      border-bottom: 0;
+      border-radius: 0 5px 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .down {
+      @include subheader-font;
+      font-size: 1em;
+      appearance: none;
+      outline: 0;
+      border: solid;
+      border-width: 2px;
+      border-color: $bgc-light-grey;
+      background: none;
+      height: 25px;
+      width: 25px;
+      margin-bottom: 0 30px 30px 0;
+      border-radius: 0 0 5px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .chevron {
+      fill: $bgc-dark-grey;
+    }
+  }
 }

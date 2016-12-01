@@ -8,11 +8,47 @@
   margin-left: 17%;
   flex-wrap: wrap;
 
+  @include tabletLandscape {
+    margin-left: 0;
+    padding: 0;
+    justify-content: center;
+  }
+
+  @include tablet {
+    margin-left: 0;
+    padding: 0;
+    justify-content: center;
+  }
+
+  @include phone {
+    margin-left: 0;
+    padding: 0;
+    justify-content: center;
+  }
+
+  @include smallPhone {
+    margin-left: 0;
+    padding: 0;
+    justify-content: center;
+  }
+
   .container {
     display: flex;
     flex-basis: 50%;
     justify-content: center;
     align-items: center;
+
+    @include tablet {
+      padding: 0;
+    }
+
+    @include phone {
+      padding: 0;
+    }
+
+    @include smallPhone {
+      padding: 0;
+    }
   }
 
   .link {
@@ -26,7 +62,7 @@
 
   .product {
     width: 95%;
-    min-width: 325px;
+    min-width: 300px;
     height: 450px;
     background-color: white;
     border-radius: 3px;
@@ -43,16 +79,16 @@
     }
 
     @include tablet {
-      display: flex;
       height: 375px;
-      // margin-left: 20%;
     }
 
     @include phone {
+      width: 350px;
       height: 350px;
     }
 
     @include smallPhone {
+      width: 300px;
       height: 300px;
     }
   }
@@ -62,6 +98,14 @@
     font-size: 1.3em;
     font-weight: 400;
     margin: 0;
+
+    @include smallPhone {
+      font-size: 1.1em;
+    }
+
+    @include phone {
+      font-size: 1.2em;
+    }
   }
 
   .priceContainer {
@@ -78,6 +122,14 @@
 
     &.strike {
       text-decoration: line-through;
+    }
+
+    @include smallPhone {
+      font-size: 1.1em;
+    }
+
+    @include phone {
+      font-size: 1.2em;
     }
   }
 
