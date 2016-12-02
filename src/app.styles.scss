@@ -2,3 +2,13 @@
 .navBarHeader {
   z-index: 1000;
 }
+
+html, body, main {
+  min-height: 100%;
+  margin: 0;
+  background-color: white;
+}
+
+* {
+  box-sizing: border-box;
+}

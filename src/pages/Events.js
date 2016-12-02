@@ -4,7 +4,7 @@ import './events.styles.scss';
 class Events extends Component {
   render() {
     return (
-      <div>
+      <div className="eventPageContainer">
         <NewEvent />
         <NewEvent />
         <NewEvent />

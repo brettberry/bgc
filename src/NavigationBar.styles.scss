@@ -1,15 +1,5 @@
 @import './constants';
 
-html, body, main {
-  min-height: 100%;
-  margin: 0;
-  background-color: $bgc-background-color;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 .mainNavContainer {
   position: relative;
   z-index: 1000;

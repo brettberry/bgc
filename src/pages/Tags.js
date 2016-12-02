@@ -13,7 +13,7 @@ class Tags extends Component {
     const tagName = this.props.routeParams.tagName;
     const productName = products.filterByTag(tagName);
     return (
-      <div>
+      <div className="productsContainer">
         <Sidebar />
         <div className="productGrid">{map(productName.toArray(), (product, key) =>
           <ProductGrid product={product} key={key} />

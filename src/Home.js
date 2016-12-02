@@ -21,9 +21,11 @@ class Home extends Component {
     return (
       <div>
         <FirstSection />
-        <Featured featured={featured} />
+        <Banner />
         <DemoSection />
+        <Featured featured={featured} />
         <ShopCategories />
+        <Banner2 />
         <Footer />
       </div>
     );
@@ -50,11 +52,33 @@ function FirstSection() {
   );
 }
 
+function Banner() {
+  return (
+    <div className="bannerContainer">
+      <div className="rowContainer">
+        <h2 className="header1">Join the revolution of </h2>
+        <h2 className="header1 highlight">&nbsp;self-made </h2>
+        <h2 className="header1">&nbsp;sportsmen and women.</h2>
+      </div>
+      <div className="rowContainer">
+        <h2 className="header1">Those who know</h2>
+        <h2 className="header1 highlight">&nbsp;do-it-yourself</h2>
+        <h2 className="header1">&nbsp;isn't a phrase, but a way of life.</h2>
+      </div>
+      <div className="rowContainer">
+        <h2 className="header1">Who hear the</h2>
+        <h2 className="header1 highlight">&nbsp;call of the wild</h2>
+        <h2 className="header1">, and respond.</h2>
+      </div>
+    </div>
+  );
+}
+
 function Featured({ featured }) {
   return (
     <div>
-      <div className="titleContainer">
-        <h1 className="title">Featured Products</h1>
+      <div className="bannerContainer">
+        <h2 className="header2">Sound like the real thing.</h2>
         <Link to="/products" className="link">
           <Button text="view all" className="viewAllButton" />
         </Link>
@@ -149,24 +173,45 @@ class DemoSection extends Component {
 function ShopCategories() {
   return (
     <div className="categoryContainer">
-      <span className="header">Shop Now</span>
       <div className="categories">
-        <Link to="/products/tags/bugles" className="link">
-          <div className="category">
-            <p className="title">Bugles</p>
-          </div>
-        </Link>
-        <Link to="/products/tags/reeds" className="link">
-          <div className="category">
-            <p className="title">Mouth Reeds</p>
-          </div>
-        </Link>
-        <Link to="/products/tags/dvds" className="link">
-          <div className="category">
-            <p className="title">Movies</p>
-          </div>
-        </Link>
+        <span className="header">Shop Now</span>
+        <div className="categoryWrapper">
+          <Link to="/products/tags/bugles" className="link">
+            <div className="category">
+              <p className="title">Bugles</p>
+            </div>
+          </Link>
+          <Link to="/products/tags/reeds" className="link">
+            <div className="category">
+              <p className="title">Mouth Reeds</p>
+            </div>
+          </Link>
+          <Link to="/products/tags/dvds" className="link">
+            <div className="category">
+              <p className="title">Movies</p>
+            </div>
+          </Link>
+        </div>
       </div>
+    </div>
+  );
+}
+
+function Banner2() {
+  return (
+    <div className="bannerContainer">
+      <div className="rowContainer">
+        <h2 className="header2">Built for hunters, by hunters</h2>
+        <h2 className="header2 highlight">&nbsp;since 1983.</h2>
+      </div>
+    </div>
+  );
+}
+
+function Banner3() {
+  return (
+    <div className="bannerContainer">
+      <h2 className="header2">Sound like the real thing.</h2>
     </div>
   );
 }

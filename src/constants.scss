@@ -6,6 +6,7 @@ $bgc-orange: #ebb052;
 $bgc-dark-orange: #cd8818;
 $bgc-light-grey: #f2f2f2;
 $bgc-yellow: #ffdc85;
+$bgc-medium-light-grey: darken($bgc-light-grey, 5);
 
 @mixin header-font {
   font-family: $main-font-family;

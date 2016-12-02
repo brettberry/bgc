@@ -71,6 +71,65 @@
   }
 }
 
+.bannerContainer {
+  height: 300px;
+  background-color: $bgc-medium-light-grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+
+  .rowContainer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .header1 {
+    display: flex;
+    @include subheader-font;
+    margin: 0;
+    font-size: 2.25em;
+    font-weight: 400;
+    color: $bgc-medium-grey;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 5px 0;
+
+    &.highlight {
+      color: $bgc-dark-orange;
+    }
+  }
+
+  .header2 {
+    display: flex;
+    @include subheader-font;
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 400;
+    color: $bgc-medium-grey;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    &.highlight {
+      color: $bgc-dark-orange;
+    }
+  }
+
+  .header3 {
+    display: flex;
+    @include subheader-font;
+    font-size: 2.5em;
+    color: $bgc-medium-grey;
+    margin: 0;
+    font-weight: 400;
+
+    &.highlight {
+      color: $bgc-dark-orange;
+    }
+  }
+}
+
 .titleContainer {
   display: flex;
   flex-direction: row;
@@ -97,7 +156,7 @@
     @include subheader-font;
     margin-top: 75px;
     margin: 50px;
-    font-size: 2em;
+    font-size: 2.5em;
     color: $bgc-medium-grey;
 
     @include tablet {
@@ -137,7 +196,7 @@
 }
 
 .viewAllButton {
-  margin: 50px;
+  margin-top: 50px;
 
   @include tabletLandscape {
     @include touchscreenButton;
@@ -169,7 +228,8 @@
   flex: 1;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 0 50px;
+  padding: 0 50px 50px 50px;
+  background-color: $bgc-medium-light-grey;
 
   @include phone {
     padding: 0 10px;
@@ -214,6 +274,7 @@
     height: 100%;
     align-items: center;
     justify-content: center;
+    background-color: $bgc-medium-light-grey;
   }
 
   .featuredDiv {
@@ -272,11 +333,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
   width: 100%;
   background-color: white;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
   padding: 25px 0;
+  z-index: 1000;
 
   @include phone {
     padding: 10px 0;
@@ -291,7 +352,7 @@
     @include subheader-font;
     margin-top: 75px;
     margin: 30px;
-    font-size: 2.25em;
+    font-size: 2.5em;
     color: $bgc-medium-grey;
     font-weight: 400;
     text-align: center;
@@ -362,7 +423,7 @@
   }
 
   .productContainer {
-    flex-direction: row;
+    flex-direction: column;
   }
 
   .tbImg {
@@ -458,7 +519,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  // margin-top: 50px;
+  z-index: 0;
   width: 100%;
 
   @include phone {
@@ -471,47 +533,59 @@
 
   .categories {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
-    width: 90%;
+    width: 100%;
+    height: 400px;
+    background-color: $bgc-orange;
 
-    @include tabletLandscape {
-      flex-direction: column;
-    }
-
-    @include tablet {
-      flex-direction: column;
-    }
-
-    @include phone {
-      flex-direction: column;
-    }
-
-    @include smallPhone {
-      flex-direction: column;
-    }
+    // @include tabletLandscape {
+    //   flex-direction: column;
+    // }
+    //
+    // @include tablet {
+    //   flex-direction: column;
+    // }
+    //
+    // @include phone {
+    //   flex-direction: column;
+    // }
+    //
+    // @include smallPhone {
+    //   flex-direction: column;
+    // }
   }
 
   .header {
     display: flex;
     @include subheader-font;
-    margin-top: 75px;
+    // margin-top: 75px;
     margin: 30px;
     font-size: 2em;
-    color: $bgc-medium-grey;
+    color: $bgc-light-grey;
+    font-weight: 300;
+    align-self: center;
+    text-align: center;
+  }
+
+  .categoryWrapper {
+    display: flex;
+    flex-direction: row;
   }
 
   .category {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 350px;
-    height: 350px;
-    background-color: white;
+    // width: 350px;
+    // height: 350px;
+    width: 100%;
+    height: 100%;
+    // background-color: white;
     border-radius: 2px;
-    margin: 25px;
-    margin-top: 0;
-    box-shadow: 0 0 2px rgba(0,0,0,0.1);
+    // margin: 25px;
+    padding: 20px;
+    // box-shadow: 0 0 2px rgba(0,0,0,0.1);
 
     @include tabletLandscape {
       display: flex;
@@ -548,12 +622,14 @@
       letter-spacing: 4px;
       padding: 25px;
       margin: 0;
-      position: absolute;
+      // position: absolute;
       font-weight: 400;
+      display: flex;
+      align-self: flex-end;
     }
 
     &:hover {
-      box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+      // box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
       transform: scale(1.02);
       transition: all 0.2s ease;
       cursor: pointer;
@@ -567,7 +643,7 @@
 
   .link {
     width: 100%;
-    height: 100%;
+    height: 300px;
     text-decoration: none;
   }
 }

@@ -1,5 +1,10 @@
 @import '../constants';
 
+.eventPageContainer {
+  background-color: $bgc-medium-light-grey;
+  padding: 75px 50px;
+}
+
 .eventsContainer {
   display: flex;
   align-items: center;
