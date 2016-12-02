@@ -1,0 +1,52 @@
+@import './constants';
+
+.bottomBar {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+
+  .leftArrow {
+    position: fixed;
+    fill: $bgc-orange;
+    width: 40px;
+    height: 40px;
+    transform: rotate(270deg);
+    margin-left: 20px;
+    margin-bottom: 5px;
+    opacity: 0.75;
+    left: 0;
+    bottom: 0;
+  }
+
+  .category {
+    @include default-font;
+    height: 100%;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+
+    @include smallPhone {
+      font-size: 1.1em;
+    }
+  }
+
+  .rightArrow {
+    position: fixed;
+    fill: $bgc-orange;
+    width: 40px;
+    height: 40px;
+    transform: rotate(90deg);
+    margin-right: 20px;
+    margin-bottom: 5px;
+    opacity: 0.75;
+    right: 0;
+    bottom: 0;
+  }
+}

@@ -1,0 +1,210 @@
+@import './constants';
+
+.bannerContainer {
+  height: 300px;
+  background-color: $bgc-medium-light-grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+
+  @include tabletLandscape {
+    padding: 10px;
+  }
+
+  @include tablet {
+    padding: 0;
+  }
+
+  @include phone {
+    padding: 0;
+  }
+
+  @include smallPhone {
+    padding: 0;
+  }
+
+  .rowContainer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .header2 {
+    display: flex;
+    @include subheader-font;
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 400;
+    color: $bgc-medium-grey;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    &.highlight {
+      color: $bgc-dark-orange;
+    }
+
+    @include tabletLandscape {
+      font-size: 2em;
+    }
+
+    @include tablet {
+      font-size: 1.75em;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+  .link {
+    text-decoration: none;
+
+    @include tablet {
+      width: 50%;
+      margin-bottom: 25px;
+    }
+
+    @include phone {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+
+    @include smallPhone {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+  }
+
+  .viewAllButton {
+    margin-top: 50px;
+
+    @include tabletLandscape {
+      @include touchscreenButton;
+    }
+
+    @include tablet {
+      @include touchscreenButton;
+      margin: 0;
+      width: 100%;
+    }
+
+    @include phone {
+      @include touchscreenButton;
+      margin: 0;
+      width: 90%;
+      align-self: center;
+    }
+
+    @include smallPhone {
+      @include touchscreenButton;
+      margin: 0;
+      width: 90%;
+      align-self: center;
+    }
+  }
+
+  .featured {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 50px 50px 50px;
+    background-color: $bgc-medium-light-grey;
+
+    @include phone {
+      padding: 0 10px;
+    }
+
+    @include smallPhone {
+      padding: 0 10px;
+    }
+  }
+
+  .featuredContainer {
+    display: flex;
+    flex-basis: 33%;
+    height: 450px;
+    justify-content: center;
+    align-items: center;
+
+    @include tabletLandscape {
+      flex-basis: 50%;
+      height: 400px;
+    }
+
+    @include tablet {
+      flex-basis: 100%;
+      height: 400px;
+    }
+
+    @include phone {
+      flex-basis: 100%;
+      height: 400px;
+    }
+
+    @include smallPhone {
+      flex-basis: 100%;
+      height: 350px;
+    }
+
+    .link {
+      display: flex;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      background-color: $bgc-medium-light-grey;
+      margin: 0;
+    }
+
+    .featuredDiv {
+      width: 90%;
+      height: 90%;
+      padding: 25px;
+      background-color: white;
+      border-radius: 3px;
+      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      .title {
+        @include subheader-font;
+        font-size: 1.3em;
+        font-weight: 400;
+        margin: 0;
+      }
+
+      .priceContainer {
+        display: flex;
+        flex-direction: row;
+
+        .price {
+          @include subheader-font;
+          font-size: 1.25em;
+          font-weight: 300;
+          margin: 0;
+          margin-top: 10px;
+
+          &.strike {
+            text-decoration: line-through;
+          }
+        }
+
+        .discount {
+          @include subheader-font;
+          font-size: 1.25em;
+          font-weight: 400;
+          margin: 0;
+          margin-top: 10px;
+          margin-left: 10px;
+          color: red;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+        transform: scale(1.02);
+        transition: all 0.2s ease;
+      }
+    }
+  }
