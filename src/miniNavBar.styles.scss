@@ -45,19 +45,30 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-}
 
-.bgcMini {
-  @include header-font;
-  margin: 0;
-  color: white;
-  font-size: 2em;
-}
+  @include tabletLandscape {
+    padding: 0;
+  }
 
+  .bgc {
+    @include header-font;
+    margin: 0;
+    color: white;
+    font-size: 2em;
+
+    @include tabletLandscape {
+      font-size: 1.75em;
+    }
+  }
+}
 .searchContainer {
   display: flex;
   flex-direction: column;
   width: 60%;
+
+  @include tabletLandscape {
+    width: 50%;
+  }
 }
 
 .searchDiv {
@@ -67,65 +78,20 @@
   width: 100%;
 }
 
-.allButton {
-  @include default-font;
-  font-size: 1em;
-  background-color: $bgc-light-grey;
-  width: 65px;
-  height: 40px;
-  border-radius: 22.5px 0 0 22.5px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .allText {
-    margin: 0;
-
-    &:hover {
-      color: $bgc-dark-grey;
-      cursor: pointer;
-    }
-  }
-}
-
-.allContainer {
-  display: flex;
-  flex-direction: column;
-  background-color: black;
-}
-
-.allTop {
-  position: absolute;
-  width: 65px;
-  height: 40px;
-  border-radius: 22.5px 0 0 0;
-  background-color: white;
-  left: 200px;
-}
-
-.allMenu {
-  @include default-font;
-  position: absolute;
-  padding: 10px 30px 10px 30px;
-  background-color: white;
-  border-radius: 0 0 2px 2px;
-  box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
-}
-
 .searchBar {
   @include default-font;
   appearance: none;
   outline: 0;
   border: none;
   border-color: $bgc-orange;
+  border-radius: 20px 0 0 20px;
   font-size: 1.2em;
   text-align: left;
   height: 40px;
   display: flex;
   z-index: 100;
   margin: 0;
-  padding: 10px;
+  padding: 10px 10px 10px 20px;
   width: 100%;
 
   &::placeholder {
@@ -160,8 +126,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-left: 20px;
-  margin-right: 20px;
 
   &.dark {
     .accountText {

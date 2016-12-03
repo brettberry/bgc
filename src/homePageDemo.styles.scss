@@ -97,26 +97,15 @@
     }
   }
 
-  .productContainer {
-    flex-direction: column;
-  }
-
-  .tbImg {
-    width: 500px;
-    height: 300px;
-    background-color: black;
-    margin-left: 150px;
-  }
-
   .buttonContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    width: 75%;
+    width: 25%;
 
     @include tabletLandscape {
-      width: 40%;
+      width: 90%;
     }
 
     @include tablet {
@@ -136,6 +125,10 @@
     .link {
       text-decoration: none;
 
+      @include tabletLandscape {
+        width: 40%;
+      }
+
       @include tablet {
         width: 50%;
         margin: 10px;
@@ -153,38 +146,50 @@
     }
 
     .detailsButton {
-      @include tablet {
-        width: 100%;
+
+      @include tabletLandscape {
         @include touchscreenButton;
+        width: 100%;
+      }
+
+      @include tablet {
+        @include touchscreenButton;
+        width: 100%;
       }
 
       @include phone {
+        @include touchscreenButton;
         width: 100%;
         margin: 10px 0;
-        @include touchscreenButton;
       }
 
       @include smallPhone {
+        @include touchscreenButton;
         width: 100%;
         margin: 10px 0;
-        @include touchscreenButton;
       }
     }
 
     .cartButton {
-      @include tablet {
+
+      @include tabletLandscape {
         width: 100%;
         @include touchscreenButton;
+      }
+
+      @include tablet {
+        @include touchscreenButton;
+        width: 100%;
       }
 
       @include phone {
-        width: 100%;
         @include touchscreenButton;
+        width: 100%;
       }
 
       @include smallPhone {
-        width: 100%;
         @include touchscreenButton;
+        width: 100%;
       }
     }
   }

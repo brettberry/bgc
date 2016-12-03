@@ -27,14 +27,6 @@
     flex-direction: column;
   }
 
-  @include phone {
-    flex-direction: column;
-  }
-
-  @include smallPhone {
-    flex-direction: column;
-  }
-
   .thumbnail {
     width: 350px;
     height: 220px;
@@ -62,7 +54,7 @@
     text-align: center;
 
     @include tabletLandscape {
-      font-size: 2em;
+      font-size: 1.5em;
     }
 
     @include tablet {
@@ -103,6 +95,12 @@
     flex-direction: row;
     justify-content: space-between;
 
+    @include tabletLandscape {
+      width: 80%;
+      justify-content: space-around;
+      align-self: center;
+    }
+
     @include phone {
       flex-direction: column;
     }
@@ -111,12 +109,20 @@
   .watchButton {
     margin-right: 20px;
 
+    @include tabletLandscape {
+      @include touchscreenButton
+    }
+
     @include phone {
       @include touchscreenButton;
     }
   }
 
   .shopButton {
+    @include tabletLandscape {
+      @include touchscreenButton
+    }
+
     @include phone {
       @include touchscreenButton;
     }

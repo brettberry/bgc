@@ -48,8 +48,6 @@ class Demo extends Component {
           </div>
           <div className="demoInfo">
             <p className="info">{thunderBugle.getDescription()}</p>
-            <div className="productContainer">
-              <div className="tbImg" />
               <div className="buttonContainer">
                 <Link to="/products/bugles/thunder-bugle" className="link">
                   <Button text="Details" className="detailsButton" />
@@ -58,7 +56,6 @@ class Demo extends Component {
                   <Button text="Add To Cart" className="cartButton" />
                 </Link>
               </div>
-            </div>
           </div>
         </div>
       </div>

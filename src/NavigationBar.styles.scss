@@ -7,12 +7,17 @@
 
 .navBar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 99px;
   top: 0;
   background-color: white;
+  padding: 0 40px;
+
+  @include tabletLandscape {
+    padding: 0 25px;
+  }
 }
 
 .header {
@@ -30,22 +35,14 @@
   align-items: flex-start;
 }
 
-.logo {
-  padding-left: 20px;
-  width: 125px;
-  height: 99px;
-}
-
 .bgc {
   @include header-font;
   text-align: left;
   margin: 0;
-}
 
-.slogan {
-  @include subheader-font;
-  text-align: center;
-  margin: 0;
+  @include tabletLandscape {
+    font-size: 2em;
+  }
 }
 
 .menu {
@@ -59,8 +56,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 37px;
-  padding-bottom: 37px;
+  padding: 37px 0;
 
   .item {
     @include menu-font;

@@ -17,7 +17,8 @@ class Home extends Component {
         <Demo />
         <Featured />
         <ShopCategories />
-        <Banner2 />
+        {/* <Banner2 /> */}
+        <MobileBanner2 />
         <Footer />
       </div>
     );
@@ -50,24 +51,21 @@ function ShopCategories() {
   return (
     <div className="categoryContainer">
       <div className="categories">
-        <span className="header">Shop Now</span>
-        <div className="categoryWrapper">
-          <Link to="/products/tags/bugles" className="link">
-            <div className="category">
-              <p className="title">Bugles</p>
-            </div>
-          </Link>
-          <Link to="/products/tags/reeds" className="link">
-            <div className="category">
-              <p className="title">Mouth Reeds</p>
-            </div>
-          </Link>
-          <Link to="/products/tags/dvds" className="link">
-            <div className="category">
-              <p className="title">Movies</p>
-            </div>
-          </Link>
-        </div>
+        <Link to="/products/tags/bugles" className="link">
+          <div className="category">
+            <p className="title">Bugles</p>
+          </div>
+        </Link>
+        <Link to="/products/tags/reeds" className="link">
+          <div className="category">
+            <p className="title">Mouth Reeds</p>
+          </div>
+        </Link>
+        <Link to="/products/tags/dvds" className="link">
+          <div className="category">
+            <p className="title">Movies</p>
+          </div>
+        </Link>
       </div>
     </div>
   );
@@ -79,6 +77,18 @@ function Banner2() {
       <div className="rowContainer">
         <h2 className="header3">Built for hunters, by hunters</h2>
         <h2 className="header3 highlight">&nbsp;since 1983.</h2>
+      </div>
+    </div>
+  );
+}
+
+function MobileBanner2() {
+  return (
+    <div className="mobileBannerContainer">
+      <div className="rowContainer">
+        <h3 className="mobileHeader">Built for hunters,</h3>
+        <h3 className="mobileHeader">by hunters</h3>
+        <h3 className="mobileHeader highlight">since 1983.</h3>
       </div>
     </div>
   );

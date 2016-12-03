@@ -16,7 +16,7 @@ class MiniNavBar extends Component {
       <div className={classnames('responsiveNavBar', this.props.showResponsiveNavBar && 'showNav')}>
         <div className="navBarContents">
           <Link to="/" className="bgcLink">
-            <h1 className="bgcMini">Berry Game Calls</h1>
+            <h1 className="bgc">Berry Game Calls</h1>
           </Link>
           <Search />
           <ShoppingCenter className="light"/>
@@ -30,31 +30,12 @@ function Search() {
   return (
     <div className="searchContainer">
       <div className="searchDiv">
-        <div className="allButton">
-          <h3 className="allText">All</h3>
-        </div>
         <input className="searchBar"
                placeholder="Search products"
                autoFocus />
         <div className="searchButton">
           <FaSearch className="searchIcon" />
         </div>
-      </div>
-      {/* <AllDropDown /> */}
-    </div>
-  );
-}
-
-function AllDropDown() {
-  return (
-    <div className="allContainer">
-      <div className="allTop" />
-      <div className="allMenu">
-        <p>Bugles</p>
-        <p>Reeds</p>
-        <p>Cow Calls</p>
-        <p>Movies</p>
-        <p>Accessories</p>
       </div>
     </div>
   );

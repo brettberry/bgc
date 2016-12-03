@@ -5,3 +5,4 @@ export About from './About';
 export Gallery from './Gallery';
 export Events from './Events';
 export Tags from './Tags';
+export MobileDemos from './MobileDemos';

@@ -18,10 +18,12 @@
   }
 
   @include phone {
+    height: 250px;
     padding: 0;
   }
 
   @include smallPhone {
+    height: 200px;
     padding: 0;
   }
 
@@ -51,6 +53,18 @@
     @include tablet {
       font-size: 1.75em;
       margin-bottom: 40px;
+    }
+
+    @include phone {
+      font-size: 1.5em;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
+    }
+
+    @include smallPhone {
+      font-size: 1.25em;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
     }
   }
 }
@@ -111,11 +125,11 @@
     background-color: $bgc-medium-light-grey;
 
     @include phone {
-      padding: 0 10px;
+      padding: 0;
     }
 
     @include smallPhone {
-      padding: 0 10px;
+      padding: 0;
     }
   }
 
