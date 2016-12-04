@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import data from '../data.json';
 import { DemosCollection } from '../models';
 import Button from '../Buttons';
+import $ from 'jquery';
 
 import './mobileDemos.styles.scss';
 
@@ -19,7 +20,7 @@ class MobileDemos extends Component {
     const turkeyDemo2 = videos.findByTitle('turkey-demo-2');
 
     return (
-      <div className="demosContainer">
+      <div className="mobileDemosContainer">
         <MobileDemoObject title={xSeriesDemo.getTitle()}
                     description={xSeriesDemo.getDescription()}
                     link={xSeriesDemo.getPath()}
@@ -62,21 +63,49 @@ class MobileDemos extends Component {
 
   class MobileDemoObject extends Component {
 
+    state = {
+      frameWidth: 0,
+      frameHeight: 0
+    }
+
+    constructor(props) {
+      super(props);
+      this._updateDimensions = this.updateDimensions.bind(this);
+    }
+
+    handleClickOutside() {
+      this.props.closeModal();
+    }
+
+    componentDidMount() {
+      this.updateDimensions();
+      $(window).on('resize', this._updateDimensions);
+    }
+
+    componentWillUnmount() {
+      $(window).off('resize', this._updateDimensions);
+    }
+
+    updateDimensions() {
+      const screenWidth = $(window).width();
+      const frameWidth = screenWidth * 0.8;
+      const frameHeight = frameWidth * 0.5625;
+      this.setState({ frameWidth, frameHeight });
+    }
+
     render() {
       const { title, description, link, video } = this.props;
+      const { frameWidth, frameHeight } = this.state;
 
       return (
         <div className="videoContainer">
-          <div className="thumbnail" />
+          <iframe width={frameWidth} height={frameHeight} src={video} frameBorder="0" allowFullScreen />
           <div className="detailsContainer">
             <h3 className="title">{title}</h3>
             <p className="description">{description}</p>
-            <div className="buttonContainer">
-              <Button text="Watch" className="watchButton" />
-              <Link to={link} className="link">
+              <Link to={link} className="shopLink">
                 <Button text="Shop" className="shopButton" />
               </Link>
-            </div>
           </div>
         </div>
       );
