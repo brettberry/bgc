@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import Footer from './Footer';
 import './buttons.styles.scss';
@@ -6,6 +6,7 @@ import './home.styles.scss';
 import Demo from './HomePageDemo';
 import Slider from './Slider';
 import Featured from './ProductFeature';
+import TabletProvider from './TabletProvider';
 
 class Home extends Component {
 
@@ -17,8 +18,9 @@ class Home extends Component {
         <Demo />
         <Featured />
         <ShopCategories />
-        {/* <Banner2 /> */}
-        <MobileBanner2 />
+        <TabletProvider>
+          <Banner2 />
+        </TabletProvider>
         <Footer />
       </div>
     );
@@ -71,27 +73,42 @@ function ShopCategories() {
   );
 }
 
-function Banner2() {
-  return (
-    <div className="bannerContainer">
-      <div className="rowContainer">
-        <h2 className="header3">Built for hunters, by hunters</h2>
-        <h2 className="header3 highlight">&nbsp;since 1983.</h2>
-      </div>
-    </div>
-  );
-}
+class Banner2 extends Component {
 
-function MobileBanner2() {
-  return (
-    <div className="mobileBannerContainer">
-      <div className="rowContainer">
-        <h3 className="mobileHeader">Built for hunters,</h3>
-        <h3 className="mobileHeader">by hunters</h3>
-        <h3 className="mobileHeader highlight">since 1983.</h3>
+  static propTypes = {
+    isTablet: PropTypes.bool
+  }
+
+  static defaultProps = {
+    isTablet: false
+  }
+
+  render() {
+    return this.props.isTablet ? this.renderMobile() : this.renderDesktop();
+  }
+
+  renderMobile() {
+    return (
+      <div className="mobileBannerContainer">
+        <div className="rowContainer">
+          <h3 className="mobileHeader">Built for hunters,</h3>
+          <h3 className="mobileHeader">by hunters</h3>
+          <h3 className="mobileHeader highlight">since 1983.</h3>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  renderDesktop() {
+    return (
+      <div className="bannerContainer">
+        <div className="rowContainer">
+          <h2 className="header3">Built for hunters, by hunters</h2>
+          <h2 className="header3 highlight">&nbsp;since 1983.</h2>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Home;

@@ -104,7 +104,7 @@ class MobileDemos extends Component {
             <h3 className="title">{title}</h3>
             <p className="description">{description}</p>
               <Link to={link} className="shopLink">
-                <Button text="Shop" className="shopButton" />
+                <Button text="Buy" className="shopButton" />
               </Link>
           </div>
         </div>

@@ -9,8 +9,10 @@
   border-width: 1px;
   border-style: solid;
   border-color: #ddd;
+
   pointer-events: none;
   opacity: 0;
+
   z-index: 100;
 }
 
@@ -19,12 +21,16 @@
   flex-direction: row;
   justify-content: space-around;
   padding: 30px 25px 50px 25px;
+
+  @include tablet {
+    padding: 0;
+  }
 }
 
-.bugles {
-  display: flex;
-  flex-direction: column;
-}
+// .bugles {
+//   display: flex;
+//   flex-direction: column;
+// }
 
 .columnTitle {
   @include title-font;
