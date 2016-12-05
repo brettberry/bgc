@@ -9,10 +9,8 @@
   border-width: 1px;
   border-style: solid;
   border-color: #ddd;
-
   pointer-events: none;
   opacity: 0;
-
   z-index: 100;
 }
 
@@ -26,11 +24,6 @@
     padding: 0;
   }
 }
-
-// .bugles {
-//   display: flex;
-//   flex-direction: column;
-// }
 
 .columnTitle {
   @include title-font;

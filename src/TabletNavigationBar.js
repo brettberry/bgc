@@ -5,8 +5,9 @@ import Waypoint from 'react-waypoint';
 import ProductsMenu from './ProductsMenu';
 import MiniNavBar, { ShoppingCenter } from './MiniNavBar';
 import './navigationBar.styles.scss';
+import MoreMenu from './MoreMenu';
 
-class NavigationBar extends Component {
+class TabletNavigationBar extends Component {
 
   state = {
     showResponsiveNavBar: false
@@ -40,12 +41,10 @@ class NavigationBar extends Component {
 
 function Menu() {
   return (
-    <div className="menu">
+    <div className="tabletMenu">
       <ProductsItem />
       <DemosItem />
-      <GalleryItem />
-      <EventsItem />
-      <AboutItem />
+      <MoreItem />
     </div>
   );
 }
@@ -73,45 +72,20 @@ function DemosItem() {
   );
 }
 
-function AboutItem() {
+function MoreItem() {
   return (
     <div className="menuItem">
-      <Link to="/about" className="menuLink">
-        <h3 className="item">About</h3>
-      </Link>
+      <h3 className="item">More</h3>
       <div className="underline" />
-    </div>
-  );
-}
-
-function GalleryItem() {
-  return (
-    <div className="menuItem">
-      <Link to="/gallery" className="menuLink">
-        <h3 className="item">Gallery</h3>
-      </Link>
-      <div className="underline" />
-    </div>
-  );
-}
-
-function EventsItem() {
-  return (
-    <div className="menuItem">
-      <Link to="/events" className="menuLink">
-        <h3 className="item">Events</h3>
-      </Link>
-      <div className="underline" />
+      <MoreMenu className="moreDropDown"/>
     </div>
   );
 }
 
 function Alert() {
   return (
-    <div className="alertBar">
-      <h3 className="alertMessage right">Flat rate shipping on all orders</h3>
-    </div>
+    <div className="alertBar" />
   );
 }
 
-export default NavigationBar;
+export default TabletNavigationBar;

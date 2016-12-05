@@ -52,6 +52,13 @@
   width: 40%;
 }
 
+.tabletMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30%;
+}
+
 .menuItem {
   display: flex;
   flex-direction: column;
@@ -88,6 +95,12 @@
       pointer-events: all;
       transition: all 0.25s ease;
     }
+
+    .moreDropDown {
+      opacity: 1;
+      pointer-events: all;
+      transition: all 0.25s ease;
+    }
   }
 }
 
@@ -103,18 +116,10 @@
 }
 
 .alertMessage {
-  @include subheader-font;
-  margin: 5px;
-  cursor: pointer;
+  @include default-font;
   color: white;
-}
-
-.chevron {
-  display: flex;
-  align-self: center;
-  fill: white;
-  width: 20px;
-  height: 20px;
-  margin-right: 30px;
-  cursor: pointer;
+  font-weight: 300;
+  font-size: 1em;
+  margin: 7px;
+  padding-right: 25px;
 }

@@ -1,0 +1,33 @@
+@import './constants';
+
+.moreDropDown {
+  position: absolute;
+  background-color: white;
+  top: 99px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ddd;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 100;
+  padding: 10px 20px;
+
+  @include tabletLandscape {
+    width: 20%;
+  }
+
+  @include tablet {
+    width: 25%;
+  }
+}
+
+.subItem {
+  @include menu-font;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  &:hover {
+    color: black;
+    cursor: pointer;
+  }
+}
