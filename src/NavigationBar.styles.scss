@@ -131,8 +131,9 @@
 .alertMessage {
   @include default-font;
   color: white;
-  font-weight: 300;
-  font-size: 1em;
-  margin: 7px;
+  font-weight: 400;
+  font-size: 0.9em;
+  margin: 8px;
   padding-right: 25px;
+  letter-spacing: 0.5px;
 }

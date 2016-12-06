@@ -84,10 +84,10 @@ class Banner2 extends Component {
   }
 
   render() {
-    return this.props.isTablet ? this.renderMobile() : this.renderDesktop();
+    return this.props.isTablet ? this.renderTablet() : this.renderDesktop();
   }
 
-  renderMobile() {
+  renderTablet() {
     return (
       <div className="mobileBannerContainer">
         <div className="rowContainer">

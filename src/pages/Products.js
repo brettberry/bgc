@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import './products.styles.scss';
 import data from '../data.json';
 import { ProductCollection } from '../models';
@@ -7,6 +7,7 @@ import classnames from 'classnames';
 import Sidebar from '../Sidebar';
 import { Link } from 'react-router';
 import MobileSidebar from '../MobileSidebar';
+import TabletProvider from '../TabletProvider';
 
 const products = new ProductCollection(data.products);
 
@@ -14,8 +15,9 @@ export default class Products extends Component {
   render() {
     return (
       <div className="productsContainer">
-        {/* <Sidebar /> */}
-        <MobileSidebar />
+        <TabletProvider>
+          <SubMenuRenderer />
+        </TabletProvider>
         <div className="productGrid">{map(products.toArray(), (product, key) =>
           <ProductGrid product={product} key={key} />
         )}
@@ -43,4 +45,35 @@ function ProductGrid({ product, key }) {
       </Link>
     </div>
   );
+}
+
+class SubMenuRenderer extends Component {
+
+  static propTypes = {
+    isTablet: PropTypes.bool
+  }
+
+  static defaultProps = {
+    isTablet: false
+  }
+
+  render() {
+    return this.props.isTablet ? this.renderTablet() : this.renderDesktop();
+  }
+
+  renderTablet() {
+    return (
+      <div>
+        <MobileSidebar />
+      </div>
+    );
+  }
+
+  renderDesktop() {
+    return (
+      <div>
+        <Sidebar />
+      </div>
+    );
+  }
 }
