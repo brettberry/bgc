@@ -48,25 +48,27 @@ class Banner extends Component {
     return (
       <div>
         <div className="mobileBanner1">
-          <h1 className="header">Join the Revolution</h1>
-          <div className="inline">
-            <h1 className="header">of</h1>
-            <h1 className="header highlight">&nbsp;self-made</h1>
-            <h1 className="header">&nbsp;hunters.</h1>
+          <div className="first">
+            <h1 className="header">Join the Revolution</h1>
+            <div className="inline">
+              <h1 className="header">of</h1>
+              <h1 className="header highlight">&nbsp;self-made</h1>
+              <h1 className="header">&nbsp;hunters.</h1>
+            </div>
           </div>
-        </div>
-        <div className="mobileBanner1">
-          <h1 className="header">Who know do-it-yourself</h1>
-          <h1 className="header">isn't a phrase,</h1>
-          <div className="inline">
-            <h1 className="header">but a</h1>
-            <h1 className="header highlight">&nbsp;way of life.</h1>
+          <div className="second">
+            <h1 className="header">Who know do-it-yourself</h1>
+            <h1 className="header">isn't a phrase,</h1>
+            <div className="inline">
+              <h1 className="header">but a</h1>
+              <h1 className="header highlight">&nbsp;way of life.</h1>
+            </div>
           </div>
-        </div>
-        <div className="mobileBanner1">
-          <h1 className="header">Who hear the</h1>
-          <h1 className="header highlight">call of the wild,</h1>
-          <h1 className="header">&nbsp;and respond.</h1>
+          <div className="third">
+            <h1 className="header">Those who hear the</h1>
+            <h1 className="header highlight">call of the wild,</h1>
+            <h1 className="header">&nbsp;and respond.</h1>
+          </div>
         </div>
       </div>
     );

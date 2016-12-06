@@ -251,7 +251,7 @@
 .mobileBanner1 {
   background-color: $bgc-medium-light-grey;
   width: 100%;
-  padding: 50px 20px;
+  padding: 100px 20px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -260,6 +260,7 @@
   .header {
     display: flex;
     align-items: center;
+    justify-content: center;
     @include subheader-font;
     margin: 0;
     font-size: 1.5em;
@@ -267,7 +268,6 @@
     color: $bgc-medium-grey;
     text-transform: uppercase;
     letter-spacing: 3px;
-    white-space: nowrap;
     text-align: center;
 
     &.highlight {
@@ -283,5 +283,49 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+  }
+
+  .first {
+    position: absolute;
+    opacity: 0;
+    animation-name: switch;
+    animation-duration: 12s;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+  }
+
+  .second {
+    position: absolute;
+    opacity: 0;
+    animation-name: switch;
+    animation-duration: 12s;
+    animation-delay: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+  }
+
+  .third {
+    position: absolute;
+    opacity: 0;
+    animation-name: switch;
+    animation-duration: 12s;
+    animation-delay: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+  }
+}
+
+@keyframes switch {
+  0% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
   }
 }
