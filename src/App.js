@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import NavigationBar from './NavigationBar';
 import TabletNavigationBar from './TabletNavigationBar';
+import MobileNavigationBar from './MobileNavigationBar';
 import TabletProvider from './TabletProvider';
+import MobileProvider from './MobileProvider';
 import './app.styles.scss';
 
 export default class App extends Component {
@@ -9,9 +11,11 @@ export default class App extends Component {
     const { children } = this.props;
     return (
       <TabletProvider>
-        <NavBarRenderer>
-          {children}
-        </NavBarRenderer>
+        <MobileProvider>
+          <NavBarRenderer>
+            {children}
+          </NavBarRenderer>
+        </MobileProvider>
       </TabletProvider>
     );
   }
@@ -20,15 +24,23 @@ export default class App extends Component {
 class NavBarRenderer extends Component {
 
   static propTypes = {
-    isTablet: PropTypes.bool
+    isTablet: PropTypes.bool,
+    isMobile: PropTypes.bool
   }
 
   static defaultProps = {
-    isTablet: false
+    isTablet: false,
+    isMobile: false
   }
 
   render() {
-    return this.props.isTablet ? this.renderTablet() : this.renderDesktop();
+    if (this.props.isMobile) {
+      return this.renderMobile();
+    }
+    if (this.props.isTablet) {
+      return this.renderTablet();
+    }
+    return this.renderDesktop();
   }
 
   renderTablet() {
@@ -46,6 +58,16 @@ class NavBarRenderer extends Component {
     return (
       <div>
         <NavigationBar className="navBarHeader" />
+        {children}
+      </div>
+    );
+  }
+
+  renderMobile() {
+    const { children } = this.props;
+    return (
+      <div>
+        <MobileNavigationBar className="navBarHeader" />
         {children}
       </div>
     );

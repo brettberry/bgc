@@ -23,6 +23,19 @@
     padding: 0 20px;
   }
 
+  @include phone {
+    padding: 0 15px;
+  }
+
+  @include smallPhone {
+    padding: 0 15px;
+  }
+
+  .iconContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .link {
     text-decoration: none;
     display: flex;
@@ -31,6 +44,11 @@
 
     @include tablet {
       width: 35%;
+      margin: 0;
+    }
+
+    @include phone {
+      width: 75%;
       margin: 0;
     }
   }
@@ -54,7 +72,15 @@
   }
 
   @include tablet {
-    font-size: 1.75em;
+    font-size: 1.5em;
+  }
+
+  @include phone {
+    font-size: 2em
+  }
+
+  @include smallPhone {
+    font-size: 1.5em;
   }
 }
 
@@ -117,6 +143,20 @@
   }
 }
 
+.hamburger {
+  width: 25px;
+  height: 25px;
+  fill: $bgc-medium-grey;
+  margin: 10px;
+}
+
+.condensedCart {
+  width: 25px;
+  height: 25px;
+  fill: $bgc-medium-grey;
+  margin: 10px;
+}
+
 .alertBar {
   top: 99px;
   display: flex;
@@ -136,4 +176,8 @@
   margin: 8px;
   padding-right: 25px;
   letter-spacing: 0.5px;
+
+  @include phone {
+    padding-right: 10px;
+  }
 }

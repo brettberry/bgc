@@ -33,9 +33,37 @@
   pointer-events: none;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   transition: opacity 0.2s 0.3s ease-in;
+  padding: 0 20px;
+
+  @include tabletLandscape {
+    padding: 0 10px;
+  }
+
+  .iconContainer {
+    .searchIcon {
+      width: 25px;
+      height: 25px;
+      fill: white;
+      margin: 10px;
+    }
+
+    .cartIcon {
+      width: 25px;
+      height: 25px;
+      fill: white;
+      margin: 10px;
+    }
+
+    .hamburgerIcon {
+      width: 25px;
+      height: 25px;
+      fill: white;
+      margin: 10px;
+    }
+  }
 }
 
 .bgcLink {
@@ -54,6 +82,14 @@
     padding: 0;
   }
 
+  @include phone {
+    padding: 0;
+  }
+
+  @include smallPhone {
+    padding: 0;
+  }
+
   .bgc {
     @include header-font;
     margin: 0;
@@ -61,7 +97,7 @@
     font-size: 2em;
 
     @include tabletLandscape {
-      font-size: 1.75em;
+      font-size: 1.25em;
     }
 
     @include tablet {
@@ -75,7 +111,7 @@
   width: 60%;
 
   @include tabletLandscape {
-    width: 50%;
+    width: 35%;
   }
 
   @include tablet {

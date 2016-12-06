@@ -1,4 +1,5 @@
 import React, { Component, Children, cloneElement } from 'react';
+import omit from 'lodash/omit';
 
 class MobileProvider extends Component {
 
@@ -30,7 +31,10 @@ class MobileProvider extends Component {
   }
 
   render() {
-    return cloneElement(Children.only(this.props.children), { isMobile: this.state.isMobile });
+    return cloneElement(Children.only(this.props.children), {
+      isMobile: this.state.isMobile,
+      ...omit(this.props, ['children'])
+    });
   }
 }
 
