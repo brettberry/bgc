@@ -71,6 +71,8 @@
 
   .link {
     text-decoration: none;
+    display: flex;
+    justify-content: center;
 
     @include tablet {
       width: 50%;

@@ -5,6 +5,7 @@ import Waypoint from 'react-waypoint';
 import ProductsMenu from './ProductsMenu';
 import MiniNavBar, { ShoppingCenter } from './MiniNavBar';
 import './navigationBar.styles.scss';
+import MDLocalDelivery from 'react-icons/lib/md/local-shipping';
 
 class NavigationBar extends Component {
 
@@ -109,6 +110,7 @@ function EventsItem() {
 function Alert() {
   return (
     <div className="alertBar">
+      <MDLocalDelivery className="shippingIcon" />
       <h3 className="alertMessage right">Flat rate shipping on all orders.</h3>
     </div>
   );
