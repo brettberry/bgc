@@ -6,9 +6,12 @@ import './app.styles.scss';
 
 export default class App extends Component {
   render() {
+    const { children } = this.props;
     return (
       <TabletProvider>
-        <NavBarRenderer />
+        <NavBarRenderer>
+          {children}
+        </NavBarRenderer>
       </TabletProvider>
     );
   }

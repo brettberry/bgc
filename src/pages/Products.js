@@ -14,8 +14,8 @@ export default class Products extends Component {
   render() {
     return (
       <div className="productsContainer">
-        <Sidebar />
-        {/* <MobileSidebar /> */}
+        {/* <Sidebar /> */}
+        <MobileSidebar />
         <div className="productGrid">{map(products.toArray(), (product, key) =>
           <ProductGrid product={product} key={key} />
         )}
