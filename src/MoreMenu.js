@@ -5,13 +5,12 @@ import './moreMenu.styles.scss';
 
 class MoreMenu extends Component {
 
-    static propTypes = {
-      className: PropTypes.string
-    }
+  static propTypes = {
+    className: PropTypes.string
+  }
 
   render() {
     const { className } = this.props;
-
     return (
       <div className={classnames('moreDropDown', className)}>
         <Link to="/gallery" className="menuLink">

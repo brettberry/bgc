@@ -18,6 +18,22 @@
   @include tabletLandscape {
     padding: 0 25px;
   }
+
+  @include tablet {
+    padding: 0 20px;
+  }
+
+  .link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include tablet {
+      width: 35%;
+      margin: 0;
+    }
+  }
 }
 
 .header {
@@ -28,13 +44,6 @@
   text-decoration: none;
 }
 
-.link {
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 .bgc {
   @include header-font;
   text-align: left;
@@ -42,6 +51,10 @@
 
   @include tabletLandscape {
     font-size: 2em;
+  }
+
+  @include tablet {
+    font-size: 1.75em;
   }
 }
 
@@ -56,7 +69,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 30%;
+  width: 38%;
 }
 
 .menuItem {

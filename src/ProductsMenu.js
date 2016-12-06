@@ -25,10 +25,14 @@ class ProductsMenu extends Component {
     return (
       <div className={classnames('dropdown', className)}>
         <div className="container">
-          <Bugles bugles={bugles} />
-          <Reeds reeds={reeds} />
-          <DVDs dvds={dvds} />
-          <Other cowCalls={cowCalls} other={other} />
+          <div className="group1">
+            <Bugles bugles={bugles} />
+            <Reeds reeds={reeds} />
+          </div>
+          <div className="group2">
+            <DVDs dvds={dvds} />
+            <Other cowCalls={cowCalls} other={other} />
+          </div>
         </div>
       </div>
     );
@@ -37,7 +41,7 @@ class ProductsMenu extends Component {
 
 function Bugles({ bugles }) {
   return (
-    <div>
+    <div className="buglesContainer">
       <Link to="/products/tags/bugles" className="link">
         <p className="columnTitle">Bugles and Accessories</p>
       </Link>
@@ -52,7 +56,7 @@ function Bugles({ bugles }) {
 
 function Reeds({ reeds }) {
   return (
-    <div>
+    <div className="reedsContainer">
       <Link to="/products/tags/reeds" className="link">
         <p className="columnTitle">Elk Mouth Reeds</p>
       </Link>
@@ -67,7 +71,7 @@ function Reeds({ reeds }) {
 
 function DVDs({ dvds }) {
   return (
-    <div>
+    <div className="dvdsContainer">
       <Link to="/products/tags/dvds" className="link">
         <h3 className="columnTitle">Hunting DVDs</h3>
       </Link>
@@ -82,7 +86,7 @@ function DVDs({ dvds }) {
 
 function Other({ cowCalls, other }) {
   return (
-    <div>
+    <div className="otherContainer">
       <Link to="/products/tags/cow-calls" className="link">
         <h3 className="columnTitle">Cow Calls</h3>
       </Link>

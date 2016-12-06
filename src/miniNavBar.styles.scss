@@ -50,6 +50,10 @@
     padding: 0;
   }
 
+  @include tablet {
+    padding: 0;
+  }
+
   .bgc {
     @include header-font;
     margin: 0;
@@ -58,6 +62,10 @@
 
     @include tabletLandscape {
       font-size: 1.75em;
+    }
+
+    @include tablet {
+      font-size: 1.5em;
     }
   }
 }
@@ -68,6 +76,10 @@
 
   @include tabletLandscape {
     width: 50%;
+  }
+
+  @include tablet {
+    width: 45%;
   }
 }
 

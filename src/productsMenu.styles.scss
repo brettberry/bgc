@@ -18,11 +18,82 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 30px 25px 50px 25px;
+  padding: 30px 10px 50px 10px;
+
+  @include tabletLandscape {
+    flex-direction: column;
+  }
 
   @include tablet {
-    padding: 0;
+    flex-direction: column;
   }
+}
+
+.group1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
+
+  @include tabletLandscape {
+    width: 100%;
+    padding-left: 75px;
+
+    .buglesContainer {
+      width: 50%;
+    }
+
+    .reedsContainer {
+      width: 50%;
+    }
+  }
+
+  @include tablet {
+    width: 100%;
+    justify-content: space-between;
+
+    .dvdsContainer {
+      width: 50%;
+    }
+
+    .otherContainer {
+      width: 50%;
+    }
+  }
+}
+
+.group2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
+  padding-left: 75px;
+
+  @include tabletLandscape {
+    width: 100%;
+    justify-content: space-between;
+
+    .dvdsContainer {
+      width: 50%;
+    }
+
+    .otherContainer {
+      width: 50%;
+    }
+ }
+
+ @include tablet {
+   width: 100%;
+   justify-content: space-between;
+
+   .dvdsContainer {
+     width: 50%;
+   }
+
+   .otherContainer {
+     width: 50%;
+   }
+ }
 }
 
 .columnTitle {
@@ -39,6 +110,7 @@
 .productNames {
   @include default-font;
   margin: 3px 0 3px 5px;
+  white-space: nowrap;
 
   &:hover {
     color: black;
@@ -46,6 +118,7 @@
   }
 }
 
-.link {
+.productsLink {
   appearance: none;
+  width: 90%;
 }
