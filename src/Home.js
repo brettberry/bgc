@@ -7,6 +7,7 @@ import Demo from './HomePageDemo';
 import Slider from './Slider';
 import Featured from './ProductFeature';
 import TabletProvider from './TabletProvider';
+import MobileProvider from './MobileProvider';
 
 class Home extends Component {
 
@@ -14,7 +15,9 @@ class Home extends Component {
     return (
       <div>
         <Slider />
-        <Banner />
+        <MobileProvider>
+          <Banner />
+        </MobileProvider>
         <Demo />
         <Featured />
         <ShopCategories />
@@ -27,26 +30,70 @@ class Home extends Component {
   }
 }
 
-function Banner() {
-  return (
-    <div className="bannerContainer">
-      <div className="rowContainer">
-        <h2 className="header1">Join the revolution of </h2>
-        <h2 className="header1 highlight">&nbsp;self-made </h2>
-        <h2 className="header1">&nbsp;sportsmen and women.</h2>
+class Banner extends Component {
+
+  static propTypes = {
+    isMobile: PropTypes.bool
+  }
+
+  static defaultProps = {
+    isMobile: false
+  }
+
+  render() {
+    return this.props.isMobile ? this.renderMobile() : this.renderDesktop();
+  }
+
+  renderMobile() {
+    return (
+      <div>
+        <div className="mobileBanner1">
+          <h1 className="header">Join the Revolution</h1>
+          <div className="inline">
+            <h1 className="header">of</h1>
+            <h1 className="header highlight">&nbsp;self-made</h1>
+            <h1 className="header">&nbsp;hunters.</h1>
+          </div>
+        </div>
+        <div className="mobileBanner1">
+          <h1 className="header">Who know do-it-yourself</h1>
+          <h1 className="header">isn't a phrase,</h1>
+          <div className="inline">
+            <h1 className="header">but a</h1>
+            <h1 className="header highlight">&nbsp;way of life.</h1>
+          </div>
+        </div>
+        <div className="mobileBanner1">
+          <h1 className="header">Who hear the</h1>
+          <h1 className="header highlight">call of the wild,</h1>
+          <h1 className="header">&nbsp;and respond.</h1>
+        </div>
       </div>
-      <div className="rowContainer">
-        <h2 className="header1">Those who know</h2>
-        <h2 className="header1 highlight">&nbsp;do-it-yourself</h2>
-        <h2 className="header1">&nbsp;isn't a phrase, but a way of life.</h2>
+    );
+  }
+
+
+  renderDesktop() {
+    return (
+      <div className="bannerContainer">
+        <div className="rowContainer">
+          <h2 className="header1">Join the revolution of </h2>
+          <h2 className="header1 highlight">&nbsp;self-made </h2>
+          <h2 className="header1">&nbsp;sportsmen and women.</h2>
+        </div>
+        <div className="rowContainer">
+          <h2 className="header1">Those who know</h2>
+          <h2 className="header1 highlight">&nbsp;do-it-yourself</h2>
+          <h2 className="header1">&nbsp;isn't a phrase, but a way of life.</h2>
+        </div>
+        <div className="rowContainer">
+          <h2 className="header1">Who hear the</h2>
+          <h2 className="header1 highlight">&nbsp;call of the wild</h2>
+          <h2 className="header1">, and respond.</h2>
+        </div>
       </div>
-      <div className="rowContainer">
-        <h2 className="header1">Who hear the</h2>
-        <h2 className="header1 highlight">&nbsp;call of the wild</h2>
-        <h2 className="header1">, and respond.</h2>
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 function ShopCategories() {
