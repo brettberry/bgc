@@ -36,38 +36,35 @@ class Slider extends Component {
         <ReactCSSTransitionGroup transitionName="sliderTransition"
                                  transitionEnterTimeout={500}
                                  transitionLeaveTimeout={500}>
-          {this.renderObjects()}
+            {this.renderObjects()}
         </ReactCSSTransitionGroup>
         <div className="chevronContainer right" onClick={this.pageRight.bind(this)}>
           <FaChevronRight className="chevron" />
         </div>
+
       </div>
     );
   }
 
   renderObjects() {
-    return [
+    const offset = Math.abs(this.state.offset);
+    const objects = [
       <Object1 key="object1" />,
       <Object2 key="object2" />,
       <Object3 key="object3" />
     ];
+    return objects[offset];
   }
 }
 
 function Object1() {
   return (
     <div className="slider first">
-      {/* <div className="chevronContainer" onClick={this.pageLeft.bind(this)}>
-        <FaChevronLeft className= "chevron"/>
-      </div> */}
       <div className="dotContainer">
         <div className="dot active"></div>
         <div className="dot"></div>
         <div className="dot"></div>
       </div>
-      {/* <div className="chevronContainer" onClick={this.pageRight.bind(this)}>
-        <FaChevronRight className="chevron" />
-      </div> */}
     </div>
   );
 }
@@ -75,17 +72,11 @@ function Object1() {
 function Object2() {
   return (
     <div className="slider second">
-      {/* <div className="chevronContainer" onClick={this.pageLeft.bind(this)}>
-        <FaChevronLeft className= "chevron"/>
-      </div> */}
       <div className="dotContainer">
         <div className="dot"></div>
         <div className="dot active"></div>
         <div className="dot"></div>
       </div>
-      {/* <div className="chevronContainer" onClick={this.pageRight.bind(this)}>
-        <FaChevronRight className="chevron" />
-      </div> */}
     </div>
   );
 }
@@ -93,17 +84,11 @@ function Object2() {
 function Object3() {
   return (
     <div className="slider third">
-      {/* <div className="chevronContainer" onClick={this.pageLeft.bind(this)}>
-        <FaChevronLeft className= "chevron"/>
-      </div> */}
       <div className="dotContainer">
         <div className="dot"></div>
         <div className="dot"></div>
         <div className="dot active"></div>
       </div>
-      {/* <div className="chevronContainer" onClick={this.pageRight.bind(this)}>
-        <FaChevronRight className="chevron" />
-      </div> */}
     </div>
   );
 }
