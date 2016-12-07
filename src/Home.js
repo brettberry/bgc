@@ -10,7 +10,6 @@ import TabletProvider from './TabletProvider';
 import MobileProvider from './MobileProvider';
 
 class Home extends Component {
-
   render() {
     return (
       <div>
@@ -57,7 +56,8 @@ class Banner extends Component {
             </div>
           </div>
           <div className="second">
-            <h1 className="header">Who know do-it-yourself</h1>
+            <h1 className="header">Who know</h1>
+            <h1 className="header">"do-it-yourself"</h1>
             <h1 className="header">isn't a phrase,</h1>
             <div className="inline">
               <h1 className="header">but a</h1>
@@ -73,7 +73,6 @@ class Banner extends Component {
       </div>
     );
   }
-
 
   renderDesktop() {
     return (

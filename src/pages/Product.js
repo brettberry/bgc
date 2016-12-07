@@ -121,7 +121,7 @@ class RelatedProducts extends Component {
           <ReactCSSTransitionGroup className={transitionClasses}
                                    transitionName="carousel"
                                    transitionEnterTimeout={500}
-                                   transitionLeaveTimeout={500} >
+                                   transitionLeaveTimeout={500}>
             <div className="transitionContainer" key={this.state.offset}>
               {this.renderItems()}
             </div>
