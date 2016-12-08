@@ -11,6 +11,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Link } from 'react-router';
 import FaChevronRight from 'react-icons/lib/fa/chevron-right';
 import FaChevronLeft from 'react-icons/lib/fa/chevron-left';
+import TabletProvider from '../TabletProvider';
 
 const products = new ProductCollection(data.products);
 
@@ -21,7 +22,9 @@ export default class Product extends Component {
     return (
       <div className="productPageContainer">
         <ProductView product={product} />
-        <RelatedProducts product={product} />
+        <TabletProvider>
+          <RelatedItemsRenderer product={product} />
+        </TabletProvider>
       </div>
     );
   }
@@ -142,6 +145,36 @@ class RelatedProducts extends Component {
         <Link to={`/products/${item.getCategory()}/${item.getPathName()}`} className="link">
           <h3 className="title">{item.getFullName()}</h3>
         </Link>
+      </div>
+    );
+  }
+}
+
+class RelatedItemsRenderer extends Component {
+
+  static propTypes = {
+    isTablet: PropTypes.bool
+  }
+
+  static defaultProps = {
+    isTablet: false
+  }
+
+  render() {
+    return this.props.isTablet ? this.renderTablet() : this.renderDesktop();
+  }
+
+  renderTablet() {
+    return (
+      <div />
+    );
+  }
+
+  renderDesktop() {
+    const { product } = this.props;
+    return (
+      <div>
+        <RelatedProducts product={product} />
       </div>
     );
   }

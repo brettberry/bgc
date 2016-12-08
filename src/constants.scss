@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
 $main-font-family: Source Sans Pro, Avenir Next, Avenir, Helvetica, "sans-serif";
+$body-font-family: 'Lora', serif;
+
 $bgc-background-color: #f9f9f9;
 $bgc-dark-grey: #263238;
 $bgc-medium-grey: #546e7a;
@@ -8,6 +12,13 @@ $bgc-light-grey: #f2f2f2;
 $bgc-yellow: #ffdc85;
 $bgc-medium-light-grey: darken($bgc-light-grey, 5);
 
+
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
 @mixin header-font {
   font-family: $main-font-family;
   font-weight: 300;
@@ -15,7 +26,9 @@ $bgc-medium-light-grey: darken($bgc-light-grey, 5);
   margin: 0;
   color: $bgc-dark-grey;
   letter-spacing: 3px;
-  font-smoothing: antialiased;
+  @include retina {
+    -webkit-font-smoothing: antialiased;
+  }
 
   &::selection {
     background-color: rgba($bgc-orange, 0.4);
@@ -27,8 +40,9 @@ $bgc-medium-light-grey: darken($bgc-light-grey, 5);
   font-weight: lighter;
   font-size: 1.5em;
   color: $bgc-dark-grey;
-  font-smoothing: antialiased;
-
+  @include retina {
+    -webkit-font-smoothing: antialiased;
+  }
   &::selection {
     background-color: rgba($bgc-orange, 0.4);
   }
@@ -42,15 +56,18 @@ $bgc-medium-light-grey: darken($bgc-light-grey, 5);
   color: $bgc-medium-grey;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-smoothing: antialiased;
-}
+  @include retina {
+    -webkit-font-smoothing: antialiased;
+  }}
 
 @mixin title-font {
   font-family: $main-font-family;
   font-weight: bold;
   font-size: 1.1em;
   color: $bgc-medium-grey;
-  font-smoothing: antialiased;
+  @include retina {
+    -webkit-font-smoothing: antialiased;
+  }
 
   &::selection {
     background-color: rgba($bgc-orange, 0.4);
@@ -60,7 +77,10 @@ $bgc-medium-light-grey: darken($bgc-light-grey, 5);
 @mixin default-font {
   font-family: $main-font-family;
   color: $bgc-medium-grey;
-  font-smoothing: antialiased;
+
+  @include retina {
+    -webkit-font-smoothing: antialiased;
+  }
 
   &::selection {
     background-color: rgba($bgc-orange, 0.4);

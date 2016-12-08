@@ -64,7 +64,7 @@ class SubMenuRenderer extends Component {
   renderTablet() {
     return (
       <div>
-        <MobileSidebar />
+        {/* <MobileSidebar /> */}
       </div>
     );
   }

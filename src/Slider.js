@@ -14,7 +14,7 @@ class Slider extends Component {
   pageLeft() {
     const { offset } = this.state;
     this.setState({
-      offset: (offset - 1) % 3,
+      offset: (offset + 1) % 3,
       reverse: true
     });
   }
@@ -22,7 +22,7 @@ class Slider extends Component {
   pageRight() {
     const { offset } = this.state;
     this.setState({
-      offset: (offset + 1) % 3,
+      offset: (offset - 1) % 3,
       reverse: false
     });
   }
@@ -41,7 +41,6 @@ class Slider extends Component {
         <div className="chevronContainer right" onClick={this.pageRight.bind(this)}>
           <FaChevronRight className="chevron" />
         </div>
-
       </div>
     );
   }
@@ -61,9 +60,9 @@ function Object1() {
   return (
     <div className="slider first">
       <div className="dotContainer">
-        <div className="dot active"></div>
-        <div className="dot"></div>
-        <div className="dot"></div>
+        <div className="dot active" />
+        <div className="dot" />
+        <div className="dot" />
       </div>
     </div>
   );
@@ -73,9 +72,9 @@ function Object2() {
   return (
     <div className="slider second">
       <div className="dotContainer">
-        <div className="dot"></div>
-        <div className="dot active"></div>
-        <div className="dot"></div>
+        <div className="dot" />
+        <div className="dot active" />
+        <div className="dot" />
       </div>
     </div>
   );
@@ -85,9 +84,9 @@ function Object3() {
   return (
     <div className="slider third">
       <div className="dotContainer">
-        <div className="dot"></div>
-        <div className="dot"></div>
-        <div className="dot active"></div>
+        <div className="dot" />
+        <div className="dot" />
+        <div className="dot active" />
       </div>
     </div>
   );

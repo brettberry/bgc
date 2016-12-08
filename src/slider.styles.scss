@@ -27,6 +27,22 @@
     height: 150px;
     fill: black;
     opacity: 0;
+
+    @include tabletLandscape {
+      opacity: 1;
+    }
+
+    @include tablet {
+      opacity: 1;
+    }
+
+    // @include phone {
+    //   opacity: 1;
+    // }
+    //
+    // @include smallPhone {
+    //   opacity: 1;
+    // }
   }
 
   &:hover {
@@ -56,7 +72,7 @@
   }
 
   &.second {
-    background-color: $bgc-orange;
+    background-color: $bgc-dark-orange;
   }
 
   &.third {
@@ -84,6 +100,22 @@
       &.active {
         background-color: $bgc-orange;
       }
+    }
+
+    @include tabletLandscape {
+      opacity: 1;
+    }
+
+    @include tablet {
+      opacity: 1;
+    }
+
+    @include phone {
+      opacity: 1;
+    }
+
+    @include smallPhone {
+      opacity: 1;
     }
   }
 

@@ -4,12 +4,24 @@ import classnames from 'classnames';
 import FaSearch from 'react-icons/lib/fa/search';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import FaBars from 'react-icons/lib/fa/bars';
+import MdClose from 'react-icons/lib/md/close';
 import './miniNavBar.styles.scss';
+import './mobileNavigationBar.styles.scss';
 
 class MobileMiniNavBar extends Component {
 
   static propTypes = {
     showResponsiveNavBar: PropTypes.bool.isRequired
+  }
+
+  state = {
+    showMobileMenu: false
+  }
+
+  handleBarsClick() {
+    this.setState({
+      showMobileMenu: !this.state.showMobileMenu
+    });
   }
 
   render() {
@@ -22,9 +34,21 @@ class MobileMiniNavBar extends Component {
           <div className="iconContainer">
             <FaSearch className="searchIcon" />
             <FaShoppingCart className="cartIcon" />
-            <FaBars className="hamburgerIcon" />
+            <FaBars className="hamburgerIcon" onClick={this.handleBarsClick.bind(this)} />
           </div>
         </div>
+        {this.renderMobileMenu()}
+      </div>
+    );
+  }
+
+  renderMobileMenu() {
+    if (!this.state.showMobileMenu) {
+      return;
+    }
+    return (
+      <div className="mobileMenu">
+        <MdClose className="exit" onClick={this.handleBarsClick.bind(this)} />
       </div>
     );
   }

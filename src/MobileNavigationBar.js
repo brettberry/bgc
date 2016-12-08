@@ -5,13 +5,17 @@ import Waypoint from 'react-waypoint';
 import ProductsMenu from './ProductsMenu';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import MobileMiniNavBar from './MobileMiniNavBar';
-import './navigationBar.styles.scss';
 import FaBars from 'react-icons/lib/fa/bars';
+import MdClose from 'react-icons/lib/md/close';
+
+import './navigationBar.styles.scss';
+import './mobileNavigationBar.styles.scss';
 
 class MobileNavigationBar extends Component {
 
   state = {
-    showResponsiveNavBar: false
+    showResponsiveNavBar: false,
+    showMobileMenu: false
   }
 
   componentDidMount() {
@@ -19,6 +23,12 @@ class MobileNavigationBar extends Component {
     if (scrollTop >= 140) {
       this.setState({ showResponsiveNavBar: true });
     }
+  }
+
+  handleBarsClick() {
+    this.setState({
+      showMobileMenu: !this.state.showMobileMenu
+    });
   }
 
   render() {
@@ -31,13 +41,25 @@ class MobileNavigationBar extends Component {
           </Link>
           <div className="iconContainer">
             <FaShoppingCart className="condensedCart" />
-            <FaBars className="hamburger" />
+            <FaBars className="hamburger" onClick={this.handleBarsClick.bind(this)} />
           </div>
         </div>
         <Waypoint onLeave={() => this.setState({ showResponsiveNavBar: true })}
                   onEnter={() => this.setState({ showResponsiveNavBar: false })} />
         <Alert />
         <MobileMiniNavBar showResponsiveNavBar={this.state.showResponsiveNavBar} />
+        {this.renderMobileMenu()}
+      </div>
+    );
+  }
+
+  renderMobileMenu() {
+    if (!this.state.showMobileMenu) {
+      return;
+    }
+    return (
+      <div className="mobileMenu">
+        <MdClose className="exit" onClick={this.handleBarsClick.bind(this)} />
       </div>
     );
   }
