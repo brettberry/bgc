@@ -42,12 +42,36 @@
     padding: 0 10px;
   }
 
+  @include tablet {
+    padding: 0 10px;
+  }
+
+  @include phone {
+    padding: 0 10px;
+  }
+
+  @include smallPhone {
+    padding: 0 10px;
+  }
+
   .iconContainer {
     .searchIcon {
       width: 25px;
       height: 25px;
       fill: white;
       margin: 10px;
+
+      @include phone {
+        width: 20px;
+        height: 20px;
+        margin: 10px 0;
+      }
+
+      @include smallPhone {
+        width: 20px;
+        height: 20px;
+        margin: 10px 0;
+      }
     }
 
     .cartIcon {
@@ -55,6 +79,18 @@
       height: 25px;
       fill: white;
       margin: 10px;
+
+      @include phone {
+        width: 20px;
+        height: 20px;
+        margin: 10px 15px;
+      }
+
+      @include smallPhone {
+        width: 20px;
+        height: 20px;
+        margin: 10px 15px;
+      }
     }
 
     .hamburgerIcon {
@@ -62,47 +98,34 @@
       height: 25px;
       fill: white;
       margin: 10px;
+
+      @include phone {
+        width: 20px;
+        height: 20px;
+        margin: 10px 0;
+      }
+
+      @include smallPhone {
+        width: 20px;
+        height: 20px;
+        margin: 10px 0;
+      }
     }
   }
 }
 
 .bgcLink {
   text-decoration: none;
-  padding-left: 20px;
-  padding-right: 20px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-
-  @include tabletLandscape {
-    padding: 0;
-  }
-
-  @include tablet {
-    padding: 0;
-  }
-
-  @include phone {
-    padding: 0;
-  }
-
-  @include smallPhone {
-    padding: 0;
-  }
+  padding: 0;
 
   .bgc {
     @include header-font;
     margin: 0;
     color: white;
     font-size: 2em;
-
-    @include tabletLandscape {
-      font-size: 1.75em;
-    }
-
-    @include tablet {
-      font-size: 1.5em;
-    }
   }
 }
 .searchContainer {
