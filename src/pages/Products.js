@@ -19,8 +19,7 @@ export default class Products extends Component {
           <SubMenuRenderer />
         </TabletProvider>
         <div className="productGrid">{map(products.toArray(), (product, key) =>
-          <ProductGrid product={product} key={key} />
-        )}
+          <ProductGrid product={product} key={key} />)}
         </div>
       </div>
     );

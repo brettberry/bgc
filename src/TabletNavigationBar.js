@@ -30,7 +30,8 @@ class TabletNavigationBar extends Component {
           <Menu />
           <ShoppingCenter className="dark" />
         </div>
-        <Waypoint onLeave={() => this.setState({ showResponsiveNavBar: true })}
+        <Waypoint scrollableAncestor={window}
+                  onLeave={() => this.setState({ showResponsiveNavBar: true })}
                   onEnter={() => this.setState({ showResponsiveNavBar: false })} />
         <Alert />
         <MiniNavBar showResponsiveNavBar={this.state.showResponsiveNavBar} />

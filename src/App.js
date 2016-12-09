@@ -47,7 +47,7 @@ class NavBarRenderer extends Component {
     const { children } = this.props;
     return (
       <div>
-        <TabletNavigationBar className="navBarHeader" />
+        <TabletNavigationBar />
         {children}
       </div>
     );
