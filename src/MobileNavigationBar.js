@@ -7,8 +7,6 @@ import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import MobileMiniNavBar from './MobileMiniNavBar';
 import FaBars from 'react-icons/lib/fa/bars';
 import MobileExpandedMenu from './MobileExpandedMenu';
-
-import './navigationBar.styles.scss';
 import './mobileNavigationBar.styles.scss';
 
 class MobileNavigationBar extends Component {
@@ -33,14 +31,13 @@ class MobileNavigationBar extends Component {
 
   render() {
     return (
-      <div className="mainNavContainer">
-        <div className="navBar">
+      <div className="mobileNavContainer">
+        <div className="mobileNavBar">
           <Link to="/" className="link">
-            <h1 className="bgc">Berry</h1>
-            <h1 className="bgc">Game Calls</h1>
+            <h1 className="bgc">Berry Game Calls</h1>
           </Link>
           <div className="iconContainer">
-            <FaShoppingCart className="condensedCart" />
+            <FaShoppingCart className="cart" />
             <FaBars className="hamburger" onClick={this.handleBarsClick.bind(this)} />
           </div>
         </div>

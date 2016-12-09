@@ -35,14 +35,6 @@
     @include tablet {
       opacity: 1;
     }
-
-    // @include phone {
-    //   opacity: 1;
-    // }
-    //
-    // @include smallPhone {
-    //   opacity: 1;
-    // }
   }
 
   &:hover {
@@ -65,7 +57,7 @@
   align-items: center;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
   left: 0;
-  top: 135px;
+  top: 110px;
 
   &.first {
     background-color: $bgc-medium-grey;

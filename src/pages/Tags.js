@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Sidebar from '../Sidebar';
 import data from '../data.json';
 import { ProductCollection } from '../models';
 import map from 'lodash/map';
 import classnames from 'classnames';
 import { Link } from 'react-router';
+import TabletProvider from '../TabletProvider';
 
 const products = new ProductCollection(data.products);
 
@@ -14,10 +15,11 @@ class Tags extends Component {
     const productName = products.filterByTag(tagName);
     return (
       <div className="productsContainer">
-        <Sidebar />
+        <TabletProvider>
+          <SidebarRenderer />
+        </TabletProvider>
         <div className="productGrid">{map(productName.toArray(), (product, key) =>
-          <ProductGrid product={product} key={key} />
-        )}
+          <ProductGrid product={product} key={key} />)}
         </div>
       </div>
     );
@@ -42,6 +44,35 @@ function ProductGrid({ product, key }) {
       </Link>
     </div>
   );
+}
+
+class SidebarRenderer extends Component {
+
+  static propTypes = {
+    isTablet: PropTypes.bool
+  }
+
+  static defaultProps = {
+    isTablet: false
+  }
+
+  render() {
+    return this.props.isTablet ? this.renderTablet() : this.renderDesktop();
+  }
+
+  renderTablet() {
+    return (
+      <div />
+    );
+  }
+
+  renderDesktop() {
+    return (
+      <div>
+        <Sidebar />
+      </div>
+    );
+  }
 }
 
 export default Tags;

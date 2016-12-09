@@ -247,11 +247,8 @@
 .mobileBanner1 {
   background-color: $bgc-medium-light-grey;
   width: 100%;
-  padding: 100px 20px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  height: 250px;
+  position: relative;
 
   .header {
     display: flex;
@@ -284,6 +281,13 @@
   .first {
     position: absolute;
     opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     animation-name: switch;
     animation-duration: 12s;
     animation-delay: 0;
@@ -294,6 +298,13 @@
   .second {
     position: absolute;
     opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     animation-name: switch;
     animation-duration: 12s;
     animation-delay: 4s;
@@ -304,6 +315,13 @@
   .third {
     position: absolute;
     opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     animation-name: switch;
     animation-duration: 12s;
     animation-delay: 8s;

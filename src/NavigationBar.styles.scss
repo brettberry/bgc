@@ -34,18 +34,29 @@
   .iconContainer {
     display: flex;
     justify-content: flex-end;
+    flex: 1;
+
+    .hamburger {
+      width: 25px;
+      height: 25px;
+      fill: $bgc-medium-grey;
+      margin: 10px;
+    }
+
+    .condensedCart {
+      width: 25px;
+      height: 25px;
+      fill: $bgc-medium-grey;
+      margin: 10px;
+    }
   }
 
-  .link {
+  .homeLink {
     text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin: 0;
-
-    @include tablet {
-      width: 21%;
-    }
   }
 }
 
@@ -136,20 +147,6 @@
       transition: all 0.25s ease;
     }
   }
-}
-
-.hamburger {
-  width: 25px;
-  height: 25px;
-  fill: $bgc-medium-grey;
-  margin: 10px;
-}
-
-.condensedCart {
-  width: 25px;
-  height: 25px;
-  fill: $bgc-medium-grey;
-  margin: 10px;
 }
 
 .alertBar {
