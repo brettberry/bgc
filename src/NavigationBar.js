@@ -6,6 +6,7 @@ import ProductsMenu from './ProductsMenu';
 import MiniNavBar, { ShoppingCenter } from './MiniNavBar';
 import './navigationBar.styles.scss';
 import MDLocalDelivery from 'react-icons/lib/md/local-shipping';
+import classnames from 'classnames';
 
 class NavigationBar extends Component {
 
@@ -24,7 +25,7 @@ class NavigationBar extends Component {
     return (
       <div className="mainNavContainer">
         <div className="navBar">
-          <Link to="/" className="link">
+          <Link to="/" className="homeLink">
             <h1 className="bgc">Berry Game Calls</h1>
           </Link>
           <Menu />
@@ -52,16 +53,36 @@ function Menu() {
   );
 }
 
-function ProductsItem() {
-  return (
-    <div className="menuItem">
-      <Link to="/products" className="menuLink">
-        <h3 className="item">Products</h3>
-      </Link>
-        <div className="underline" />
-      <ProductsMenu className="products" />
-    </div>
-  );
+class ProductsItem extends Component {
+
+  state = {
+    showProductsMenu: false
+  }
+
+  showMenu() {
+    this.setState({ showProductsMenu: true });
+    clearTimeout(this.timeout);
+  }
+
+  closeMenu() {
+    this.timeout = setTimeout(() => {
+      this.setState({ showProductsMenu: false });
+    }, 300);
+  }
+
+  render() {
+    return (
+      <div className={classnames('menuItem', this.state.showProductsMenu && 'showProductsMenu')}
+           onMouseEnter={() => this.showMenu()}
+           onMouseLeave={() => this.closeMenu()}>
+        <Link to="/products" className="menuLink">
+          <h3 className="item">Products</h3>
+        </Link>
+          <div className="underline" />
+        <ProductsMenu className="productsMenu" onItemClick={() => this.setState({ showProductsMenu: false })} />
+      </div>
+    );
+  }
 }
 
 function DemosItem() {

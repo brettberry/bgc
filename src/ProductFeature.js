@@ -16,7 +16,7 @@ class Featured extends Component {
       <div>
         <div className="bannerContainer">
           <h2 className="header2">Sound like the real thing.</h2>
-          <Link to="/products" className="link">
+          <Link to="/products" className="viewLink">
             <Button text="view all" className="viewAllButton" />
           </Link>
         </div>

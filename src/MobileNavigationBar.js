@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router';
 import Waypoint from 'react-waypoint';
-import ProductsMenu from './ProductsMenu';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import MobileMiniNavBar from './MobileMiniNavBar';
 import FaBars from 'react-icons/lib/fa/bars';
@@ -41,7 +40,8 @@ class MobileNavigationBar extends Component {
             <FaBars className="hamburger" onClick={this.handleBarsClick.bind(this)} />
           </div>
         </div>
-        <Waypoint onLeave={() => this.setState({ showResponsiveNavBar: true })}
+        <Waypoint scrollableAncestor={window}
+                  onLeave={() => this.setState({ showResponsiveNavBar: true })}
                   onEnter={() => this.setState({ showResponsiveNavBar: false })} />
         <Alert />
         <MobileMiniNavBar showResponsiveNavBar={this.state.showResponsiveNavBar} />

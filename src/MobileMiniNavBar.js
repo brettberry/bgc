@@ -51,21 +51,6 @@ class MobileMiniNavBar extends Component {
     );
   }
 }
-//
-// function Search() {
-//   return (
-//     <div className="searchContainer">
-//       <div className="searchDiv">
-//         <input className="searchBar"
-//                placeholder="Search products"
-//                autoFocus />
-//         <div className="searchButton">
-//           <FaSearch className="searchIcon" />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
 
 export function ShoppingCenter({ className }) {
   return (
