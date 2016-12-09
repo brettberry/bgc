@@ -4,9 +4,9 @@ import classnames from 'classnames';
 import FaSearch from 'react-icons/lib/fa/search';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import FaBars from 'react-icons/lib/fa/bars';
-import MdClose from 'react-icons/lib/md/close';
 import './miniNavBar.styles.scss';
 import './mobileNavigationBar.styles.scss';
+import MobileExpandedMenu from './MobileExpandedMenu';
 
 class MobileMiniNavBar extends Component {
 
@@ -47,27 +47,25 @@ class MobileMiniNavBar extends Component {
       return;
     }
     return (
-      <div className="mobileMenu">
-        <MdClose className="exit" onClick={this.handleBarsClick.bind(this)} />
-      </div>
+      <MobileExpandedMenu onClose={this.handleBarsClick.bind(this)} />
     );
   }
 }
-
-function Search() {
-  return (
-    <div className="searchContainer">
-      <div className="searchDiv">
-        <input className="searchBar"
-               placeholder="Search products"
-               autoFocus />
-        <div className="searchButton">
-          <FaSearch className="searchIcon" />
-        </div>
-      </div>
-    </div>
-  );
-}
+//
+// function Search() {
+//   return (
+//     <div className="searchContainer">
+//       <div className="searchDiv">
+//         <input className="searchBar"
+//                placeholder="Search products"
+//                autoFocus />
+//         <div className="searchButton">
+//           <FaSearch className="searchIcon" />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 
 export function ShoppingCenter({ className }) {
   return (

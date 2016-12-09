@@ -6,7 +6,7 @@ import ProductsMenu from './ProductsMenu';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import MobileMiniNavBar from './MobileMiniNavBar';
 import FaBars from 'react-icons/lib/fa/bars';
-import MdClose from 'react-icons/lib/md/close';
+import MobileExpandedMenu from './MobileExpandedMenu';
 
 import './navigationBar.styles.scss';
 import './mobileNavigationBar.styles.scss';
@@ -58,9 +58,7 @@ class MobileNavigationBar extends Component {
       return;
     }
     return (
-      <div className="mobileMenu">
-        <MdClose className="exit" onClick={this.handleBarsClick.bind(this)} />
-      </div>
+      <MobileExpandedMenu onClose={this.handleBarsClick.bind(this)} />
     );
   }
 }

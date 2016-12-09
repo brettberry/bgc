@@ -13,9 +13,36 @@
     position: absolute;
     top: 0;
     right: 0;
-    fill: $bgc-dark-grey;
+    fill: $bgc-medium-grey;
     width: 50px;
     height: 50px;
     margin: 20px;
+  }
+
+  .menuContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    height: 100%;
+
+    .horizontalRule {
+      height: 1px;
+      width: 80%;
+      background-color: $bgc-medium-light-grey;
+      margin: 10px;
+    }
+
+    .item {
+      @include menu-font;
+      font-size: 2em;
+      margin: 10px;
+    }
+
+    .link {
+      text-decoration: none;
+      margin: 0;
+    }
   }
 }
