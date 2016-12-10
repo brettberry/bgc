@@ -25,7 +25,7 @@ class TabletNavigationBar extends Component {
     return (
       <div className="mainNavContainer">
         <div className="navBar">
-          <Link to="/" className="link">
+          <Link to="/" className="homeLink">
             <h1 className="bgc">Berry Game Calls</h1>
           </Link>
           <Menu />

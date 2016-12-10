@@ -14,11 +14,11 @@
   z-index: 100;
 }
 
-.container {
+.productMenuContainer {
   display: flex;
   flex-direction: row;
+  padding: 25px;
   justify-content: space-around;
-  padding: 30px 10px 50px 10px;
 
   @include tabletLandscape {
     flex-direction: column;
@@ -37,7 +37,7 @@
 
   @include tabletLandscape {
     width: 100%;
-    padding-left: 75px;
+    padding: 25px 0px 25px 50px;
 
     .buglesContainer {
       width: 50%;
@@ -50,13 +50,13 @@
 
   @include tablet {
     width: 100%;
-    justify-content: space-between;
+    padding: 20px 0px;
 
-    .dvdsContainer {
+    .buglesContainer {
       width: 50%;
     }
 
-    .otherContainer {
+    .reedsContainer {
       width: 50%;
     }
   }
@@ -67,11 +67,10 @@
   flex-direction: row;
   justify-content: space-around;
   width: 50%;
-  padding-left: 75px;
 
   @include tabletLandscape {
     width: 100%;
-    justify-content: space-between;
+    padding: 25px 0 25px 50px;
 
     .dvdsContainer {
       width: 50%;
@@ -84,7 +83,7 @@
 
  @include tablet {
    width: 100%;
-   justify-content: space-between;
+   padding: 20px 0px;
 
    .dvdsContainer {
      width: 50%;

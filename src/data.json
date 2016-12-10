@@ -58,7 +58,7 @@
       "tags": ["bugles", "sale", "featured"]
     },
     {
-      "fullName": "Thunder Bugle White Replacement Reed",
+      "fullName": "Thunder Bugle White RT-Reed",
       "pathName": "rt-white",
       "price": {
         "amount": 6.25
@@ -69,7 +69,7 @@
       "tags": ["rt-reeds", "bugles", "popular"]
     },
     {
-      "fullName": "Thunder Bugle Black Replacement Reed",
+      "fullName": "Thunder Bugle Black RT-Reed",
       "pathName": "rt-black",
       "price": {
         "amount": 6.25
@@ -80,7 +80,7 @@
       "tags": ["rt-reeds", "bugles"]
     },
     {
-      "fullName": "Thunder Bugle Green Replacement Reed",
+      "fullName": "Thunder Bugle Green RT-Reed",
       "pathName": "rt-green",
       "price": {
         "amount": 6.25
@@ -91,7 +91,7 @@
       "tags": ["rt-reeds", "bugles", "popular"]
     },
     {
-      "fullName": "Thunder Bugle Red Replacement Reed",
+      "fullName": "Thunder Bugle Red RT-Reed",
       "pathName": "rt-red",
       "price": {
         "amount": 6.25

@@ -25,7 +25,7 @@ class ProductsMenu extends Component {
 
     return (
       <div className={classnames('dropdown', className)}>
-        <div className="container">
+        <div className="productMenuContainer">
           <div className="group1">
             <Bugles bugles={bugles} onItemClick={this.props.onItemClick}/>
             <Reeds reeds={reeds} onItemClick={this.props.onItemClick}/>
