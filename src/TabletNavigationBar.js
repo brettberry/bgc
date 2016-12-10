@@ -6,6 +6,7 @@ import ProductsMenu from './ProductsMenu';
 import MiniNavBar, { ShoppingCenter } from './MiniNavBar';
 import './navigationBar.styles.scss';
 import MoreMenu from './MoreMenu';
+import classnames from 'classnames';
 
 class TabletNavigationBar extends Component {
 
@@ -50,16 +51,24 @@ function Menu() {
   );
 }
 
-function ProductsItem() {
-  return (
-    <div className="menuItem">
-      <Link to="/products" className="menuLink">
-        <h3 className="item">Products</h3>
-      </Link>
-        <div className="underline" />
-      <ProductsMenu className="products" />
-    </div>
-  );
+class ProductsItem extends Component {
+
+  state = {
+    showProductsMenu: false
+  }
+
+  render() {
+    return (
+      <div className={classnames('menuItem', this.state.showProductsMenu && 'showProductsMenu')}
+           onClick={() => this.setState({ showProductsMenu: !this.state.showProductsMenu })}>
+        <Link to="/products" className="menuLink">
+          <h3 className="item">Products</h3>
+        </Link>
+          <div className="underline" />
+        <ProductsMenu className="productsMenu" onItemClick={() => this.setState({ showProductsMenu: !this.state.showProductsMenu })} />
+      </div>
+    );
+  }
 }
 
 function DemosItem() {
