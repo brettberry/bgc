@@ -75,7 +75,7 @@ class ProductsItem extends Component {
       <div className={classnames('menuItem', this.state.showProductsMenu && 'showProductsMenu')}
            onMouseEnter={() => this.showMenu()}
            onMouseLeave={() => this.closeMenu()}>
-        <Link to="/products" className="menuLink">
+        <Link to="/products" className="menuLink" onClick={() => this.setState({ showProductsMenu: false })}>
           <h3 className="item">Products</h3>
         </Link>
           <div className="underline" />
