@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import MdClose from 'react-icons/lib/md/close';
 import MdChevronLeft from 'react-icons/lib/md/chevron-left';
+import FaSearch from 'react-icons/lib/fa/search';
 import { Link } from 'react-router';
 import './mobileNavigationBar.styles.scss';
 
@@ -53,6 +54,12 @@ class MobileExpandedMenu extends Component {
           <Link to="/events" className="link">
             <h3 className="item" onClick={this.props.onClose}>Events</h3>
           </Link>
+        </div>
+        <div className="searchContainer">
+          <FaSearch className="search" />
+          <input className="searchField"
+                 placeholder="Search products"
+                 autoFocus />
         </div>
       </div>
     );

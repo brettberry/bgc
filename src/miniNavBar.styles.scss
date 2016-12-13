@@ -186,7 +186,6 @@
   fill: $bgc-medium-grey;
   width: 23px;
   height: 23px;
-  cursor: pointer;
 
   &:hover {
     fill: $bgc-dark-grey;
@@ -211,6 +210,10 @@
     .cartIcon {
       fill: $bgc-medium-grey;
     }
+
+    .searchIcon {
+      fill: $bgc-medium-grey;
+    }
   }
 
   &.light {
@@ -220,10 +223,18 @@
 
     .divider {
       background-color: rgba(white, 0.5);
+
+      &.hide {
+        opacity: 0;
+      }
     }
 
     .cartIcon {
       fill: white;
+    }
+
+    .searchIcon {
+      opacity: 0;
     }
   }
 }

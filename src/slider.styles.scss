@@ -58,8 +58,8 @@
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
   left: 0;
   top: 135px;
-  transition: all 500ms linear;
-  //cubic-bezier(1, 0, 0, 1);
+  // transition: all 2000ms cubic-bezier(1, 0, 0, 1);
+  // transition: all 2000ms cubic-bezier(0.215, 0.61, 0.355, 1);
 
   @include phone {
     top: 110px;
@@ -89,7 +89,7 @@
     justify-content: center;
     align-items: flex-end;
     padding-bottom: 25px;
-    opacity: 0;
+    opacity: 1;
     pointer-events: none;
 
     .dot {
@@ -102,22 +102,6 @@
       &.active {
         background-color: $bgc-orange;
       }
-    }
-
-    @include tabletLandscape {
-      opacity: 1;
-    }
-
-    @include tablet {
-      opacity: 1;
-    }
-
-    @include phone {
-      opacity: 1;
-    }
-
-    @include smallPhone {
-      opacity: 1;
     }
   }
 
@@ -135,11 +119,13 @@
   &.right .sliderTransition-enter {
     transform: translateX(-100%);
     opacity: 0;
+    transition: opacity 500ms cubic-bezier(1, 0, 0, 1);
   }
 
   &.left .sliderTransition-enter {
     transform: translateX(100%);
     opacity: 0;
+    transition: opacity 500ms cubic-bezier(1, 0, 0, 1);
   }
 
   .sliderTransition-enter {
@@ -148,25 +134,28 @@
     &.sliderTransition-enter-active {
       opacity: 1;
       transform: translateX(0);
-      // transition: all 500ms cubic-bezier(1, 0, 0, 1);
+      transition: opacity 500ms cubic-bezier(1, 0, 0, 1);
     }
   }
 
   .sliderTransition-leave {
     opacity: 1;
     transform: translateX(0);
+    transition: opacity 500ms cubic-bezier(1, 0, 0, 1);
 
     &.right .sliderTransition-leave-active {
       transform: translateX(100%);
+      transition: opacity 500ms cubic-bezier(1, 0, 0, 1);
     }
 
     &.left .sliderTransition-leave-active {
       transform: translateX(-100%);
+      transition: opacity 500ms cubic-bezier(1, 0, 0, 1);
     }
 
     &.sliderTransition-leave-active {
       opacity: 0;
-      // transition: all 500ms cubic-bezier(1, 0, 0, 1);
+      transition: opacity 500ms cubic-bezier(1, 0, 0, 1);
     }
   }
 }

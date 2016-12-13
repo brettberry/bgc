@@ -71,6 +71,38 @@
       margin: 0;
     }
   }
+
+  .searchContainer {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin-top: 25px;
+    z-index: 1000000;
+
+    .search {
+      fill: $bgc-medium-grey;
+      width: 40px;
+      height: 40px;
+      margin: 10px;
+    }
+
+    .searchField {
+      @include default-font;
+      appearance: none;
+      outline: 0;
+      border: none;
+      font-size: 1.75em;
+      text-align: left;
+      height: 40px;
+      display: flex;
+      margin: 10px;
+      width: 100%;
+      border-style: solid;
+      border-width: 0 0 2px 0;
+      border-color: $bgc-medium-grey;
+      padding: 20px 0;
+    }
+  }
 }
 
 
@@ -141,16 +173,16 @@
       // @include smallPhone {
       //   font-size: 1.5em;
       // }
+    }
   }
-}
 
-.header {
-  margin: 0;
-}
+  .header {
+    margin: 0;
+  }
 
-.menuLink {
-  text-decoration: none;
-}
+  .menuLink {
+    text-decoration: none;
+  }
 }
 
 .menu {
@@ -239,11 +271,4 @@
   @include smallPhone {
     padding-right: 10px;
   }
-}
-
-.shippingIcon {
-  fill: white;
-  width: 20px;
-  height: 20px;
-  margin: 8px;
 }

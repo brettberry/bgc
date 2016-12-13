@@ -13,7 +13,14 @@ class Slider extends Component {
   }
 
   componentDidMount() {
-    setInterval(this.pageRight.bind(this), 3500);
+    // if (this.state.reverse) {
+    //   this.interval = setInterval(this.pageLeft.bind(this), 3500);
+    // }
+    this.interval = setInterval(this.pageRight.bind(this), 3500);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   pageLeft() {

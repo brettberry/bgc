@@ -45,6 +45,8 @@ export function ShoppingCenter({ className }) {
   return (
     <div>
       <div className={classnames('shoppingContainer', className)}>
+        <FaSearch className="searchIcon" />
+        <div className="divider hide" />
         <FaShoppingCart className="cartIcon" />
         <div className="divider" />
         <h3 className="accountText">My <br/> Account</h3>
