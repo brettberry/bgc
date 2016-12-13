@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FaChevronLeft from 'react-icons/lib/fa/chevron-left';
 import FaChevronRight from 'react-icons/lib/fa/chevron-right';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import classnames from 'classnames';
 import './slider.styles.scss';
 
 class Slider extends Component {
@@ -9,6 +10,10 @@ class Slider extends Component {
   state = {
     offset: 0,
     reverse: false
+  }
+
+  componentDidMount() {
+    setInterval(this.pageRight.bind(this), 3500);
   }
 
   pageLeft() {
@@ -28,12 +33,14 @@ class Slider extends Component {
   }
 
   render() {
+    const transitionClasses = classnames('sliderTransition', this.state.reverse ? 'left' : 'right');
     return (
       <div className="sliderContainer">
         <div className="chevronContainer left" onClick={this.pageLeft.bind(this)}>
           <FaChevronLeft className= "chevron"/>
         </div>
-        <ReactCSSTransitionGroup transitionName="sliderTransition"
+        <ReactCSSTransitionGroup className={transitionClasses}
+                                 transitionName="sliderTransition"
                                  transitionEnterTimeout={500}
                                  transitionLeaveTimeout={500}>
             {this.renderObjects()}

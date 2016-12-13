@@ -58,7 +58,9 @@
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
   left: 0;
   top: 135px;
-  
+  transition: all 500ms linear;
+  //cubic-bezier(1, 0, 0, 1);
+
   @include phone {
     top: 110px;
   }
@@ -76,7 +78,7 @@
   }
 
   &.third {
-    background-color: white;
+    background-color: black;
   }
 
   .dotContainer {
@@ -132,10 +134,12 @@
 
   &.right .sliderTransition-enter {
     transform: translateX(-100%);
+    opacity: 0;
   }
 
   &.left .sliderTransition-enter {
     transform: translateX(100%);
+    opacity: 0;
   }
 
   .sliderTransition-enter {
@@ -144,7 +148,7 @@
     &.sliderTransition-enter-active {
       opacity: 1;
       transform: translateX(0);
-      transition: all 500ms cubic-bezier(1, 0, 0, 1);
+      // transition: all 500ms cubic-bezier(1, 0, 0, 1);
     }
   }
 
@@ -162,7 +166,7 @@
 
     &.sliderTransition-leave-active {
       opacity: 0;
-      transition: all 500ms cubic-bezier(1, 0, 0, 1);
+      // transition: all 500ms cubic-bezier(1, 0, 0, 1);
     }
   }
 }
