@@ -7,6 +7,7 @@ import MiniNavBar, { ShoppingCenter } from './MiniNavBar';
 import './navigationBar.styles.scss';
 import MoreMenu from './MoreMenu';
 import classnames from 'classnames';
+// import clickOutside from 'react-click-outside';
 
 class TabletNavigationBar extends Component {
 
@@ -57,6 +58,10 @@ class ProductsItem extends Component {
     showProductsMenu: false
   }
 
+  handleClickOutside() {
+    this.props.closeMenu();
+  }
+
   render() {
     return (
       <div className={classnames('menuItem', this.state.showProductsMenu && 'showProductsMenu')}
@@ -65,7 +70,9 @@ class ProductsItem extends Component {
           <h3 className="item">Products</h3>
         </Link>
           <div className="underline" />
-        <ProductsMenu className="productsMenu" onItemClick={() => this.setState({ showProductsMenu: !this.state.showProductsMenu })} />
+        <ProductsMenu className="productsMenu"
+                      onItemClick={() => this.setState({ showProductsMenu: !this.state.showProductsMenu })}
+                      closeMenu={() => this.setState({ showProductsMenu: false })} />
       </div>
     );
   }
@@ -82,14 +89,22 @@ function DemosItem() {
   );
 }
 
-function MoreItem() {
-  return (
-    <div className="menuItem">
-      <h3 className="item">More</h3>
-      <div className="underline" />
-      <MoreMenu className="moreDropDown"/>
-    </div>
-  );
+class MoreItem extends Component {
+
+  state = {
+    showMoreMenu: false
+  }
+
+  render() {
+    return (
+      <div className={classnames('moreDropDownMenuItem', this.state.showMoreMenu && 'showMoreMenu')}
+           onClick={() => this.setState({ showMoreMenu: !this.state.showMoreMenu })}>
+        <h3 className="item">More</h3>
+        <div className="underline" />
+        <MoreMenu className="moreDropDown" onItemClick={() => this.setState({ showMoreMenu: false })} />
+      </div>
+    );
+  }
 }
 
 function Alert() {

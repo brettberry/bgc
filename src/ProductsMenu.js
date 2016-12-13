@@ -5,6 +5,7 @@ import './productsMenu.styles.scss';
 import data from './data.json';
 import { ProductCollection } from './models';
 import map from 'lodash/map';
+import clickOutside from 'react-click-outside';
 
 const products = new ProductCollection(data.products);
 
@@ -110,4 +111,4 @@ function Other({ cowCalls, other, onItemClick }) {
   );
 }
 
-export default ProductsMenu;
+export default clickOutside(ProductsMenu);
