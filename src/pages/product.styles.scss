@@ -5,6 +5,14 @@
   position: absolute;
   top: 135px;
   width: 100%;
+
+  @include phone {
+    top: 110px;
+  }
+
+  @include smallPhone {
+    top: 110px;
+  }
 }
 
 .productView {

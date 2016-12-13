@@ -13,7 +13,14 @@ class ProductsMenu extends Component {
 
   static propTypes = {
     className: PropTypes.string,
-    onItemClick: PropTypes.func.isRequired
+    onItemClick: PropTypes.func.isRequired,
+    onClose: PropTypes.func
+  }
+
+  handleClickOutside() {
+    if (this.props.closeMenu) {
+      this.props.closeMenu();
+    }
   }
 
   render() {

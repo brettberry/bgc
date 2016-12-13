@@ -9,6 +9,10 @@
   height: 100%;
   z-index: 100000;
 
+  @include smallPhone {
+    padding-top: 50px;
+  }
+
   .exit {
     position: absolute;
     top: 0;
@@ -17,6 +21,28 @@
     width: 50px;
     height: 50px;
     margin: 20px;
+
+    @include smallPhone {
+      width: 40px;
+      height: 40px;
+      margin: 15px;
+    }
+  }
+
+  .backButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: $bgc-medium-grey;
+    width: 64px;
+    height: 64px;
+    margin: 13px 0;
+
+    @include smallPhone {
+      width: 50px;
+      height: 50px;
+      margin: 10px 0;
+    }
   }
 
   .menuContainer {
@@ -73,17 +99,17 @@
     width: 30%;
 
     .cart {
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
       fill: $bgc-medium-grey;
       margin: 10px 15px;
     }
 
     .hamburger {
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
       fill: $bgc-medium-grey;
-      margin: 10px 0;
+      margin: 10px 10px 10px 5px;
     }
   }
 

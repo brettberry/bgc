@@ -58,10 +58,6 @@ class ProductsItem extends Component {
     showProductsMenu: false
   }
 
-  handleClickOutside() {
-    this.props.closeMenu();
-  }
-
   render() {
     return (
       <div className={classnames('menuItem', this.state.showProductsMenu && 'showProductsMenu')}

@@ -3,6 +3,14 @@
 .eventPageContainer {
   background-color: $bgc-background-color;
   padding: 75px 50px;
+
+  @include phone {
+    padding: 15px;
+  }
+
+  @include smallPhone {
+    padding: 15px;
+  }
 }
 
 .eventsContainer {

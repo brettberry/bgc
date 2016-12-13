@@ -19,7 +19,7 @@ class Home extends Component {
         </MobileProvider>
         <Demo />
         <Featured />
-        <Images />
+        {/* <Images /> */}
         <ShopCategories />
         <TabletProvider>
           <Banner2 />
