@@ -43,17 +43,40 @@ function ProductView({ product }) {
   );
 }
 
-function Images() {
-  return (
-    <div className="imgContainer">
-      <div className="thumbnailsContainer">
-        <div className="thumbnail" />
-        <div className="thumbnail" />
-        <div className="thumbnail" />
+const images = ['url(/samplePhotos/deer.jpg)',
+               'url(/samplePhotos/fox.jpg)',
+               'url(/samplePhotos/scenery.jpg)'];
+
+class Images extends Component {
+
+  state = {
+    activeIndex: 0
+  }
+
+  getBackgroundImage(index) {
+    return {
+      backgroundImage: images[index]
+    };
+  }
+
+  handleImageClick(index) {
+    this.setState({
+      activeIndex: index
+    });
+  }
+
+  render() {
+    return (
+      <div className="imgContainer">
+        <div className="thumbnailsContainer">
+          <div className="thumbnail" style={this.getBackgroundImage(0)} onClick={() => this.handleImageClick(0)} />
+          <div className="thumbnail" style={this.getBackgroundImage(1)} onClick={() => this.handleImageClick(1)} />
+          <div className="thumbnail" style={this.getBackgroundImage(2)} onClick={() => this.handleImageClick(2)} />
+        </div>
+        <div className="mainImg" style={this.getBackgroundImage(this.state.activeIndex)} />
       </div>
-      <div className="mainImg" />
-    </div>
-  );
+    );
+  }
 }
 
 function Details({ product }) {

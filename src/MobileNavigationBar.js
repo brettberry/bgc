@@ -33,8 +33,7 @@ class MobileNavigationBar extends Component {
       <div className="mobileNavContainer">
         <div className="mobileNavBar">
           <Link to="/" className="link">
-            <h1 className="bgc">Berry</h1>
-            <h1 className="bgc">Game Calls</h1>
+            <h1 className="bgc">Berry Game Calls</h1>
           </Link>
           <div className="iconContainer">
             <FaShoppingCart className="cart" />

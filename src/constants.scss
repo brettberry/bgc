@@ -94,13 +94,13 @@ $bgc-medium-light-grey: darken($bgc-light-grey, 5);
 }
 
 @mixin phone {
-  @media all and (min-width: 321px)and (max-width: 480px) {
+  @media all and (min-width: 321px)and (max-width: 500px) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media all and (min-width: 481px) and (max-width: 825px) {
+  @media all and (min-width: 501px) and (max-width: 825px) {
     @content;
   }
 }
