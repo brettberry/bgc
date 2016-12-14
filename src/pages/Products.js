@@ -31,6 +31,8 @@ function ProductGrid({ product, key }) {
   const price = product.getPrice().getAmount();
   const discount = product.getPrice().getDiscount();
   const showDiscount = !!discount;
+  const sampleImage = 'url(/samplePhotos/flower.jpg)';
+
   return (
     <div className="container">
       <Link key={key} to={`/products/${product.getCategory()}/${product.getPathName()}`} className="link">
@@ -39,6 +41,9 @@ function ProductGrid({ product, key }) {
             <div className="priceContainer">
               <p className={classnames('price', showDiscount && 'strike')}>${price}</p>
               { showDiscount && <p className="discount">${discount}</p>}
+            </div>
+            <div className="productImgContainer">
+              <div className="productImage" style={{ backgroundImage: sampleImage }} />
             </div>
           </div>
       </Link>

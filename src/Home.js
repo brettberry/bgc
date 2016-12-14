@@ -107,11 +107,16 @@ function Images() {
 }
 
 function ShopCategories() {
+  const sampleImage = 'url(/samplePhotos/flower.jpg)';
+
   return (
     <div className="categoryContainer">
       <div className="categories">
         <Link to="/products/tags/bugles" className="link">
           <div className="category">
+            {/* <div className="productImgContainer">
+              <div className="productImage" style={{ backgroundImage: sampleImage }} />
+            </div> */}
             <p className="title">Bugles</p>
           </div>
         </Link>
