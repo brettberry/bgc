@@ -81,7 +81,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 20px;
     width: 70%;
 
     @include tabletLandscape {
@@ -92,6 +91,8 @@
     @include tablet {
       width: 100%;
       justify-content: center;
+      flex-direction: column;
+      margin: 20px 0;
     }
 
     @include phone {
@@ -115,23 +116,23 @@
       width: 20%;
       height: 500px;
 
-      // @include phone {
-      //   flex-direction: row;
-      //   justify-content: center;
-      //   width: 100%;
-      //   height: 100px;
-      // }
+      @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        height: 200px;
+      }
 
       @include phone {
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         width: 100%;
         height: 100px;
       }
 
       @include smallPhone {
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         width: 100%;
         height: 100px;
       }
@@ -140,6 +141,11 @@
     .thumbnail {
       width: 100%;
       height: 33%;
+
+      @include tablet {
+        height: 100%;
+        width: 33%;
+      }
 
       @include phone {
         height: 100%;
@@ -163,16 +169,24 @@
       align-self: center;
       width: 80%;
       height: 500px;
-      margin: 10px;
+      margin: 10px 0 10px 10px;
+
+      @include tablet {
+        width: 100%;
+        height: 450px;
+        margin: 10px 0 0 0;
+      }
 
       @include phone {
         width: 100%;
         height: 250px;
+        margin: 10px 0 0 0;
       }
 
       @include smallPhone {
         width: 100%;
         height: 250px;
+        margin: 10px 0 0 0;
       }
     }
   }
@@ -181,17 +195,26 @@
     display: flex;
     flex-direction: column;
     width: 30%;
+    margin-left: 25px;
+
+    @include tabletLandscape {
+      width: 100%;
+      margin: 25px 0;
+    }
 
     @include tablet {
       width: 100%;
+      margin: 25px 0;
     }
 
     @include phone {
       width: 100%;
+      margin: 25px 0;
     }
 
     @include smallPhone {
       width: 100%;
+      margin: 25px 0;
     }
   }
 
