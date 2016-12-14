@@ -16,7 +16,7 @@ class MiniNavBar extends Component {
       <div className={classnames('responsiveNavBar', this.props.showResponsiveNavBar && 'showNav')}>
         <div className="navBarContents">
           <Link to="/" className="bgcLink">
-            <h1 className="bgc">Berry Game Calls</h1>
+            <h1 className="bgc">BGC</h1>
           </Link>
           <Search />
           <ShoppingCenter className="light"/>

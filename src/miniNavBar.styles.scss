@@ -36,80 +36,64 @@
   justify-content: space-between;
   align-items: center;
   transition: opacity 0.2s 0.3s ease-in;
-  padding: 0 20px;
+  padding: 0 25px;
+}
 
-  @include tabletLandscape {
-    padding: 0 10px;
-  }
+.iconContainer {
+  .searchIcon {
+    width: 25px;
+    height: 25px;
+    fill: white;
+    margin: 10px;
 
-  @include tablet {
-    padding: 0 10px;
-  }
-
-  @include phone {
-    padding: 0 20px;
-  }
-
-  @include smallPhone {
-    padding: 0 10px;
-  }
-
-  .iconContainer {
-    .searchIcon {
-      width: 25px;
-      height: 25px;
-      fill: white;
-      margin: 10px;
-
-      @include phone {
-        width: 20px;
-        height: 20px;
-        margin: 10px 0;
-      }
-
-      @include smallPhone {
-        width: 20px;
-        height: 20px;
-        margin: 10px 0;
-      }
+    @include phone {
+      width: 20px;
+      height: 20px;
+      margin: 10px 0;
     }
 
-    .cartIcon {
-      width: 25px;
-      height: 25px;
-      fill: white;
-      margin: 10px;
+    @include smallPhone {
+      width: 20px;
+      height: 20px;
+      margin: 10px 0;
+    }
+  }
 
-      @include phone {
-        width: 20px;
-        height: 20px;
-        margin: 10px 15px;
-      }
+  .cartIcon {
+    width: 25px;
+    height: 25px;
+    fill: white;
+    margin: 10px;
 
-      @include smallPhone {
-        width: 20px;
-        height: 20px;
-        margin: 10px 15px;
-      }
+    @include phone {
+      width: 20px;
+      height: 20px;
+      margin: 10px 15px;
     }
 
-    .hamburgerIcon {
-      width: 25px;
-      height: 25px;
-      fill: white;
-      margin: 10px;
+    @include smallPhone {
+      width: 20px;
+      height: 20px;
+      margin: 10px 15px;
+    }
+  }
 
-      @include phone {
-        width: 20px;
-        height: 20px;
-        margin: 10px 0;
-      }
+  .hamburgerIcon {
+    width: 25px;
+    height: 25px;
+    fill: white;
+    margin: 10px;
 
-      @include smallPhone {
-        width: 20px;
-        height: 20px;
-        margin: 10px 0;
-      }
+    @include phone {
+      width: 20px;
+      height: 20px;
+      margin: 10px 0;
+    }
+
+    @include smallPhone {
+      width: 20px;
+      height: 20px;
+      margin: 10px 0;
     }
   }
 }
@@ -126,21 +110,14 @@
     margin: 0;
     color: white;
     font-size: 2em;
+    margin-right: 30px;
   }
 }
+
 .searchContainer {
   display: flex;
   flex-direction: column;
-  width: 60%;
-  margin: 0 10px;
-
-  @include tabletLandscape {
-    width: 40%;
-  }
-
-  @include tablet {
-    width: 45%;
-  }
+  width: 65%;
 }
 
 .searchDiv {
@@ -225,7 +202,7 @@
       background-color: rgba(white, 0.5);
 
       &.hide {
-        opacity: 0;
+        width: 0;
       }
     }
 
@@ -234,7 +211,7 @@
     }
 
     .searchIcon {
-      opacity: 0;
+      width: 0;
     }
   }
 }

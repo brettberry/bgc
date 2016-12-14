@@ -76,8 +76,8 @@ class ProductsItem extends Component {
            onMouseLeave={() => this.closeMenu()}>
         <Link to="/products" className="menuLink" onClick={() => this.setState({ showProductsMenu: false })}>
           <h3 className="item">Products</h3>
-        </Link>
           <div className="underline" />
+        </Link>
         <ProductsMenu className="productsMenu" onItemClick={() => this.setState({ showProductsMenu: false })} />
       </div>
     );
@@ -89,8 +89,8 @@ function DemosItem() {
     <div className="menuItem">
       <Link to="/demos" className="menuLink">
         <h3 className="item">Demos</h3>
+        <div className="underline" />
       </Link>
-      <div className="underline" />
     </div>
   );
 }
@@ -100,8 +100,8 @@ function AboutItem() {
     <div className="menuItem">
       <Link to="/about" className="menuLink">
         <h3 className="item">About</h3>
+        <div className="underline" />
       </Link>
-      <div className="underline" />
     </div>
   );
 }
@@ -111,8 +111,8 @@ function GalleryItem() {
     <div className="menuItem">
       <Link to="/gallery" className="menuLink">
         <h3 className="item">Gallery</h3>
+        <div className="underline" />
       </Link>
-      <div className="underline" />
     </div>
   );
 }
@@ -122,8 +122,8 @@ function EventsItem() {
     <div className="menuItem">
       <Link to="/events" className="menuLink">
         <h3 className="item">Events</h3>
+        <div className="underline" />
       </Link>
-      <div className="underline" />
     </div>
   );
 }

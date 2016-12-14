@@ -7,7 +7,6 @@ import MiniNavBar, { ShoppingCenter } from './MiniNavBar';
 import './navigationBar.styles.scss';
 import MoreMenu from './MoreMenu';
 import classnames from 'classnames';
-// import clickOutside from 'react-click-outside';
 
 class TabletNavigationBar extends Component {
 
@@ -64,8 +63,8 @@ class ProductsItem extends Component {
            onClick={() => this.setState({ showProductsMenu: !this.state.showProductsMenu })}>
         <Link to="/products" className="menuLink">
           <h3 className="item">Products</h3>
-        </Link>
           <div className="underline" />
+        </Link>
         <ProductsMenu className="productsMenu"
                       onItemClick={() => this.setState({ showProductsMenu: !this.state.showProductsMenu })}
                       closeMenu={() => this.setState({ showProductsMenu: false })} />
@@ -79,8 +78,8 @@ function DemosItem() {
     <div className="menuItem">
       <Link to="/demos" className="menuLink">
         <h3 className="item">Demos</h3>
+        <div className="underline" />
       </Link>
-      <div className="underline" />
     </div>
   );
 }
