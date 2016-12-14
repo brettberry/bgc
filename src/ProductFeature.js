@@ -30,11 +30,14 @@ class Featured extends Component {
   }
 }
 
+
 function FeaturedItem({ feature, key }) {
   const price = feature.getPrice().getAmount();
   const discount = feature.getPrice().getDiscount();
   const showDiscount = !!discount;
   const priceClasses = classnames('price', showDiscount && 'strike');
+  const sampleImage = 'url(/samplePhotos/flower.jpg)';
+
   return (
     <div className="featuredContainer">
       <Link key={key} to={`/products/${feature.getCategory()}/${feature.getPathName()}`} className="link">
@@ -43,6 +46,9 @@ function FeaturedItem({ feature, key }) {
           <div className="priceContainer">
             <p className={priceClasses}>${price}</p>
             {showDiscount && <p className="discount">${discount}</p>}
+          </div>
+          <div className="productImgContainer">
+            <div className="productImage" style={{ backgroundImage: sampleImage }} />
           </div>
         </div>
       </Link>

@@ -142,22 +142,20 @@
 
     @include tabletLandscape {
       flex-basis: 50%;
-      height: 400px;
     }
 
     @include tablet {
       flex-basis: 100%;
-      height: 400px;
+      min-height: 650px;
     }
 
     @include phone {
       flex-basis: 100%;
-      height: 400px;
     }
 
     @include smallPhone {
       flex-basis: 100%;
-      height: 350px;
+      min-height: 350px;
     }
 
     .link {
@@ -219,6 +217,22 @@
         box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
         transform: scale(1.02);
         transition: all 0.2s ease;
+      }
+    }
+
+    .productImgContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 90%;
+
+      .productImage {
+        width: 90%;
+        height: 90%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
       }
     }
   }
