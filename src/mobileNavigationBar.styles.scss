@@ -109,7 +109,6 @@
   }
 }
 
-
 .mobileNavContainer {
   position: relative;
   z-index: 1000;
@@ -123,11 +122,7 @@
   height: 75px;
   top: 0;
   background-color: white;
-  padding: 0 10px;
-
-  @include phone {
-    padding: 0 20px;
-  }
+  padding: 0 15px;
 
   .iconContainer {
     display: flex;
@@ -138,14 +133,14 @@
       width: 25px;
       height: 25px;
       fill: $bgc-medium-grey;
-      margin: 10px 15px;
+      margin: 10px;
     }
 
     .hamburger {
       width: 25px;
       height: 25px;
       fill: $bgc-medium-grey;
-      margin: 10px 10px 10px 5px;
+      margin: 10px 0;
     }
   }
 

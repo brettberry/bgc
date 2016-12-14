@@ -2,12 +2,20 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import classnames from 'classnames';
 import './moreMenu.styles.scss';
+import clickOutside from 'react-click-outside';
 
 class MoreMenu extends Component {
 
   static propTypes = {
     className: PropTypes.string,
-    onItemClick: PropTypes.func.isRequired
+    onItemClick: PropTypes.func.isRequired,
+    onClose: PropTypes.func
+  }
+
+  handleClickOutside() {
+    if (this.props.closeMenu) {
+      this.props.closeMenu();
+    }
   }
 
   render() {
@@ -28,4 +36,4 @@ class MoreMenu extends Component {
   }
 }
 
-export default MoreMenu;
+export default clickOutside(MoreMenu);

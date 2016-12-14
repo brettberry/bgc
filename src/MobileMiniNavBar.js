@@ -32,7 +32,6 @@ class MobileMiniNavBar extends Component {
             <h1 className="bgc">BGC</h1>
           </Link>
           <div className="iconContainer">
-            <FaSearch className="searchIcon" />
             <FaShoppingCart className="cartIcon" />
             <FaBars className="hamburgerIcon" onClick={this.handleBarsClick.bind(this)} />
           </div>

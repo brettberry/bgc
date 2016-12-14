@@ -36,65 +36,22 @@
   justify-content: space-between;
   align-items: center;
   transition: opacity 0.2s 0.3s ease-in;
-  padding: 0 25px;
+  padding: 0 15px;
 }
 
 .iconContainer {
-  .searchIcon {
-    width: 25px;
-    height: 25px;
-    fill: white;
-    margin: 10px;
-
-    @include phone {
-      width: 20px;
-      height: 20px;
-      margin: 10px 0;
-    }
-
-    @include smallPhone {
-      width: 20px;
-      height: 20px;
-      margin: 10px 0;
-    }
-  }
-
   .cartIcon {
     width: 25px;
     height: 25px;
     fill: white;
     margin: 10px;
-
-    @include phone {
-      width: 20px;
-      height: 20px;
-      margin: 10px 15px;
-    }
-
-    @include smallPhone {
-      width: 20px;
-      height: 20px;
-      margin: 10px 15px;
-    }
   }
 
   .hamburgerIcon {
     width: 25px;
     height: 25px;
     fill: white;
-    margin: 10px;
-
-    @include phone {
-      width: 20px;
-      height: 20px;
-      margin: 10px 0;
-    }
-
-    @include smallPhone {
-      width: 20px;
-      height: 20px;
-      margin: 10px 0;
-    }
+    margin: 10px 0;
   }
 }
 

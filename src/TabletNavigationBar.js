@@ -7,6 +7,7 @@ import MiniNavBar, { ShoppingCenter } from './MiniNavBar';
 import './navigationBar.styles.scss';
 import MoreMenu from './MoreMenu';
 import classnames from 'classnames';
+import clickOutside from 'react-click-outside';
 
 class TabletNavigationBar extends Component {
 
@@ -96,7 +97,9 @@ class MoreItem extends Component {
            onClick={() => this.setState({ showMoreMenu: !this.state.showMoreMenu })}>
         <h3 className="item">More</h3>
         <div className="underline" />
-        <MoreMenu className="moreDropDown" onItemClick={() => this.setState({ showMoreMenu: false })} />
+        <MoreMenu className="moreDropDown"
+                  onItemClick={() => this.setState({ showMoreMenu: false })}
+                  closeMenu={() => this.setState({ showMoreMenu: false })} />
       </div>
     );
   }
