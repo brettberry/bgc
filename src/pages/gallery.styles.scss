@@ -37,7 +37,6 @@
   .photo {
     width: 25%;
     height: 400px;
-    background-color: white;
     border-width: 1px;
     border-style: solid;
     border-color: $bgc-light-grey;
@@ -61,4 +60,12 @@
       width: 100%;
     }
   }
+}
+
+.photoView {
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }

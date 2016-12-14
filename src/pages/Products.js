@@ -6,7 +6,6 @@ import map from 'lodash/map';
 import classnames from 'classnames';
 import Sidebar from '../Sidebar';
 import { Link } from 'react-router';
-import MobileSidebar from '../MobileSidebar';
 import TabletProvider from '../TabletProvider';
 
 const products = new ProductCollection(data.products);
