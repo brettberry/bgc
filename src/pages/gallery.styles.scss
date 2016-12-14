@@ -10,15 +10,55 @@
   padding: 0 250px 0 250px;
 }
 
-.galleryRow {
+.photoContainer {
   display: flex;
-}
-
-.imageContainer {
-  width: 25%;
+  flex-direction: row;
   height: 400px;
-  background-color: white;
-  border-width: 1px;
-  border-style: solid;
-  border-color: $bgc-light-grey;
+  width: 100%;
+  flex-basis: 25%;
+  flex-wrap: wrap;
+
+  @include tabletLandscape {
+    flex-basis: 33%;
+  }
+
+  @include tablet {
+    flex-basis: 50%;
+  }
+
+  @include phone {
+    flex-basis: 100%;
+  }
+
+  @include smallPhone {
+    flex-basis: 100%;
+  }
+
+  .photo {
+    width: 25%;
+    height: 400px;
+    background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $bgc-light-grey;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    @include tabletLandscape {
+      width: 33%;
+    }
+
+    @include tablet {
+      width: 50%;
+    }
+
+    @include phone {
+      width: 100%;
+    }
+
+    @include smallPhone {
+      width: 100%;
+    }
+  }
 }

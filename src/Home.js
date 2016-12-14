@@ -107,7 +107,7 @@ function Images() {
 }
 
 function ShopCategories() {
-  const sampleImage = 'url(/samplePhotos/flower.jpg)';
+  // const sampleImage = 'url(/samplePhotos/flower.jpg)';
 
   return (
     <div className="categoryContainer">
