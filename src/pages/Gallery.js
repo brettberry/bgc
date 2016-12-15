@@ -3,6 +3,8 @@ import Modal from 'simple-react-modal';
 import clickOutside from 'react-click-outside';
 import map from 'lodash/map';
 import MdClose from 'react-icons/lib/md/close';
+import MDChevronLeft from 'react-icons/lib/md/chevron-left';
+import MDChevronRight from 'react-icons/lib/md/chevron-right';
 import './gallery.styles.scss';
 
 const images = ['url(/samplePhotos/deer.jpg)',
@@ -41,7 +43,9 @@ class PhotoGallery extends Component {
     return (
       <div>
         <div className="photoContainer">{this.getPhotos()}</div>
-        <Modal show={showModal} containerClassName="photoModal">
+        <Modal show={showModal}
+               containerClassName="photoModal"
+               closeOnOuterClick={false}>
           <ModalComponent closeModal={() => this.setState({ showModal: false })}
                           index={this.state.index}
                           photoLeft={() => this.setState({ index: (index - 1) % images.length })}
@@ -67,8 +71,8 @@ class PhotoModalContents extends Component {
           <div className="photoView" style={{ backgroundImage: images[Math.abs(index)] }} />
           <div className="caption">Sample text</div>
         </div>
-        <div className="photoLeft" onClick={this.props.photoLeft}></div>
-        <div className="photoRight" onClick={this.props.photoRight}></div>
+        <MDChevronLeft className="photoLeft" onClick={this.props.photoLeft} />
+        <MDChevronRight className="photoRight" onClick={this.props.photoRight} />
       </div>
     );
   }

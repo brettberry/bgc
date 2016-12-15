@@ -116,6 +116,10 @@
     fill: rgba($bgc-light-grey, 0.5);
     right: 0;
     top: 0;
+
+    &:hover {
+      fill: $bgc-light-grey;
+    }
   }
 
   .caption {
@@ -129,19 +133,65 @@
 
   .photoLeft {
     position: fixed;
-    width: 25px;
-    height: 25px;
-    background-color: white;
+    width: 100px;
+    height: 100px;
+    fill: $bgc-medium-grey;
     left: 0;
     pointer-events: all;
+    margin: 0 50px;
+
+    @include tablet {
+      margin: 0;
+      width: 75px;
+      height: 75px;
+    }
+
+    @include phone {
+      margin: 0;
+      width: 75px;
+      height: 75px;
+    }
+
+    @include smallPhone {
+      margin: 0;
+      width: 50px;
+      height: 50px;
+    }
+
+    &:hover {
+      fill: $bgc-light-grey;
+    }
   }
 
   .photoRight {
     position: fixed;
-    width: 25px;
-    height: 25px;
-    background-color: blue;
+    width: 100px;
+    height: 100px;
+    margin: 0 50px;
+    fill: $bgc-medium-grey;
     right: 0;
     pointer-events: all;
+
+    @include tablet {
+      margin: 0;
+      width: 75px;
+      height: 75px;
+    }
+
+    @include phone {
+      margin: 0;
+      width: 75px;
+      height: 75px;
+    }
+
+    @include smallPhone {
+      margin: 0;
+      width: 50px;
+      height: 50px;
+    }
+
+    &:hover {
+      fill: $bgc-light-grey;
+    }
   }
 }

@@ -85,7 +85,8 @@ class DemoObject extends Component {
           <div className="buttonContainer">
             <Button text="Watch" onClick={() => this.setState({ showModal: !showModal })} className="watchButton" />
             <Modal show={showModal}
-                   containerClassName="videoModal">
+                   containerClassName="videoModal"
+                   closeOnOuterClick={false}>
               <ModalComponent video={video} closeModal={() => this.setState({ showModal: false })} />
             </Modal>
             <Link to={link} className="link">
