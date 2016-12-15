@@ -13,7 +13,7 @@ class MobileProvider extends Component {
   }
 
   componentDidMount() {
-    this.mql = window.matchMedia('(max-width: 500px)');
+    this.mql = window.matchMedia('(max-width: 505px)');
     this.mql.addListener(this._handleMediaUpdate);
     this.handleMediaUpdate(this.mql);
   }

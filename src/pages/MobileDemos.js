@@ -99,14 +99,14 @@ class MobileDemos extends Component {
 
       return (
         <div className="videoContainer">
-          <iframe width={frameWidth} height={frameHeight} src={video} frameBorder="0" allowFullScreen />
-          <div className="detailsContainer">
+          <div className="titleContainer">
             <h3 className="title">{title}</h3>
-            <p className="description">{description}</p>
-              <Link to={link} className="shopLink">
-                <Button text="Buy" className="shopButton" />
-              </Link>
+            <Link to={link} className="shopLink">
+              <Button text="Shop" className="shopButton" />
+            </Link>
           </div>
+          <iframe width={frameWidth} height={frameHeight} src={video} frameBorder="0" allowFullScreen />
+          <p className="description">{description}</p>
         </div>
       );
     }
