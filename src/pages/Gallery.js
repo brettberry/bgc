@@ -37,12 +37,15 @@ class PhotoGallery extends Component {
 
   render() {
     const ModalComponent = clickOutside(PhotoModalContents);
-    const { showModal } = this.state;
+    const { showModal, index } = this.state;
     return (
       <div>
         <div className="photoContainer">{this.getPhotos()}</div>
         <Modal show={showModal} containerClassName="photoModal">
-          <ModalComponent closeModal={() => this.setState({ showModal: false })} index={this.state.index} />
+          <ModalComponent closeModal={() => this.setState({ showModal: false })}
+                          index={this.state.index}
+                          photoLeft={() => this.setState({ index: (index - 1) % images.length })}
+                          photoRight={() => this.setState({ index: (index + 1) % images.length })} />
         </Modal>
       </div>
     );
@@ -61,9 +64,11 @@ class PhotoModalContents extends Component {
       <div className="modalContainer">
         <MdClose className="exit" />
         <div className="modalContents">
-          <div className="photoView" style={{ backgroundImage: images[index] }} />
+          <div className="photoView" style={{ backgroundImage: images[Math.abs(index)] }} />
           <div className="caption">Sample text</div>
         </div>
+        <div className="photoLeft" onClick={this.props.photoLeft}></div>
+        <div className="photoRight" onClick={this.props.photoRight}></div>
       </div>
     );
   }

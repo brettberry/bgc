@@ -126,4 +126,22 @@
     line-height: 1.5;
     margin: 0;
   }
+
+  .photoLeft {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    left: 0;
+    pointer-events: all;
+  }
+
+  .photoRight {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background-color: blue;
+    right: 0;
+    pointer-events: all;
+  }
 }
