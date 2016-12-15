@@ -10,7 +10,7 @@ class Events extends Component {
         <NewEvent />
         <NewEvent />
         <NewEvent />
-        <NewEvent />
+
       </div>
     );
   }
@@ -18,8 +18,13 @@ class Events extends Component {
 
 function NewEvent() {
   return (
-    <div className="eventsContainer">
-      <div className="eventContainer" />
+    <div className="eventContainer">
+      <h1 className="eventName">Event</h1>
+      <div className="subheaderContainer">
+        <h3 className="location">City, State</h3>
+        <h3 className="date">Month, Days, Year</h3>
+      </div>
+      <p className="eventDetails">Details about event here.</p>
     </div>
   );
 }
