@@ -21,17 +21,18 @@ const images = ['url(/samplePhotos/deer.jpg)',
 class PhotoGallery extends Component {
 
   state = {
-    showModal: false
+    showModal: false,
+    index: 0
   }
 
-  getPhoto() {
+  getPhotos() {
     return (
       map(images, (image, key) =>
         <div className="photo"
              style={{ backgroundImage: image }}
-             onClick={() => this.setState({ showModal: true })}
+             onClick={() => this.setState({ showModal: true, index: key })}
              key={key} />)
-      );
+    );
   }
 
   render() {
@@ -39,9 +40,9 @@ class PhotoGallery extends Component {
     const { showModal } = this.state;
     return (
       <div>
-        <div className="photoContainer">{this.getPhoto()}</div>
-        <Modal show={showModal}>
-          <ModalComponent closeModal={() => this.setState({ showModal: false })} />
+        <div className="photoContainer">{this.getPhotos()}</div>
+        <Modal show={showModal} containerClassName="photoModal">
+          <ModalComponent closeModal={() => this.setState({ showModal: false })} index={this.state.index} />
         </Modal>
       </div>
     );
@@ -49,43 +50,20 @@ class PhotoGallery extends Component {
 }
 
 class PhotoModalContents extends Component {
-  //
-  // state = {
-  //   frameWidth: 0,
-  //   frameHeight: 0
-  // }
-
-  // constructor(props) {
-  //   super(props);
-  //   this._updateDimensions = this.updateDimensions.bind(this);
-  // }
 
   handleClickOutside() {
     this.props.closeModal();
   }
 
-  // componentDidMount() {
-  //   this.updateDimensions();
-  //   $(window).on('resize', this._updateDimensions);
-  // }
-  //
-  // componentWillUnmount() {
-  //   $(window).off('resize', this._updateDimensions);
-  // }
-  //
-  // updateDimensions() {
-  //   const screenWidth = $(window).width();
-  //   const frameWidth = screenWidth * 0.6;
-  //   const frameHeight = frameWidth * 0.5625;
-  //   this.setState({ frameWidth, frameHeight });
-  // }
-
   render() {
-    // const { frameWidth, frameHeight } = this.state;
+    const { index } = this.props;
     return (
-      <div>
+      <div className="modalContainer">
         <MdClose className="exit" />
-        <div className="photoView" style={{ backgroundImage: images[0] }} />
+        <div className="modalContents">
+          <div className="photoView" style={{ backgroundImage: images[index] }} />
+          <div className="caption">Sample text</div>
+        </div>
       </div>
     );
   }

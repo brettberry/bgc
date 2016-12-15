@@ -7,7 +7,7 @@
   width: 100%;
   height: 50px;
   background-color: white;
-  padding: 0 250px 0 250px;
+  padding: 0 250px;
 }
 
 .photoContainer {
@@ -62,10 +62,68 @@
   }
 }
 
+.modalContainer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.modalContents {
+
+}
+
 .photoView {
-  width: 400px;
-  height: 400px;
+  width: 700px;
+  height: 600px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+
+  @include tablet {
+    width: 600px;
+    height: 500px;
+  }
+
+  @include phone {
+    width: 375px;
+    height: 275px;
+  }
+
+  @include smallPhone {
+    width: 300px;
+    height: 200px;
+  }
+}
+
+.photoModal {
+  display: flex;
+  justify-content: center;
+  width: 0 !important;
+  padding: 0 !important;
+  pointer-events: none;
+  margin: 0;
+
+  .exit {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+    fill: rgba($bgc-light-grey, 0.5);
+    right: 0;
+    top: 0;
+  }
+
+  .caption {
+    @include default-font;
+    font-weight: 300;
+    font-size: 1.1em;
+    color: $bgc-light-grey;
+    line-height: 1.5;
+    margin: 0;
+  }
 }
