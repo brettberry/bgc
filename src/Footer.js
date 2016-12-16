@@ -42,7 +42,7 @@ function LeftSide() {
       <div className="section">
         <div className="itemContainer">
           <FaEnvelope className="icon" />
-          <p className="item">PO Box 416 / 219 S. Lefevre</p>
+          <p className="item">PO Box 416</p>
         </div>
         <p className="text">Medical Lake, WA 99022</p>
       </div>

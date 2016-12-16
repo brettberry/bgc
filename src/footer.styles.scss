@@ -85,7 +85,8 @@
     color: $bgc-background-color;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin: 0 0 20px 16px;
+    margin-bottom: 20px;
+    text-align: center;
 
     @include tablet {
       text-align: center;
@@ -112,7 +113,7 @@
   .section {
     @include tablet {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: flex-start;
     }
 
@@ -171,10 +172,6 @@
         color: $bgc-orange;
       }
 
-      @include tablet {
-        margin: 15px;
-      }
-
       @include phone {
         font-size: 1.1em;
       }
@@ -220,7 +217,8 @@
     color: $bgc-background-color;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin: 0 0 20px 16px;
+    margin-bottom: 20px;
+    text-align: center;
   }
 
   .itemContainer {

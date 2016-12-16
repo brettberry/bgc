@@ -98,7 +98,7 @@ class MoreItem extends Component {
         <h3 className="item">More</h3>
         <div className="underline" />
         <MoreMenu className="moreDropDown"
-                  onItemClick={() => this.setState({ showMoreMenu: false })}
+                  onItemClick={() => this.setState({ showMoreMenu: !this.state.showMoreMenu })}
                   closeMenu={() => this.setState({ showMoreMenu: false })} />
       </div>
     );

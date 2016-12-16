@@ -12,6 +12,9 @@
   z-index: 100;
   padding: 10px 20px;
 
+  // Mozilla only
+  // transform: translateX(-50%);
+
   @include tabletLandscape {
     width: 20%;
   }
