@@ -107,26 +107,32 @@ function Images() {
 }
 
 function ShopCategories() {
-  // const sampleImage = 'url(/samplePhotos/flower.jpg)';
+  const sampleImage = 'url(/samplePhotos/flower.jpg)';
 
   return (
     <div className="categoryContainer">
       <div className="categories">
         <Link to="/products/tags/bugles" className="link">
           <div className="category">
-            {/* <div className="productImgContainer">
+            <div className="imageContainer">
               <div className="productImage" style={{ backgroundImage: sampleImage }} />
-            </div> */}
+            </div>
             <p className="title">Bugles</p>
           </div>
         </Link>
         <Link to="/products/tags/reeds" className="link">
           <div className="category">
+            <div className="imageContainer">
+              <div className="productImage" style={{ backgroundImage: sampleImage }} />
+            </div>
             <p className="title">Mouth Reeds</p>
           </div>
         </Link>
         <Link to="/products/tags/dvds" className="link">
           <div className="category">
+            <div className="imageContainer">
+              <div className="productImage" style={{ backgroundImage: sampleImage }} />
+            </div>
             <p className="title">Movies</p>
           </div>
         </Link>

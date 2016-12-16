@@ -49,13 +49,21 @@ function LeftSide() {
       <div className="section">
         <div className="itemContainer">
           <FaFacebook className="icon" />
-          <p className="item">Follow us on Facebook</p>
+          <a target="_blank"
+             className="anchor"
+             href="https://www.facebook.com/BerryGameCalls/?fref=ts">
+            <p className="item">Follow us on Facebook</p>
+          </a>
         </div>
       </div>
       <div className="section">
         <div className="itemContainer">
           <FaYoutube className="icon" />
-          <p className="item">Subscribe to our Youtube Channel</p>
+          <a target="_blank"
+             className="anchor"
+             href="https://www.youtube.com/user/BERRYGAMECALLS">
+            <p className="item">Subscribe to our Youtube Channel</p>
+          </a>
         </div>
       </div>
     </div>
