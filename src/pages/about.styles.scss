@@ -1,20 +1,5 @@
 @import '../constants';
 
-.aboutPageContainer {
-  display: flex;
-  justify-content: center;
-  padding: 50px 0;
-  background-color: white;
-
-  @include phone {
-    padding: 10px 0;
-  }
-
-  @include smallPhone {
-    padding: 10px 0;
-  }
-}
-
 .aboutContainer {
   display: flex;
   flex-direction: column;
