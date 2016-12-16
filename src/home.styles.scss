@@ -171,6 +171,30 @@
       color: $bgc-dark-orange;
     }
   }
+
+  .banner2Header {
+    display: flex;
+    @include subheader-font;
+    margin: 0;
+    font-size: 2em;
+    font-weight: 400;
+    color: $bgc-medium-grey;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    white-space: nowrap;
+
+    @include phone {
+      font-size: 1.5em;
+    }
+
+    @include smallPhone {
+      font-size: 1.25em;
+    }
+
+    &.highlight {
+      color: $bgc-dark-orange;
+    }
+  }
 }
 
 .categoryContainer {

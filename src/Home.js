@@ -159,10 +159,10 @@ class Banner2 extends Component {
     return (
       <div className="mobileBannerContainer">
         <div className="rowContainer">
-          <h3 className="mobileHeader">Built for hunters,</h3>
+          <h3 className="banner2Header">Built for hunters,</h3>
           <div className="row">
-            <h3 className="mobileHeader">by hunters</h3>
-            <h3 className="mobileHeader highlight">&nbsp;since 1983.</h3>
+            <h3 className="banner2Header">by hunters</h3>
+            <h3 className="banner2Header highlight">&nbsp;since 1983.</h3>
           </div>
         </div>
       </div>
