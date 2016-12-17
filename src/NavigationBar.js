@@ -21,21 +21,19 @@ class NavigationBar extends Component {
   }
 
   renderStandardNavBar() {
-    if (this.state.showResponsiveNavBar === false) {
-      return (
-      <div className="navBar">
-        <Link to="/" className="homeLink">
-          <h1 className="bgc">Berry Game Calls</h1>
-        </Link>
-        <Menu />
-        <ShoppingCenter className="dark" onSearchClick={this.handleSearchClick.bind(this)} />
-      </div>
-     );
-   }
+    return (
+    <div className="navBar">
+      <Link to="/" className="homeLink">
+        <h1 className="bgc">Berry Game Calls</h1>
+      </Link>
+      <Menu />
+      <ShoppingCenter className="dark" onSearchClick={this.handleSearchClick.bind(this)} />
+    </div>
+   );
   }
 
   handleSearchClick() {
-    this.setState({ showResponsiveNavBar: true });
+    $(window).scrollTop(140);
     this.refs.miniNavBar.focusInput();
   }
 
