@@ -142,7 +142,7 @@ class RelatedProducts extends Component {
         <h2 className="subheader">Related Items</h2>
         <div className="relatedInnerDiv">
           { showButtons && <button className="paginationButton left" onClick={this.pageLeft.bind(this)}>
-            <FaChevronLeft className="paginationChevron" />
+            <FaChevronLeft className="nextItemsChevron" />
           </button> }
           <ReactCSSTransitionGroup className={transitionClasses}
                                    transitionName="carousel"
@@ -153,7 +153,7 @@ class RelatedProducts extends Component {
             </div>
           </ReactCSSTransitionGroup>
           { showButtons && <button className="paginationButton right" onClick={this.pageRight.bind(this)}>
-            <FaChevronRight className="paginationChevron" />
+            <FaChevronRight className="nextItemsChevron" />
           </button> }
         </div>
       </div>
