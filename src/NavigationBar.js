@@ -28,7 +28,7 @@ class NavigationBar extends Component {
             <h1 className="bgc">Berry Game Calls</h1>
           </Link>
           <Menu />
-          <ShoppingCenter className="dark" />
+          <ShoppingCenter className="dark" onSearchClick={() => this.setState({ showResponsiveNavBar: true })} />
         </div>
         <Waypoint scrollableAncestor={window}
                   onLeave={() => this.setState({ showResponsiveNavBar: true })}

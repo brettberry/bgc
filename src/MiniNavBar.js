@@ -59,11 +59,15 @@ class Search extends Component {
             <FaSearch className="searchIcon" />
           </div>
         </div>
+        {this.renderAllResults()}
       </div>
     );
   }
 
   renderAllResults() {
+    if (this.state.searchResults.toArray().length === 0) {
+      return;
+    }
     return (
       <div className="resultsContainer">
         {map(this.state.searchResults.toArray(), this.renderSearchResult.bind(this))}
@@ -85,11 +89,11 @@ function ellipsify(string) {
   return string.slice(0, 200) + '...';
 }
 
-export function ShoppingCenter({ className }) {
+export function ShoppingCenter({ className, onSearchClick }) {
   return (
     <div>
       <div className={classnames('shoppingContainer', className)}>
-        <FaSearch className="searchIcon" />
+        <FaSearch className="searchIcon" onClick={onSearchClick} />
         <div className="divider hide" />
         <FaShoppingCart className="cartIcon" />
         <div className="divider" />
