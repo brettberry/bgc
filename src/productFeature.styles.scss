@@ -1,21 +1,12 @@
 @import './constants';
 
-.bannerContainer {
+.productBannerContainer {
   height: 300px;
   background-color: $bgc-medium-light-grey;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 50px;
-
-  @include tabletLandscape {
-    padding: 10px;
-  }
-
-  @include tablet {
-    padding: 0;
-  }
 
   @include phone {
     height: 250px;
@@ -32,11 +23,11 @@
     flex-direction: row;
   }
 
-  .header2 {
+  .header {
     display: flex;
     @include subheader-font;
     margin: 0;
-    font-size: 2.5em;
+    font-size: 3em;
     font-weight: 400;
     color: $bgc-medium-grey;
     text-transform: uppercase;
@@ -47,11 +38,11 @@
     }
 
     @include tabletLandscape {
-      font-size: 2em;
+      font-size: 2.5em;
     }
 
     @include tablet {
-      font-size: 1.75em;
+      font-size: 2em;
       margin-bottom: 40px;
     }
 
@@ -181,8 +172,8 @@
 
       .title {
         @include subheader-font;
-        font-size: 1.3em;
-        font-weight: 400;
+        font-size: 1.5em;
+        font-weight: 300;
         margin: 0;
       }
 

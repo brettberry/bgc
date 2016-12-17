@@ -20,7 +20,7 @@ export default class Product extends Component {
     const pathName = this.props.routeParams.productName;
     const product = products.findByPathName(pathName);
     return (
-      <div className="productPageContainer">
+      <div>
         <ProductView product={product} />
         <TabletProvider>
           <RelatedItemsRenderer product={product} />

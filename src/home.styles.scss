@@ -1,13 +1,13 @@
 @import './constants';
 
 .bannerContainer {
-  height: 300px;
   background-color: $bgc-medium-light-grey;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 0;
+  padding-bottom: 100px;
+  top: 0;
 
   .rowContainer {
     display: flex;
@@ -18,7 +18,7 @@
     display: flex;
     @include subheader-font;
     margin: 0;
-    font-size: 1.9em;
+    font-size: 2em;
     font-weight: 400;
     color: $bgc-medium-grey;
     text-transform: uppercase;
@@ -31,12 +31,12 @@
     }
 
     @include tabletLandscape {
-      font-size: 1.5em;
+      font-size: 1.75em;
       letter-spacing: 1px;
     }
 
     @include tablet {
-      font-size: 1.1em;
+      font-size: 1.25em;
       letter-spacing: 1px;
     }
 
@@ -61,6 +61,7 @@
     text-transform: uppercase;
     letter-spacing: 3px;
     white-space: nowrap;
+    padding-top: 100px;
 
     &.highlight {
       color: $bgc-dark-orange;

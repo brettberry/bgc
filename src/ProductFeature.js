@@ -14,8 +14,8 @@ class Featured extends Component {
     const featured = products.filterByTag('featured');
     return (
       <div>
-        <div className="bannerContainer">
-          <h2 className="header2">Sound like the real thing.</h2>
+        <div className="productBannerContainer">
+          <h2 className="header">Sound like the real thing.</h2>
           <Link to="/products" className="viewLink">
             <Button text="view all" className="viewAllButton" />
           </Link>

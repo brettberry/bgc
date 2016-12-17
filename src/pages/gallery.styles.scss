@@ -113,6 +113,8 @@
     fill: rgba($bgc-light-grey, 0.5);
     right: 0;
     top: 0;
+    pointer-events: all;
+    cursor: pointer;
 
     &:hover {
       fill: $bgc-light-grey;

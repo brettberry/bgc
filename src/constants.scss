@@ -54,7 +54,7 @@ $bgc-medium-light-grey: darken($bgc-light-grey, 5);
   font-size: 1em;
   margin: 0;
   color: $bgc-medium-grey;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   @include retina {
     -webkit-font-smoothing: antialiased;

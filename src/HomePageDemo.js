@@ -41,7 +41,7 @@ class Demo extends Component {
     const thunderBugle = products.findByPathName('thunder-bugle');
     return (
       <div className="demoContainer">
-        <span className="title">The Revolutionary Berry Thunder Bugle</span>
+        <span className="title">Meet the Revolutionary Berry Thunder Bugle</span>
         <div className="demoSection">
           <div className="demo">
             <iframe height={frameHeight} width={frameWidth} src={"https://www.youtube.com/embed/bLAz_kbihLE"} frameBorder="0" allowFullScreen />

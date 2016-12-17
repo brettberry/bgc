@@ -47,6 +47,8 @@
 
     .callType {
       @include default-font;
+      font-size: 1.1em;
+      color: black;
       margin: 0;
       font-weight: 300;
       padding-left: 20px;

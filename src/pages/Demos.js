@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Button from '../Buttons';
-import './demos.styles.scss';
 import { Link } from 'react-router';
 import Modal from 'simple-react-modal';
 import clickOutside from 'react-click-outside';

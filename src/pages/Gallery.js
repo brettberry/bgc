@@ -66,7 +66,7 @@ class PhotoModalContents extends Component {
     const { index } = this.props;
     return (
       <div className="modalContainer">
-        <MdClose className="exit" />
+        <MdClose className="exit" onClick={this.props.closeModal} />
         <div className="modalContents">
           <div className="photoView" style={{ backgroundImage: images[Math.abs(index)] }} />
           <div className="caption">Sample text</div>
