@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
 import classnames from 'classnames';
 import FaSearch from 'react-icons/lib/fa/search';
@@ -6,6 +7,7 @@ import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import map from 'lodash/map';
 import ProductCollection from './models/ProductCollection';
 import data from './data.json';
+import $ from 'jquery';
 import './miniNavBar.styles.scss';
 
 const products = new ProductCollection(data.products);
@@ -16,6 +18,10 @@ class MiniNavBar extends Component {
     showResponsiveNavBar: PropTypes.bool.isRequired
   }
 
+  focusInput() {
+    this.refs.search.focus();
+  }
+
   render() {
     return (
       <div className={classnames('responsiveNavBar', this.props.showResponsiveNavBar && 'showNav')}>
@@ -23,7 +29,7 @@ class MiniNavBar extends Component {
           <Link to="/" className="bgcLink">
             <h1 className="bgc">BGC</h1>
           </Link>
-          <Search products={products} />
+          <Search products={products} ref="search" />
           <ShoppingCenter className="light"/>
         </div>
       </div>
@@ -47,6 +53,11 @@ class Search extends Component {
     this.setState({ searchResults: searchResults });
   }
 
+  focus() {
+    const inputNode = ReactDOM.findDOMNode(this.refs.input);
+    $(inputNode).focus();
+  }
+
   render() {
     return (
       <div className="searchContainer">
@@ -54,7 +65,8 @@ class Search extends Component {
           <input className="searchBar"
                  onChange={(e) => this.handleInputChange(e)}
                  placeholder="Search products"
-                 autoFocus />
+                 autoFocus
+                 ref="input" />
           <div className="searchButton">
             <FaSearch className="searchIcon" />
           </div>

@@ -20,21 +20,34 @@ class NavigationBar extends Component {
     }
   }
 
+  renderStandardNavBar() {
+    if (this.state.showResponsiveNavBar === false) {
+      return (
+      <div className="navBar">
+        <Link to="/" className="homeLink">
+          <h1 className="bgc">Berry Game Calls</h1>
+        </Link>
+        <Menu />
+        <ShoppingCenter className="dark" onSearchClick={this.handleSearchClick.bind(this)} />
+      </div>
+     );
+   }
+  }
+
+  handleSearchClick() {
+    this.setState({ showResponsiveNavBar: true });
+    this.refs.miniNavBar.focusInput();
+  }
+
   render() {
     return (
       <div className="mainNavContainer">
-        <div className="navBar">
-          <Link to="/" className="homeLink">
-            <h1 className="bgc">Berry Game Calls</h1>
-          </Link>
-          <Menu />
-          <ShoppingCenter className="dark" onSearchClick={() => this.setState({ showResponsiveNavBar: true })} />
-        </div>
+        {this.renderStandardNavBar()}
         <Waypoint scrollableAncestor={window}
                   onLeave={() => this.setState({ showResponsiveNavBar: true })}
                   onEnter={() => this.setState({ showResponsiveNavBar: false })} />
         <Alert />
-        <MiniNavBar showResponsiveNavBar={this.state.showResponsiveNavBar} />
+        <MiniNavBar showResponsiveNavBar={this.state.showResponsiveNavBar} ref="miniNavBar" />
       </div>
     );
   }
