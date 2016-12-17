@@ -73,8 +73,23 @@
 
 .searchContainer {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 65%;
+
+  .resultsContainer {
+    position: absolute;
+    top: calc(100% + 10px);
+    width: 100%;
+    background-color: white;
+    padding: 25px;
+  }
+
+  .description {
+    max-height: 38px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .searchDiv {

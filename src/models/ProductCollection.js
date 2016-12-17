@@ -17,4 +17,11 @@ export default class ProductCollection extends Collection {
   filterByTag(tag) {
     return this.filter(item => includes(item.getTags(), tag));
   }
+
+  findBySearch(query) {
+    if (!query) {
+      return new ProductCollection();
+    }
+    return this.filter(item => item.matchesQuery(query));
+  }
 }

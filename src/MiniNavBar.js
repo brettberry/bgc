@@ -3,7 +3,12 @@ import { Link } from 'react-router';
 import classnames from 'classnames';
 import FaSearch from 'react-icons/lib/fa/search';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
+import map from 'lodash/map';
+import ProductCollection from './models/ProductCollection';
+import data from './data.json';
 import './miniNavBar.styles.scss';
+
+const products = new ProductCollection(data.products);
 
 class MiniNavBar extends Component {
 
@@ -18,7 +23,7 @@ class MiniNavBar extends Component {
           <Link to="/" className="bgcLink">
             <h1 className="bgc">BGC</h1>
           </Link>
-          <Search />
+          <Search products={products} />
           <ShoppingCenter className="light"/>
         </div>
       </div>
@@ -26,19 +31,58 @@ class MiniNavBar extends Component {
   }
 }
 
-function Search() {
-  return (
-    <div className="searchContainer">
-      <div className="searchDiv">
-        <input className="searchBar"
-               placeholder="Search products"
-               autoFocus />
-        <div className="searchButton">
-          <FaSearch className="searchIcon" />
+class Search extends Component {
+
+  static propTypes = {
+    products: PropTypes.instanceOf(ProductCollection).isRequired
+  }
+
+  state = {
+    searchResults: new ProductCollection()
+  }
+
+  handleInputChange(e) {
+    const text = e.target.value;
+    const searchResults = this.props.products.findBySearch(text);
+    this.setState({ searchResults: searchResults });
+  }
+
+  render() {
+    return (
+      <div className="searchContainer">
+        <div className="searchDiv">
+          <input className="searchBar"
+                 onChange={(e) => this.handleInputChange(e)}
+                 placeholder="Search products"
+                 autoFocus />
+          <div className="searchButton">
+            <FaSearch className="searchIcon" />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  renderAllResults() {
+    return (
+      <div className="resultsContainer">
+        {map(this.state.searchResults.toArray(), this.renderSearchResult.bind(this))}
+      </div>
+    );
+  }
+
+  renderSearchResult(item, key) {
+    return (
+      <div key={key}>
+        <div>{item.getFullName()}</div>
+        <div className="description">{ellipsify(item.getDescription())}</div>
+      </div>
+    );
+  }
+}
+
+function ellipsify(string) {
+  return string.slice(0, 200) + '...';
 }
 
 export function ShoppingCenter({ className }) {

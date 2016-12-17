@@ -15,8 +15,8 @@ class Footer extends Component {
   render() {
     return (
       <div className="footer">
-        <h3 className="header">Contact us</h3>
-        <div className="horizontalRule"/>
+        {/* <h3 className="header">Contact us</h3> */}
+        {/* <div className="horizontalRule"/> */}
         <div className="contactContainer">
           <LeftSide />
           <RightSide />

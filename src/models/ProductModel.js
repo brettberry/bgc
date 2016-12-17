@@ -35,4 +35,9 @@ export default class ProductModel extends Model {
   getTags() {
     return this.get('tags');
   }
+
+  matchesQuery(query) {
+    const fullName = this.getFullName().toLowerCase();
+    return (fullName.indexOf(query.toLowerCase()) >= 0);
+  }
 }
