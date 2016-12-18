@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import toNumber from 'lodash/toNumber';
 import clamp from 'lodash/clamp';
 import isFinite from 'lodash/isFinite';
@@ -7,6 +7,10 @@ import FaChevronDown from 'react-icons/lib/fa/chevron-down';
 import './quantityPicker.styles.scss'
 
 class QuantityPicker extends Component {
+
+  static propTypes = {
+    onQuantityChange: PropTypes.func
+  }
 
   state = {
     number: 1
@@ -17,6 +21,7 @@ class QuantityPicker extends Component {
     const numberInRange = clamp(number, 1, 1000);
     if (isFinite(numberInRange)) {
       this.setState({ number: numberInRange });
+      this.props.onQuantityChange(numberInRange);
     }
   }
 

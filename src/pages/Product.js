@@ -79,27 +79,46 @@ class Images extends Component {
   }
 }
 
-function Details({ product }) {
-  const price = product.getPrice().getAmount();
-  const discount = product.getPrice().getDiscount();
-  const showDiscount = !!discount;
-  return (
-    <div className="details">
-      <div className="priceContainer">
-        <h2 className={classnames('price', showDiscount && 'strike')}>${price}</h2>
-        {showDiscount && <h2 className="discount">${discount}</h2>}
+class Details extends Component {
+
+  static contextTypes = {
+    addToCart: PropTypes.func
+  }
+
+  state = {
+    quantity: 1
+  }
+
+  handleClickAddToCart() {
+    const { product } = this.props;
+    const { quantity } = this.state;
+    this.context.addToCart(product, quantity);
+  }
+
+  render() {
+    const { product } = this.props;
+    const price = product.getPrice().getAmount();
+    const discount = product.getPrice().getDiscount();
+    const showDiscount = !!discount;
+
+    return (
+      <div className="details">
+        <div className="priceContainer">
+          <h2 className={classnames('price', showDiscount && 'strike')}>${price}</h2>
+          {showDiscount && <h2 className="discount">${discount}</h2>}
+        </div>
+        <h3 className="shipping">+ Flatrate shipping: $2.95</h3>
+        <div className="buttonContainer">
+          <QuantityPicker onQuantityChange={(quantity) => this.setState({ quantity: quantity })} />
+          <Button text="Add To Cart" className="cartButton" onClick={this.handleClickAddToCart.bind(this)} />
+        </div>
+        <div className="descriptionContainer">
+          <h3 className="descriptionTitle">Description</h3>
+          <p className="description">{product.getDescription()}</p>
+        </div>
       </div>
-      <h3 className="shipping">+ Flatrate shipping: $2.95</h3>
-      <div className="buttonContainer">
-        <QuantityPicker />
-        <Button text="Add To Cart" className="cartButton" />
-      </div>
-      <div className="descriptionContainer">
-        <h3 className="descriptionTitle">Description</h3>
-        <p className="description">{product.getDescription()}</p>
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 class RelatedProducts extends Component {
