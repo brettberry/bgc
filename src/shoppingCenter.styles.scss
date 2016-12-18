@@ -1,0 +1,21 @@
+@import './constants';
+
+.cartContainer {
+  position: relative;
+}
+
+.cartQuantity {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: $bgc-orange;
+  @include default-font;
+  color: white;
+  font-size: 9pt;
+}
