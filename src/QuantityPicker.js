@@ -9,12 +9,21 @@ import './quantityPicker.styles.scss'
 class QuantityPicker extends Component {
 
   static propTypes = {
-    onQuantityChange: PropTypes.func
+    onQuantityChange: PropTypes.func,
+    initialQuanity: PropTypes.number
   }
 
-  state = {
-    number: 1
+  static defaultProps = {
+    initialQuanity: 1
   }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      number: props.initialQuanity
+    };
+  }
+
 
   changeNumber(value) {
     const number = toNumber(value);

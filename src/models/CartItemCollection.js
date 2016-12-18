@@ -32,6 +32,16 @@ export default class CartItemCollection extends Collection {
     return this.addProductWithQuantity(product, quantity);
   }
 
+  setItem(product, quantity) {
+    const item = this.findItemByName(product.getFullName());
+    const newItem = item.setQuantity(quantity);
+    return this.replaceItemByName(newItem);
+  }
+
+  removeItem(product) {
+    return this.filter(item => item.getFullName() !== product.getFullName());
+  }
+
   getCartQuantity() {
     return sumBy(this.toArray(), (item) => item.getQuantity());
   }

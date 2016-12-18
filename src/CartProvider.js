@@ -16,6 +16,8 @@ class CartProvider extends Component {
 
   static childContextTypes = {
     addToCart: PropTypes.func,
+    updateCartItem: PropTypes.func,
+    removeCartItem: PropTypes.func,
     cart: PropTypes.instanceOf(CartItemCollection)
   }
 
@@ -26,6 +28,8 @@ class CartProvider extends Component {
   getChildContext() {
     return {
       addToCart: this.addToCart.bind(this),
+      updateCartItem: this.updateCartItem.bind(this),
+      removeCartItem: this.removeCartItem.bind(this),
       cart: this.state.cart
      };
   }
@@ -42,6 +46,14 @@ class CartProvider extends Component {
 
   addToCart(product, quantity) {
     this.setState({ cart: this.state.cart.addItem(product, quantity) });
+  }
+
+  updateCartItem(product, quantity) {
+    this.setState({ cart: this.state.cart.setItem(product, quantity) });
+  }
+
+  removeCartItem(product) {
+    this.setState({ cart: this.state.cart.removeItem(product) });
   }
 
   render() {

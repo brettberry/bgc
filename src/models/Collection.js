@@ -14,10 +14,10 @@ export default class Collection {
     }
     else {
       const Model = this.constructor.ModelType;
-        this.data = new List(map(data, (d) => {
-            const model = d instanceof Model ? d : new Model(d);
-            return model;
-        }));
+      this.data = new List(map(data, (d) => {
+          const model = d instanceof Model ? d : new Model(d);
+          return model;
+      }));
     }
   }
 

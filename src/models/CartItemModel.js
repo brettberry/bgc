@@ -16,6 +16,10 @@ export default class CartItemModel extends Model {
     return this.product;
   }
 
+  getSubtotal() {
+    return this.getProduct().getPriceAmount() * this.getQuantity();
+  }
+
   getFullName() {
     return this.getProduct().getFullName();
   }

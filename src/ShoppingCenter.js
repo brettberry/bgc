@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import FaSearch from 'react-icons/lib/fa/search';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import CartItemCollection from './models/CartItemCollection';
+import { Link } from 'react-router';
 import './shoppingCenter.styles.scss';
 
 class ShoppingCenter extends Component {
@@ -20,10 +21,12 @@ class ShoppingCenter extends Component {
         <div className={classnames('shoppingContainer', className)}>
           <FaSearch className="searchIcon" onClick={onSearchClick} />
           <div className="divider hide" />
-          <div className="cartContainer">
-            <FaShoppingCart className="cartIcon" />
-            {showCartQuantity && <div className="cartQuantity animated bounceIn">{cartQuantity}</div>}
-          </div>
+          <Link to={"/cart"}>
+            <div className="cartContainer">
+              <FaShoppingCart className="cartIcon" />
+              {showCartQuantity && <div className="cartQuantity animated bounceIn">{cartQuantity}</div>}
+            </div>
+          </Link>
           <div className="divider" />
           <h3 className="accountText">My <br/> Account</h3>
         </div>

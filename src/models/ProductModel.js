@@ -20,6 +20,10 @@ export default class ProductModel extends Model {
     return this.price;
   }
 
+  getPriceAmount() {
+    return this.getPrice().getAmountOrDiscount();
+  }
+
   getDescription() {
     return this.get('description');
   }

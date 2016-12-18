@@ -9,4 +9,9 @@ export default class PriceModel extends Model {
   getDiscount() {
     return this.get('discount');
   }
+
+  getAmountOrDiscount() {
+    const discount = this.getDiscount();
+    return discount || this.getAmount();
+  }
 }
