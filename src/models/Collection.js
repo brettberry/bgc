@@ -48,4 +48,8 @@ export default class Collection {
   push(item) {
     return new this.constructor(this.data.push(item));
   }
+
+  get length() {
+    return this.data.size;
+  }
 }

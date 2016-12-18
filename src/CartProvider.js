@@ -1,29 +1,33 @@
 import { Component, PropTypes } from 'react';
 import localForage from 'localForage';
 import Promise from 'bluebird';
-import { CartModel } from './models';
+import { CartItemCollection } from './models';
 
 function loadCart() {
   return Promise.resolve()
     .then(() => localForage.getItem('cart'))
     .then(data => {
       const cart = JSON.parse(data);
-      return new CartModel(cart);
+      return new CartItemCollection(cart);
     });
 }
 
 class CartProvider extends Component {
 
   static childContextTypes = {
-    addToCart: PropTypes.func
+    addToCart: PropTypes.func,
+    cart: PropTypes.instanceOf(CartItemCollection)
   }
 
   state = {
-    cart: new CartModel()
+    cart: new CartItemCollection()
   }
 
   getChildContext() {
-    return { addToCart: this.addToCart.bind(this) };
+    return {
+      addToCart: this.addToCart.bind(this),
+      cart: this.state.cart
+     };
   }
 
   componentDidMount() {
@@ -33,7 +37,7 @@ class CartProvider extends Component {
   }
 
   addToCart(product, quantity) {
-    this.setState({ cart: this.state.cart.addItems(product, quantity) });
+    this.setState({ cart: this.state.cart.addItem(product, quantity) });
   }
 
   render() {

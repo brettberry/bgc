@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
 import classnames from 'classnames';
 import FaSearch from 'react-icons/lib/fa/search';
-import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
+import ShoppingCenter from './ShoppingCenter';
 import map from 'lodash/map';
 import ProductCollection from './models/ProductCollection';
 import data from './data.json';
@@ -99,20 +99,6 @@ class Search extends Component {
 
 function ellipsify(string) {
   return string.slice(0, 200) + '...';
-}
-
-export function ShoppingCenter({ className, onSearchClick }) {
-  return (
-    <div>
-      <div className={classnames('shoppingContainer', className)}>
-        <FaSearch className="searchIcon" onClick={onSearchClick} />
-        <div className="divider hide" />
-        <FaShoppingCart className="cartIcon" />
-        <div className="divider" />
-        <h3 className="accountText">My <br/> Account</h3>
-      </div>
-    </div>
-  );
 }
 
 export default MiniNavBar;

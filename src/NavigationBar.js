@@ -3,7 +3,8 @@ import $ from 'jquery';
 import { Link } from 'react-router';
 import Waypoint from 'react-waypoint';
 import ProductsMenu from './ProductsMenu';
-import MiniNavBar, { ShoppingCenter } from './MiniNavBar';
+import MiniNavBar from './MiniNavBar';
+import ShoppingCenter from './ShoppingCenter';
 import './navigationBar.styles.scss';
 import classnames from 'classnames';
 
