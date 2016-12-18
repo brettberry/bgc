@@ -1,0 +1,22 @@
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  input, button {
+    width: 300px;
+    font-size: 2em;
+  }
+}
+
+.returningUserContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.newUserContainer {
+  display: flex;
+  flex-direction: column;
+}
