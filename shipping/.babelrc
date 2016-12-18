@@ -1,0 +1,9 @@
+{
+  "presets": ["es2015", "stage-1", "react"],
+  "plugins": [
+      "add-module-exports"
+  ],
+  "ignore": [
+      "/(node_modules|bower_components)/"
+   ]
+}

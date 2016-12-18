@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="initial-migration" author="brettberry">
+
+        <createTable tableName="shippingInfo">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="firstName" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastName" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="addressLine1" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="addressLine2" type="varchar(255)"/>
+            <column name="city" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="state" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="zip" type="tinyint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="userId" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="userId"
+                                 baseTableName="shippingInfo"
+                                 referencedTableName="user"
+                                 referencedColumnNames="id"
+                                 constraintName="shippingInfoUserId"/>
+
+
+    </changeSet>
+
+</databaseChangeLog>
