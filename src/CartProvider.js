@@ -36,6 +36,10 @@ class CartProvider extends Component {
     });
   }
 
+  componentDidUpdate() {
+    localForage.setItem('cart', JSON.stringify(this.state.cart.toJS()));
+  }
+
   addToCart(product, quantity) {
     this.setState({ cart: this.state.cart.addItem(product, quantity) });
   }
