@@ -4,19 +4,22 @@ import TabletNavigationBar from './TabletNavigationBar';
 import MobileNavigationBar from './MobileNavigationBar';
 import TabletProvider from './TabletProvider';
 import MobileProvider from './MobileProvider';
+import CartProvider from './CartProvider';
 import './app.styles.scss';
 
 export default class App extends Component {
   render() {
     const { children } = this.props;
     return (
-      <TabletProvider>
-        <MobileProvider>
-          <NavBarRenderer>
-            {children}
-          </NavBarRenderer>
-        </MobileProvider>
-      </TabletProvider>
+      <CartProvider>
+        <TabletProvider>
+          <MobileProvider>
+            <NavBarRenderer>
+              {children}
+            </NavBarRenderer>
+          </MobileProvider>
+        </TabletProvider>
+      </CartProvider>
     );
   }
 }
