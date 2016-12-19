@@ -1,4 +1,5 @@
 import ShippingInfoModel from '../models/ShippingInfoModel';
+import ShippingInfoCollection from '../models/ShippingInfoCollection';
 
 export default class ShippingInfoDao {
 
@@ -15,6 +16,18 @@ export default class ShippingInfoDao {
         return;
       }
       return new ShippingInfoModel(response[0]);
+    });
+  }
+
+  findAllByUserId(userId) {
+    return this.client.query({
+      sql: 'select s.* from shippingInfo s where s.userId = ?;',
+      values: [userId]
+    }).then(response => {
+      if (!response) {
+        return;
+      }
+      return new ShippingInfoCollection(response);
     });
   }
 

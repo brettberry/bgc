@@ -26,4 +26,20 @@ router.post('/', (request, response) => {
     });
 });
 
+router.get('/', (request, response) => {
+  return Promise.resolve()
+    .then(() => {
+      const userId = request.params.userId;
+      return dao.findAllByUserId(userId);
+    })
+    .then((shippingInfoCollection) => {
+      response.json(shippingInfoCollection.toJS());
+    })
+    .catch((error) => {
+      log.trace(error);
+      log.error('Failed to get shipping info.');
+      response.sendStatus(500);
+    });
+});
+
 export default router;
