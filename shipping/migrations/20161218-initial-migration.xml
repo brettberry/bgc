@@ -31,21 +31,18 @@
             <column name="state" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="zip" type="tinyint">
+            <column name="zip" type="int">
                 <constraints nullable="false"/>
             </column>
             <column name="userId" type="bigint">
                 <constraints nullable="false"/>
             </column>
         </createTable>
-
         <addForeignKeyConstraint baseColumnNames="userId"
                                  baseTableName="shippingInfo"
                                  referencedTableName="user"
                                  referencedColumnNames="id"
                                  constraintName="shippingInfoUserId"/>
-
-
     </changeSet>
 
 </databaseChangeLog>
