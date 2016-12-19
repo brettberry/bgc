@@ -4,7 +4,8 @@ import $ from 'jquery';
 
 import Home from './Home';
 import App from './App';
-import { Products, Product, Demos, About, Gallery, Events, Tags, MobileDemos, LogIn, Cart } from './pages';
+import { Products, Product, Demos, About, Gallery, Events, Tags, MobileDemos,
+         LogIn, Cart, Checkout } from './pages';
 
 export default function RouteProvider() {
   return (
@@ -21,6 +22,7 @@ export default function RouteProvider() {
         <Route path="events" component={Events} />
         <Route path="login" component={LogIn} />
         <Route path="cart" component={Cart} />
+        <Route path="checkout" component={Checkout} />
       </Route>
     </Router>
   );

@@ -8,3 +8,4 @@ export Tags from './Tags';
 export MobileDemos from './MobileDemos';
 export LogIn from './LogIn';
 export Cart from './Cart';
+export Checkout from './Checkout';

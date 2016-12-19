@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Promise from 'bluebird';
 import fetch from 'isomorphic-fetch';
 import './login.styles.scss';
@@ -16,6 +16,10 @@ class LogIn extends Component {
 
 class ReturnAccount extends Component {
 
+  static contextTypes = {
+    login: PropTypes.func
+  }
+
   state = {
     username: '',
     password: ''
@@ -23,20 +27,7 @@ class ReturnAccount extends Component {
 
   handleLogin() {
     const { username, password } = this.state;
-
-    Promise.resolve()
-      .then(() => fetch('//localhost:5002/auth/login', {
-        method: 'POST',
-        body: JSON.stringify({
-          username: username,
-          password: password
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }))
-      .then(res => res.json())
-      .then(body => console.log(body));
+    this.context.login(username, password);
   }
 
   render() {
@@ -53,6 +44,10 @@ class ReturnAccount extends Component {
 
 class NewAccount extends Component {
 
+  static contextTypes = {
+    createUser: PropTypes.func
+  }
+
   state = {
     username: '',
     password: '',
@@ -65,20 +60,7 @@ class NewAccount extends Component {
     if (password !== confirmPassword) {
       return this.setState({ passwordError: true });
     }
-
-    //FIXME
-    Promise.resolve()
-      .then(() => fetch('//localhost:5002/auth/users', {
-        method: 'POST',
-        body: JSON.stringify({
-          username: username,
-          password: password
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }))
-      .then(res => res.json());
+    this.context.createUser(username, password);
   }
 
   render() {

@@ -45,4 +45,8 @@ export default class CartItemCollection extends Collection {
   getCartQuantity() {
     return sumBy(this.toArray(), (item) => item.getQuantity());
   }
+
+  getCartTotal() {
+    return sumBy(this.toArray(), (item) => item.getSubtotal());
+  }
 }

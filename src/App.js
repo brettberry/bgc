@@ -5,6 +5,7 @@ import MobileNavigationBar from './MobileNavigationBar';
 import TabletProvider from './TabletProvider';
 import MobileProvider from './MobileProvider';
 import CartProvider from './CartProvider';
+import AuthProvider from './AuthProvider';
 import './app.styles.scss';
 
 export default class App extends Component {
@@ -12,13 +13,15 @@ export default class App extends Component {
     const { children } = this.props;
     return (
       <CartProvider>
-        <TabletProvider>
-          <MobileProvider>
-            <NavBarRenderer>
-              {children}
-            </NavBarRenderer>
-          </MobileProvider>
-        </TabletProvider>
+        <AuthProvider>
+          <TabletProvider>
+            <MobileProvider>
+              <NavBarRenderer>
+                {children}
+              </NavBarRenderer>
+            </MobileProvider>
+          </TabletProvider>
+        </AuthProvider>
       </CartProvider>
     );
   }
