@@ -32,8 +32,8 @@ class Featured extends Component {
 
 
 function FeaturedItem({ feature, key }) {
-  const price = feature.getPrice().getAmount();
-  const discount = feature.getPrice().getDiscount();
+  const price = feature.getPrice().getAmount().toFixed(2);
+  const discount = feature.getPrice().getDiscount() && feature.getPrice().getDiscount().toFixed(2);
   const showDiscount = !!discount;
   const priceClasses = classnames('price', showDiscount && 'strike');
   const sampleImage = 'url(/samplePhotos/flower.jpg)';

@@ -97,8 +97,8 @@ class Details extends Component {
 
   render() {
     const { product } = this.props;
-    const price = product.getPrice().getAmount();
-    const discount = product.getPrice().getDiscount();
+    const price = product.getPrice().getAmount().toFixed(2);
+    const discount = product.getPrice().getDiscount() && product.getPrice().getDiscount().toFixed(2);
     const showDiscount = !!discount;
 
     return (

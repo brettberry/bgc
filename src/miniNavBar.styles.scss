@@ -79,14 +79,48 @@
 
   .resultsContainer {
     position: absolute;
-    top: calc(100% + 10px);
+    top: calc(100% + 12px);
     width: 100%;
     background-color: white;
     padding: 25px;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+    border-style: solid;
+    border-width: 0 1px 1px 1px;
+    border-radius: 0 0 5px 5px;
+    border-color: $bgc-medium-light-grey;
+    max-height: 500px;
+    overflow: auto;
+
+    .link {
+      text-decoration: none;
+      display: block;
+      outline: none;
+
+      &:hover {
+        background-color: $bgc-light-grey;
+      }
+
+      &:focus {
+        background-color: $bgc-light-grey;
+      }
+    }
+  }
+
+  .searchItemContainer {
+    padding: 10px;
+  }
+
+  .searchItem {
+    @include subheader-font;
+    font-weight: 400;
+    font-size: 1.25em;
   }
 
   .description {
-    max-height: 38px;
+    @include default-font;
+    color: black;
+    font-weight: 300;
+    max-height: 40px;
     overflow: hidden;
     text-overflow: ellipsis;
   }

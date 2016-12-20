@@ -7,7 +7,8 @@ class AuthProvider extends Component {
   static childContextTypes = {
     user: PropTypes.instanceOf(User),
     login: PropTypes.func,
-    createUser: PropTypes.func
+    createUser: PropTypes.func,
+    getCurrentUser: PropTypes.func
   }
 
   state = {
@@ -18,12 +19,9 @@ class AuthProvider extends Component {
     return {
       user: this.state.user,
       login: this.login.bind(this),
-      createUser: this.createUser.bind(this)
+      createUser: this.createUser.bind(this),
+      getCurrentUser: this.getCurrentUser.bind(this)
     };
-  }
-
-  componentDidMount() {
-
   }
 
   render() {
@@ -31,7 +29,7 @@ class AuthProvider extends Component {
   }
 
   login(username, password) {
-    Promise.resolve()
+    return Promise.resolve()
       .then(() => fetch('//localhost:5002/auth/login', {
         method: 'POST',
         body: JSON.stringify({
@@ -40,7 +38,8 @@ class AuthProvider extends Component {
         }),
         headers: {
           'Content-Type': 'application/json'
-        }
+        },
+        credentials: 'include'
       }))
       .then(res => res.json())
       .then(body => {
@@ -51,7 +50,7 @@ class AuthProvider extends Component {
 
   createUser(username, password) {
     //FIXME
-    Promise.resolve()
+    return Promise.resolve()
       .then(() => fetch('//localhost:5002/auth/users', {
         method: 'POST',
         body: JSON.stringify({
@@ -60,12 +59,26 @@ class AuthProvider extends Component {
         }),
         headers: {
           'Content-Type': 'application/json'
-        }
+        },
+        credentials: 'include'
       }))
       .then(res => res.json())
       .then(body => {
         const user = new User(body);
         this.setState({ user: user });
+      });
+  }
+
+  getCurrentUser() {
+    return Promise.resolve()
+      .then(() => fetch('//localhost:5002/auth/users/me', {
+        credentials: 'include'
+      }))
+      .then(res => res.json())
+      .then(body => {
+        const user = new User(body);
+        this.setState({ user: user });
+        return user;
       });
   }
 }

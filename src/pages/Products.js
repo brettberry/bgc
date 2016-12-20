@@ -27,8 +27,8 @@ export default class Products extends Component {
 
 function ProductGrid({ product, key }) {
   const name = product.getFullName();
-  const price = product.getPrice().getAmount();
-  const discount = product.getPrice().getDiscount();
+  const price = product.getPrice().getAmount().toFixed(2);
+  const discount = product.getPrice().getDiscount() && product.getPrice().getDiscount().toFixed(2);
   const showDiscount = !!discount;
   const sampleImage = 'url(/samplePhotos/flower.jpg)';
 

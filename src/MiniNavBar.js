@@ -6,6 +6,7 @@ import FaSearch from 'react-icons/lib/fa/search';
 import ShoppingCenter from './ShoppingCenter';
 import map from 'lodash/map';
 import ProductCollection from './models/ProductCollection';
+import clickOutside from 'react-click-outside';
 import data from './data.json';
 import $ from 'jquery';
 import './miniNavBar.styles.scss';
@@ -23,13 +24,14 @@ class MiniNavBar extends Component {
   }
 
   render() {
+    const SearchComponent = clickOutside(Search);
     return (
       <div className={classnames('responsiveNavBar', this.props.showResponsiveNavBar && 'showNav')}>
         <div className="navBarContents">
           <Link to="/" className="bgcLink">
             <h1 className="bgc">BGC</h1>
           </Link>
-          <Search products={products} ref="search" />
+          <SearchComponent products={products} ref="search" />
           <ShoppingCenter className="light"/>
         </div>
       </div>
@@ -45,6 +47,10 @@ class Search extends Component {
 
   state = {
     searchResults: new ProductCollection()
+  }
+
+  handleClickOutside() {
+    this.setState({ searchResults: new ProductCollection() });
   }
 
   handleInputChange(e) {
@@ -64,6 +70,7 @@ class Search extends Component {
         <div className="searchDiv">
           <input className="searchBar"
                  onChange={(e) => this.handleInputChange(e)}
+                 onFocus={(e) => this.handleInputChange(e)}
                  placeholder="Search products"
                  autoFocus
                  ref="input" />
@@ -80,19 +87,28 @@ class Search extends Component {
     if (this.state.searchResults.toArray().length === 0) {
       return;
     }
+    return <SearchDropDown searchResults={this.state.searchResults} />;
+  }
+}
+
+class SearchDropDown extends Component {
+
+  render() {
     return (
       <div className="resultsContainer">
-        {map(this.state.searchResults.toArray(), this.renderSearchResult.bind(this))}
+        {map(this.props.searchResults.toArray(), this.renderSearchResult.bind(this))}
       </div>
     );
   }
 
   renderSearchResult(item, key) {
     return (
-      <div key={key}>
-        <div>{item.getFullName()}</div>
-        <div className="description">{ellipsify(item.getDescription())}</div>
-      </div>
+      <Link to={`/products/${item.getCategory()}/${item.getPathName()}`} className="link" key={key}>
+        <div className="searchItemContainer">
+          <div className="searchItem">{item.getFullName()}</div>
+          <div className="description">{ellipsify(item.getDescription())}</div>
+        </div>
+      </Link>
     );
   }
 }
