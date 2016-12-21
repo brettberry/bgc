@@ -1,20 +1,36 @@
 import React, { Component, PropTypes } from 'react';
-import Promise from 'bluebird';
-import fetch from 'isomorphic-fetch';
 import './login.styles.scss';
 
 class LogIn extends Component {
+
+  static propTypes = {
+    location: PropTypes.object
+  }
+
+  static contextTypes = {
+    router: PropTypes.object
+  }
+
+  handleSubmit() {
+    const pathname = this.props.location.query.redirectTo || '/';
+    this.context.router.push(pathname);
+  }
+
   render() {
     return (
       <div className="loginContainer">
-        <ReturnAccount />
-        <NewAccount />
+        <ReturnAccount onSubmit={this.handleSubmit.bind(this)} />
+        <NewAccount onSubmit={this.handleSubmit.bind(this)} />
       </div>
     );
   }
 }
 
 class ReturnAccount extends Component {
+
+  static propTypes = {
+    onSubmit: PropTypes.func
+  }
 
   static contextTypes = {
     login: PropTypes.func
@@ -27,7 +43,7 @@ class ReturnAccount extends Component {
 
   handleLogin() {
     const { username, password } = this.state;
-    this.context.login(username, password);
+    this.context.login(username, password).then(this.props.onSubmit);
   }
 
   render() {
@@ -43,6 +59,10 @@ class ReturnAccount extends Component {
 }
 
 class NewAccount extends Component {
+
+  static propTypes = {
+    onSubmit: PropTypes.func
+  }
 
   static contextTypes = {
     createUser: PropTypes.func
@@ -60,7 +80,7 @@ class NewAccount extends Component {
     if (password !== confirmPassword) {
       return this.setState({ passwordError: true });
     }
-    this.context.createUser(username, password);
+    this.context.createUser(username, password).then(this.props.onSubmit);
   }
 
   render() {

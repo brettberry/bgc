@@ -8,7 +8,8 @@ class AuthProvider extends Component {
     user: PropTypes.instanceOf(User),
     login: PropTypes.func,
     createUser: PropTypes.func,
-    getCurrentUser: PropTypes.func
+    getCurrentUser: PropTypes.func,
+    logout: PropTypes.func
   }
 
   state = {
@@ -20,12 +21,24 @@ class AuthProvider extends Component {
       user: this.state.user,
       login: this.login.bind(this),
       createUser: this.createUser.bind(this),
-      getCurrentUser: this.getCurrentUser.bind(this)
+      getCurrentUser: this.getCurrentUser.bind(this),
+      logout: this.logout.bind(this)
     };
   }
 
   render() {
     return this.props.children;
+  }
+
+  logout() {
+    return Promise.resolve()
+      .then(() => fetch('//localhost:5002/auth/logout', {
+        method: 'POST',
+        credentials: 'include'
+      }))
+      .then(() => {
+        this.setState({ user: null });
+      });
   }
 
   login(username, password) {
@@ -62,11 +75,7 @@ class AuthProvider extends Component {
         },
         credentials: 'include'
       }))
-      .then(res => res.json())
-      .then(body => {
-        const user = new User(body);
-        this.setState({ user: user });
-      });
+      .then(() => this.login(username, password));
   }
 
   getCurrentUser() {
