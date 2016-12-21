@@ -1,22 +1,120 @@
 @import './constants';
 
-.cartContainer {
-  position: relative;
+.shoppingContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &.dark {
+    .accountText {
+      color: $bgc-medium-grey;
+    }
+
+    .divider {
+      background-color: rgba($bgc-medium-grey, 0.5);
+    }
+
+    .cartIcon {
+      fill: $bgc-medium-grey;
+    }
+
+    .searchIcon {
+      fill: $bgc-medium-grey;
+    }
+
+    .cartQuantity {
+      background-color: $bgc-orange;
+    }
+  }
+
+  &.light {
+    .accountText {
+      color: white;
+    }
+
+    .divider {
+      background-color: rgba(white, 0.5);
+
+      &.hide {
+        width: 0;
+      }
+    }
+
+    .cartIcon {
+      fill: white;
+    }
+
+    .searchIcon {
+      width: 0;
+    }
+
+    .cartQuantity {
+      background-color: $bgc-dark-orange;
+    }
+  }
+
+  .cartQuantity {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    @include default-font;
+    color: white;
+    font-size: 9pt;
+    line-height: 9pt;
+  }
+
+  .searchIcon {
+    fill: $bgc-medium-grey;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+
+    &:hover {
+      fill: $bgc-dark-orange;
+    }
+  }
+
+  .cartIcon {
+    fill: white;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+    &:hover {
+      fill: $bgc-dark-orange;
+    }
+  }
+
+  .accountText {
+    @include default-font;
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0;
+
+    &:hover {
+      color: $bgc-dark-orange;
+      cursor: pointer;
+    }
+  }
 }
 
-.cartQuantity {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: $bgc-dark-orange;
-  @include default-font;
-  color: white;
-  font-size: 9pt;
-  line-height: 9pt;
+.divider {
+  width: 1px;
+  height: 40px;
+  background-color: rgba(white, 0.5);
+  border: none;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.cartContainer {
+  position: relative;
 }

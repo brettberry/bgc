@@ -10,6 +10,7 @@ import clickOutside from 'react-click-outside';
 import data from './data.json';
 import $ from 'jquery';
 import './miniNavBar.styles.scss';
+import './shoppingCenter.styles.scss';
 
 const products = new ProductCollection(data.products);
 

@@ -123,6 +123,7 @@
     max-height: 40px;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-top: 5px;
   }
 }
 
@@ -163,95 +164,11 @@
   width: 65px;
   height: 40px;
   border-radius: 0 22.5px 22.5px 0;
-}
 
-.searchIcon {
-  fill: $bgc-medium-grey;
-  width: 23px;
-  height: 23px;
-  cursor: pointer;
-
-  &:hover {
-    fill: $bgc-orange;
-  }
-}
-
-.shoppingContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  &.dark {
-    .accountText {
-      color: $bgc-medium-grey;
-    }
-
-    .divider {
-      background-color: rgba($bgc-medium-grey, 0.5);
-    }
-
-    .cartIcon {
-      fill: $bgc-medium-grey;
-    }
-
-    .searchIcon {
-      fill: $bgc-medium-grey;
-    }
-  }
-
-  &.light {
-    .accountText {
-      color: white;
-    }
-
-    .divider {
-      background-color: rgba(white, 0.5);
-
-      &.hide {
-        width: 0;
-      }
-    }
-
-    .cartIcon {
-      fill: white;
-    }
-
-    .searchIcon {
-      width: 0;
-    }
-  }
-}
-
-.accountText {
-  @include default-font;
-  font-size: 1em;
-  font-weight: 400;
-  letter-spacing: 1px;
-  margin: 0;
-
-  &:hover {
-    fill: $bgc-light-grey;
+  .searchIcon {
+    fill: $bgc-medium-grey;
+    width: 23px;
+    height: 23px;
     cursor: pointer;
-  }
-}
-
-.divider {
-  width: 1px;
-  height: 40px;
-  background-color: rgba(white, 0.5);
-  border: none;
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-.cartIcon {
-  fill: white;
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-
-  &:hover {
-    fill: $bgc-light-grey;
   }
 }
