@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import NavigationBar from './NavigationBar';
+import ShippingProvider from './ShippingProvider';
 import TabletNavigationBar from './TabletNavigationBar';
 import MobileNavigationBar from './MobileNavigationBar';
 import TabletProvider from './TabletProvider';
@@ -12,17 +13,19 @@ export default class App extends Component {
   render() {
     const { children } = this.props;
     return (
-      <CartProvider>
-        <AuthProvider>
-          <TabletProvider>
-            <MobileProvider>
-              <NavBarRenderer>
-                {children}
-              </NavBarRenderer>
-            </MobileProvider>
-          </TabletProvider>
-        </AuthProvider>
-      </CartProvider>
+        <CartProvider>
+          <AuthProvider>
+            <TabletProvider>
+              <MobileProvider>
+                <ShippingProvider>
+                  <NavBarRenderer>
+                              {children}
+                  </NavBarRenderer>
+                </ShippingProvider>
+              </MobileProvider>
+            </TabletProvider>
+          </AuthProvider>
+        </CartProvider>
     );
   }
 }
