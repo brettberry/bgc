@@ -49,4 +49,24 @@ export default class ShippingInfoDao {
       return this.findById(response.insertId);
     });
   }
+
+  updateShippingInfo(shippingInfo) {
+    return this.client.query({
+      sql: `update shippingInfo set firstName = ?, lastName = ?, phone = ?, addressLine1 = ?,
+                                      addressLine2 = ?, city = ?, state = ?, zip = ?, userId = ?
+                                      where id = ?;`,
+      values: [shippingInfo.getFirstName(),
+               shippingInfo.getLastName(),
+               shippingInfo.getPhone(),
+               shippingInfo.getAddressLine1(),
+               shippingInfo.getAddressLine2(),
+               shippingInfo.getCity(),
+               shippingInfo.getState(),
+               shippingInfo.getZip(),
+               shippingInfo.getUserId(),
+               shippingInfo.getId()]
+    }).then(response => {
+      return this.findById(shippingInfo.getId());
+    });
+  }
 }

@@ -26,6 +26,24 @@ router.post('/', (request, response) => {
     });
 });
 
+router.put('/', (request, response) => {
+  return Promise.resolve()
+    .then(() => {
+      let body = request.body;
+      body.userId = request.params.userId;
+      const shippingInfo = new ShippingInfoModel(body);
+      return dao.updateShippingInfo(shippingInfo);
+    })
+    .then((shippingInfo) => {
+      response.json(shippingInfo.toJS());
+    })
+    .catch((error) => {
+      log.trace(error);
+      log.error('Failed to update shipping info.');
+      response.sendStatus(500);
+    });
+});
+
 router.get('/', (request, response) => {
   return Promise.resolve()
     .then(() => {

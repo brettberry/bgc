@@ -38,4 +38,8 @@ export default class ShippingInfoModel extends Model {
     return this.get('userId');
   }
 
+  getId() {
+    return this.get('id');
+  }
+
 }

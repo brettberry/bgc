@@ -9,10 +9,19 @@ class Checkout extends Component {
     router: PropTypes.object,
     saveShippingInfo: PropTypes.func,
     shippingInfo: PropTypes.instanceOf(ShippingInfoModel),
-    getShippingInfo: PropTypes.func
+    getShippingInfo: PropTypes.func,
+    updateShippingInfo: PropTypes.func
   }
 
   state = {
+    firstName: '',
+    lastName: '',
+    phone: '',
+    addressLine1: '',
+    addressLine2: '',
+    city: '',
+    state: '',
+    zip: ''
   }
 
   componentDidMount() {
@@ -47,7 +56,8 @@ class Checkout extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.context.saveShippingInfo({
+    const shippingId = this.context.shippingInfo && this.context.shippingInfo.getId();
+    const shippingInfo = {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       phone: this.state.phone,
@@ -55,8 +65,13 @@ class Checkout extends Component {
       addressLine2: this.state.addressLine2,
       city: this.state.city,
       state: this.state.state,
-      zip: this.state.zip
-    });
+      zip: this.state.zip,
+      id: shippingId
+    };
+    if (shippingId) {
+      return this.context.updateShippingInfo(shippingInfo);
+    }
+    this.context.saveShippingInfo(shippingInfo);
   }
 
   render() {
