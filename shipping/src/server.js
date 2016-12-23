@@ -5,7 +5,7 @@ import healthCheck from 'express-healthcheck';
 import morgan from 'morgan';
 import cors from 'cors';
 
-import { ShippingInfoRouter } from './routes';
+import { ShippingInfoRouter, PaymentsRouter } from './routes';
 import { serverConfig } from './config';
 import log from './log';
 
@@ -21,6 +21,7 @@ app.use(morgan('combined'));
 const router = express.Router();
 router.use('/healthcheck', healthCheck());
 router.use('/users/:userId/addresses', ShippingInfoRouter);
+router.use('/users/:userId/payments', PaymentsRouter);
 app.use('/shipping', router);
 
 export default function startServer() {

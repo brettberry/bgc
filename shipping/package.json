@@ -20,6 +20,7 @@
     "bcrypt": "0.8.7",
     "bluebird": "^3.4.1",
     "body-parser": "^1.15.2",
+    "braintree": "^1.46.0",
     "camelcase": "^3.0.0",
     "cookie-parser": "1.4.3",
     "cors": "2.7.1",

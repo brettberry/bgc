@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ShippingInfoModel from '../../shipping/src/models/ShippingInfoModel';
+import braintree from 'braintree-web';
 
 class Checkout extends Component {
 
@@ -10,7 +11,9 @@ class Checkout extends Component {
     saveShippingInfo: PropTypes.func,
     shippingInfo: PropTypes.instanceOf(ShippingInfoModel),
     getShippingInfo: PropTypes.func,
-    updateShippingInfo: PropTypes.func
+    updateShippingInfo: PropTypes.func,
+    createClientToken: PropTypes.func,
+    clientToken: PropTypes.string
   }
 
   state = {
@@ -27,7 +30,8 @@ class Checkout extends Component {
   componentDidMount() {
     this.loadUser()
       .then(() => this.context.getShippingInfo())
-      .then(() => this.setupFormData());
+      .then(() => this.setupFormData())
+      .then(() => this.loadBraintreeToken());
   }
 
   loadUser() {
@@ -38,6 +42,16 @@ class Checkout extends Component {
           query: { redirectTo: '/checkout' }
         });
       });
+  }
+
+  loadBraintreeToken() {
+    return this.context.createClientToken()
+    .then((clientToken) => {
+      console.log(clientToken);
+      braintree.setup(clientToken, 'dropin', {
+        container: 'braintree_ui'
+      });
+    });
   }
 
   setupFormData() {
@@ -78,6 +92,7 @@ class Checkout extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit.bind(this)}>
+          <div id="braintree_ui"/>
           <div>
             <label htmlFor="firstName">First Name</label>
             <input id="firstName"
