@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ShippingInfoModel from '../../shipping/src/models/ShippingInfoModel';
+import CartItemCollection from '../models/CartItemCollection';
 import braintree from 'braintree-web';
 
 class Checkout extends Component {
@@ -13,7 +14,9 @@ class Checkout extends Component {
     getShippingInfo: PropTypes.func,
     updateShippingInfo: PropTypes.func,
     createClientToken: PropTypes.func,
-    clientToken: PropTypes.string
+    clientToken: PropTypes.string,
+    createTransaction: PropTypes.func,
+    cart: PropTypes.instanceOf(CartItemCollection)
   }
 
   state = {
@@ -47,9 +50,17 @@ class Checkout extends Component {
   loadBraintreeToken() {
     return this.context.createClientToken()
     .then((clientToken) => {
-      console.log(clientToken);
       braintree.setup(clientToken, 'dropin', {
-        container: 'braintree_ui'
+        container: 'braintree_ui',
+        paypal: {
+          button: {
+            type: 'checkout'
+          }
+        },
+        onPaymentMethodReceived: (paymentInfo) => {
+          const amount = this.context.cart.getCartTotal().toFixed(2);
+          this.context.createTransaction(amount, paymentInfo.nonce);
+        }
       });
     });
   }
