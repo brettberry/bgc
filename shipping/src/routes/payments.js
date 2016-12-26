@@ -16,15 +16,15 @@ const router = express.Router({ mergeParams: true });
 
 router.post('/tokens', (request, response) => {
   return Promise.resolve()
-  .then(() => generate({}))
-  .then(gatewayResponse => {
-    response.json({ token: gatewayResponse.clientToken });
-  })
-  .catch(error => {
-    log.trace(error);
-    log.error('Failed to create token.');
-    response.sendStatus(500);
-  });
+    .then(() => generate({}))
+    .then(gatewayResponse => {
+      response.json({ token: gatewayResponse.clientToken });
+    })
+    .catch(error => {
+      log.trace(error);
+      log.error('Failed to create token.');
+      response.sendStatus(500);
+    });
 });
 
 router.post('/transactions', (request, response) => {

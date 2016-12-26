@@ -59,7 +59,8 @@ class Checkout extends Component {
         },
         onPaymentMethodReceived: (paymentInfo) => {
           const amount = this.context.cart.getCartTotal().toFixed(2);
-          this.context.createTransaction(amount, paymentInfo.nonce);
+          this.context.createTransaction(amount, paymentInfo.nonce)
+          .then(() => this.context.router.push('/checkout/success'));
         }
       });
     });
@@ -154,7 +155,7 @@ class Checkout extends Component {
           </div>
           <button type="submit">Submit</button>
         </form>
-        <button onClick={this.context.logout}>Log out</button>
+        {/* <button onClick={this.context.logout}>Log out</button> */}
       </div>
     );
   }
