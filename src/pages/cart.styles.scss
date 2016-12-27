@@ -1,6 +1,44 @@
 
+@import '../constants';
+
 .cartItemContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+
+  .thumbnailImageDiv {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .item {
+    @include subheader-font;
+  }
+
+  .itemTotal {
+    @include subheader-font;
+  }
+
+  .remove {
+    fill: $bgc-medium-grey;
+    height: 25px;
+    width: 25px;
+
+    &:hover {
+      fill: darken(red, 10);
+    }
+  }
+
+  .rightContents {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 25%;
+  }
 }

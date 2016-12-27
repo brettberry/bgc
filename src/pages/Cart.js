@@ -14,6 +14,12 @@ class Cart extends Component {
     removeCartItem: PropTypes.func
   }
 
+  getThumbnailImage(item) {
+      const productImg = item.getMedia();
+      console.log(item.getProduct().toJS());
+      return { backgroundImage: productImg[0] };
+  }
+
   render() {
     return (
       <div>
@@ -33,11 +39,15 @@ class Cart extends Component {
   renderItem(item, index) {
     return (
       <div key={index} className="cartItemContainer">
-        <div>{item.getFullName()}</div>
-        <QuantityPicker initialQuanity={item.getQuantity()}
-                        onQuantityChange={quantity => this.context.updateCartItem(item, quantity)} />
-        <div>{item.getSubtotal().toFixed(2)}</div>
-        <FaClose onClick={() => this.context.removeCartItem(item)} />
+        <div className="thumbnailImageDiv" style={this.getThumbnailImage(item)} />
+        <div className="item">{item.getFullName()}</div>
+        <div className="rightContents">
+          <QuantityPicker initialQuanity={item.getQuantity()}
+                          onQuantityChange={quantity => this.context.updateCartItem(item, quantity)} />
+          <div className="itemTotal">{`$${item.getSubtotal().toFixed(2)}`}</div>
+          <FaClose className="remove"
+                   onClick={() => this.context.removeCartItem(item)} />
+        </div>
       </div>
     );
   }

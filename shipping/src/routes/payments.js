@@ -27,7 +27,7 @@ router.post('/tokens', (request, response) => {
     });
 });
 
-router.post('/transactions', (request, response) => {
+router.post('/orders', (request, response) => {
   return Promise.resolve()
     .then(() => sale({
       amount: request.body.amount,

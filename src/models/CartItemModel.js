@@ -24,6 +24,10 @@ export default class CartItemModel extends Model {
     return this.getProduct().getFullName();
   }
 
+  getMedia() {
+    return this.getProduct().getMedia();
+  }
+
   addQuantity(newQuantity) {
     return this.setQuantity(this.getQuantity() + newQuantity);
   }
