@@ -19,7 +19,7 @@ export default class App extends Component {
               <MobileProvider>
                 <ShippingProvider>
                   <NavBarRenderer>
-                              {children}
+                    {children}
                   </NavBarRenderer>
                 </ShippingProvider>
               </MobileProvider>

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);.button {
+@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);@import url(https://fonts.googleapis.com/css?family=Lora);.button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4329,7 +4329,62 @@ html, body, main {
           flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 50px; }
+  .cartItemContainer .thumbnailImageDiv {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; }
+  .cartItemContainer .item {
+    font-family: Source Sans Pro, Avenir Next, Avenir, Helvetica, "sans-serif";
+    font-weight: lighter;
+    font-size: 1.5em;
+    color: #263238; }
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .cartItemContainer .item {
+        -webkit-font-smoothing: antialiased; } }
+    .cartItemContainer .item::-moz-selection {
+      background-color: rgba(235, 176, 82, 0.4); }
+    .cartItemContainer .item::selection {
+      background-color: rgba(235, 176, 82, 0.4); }
+  .cartItemContainer .itemTotal {
+    font-family: Source Sans Pro, Avenir Next, Avenir, Helvetica, "sans-serif";
+    font-weight: lighter;
+    font-size: 1.5em;
+    color: #263238; }
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .cartItemContainer .itemTotal {
+        -webkit-font-smoothing: antialiased; } }
+    .cartItemContainer .itemTotal::-moz-selection {
+      background-color: rgba(235, 176, 82, 0.4); }
+    .cartItemContainer .itemTotal::selection {
+      background-color: rgba(235, 176, 82, 0.4); }
+  .cartItemContainer .remove {
+    fill: #546e7a;
+    height: 25px;
+    width: 25px; }
+    .cartItemContainer .remove:hover {
+      fill: #cc0000; }
+  .cartItemContainer .rightContents {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 25%; }
 @font-face{
     font-family: 'Source Sans Pro';
     font-weight: 200;

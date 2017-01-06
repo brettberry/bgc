@@ -4,7 +4,7 @@
       "fullName": "Berry Thunder Bugle",
       "pathName": "thunder-bugle",
       "price": {
-        "amount": 34.50
+        "amount": 37.50
       },
       "description": "The revolutionary Thunder Bugle is one of the best external elk calls ever made. The thin replaceable RT-Reeds snap into the mouthpiece in seconds.  With four different types of RT-Reeds you can produce a variety of sounds quickly.  Simply blow a breath of air through the call and apply top lip, bottom lip, or even tongue pressure and you will be producing tones so easily.  With a little practice you will be sounding like the real thing in no time.  The Thunder Bugle comes with two RT-Reeds, a camo cover, and a cap to protect the reed.",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -17,15 +17,14 @@
       "fullName": "Thunder Bugle Pro",
       "pathName": "thunder-bugle-pro",
       "price": {
-        "amount": 49.95,
-        "discount": 45.95
+        "amount": 49.95
       },
       "description": "Designed by world champion elk caller Glen Berry. Thunder Bugle Pro Includes stretchy cord lanyard, camo cover a cap to protect the RT- REED it has a white RT-REED install in the mouthpiece, black RT-REED, green RT-REED and red RT-REED included in the Package.",
       "media": ["url(/samplePhotos/deer.jpg)",
                 "url(/samplePhotos/fox.jpg)",
                 "url(/samplePhotos/scenery.jpg)"],
       "category": "bugles",
-      "tags": ["bugles", "sale", "featured"]
+      "tags": ["bugles", "featured"]
     },
     {
       "fullName": "Mini Thunder Bugle",
@@ -71,7 +70,7 @@
       "fullName": "Thunder Bugle White RT-Reed",
       "pathName": "rt-white",
       "price": {
-        "amount": 6.25
+        "amount": 7.95
       },
       "description": "The Thunder Bugle White single RT- Reed Consist of 1 thin layer of latex, this Reed is designed to get a small to Medium bull sounds with excited bull tone range. RT- Reeds come in a Two Pack! (Caution These are not mouth Reeds. RT-REEDS are replacement reeds for Thunder Bugle)",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -84,7 +83,7 @@
       "fullName": "Thunder Bugle Black RT-Reed",
       "pathName": "rt-black",
       "price": {
-        "amount": 6.25
+        "amount": 7.95
       },
       "description": "The Thunder Bugle Black single RT- Reed Consist of 1 thick layer of latex, this Reed is designed to get a Medium to larger bull sounds with excited bull tone range. RT- Reeds come in a Two Pack! (Caution These are not mouth Reeds. RT-REEDS are replacement reeds for Thunder Bugle)",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -97,7 +96,7 @@
       "fullName": "Thunder Bugle Green RT-Reed",
       "pathName": "rt-green",
       "price": {
-        "amount": 6.25
+        "amount": 7.95
       },
       "description": "The Thunder Bugle Green Double RT- Reed Consist of 2 layers of latex, this Reed is designed to get a Medium bull sounds with excited bull tone range. RT- Reeds come in a Two Pack! (Caution These are not mouth Reeds. RT-REEDS are replacement reeds for Thunder Bugle)",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -110,7 +109,7 @@
       "fullName": "Thunder Bugle Red RT-Reed",
       "pathName": "rt-red",
       "price": {
-        "amount": 6.25
+        "amount": 7.95
       },
       "description": "The Thunder Bugle Red Triple Rt-Reed Consist of 3 layers of latex, this Reed is designed to get deeper sounds with more volume and tone range. RT- Reeds come in a Two Pack. (Caution These are not mouth Reeds. RT-REEDS are replacement reeds for Thunder Bugle)",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -123,7 +122,7 @@
       "fullName": "Golden Dome Large Bull",
       "pathName": "golden-dome-large",
       "price": {
-        "amount": 6.95
+        "amount": 7.95
       },
       "description": "Glen Berry designed the unique X-Series mouth reeds with great success.  He used this proven X-design and evolved this concept into the new Golden Dome with a contoured elevated design to help produce the realistic elk sounds of bugles, grunts and cow and calf mews!  Easy to use and effective. Sound like the real thing and produce those perfect tones with the NEW Golden Dome!  The large bull reed has two layers of latex to help produce more volume.",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -136,7 +135,7 @@
       "fullName": "Golden Dome Medium Bull",
       "pathName": "golden-dome-medium",
       "price": {
-        "amount": 6.95
+        "amount": 7.95
       },
       "description": "Glen Berry designed the unique X-Series mouth reeds with great success.  He used this proven X-design and evolved this concept into the new Golden Dome with a contoured elevated design to help produce the realistic elk sounds of bugles, grunts and cow and calf mews! Easy to use and effective.  Sound like the real thing and produce those perfect tones with the NEW Golden Dome! The medium bull reed has a medium thickness of latex to help produce the high pitch sounds of raghorn bulls and cow and calf sounds.",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -149,7 +148,7 @@
       "fullName": "Golden Dome Small Bull",
       "pathName": "golden-dome-small",
       "price": {
-        "amount": 6.95
+        "amount": 7.95
       },
       "description": "Glen Berry designed the unique X-Series mouth reeds with great success.  He used this proven X-design and evolved this concept into the new Golden Dome with a contoured elevated design to help produce the realistic elk sounds of bugles, grunts and cow and calf mews! Easy to use and effective. Sound like the real thing and produce those perfect tones with the NEW Golden Dome! The small bull reed has a thin layer of latex to help produce the high pitch sounds of smaller bulls and cow and calf sounds.",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -162,8 +161,7 @@
       "fullName": "X-Series Young Hot Bull",
       "pathName": "x-series-young-hot-bull",
       "price": {
-        "amount": 6.95,
-        "discount": 6.25
+        "amount": 8.45
       },
       "description": " This reed takes very little air pressure to produce a high pitch.  Add voice with it and get realistic sounds of a young hot bull.",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -176,8 +174,7 @@
       "fullName": "X-Series Herd Bull",
       "pathName": "x-series-herd-bull",
       "price": {
-        "amount": 6.95,
-        "discount": 6.25
+        "amount": 8.45
       },
       "description": "This reed has a separation between the X and the green sound reed, producing the deeper tones of a young herd bull, this call also makes great elk calf sounds.",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -190,8 +187,7 @@
       "fullName": "X-Series Satellite Bull",
       "pathName": "x-series-satellite-bull",
       "price": {
-        "amount": 6.95,
-        "discount": 6.25
+        "amount": 8.45
       },
       "description": "This reed has a separation between the sound reed and the X, producing a higher to medium pitched cow call and the grunts, bugles and mews of a satellite bull.",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -204,21 +200,20 @@
       "fullName": "X-Series Roosevelt",
       "pathName": "x-series-roosevelt",
       "price": {
-        "amount": 6.95,
-        "discount": 6.25
+        "amount": 8.45
       },
       "description": "This reed has a separation between the sound reed and X, producing the high pitched shrill of a roosevelt bull and allowing the sound to carry through the thick coastal vegetation.",
       "media": ["url(/samplePhotos/deer.jpg)",
                 "url(/samplePhotos/fox.jpg)",
                 "url(/samplePhotos/scenery.jpg)"],
       "category": "reeds",
-      "tags": ["x-series", "sale", "reeds"]
+      "tags": ["x-series", "reeds"]
     },
     {
       "fullName": "Small Bull Single Reed",
       "pathName": "small-bull-single",
       "price": {
-        "amount": 5.50
+        "amount": 7.95
       },
       "description": "",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -231,7 +226,7 @@
       "fullName": "Medium Bull Double Reed",
       "pathName": "medium-bull-double",
       "price": {
-        "amount": 5.75
+        "amount": 7.95
       },
       "description": "This call features a thick/thin combination of latex that is stretched and spaced to produce a medium range of calls.",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -244,7 +239,7 @@
       "fullName": "Large Bull Double Reed",
       "pathName": "large-bull-double",
       "price": {
-        "amount": 5.95
+        "amount": 7.95
       },
       "description": "",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -257,21 +252,20 @@
       "fullName": "Berry Deceiver Reed",
       "pathName": "berry-deceiver",
       "price": {
-        "amount": 6.95,
-        "discount": 6.25
+        "amount": 7.95
       },
       "description": "The Berry Deceiver is designed by Glen Berry to produces great medium bull elk sounds. This call has a 30 thousands gap between the second and third layer.",
       "media": ["url(/samplePhotos/deer.jpg)",
                 "url(/samplePhotos/fox.jpg)",
                 "url(/samplePhotos/scenery.jpg)"],
       "category": "reeds",
-      "tags": ["big-bull", "reeds", "sale"]
+      "tags": ["big-bull", "reeds"]
     },
     {
       "fullName": "Sleazy Cow Mouth Reed",
       "pathName": "sleazy-cow-reed",
       "price": {
-        "amount": 5.75
+        "amount": 7.95
       },
       "description": "The Sleazy Cow Call Mouth Reed features a single layer of latex for the sound reed,  a 30 thousands gap between the second layer set at 45 degrees this combination produces a raspy cow-in-estrus call. A great hands free Call!",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -409,7 +403,7 @@
       "fullName": "Sleazy Cow Call",
       "pathName": "sleazy-cow-call",
       "price": {
-        "amount": 14.95
+        "amount": 16.95
       },
       "description": "The Sleazy Cow Call produces a raspy cow-in-estrus call that drives bulls crazy. This call is great for locating bulls at long distances or bulls that become call shy. The Sleazy Cow Call was used in our DVD’s, “Hot Bulls Classics” and “Hot Bulls III” with great success.",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -435,7 +429,7 @@
       "fullName": "Buck Grunt Call",
       "pathName": "buck-call",
       "price": {
-        "amount": 13.95
+        "amount": 14.95
       },
       "description": "This call is easy to use and produces the sounds of a whitetail & blacktail deer.  With the adjustable o-ring you can produce a variety of doe bleats and grunts.  The Berry Buck Grunt and Bleat Call has been proven year after year by expert deer hunters.  Tip: The collapsible tube allows you to change the sound of the call by adjusting the length of the tube.",
       "media": ["url(/samplePhotos/deer.jpg)",
@@ -488,8 +482,8 @@
       "fullName": "Power Arrow Gripper",
       "pathName": "power-arrow-gripper",
       "price": {
-        "amount": 14.95,
-        "discount": 13.95
+        "amount": 16.95,
+        "discount": 15.95
       },
       "description": "",
       "media": ["url(/samplePhotos/deer.jpg)",
