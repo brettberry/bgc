@@ -4,6 +4,7 @@ import Button from '../Buttons';
 import './product.styles.scss';
 import data from '../data.json';
 import { ProductCollection } from '../models';
+import ProductModel from '../models/ProductModel';
 import classnames from 'classnames';
 import map from 'lodash/map';
 import slice from 'lodash/slice';
@@ -82,18 +83,24 @@ class Images extends Component {
 
 class Details extends Component {
 
+  static propTypes = {
+    product: PropTypes.instanceOf(ProductModel)
+  }
+
   static contextTypes = {
     addToCart: PropTypes.func
   }
 
   state = {
-    quantity: 1
+    quantity: 1,
+    showModal: false
   }
 
   handleClickAddToCart() {
     const { product } = this.props;
     const { quantity } = this.state;
     this.context.addToCart(product, quantity);
+    this.setState({ showModal: true });
   }
 
   render() {
@@ -117,6 +124,10 @@ class Details extends Component {
           <h3 className="descriptionTitle">Description</h3>
           <p className="description">{product.getDescription()}</p>
         </div>
+        <CartModal showModal={this.state.showModal}
+                   closeModal={() => this.setState({ showModal: false })}
+                   quantity={this.state.quantity}
+                   product={this.props.product} />
       </div>
     );
   }

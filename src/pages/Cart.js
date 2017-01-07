@@ -63,7 +63,7 @@ class Cart extends Component {
           <div className="thumbnailImageDiv" style={this.getThumbnailImage(item)} />
           <div className="item">{item.getFullName()}</div>
         </div>
-        <div className="unitPrice">${item.getSubtotal() / item.getQuantity()}</div>
+        <div className="unitPrice">${(item.getSubtotal() / item.getQuantity()).toFixed(2)}</div>
         <div className="quantityContainer">
           <QuantityPicker initialQuanity={item.getQuantity()}
                           onQuantityChange={quantity => this.context.updateCartItem(item, quantity)} />

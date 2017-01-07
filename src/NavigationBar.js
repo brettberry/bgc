@@ -58,7 +58,7 @@ function Menu() {
       <ProductsItem />
       <DemosItem />
       <GalleryItem />
-      <EventsItem />
+      {/* <EventsItem /> */}
       <AboutItem />
     </div>
   );

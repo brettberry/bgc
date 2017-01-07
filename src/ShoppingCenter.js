@@ -28,7 +28,9 @@ class ShoppingCenter extends Component {
             </div>
           </Link>
           <div className="divider" />
-          <h3 className="accountText">My <br/> Account</h3>
+          <Link to={"/login"} className="loginLink">
+            <h3 className="accountText">My <br/> Account</h3>
+          </Link>
         </div>
       </div>
     );
