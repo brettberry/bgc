@@ -5,8 +5,14 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 50px;
+  flex: 1;
+
+  .itemDescription {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 
   .thumbnailImageDiv {
     width: 100px;
@@ -18,27 +24,130 @@
 
   .item {
     @include subheader-font;
+    font-size: 1.25em;
+    padding-left: 15px;
+  }
+
+  .unitPrice {
+    @include subheader-font;
+    font-size: 1.25em;
+    width: 200px;
+    align-self: center;
+    padding-left: 10px;
+  }
+
+  .quantityContainer {
+    width: 200px;
+    padding-left: 10px;
   }
 
   .itemTotal {
     @include subheader-font;
+    font-size: 1.25em;
+    width: 200px;
+    align-self: center;
+    padding-left: 10px;
   }
 
-  .remove {
-    fill: $bgc-medium-grey;
-    height: 25px;
-    width: 25px;
+  .removeContainer {
+    width: 200px;
+    display: flex;
+    justify-content: flex-end;
 
-    &:hover {
-      fill: darken(red, 10);
+    .remove {
+      fill: $bgc-medium-grey;
+      height: 25px;
+      width: 25px;
+
+      &:hover {
+        fill: darken(red, 10);
+      }
     }
   }
+}
 
-  .rightContents {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 25%;
+.cartHeaderContainer {
+  background-color: lighten($bgc-orange, 20);
+
+  .cartHeader {
+    font-family: $main-font-family;
+    font-weight: 300;
+    padding: 50px;
+    margin: 0;
   }
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  margin: 25px 50px;
+}
+
+.thead {
+  width: 100%;
+}
+
+.tableBody {
+  width: 100%;
+}
+
+.itemHeaderContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.itemDescriptionHeader {
+  @include menu-font;
+  color: $bgc-medium-grey;
+  font-size: 1em;
+  font-weight: 200;
+  text-align: left;
+  width: 500px;
+  padding: 10px 0;
+}
+
+.itemHeader {
+  @include menu-font;
+  color: $bgc-medium-grey;
+  font-size: 1em;
+  font-weight: 200;
+  text-align: left;
+  width: 200px;
+  padding: 10px 0;
+}
+
+.removeTitle {
+  text-align: right;
+}
+
+.horizontalRule {
+  background-color: $bgc-light-grey;
+  height: 2px;
+  width: 100%;
+}
+
+.totalHeader {
+  @include subheader-font;
+  text-align: right;
+  margin-right: 20px;
+  font-size: 1em;
+}
+
+.cartTotal {
+  display: flex;
+  justify-content: flex-end;
+  @include subheader-font;
+  width: 100%;
+  text-align: right;
+  padding: 0 50px;
+}
+
+.checkoutLink {
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 65px;
 }

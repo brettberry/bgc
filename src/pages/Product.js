@@ -12,6 +12,7 @@ import { Link } from 'react-router';
 import FaChevronRight from 'react-icons/lib/fa/chevron-right';
 import FaChevronLeft from 'react-icons/lib/fa/chevron-left';
 import TabletProvider from '../TabletProvider';
+import CartModal from '../CartModal';
 
 const products = new ProductCollection(data.products);
 
