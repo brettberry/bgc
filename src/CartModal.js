@@ -13,13 +13,13 @@ const styles = {
   minWidth: 500,
   maxWidth: 800,
   width: '100%',
-  height: 600,
+  height: 500,
   top: -40,
   borderStyle: 'solid',
   borderWidth: 5,
   borderColor: '#ebb052',
   borderRadius: 10,
-  padding: '25px 50px'
+  padding: '25px'
 };
 
 class CartModal extends Component {
@@ -80,21 +80,32 @@ class CartModalContents extends Component {
           <FaCheckCircle className="checkmark" />
           <h1 className="itemsAddedMsg">{this.getQuantityMessage()}</h1>
         </div>
-        <div className="itemDetails">
+        <div className="itemDetailsContainer">
           <div className="itemContainer">
             <div className="productThumbnail"
                  style={this.getThumbnailImage(product)} />
             <div className="productDetailsContainer">
               <h1 className="itemSelected">{product.getFullName()}</h1>
               <h1 className="itemDetails">Quantity: {quantity}</h1>
-              <h1 className="itemDetails">Price: ${product.getPrice().getAmount().toFixed(2)}</h1>
+              <h1 className="itemDetails">${product.getPrice().getAmount().toFixed(2)} each</h1>
             </div>
           </div>
+          <h3 className="itemSelectedTotal">${this.getItemTotal()}</h3>
         </div>
         <div className="totalsCheckoutContainer">
-          <h3 className="subtotal">Subtotal: ${this.getItemSubtotal()}</h3>
-          <h3 className="subtotal">Shipping: $2.95</h3>
-          <h2 className="total">Total: ${(this.context.cart.getCartTotal() + 2.95).toFixed(2)}</h2>
+          <div className="subtotalContainer">
+            <h3 className="subtotal">Subtotal:</h3>
+            <h3 className="subtotal">${this.context.cart.getCartTotal().toFixed(2)}</h3>
+          </div>
+          <div className="subtotalContainer">
+            <h3 className="subtotal">Shipping:</h3>
+            <h3 className="subtotal">$2.95</h3>
+          </div>
+          <div className="horizontalRule" />
+          <div className="subtotalContainer">
+            <h3 className="total">Total:</h3>
+            <h3 className="total">${(this.context.cart.getCartTotal() + 2.95).toFixed(2)}</h3>
+          </div>
           <Link to="/checkout" className="link">
             <Button text="Check Out" />
           </Link>
@@ -109,7 +120,7 @@ class CartModalContents extends Component {
     return this.props.quantity === 1 ? `You just added 1 item to your cart` : `You just added ${this.props.quantity} items to your cart`;
   }
 
-  getItemSubtotal() {
+  getItemTotal() {
     const subtotal = this.props.product.getPrice().getAmount() * this.props.quantity;
     return subtotal.toFixed(2);
   }
