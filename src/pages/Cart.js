@@ -17,7 +17,6 @@ class Cart extends Component {
 
   getThumbnailImage(item) {
       const productImg = item.getMedia();
-      console.log(item.getProduct().toJS());
       return { backgroundImage: productImg[0] };
   }
 

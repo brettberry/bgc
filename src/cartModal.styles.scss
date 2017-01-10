@@ -7,6 +7,39 @@
     align-items: center;
   }
 
+  .itemDetails {
+    display: flex;
+    margin-top: 30px;
+
+    .productDetailsContainer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .productThumbnail {
+      margin-right: 15px;
+      width: 100px;
+      height: 100px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .itemSelected {
+      font-family: $main-font-family;
+      font-weight: 400;
+      font-size: 1.5em;
+      margin: 0;
+    }
+
+    .itemDetails {
+      font-family: $main-font-family;
+      font-weight: 300;
+      font-size: 1em;
+      margin: 0;
+    }
+  }
+
   .checkmark {
     fill: $green;
     width: 50px;
@@ -17,7 +50,6 @@
   .itemsAddedMsg {
     font-family: $main-font-family;
     font-weight: 300;
-
   }
 
   .exit {
@@ -28,5 +60,33 @@
     top: 20px;
     right: 20px;
     cursor: pointer;
+  }
+}
+
+.itemContainer {
+  display: flex;
+}
+
+.totalsCheckoutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex: 1;
+
+  .subtotal {
+    font-family: $main-font-family;
+    font-weight: 300;
+    margin: 5px;
+  }
+
+  .total {
+    font-family: $main-font-family;
+    font-weight: 300;
+    margin-top: 0;
+  }
+
+  .link {
+    text-decoration: none;
   }
 }
