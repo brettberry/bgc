@@ -9,10 +9,15 @@ import CartProvider from './CartProvider';
 import AuthProvider from './AuthProvider';
 import './app.styles.scss';
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// import injectTapEventPlugin from 'react-tap-event-plugin';
+// injectTapEventPlugin();
+
 export default class App extends Component {
   render() {
     const { children } = this.props;
     return (
+      <MuiThemeProvider>
         <CartProvider>
           <AuthProvider>
             <TabletProvider>
@@ -26,6 +31,7 @@ export default class App extends Component {
             </TabletProvider>
           </AuthProvider>
         </CartProvider>
+      </MuiThemeProvider>
     );
   }
 }

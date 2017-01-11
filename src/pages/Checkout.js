@@ -1,7 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import ShippingInfoModel from '../../shipping/src/models/ShippingInfoModel';
 import CartItemCollection from '../models/CartItemCollection';
+import TextField from 'material-ui/TextField';
+import { orange800 } from 'material-ui/styles/colors';
 import braintree from 'braintree-web';
+import './checkout.styles.scss';
 
 class Checkout extends Component {
 
@@ -22,12 +25,13 @@ class Checkout extends Component {
   state = {
     firstName: '',
     lastName: '',
-    phone: '',
     addressLine1: '',
     addressLine2: '',
     city: '',
     state: '',
-    zip: ''
+    zip: '',
+    phone: '',
+    email: ''
   }
 
   componentDidMount() {
@@ -101,60 +105,95 @@ class Checkout extends Component {
   }
 
   render() {
+
+    const styles = {
+      underlineStyle: {
+        borderColor: orange800
+      },
+      floatingLabelStyle: {
+        color: orange800
+      },
+      floatingLabelFocusStyle: {
+        color: orange800
+      }
+    };
+
     return (
-      <div>
-        <form onSubmit={this.handleSubmit.bind(this)}>
+      <div className="shippingInfoContainer">
+        {/* <form onSubmit={this.handleSubmit.bind(this)}> */}
           <div id="braintree_ui"/>
-          <div>
-            <label htmlFor="firstName">First Name</label>
-            <input id="firstName"
-                   value={this.state.firstName}
-                   onChange={e => this.setState({ firstName: e.target.value })} />
+          <h1 className="shipHeader">Shipping Information</h1>
+          <div className="nameContainer">
+            <div className="firstNameContainer">
+              <TextField floatingLabelText="First Name"
+                         fullWidth={true}
+                         underlineFocusStyle={styles.underlineStyle}
+                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                         onChange={(e) => this.setState({ firstName: e.target.value })} />
+            </div>
+            <div className="lastNameContainer">
+              <TextField floatingLabelText="Last Name"
+                         fullWidth={true}
+                         underlineFocusStyle={styles.underlineStyle}
+                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                         onChange={(e) => this.setState({ lastName: e.target.value })} />
+            </div>
           </div>
-          <div>
-            <label htmlFor="lastName">Last Name</label>
-            <input id="lastName"
-                   value={this.state.lastName}
-                   onChange={e => this.setState({ lastName: e.target.value })} />
+          <div className="addressContainer">
+            <TextField floatingLabelText="Street Address"
+                       fullWidth={true}
+                       underlineFocusStyle={styles.underlineStyle}
+                       floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                       onChange={(e) => this.setState({ addressLine1: e.target.value })} />
           </div>
-          <div>
-            <label htmlFor="phone">Phone Number</label>
-            <input id="phone"
-                   value={this.state.phone}
-                   onChange={e => this.setState({ phone: e.target.value })} />
+          <div className="addressContainer">
+            <TextField floatingLabelText="Street Address"
+                       fullWidth={true}
+                       underlineFocusStyle={styles.underlineStyle}
+                       floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                       onChange={(e) => this.setState({ addressLine2: e.target.value })} />
           </div>
-          <div>
-            <label htmlFor="address1">Street Address 1</label>
-            <input id="address1"
-                   value={this.state.addressLine1}
-                   onChange={e => this.setState({ addressLine1: e.target.value })} />
+          <div className="locationContainer">
+            <div className="cityContainer">
+              <TextField floatingLabelText="City"
+                         fullWidth={true}
+                         underlineFocusStyle={styles.underlineStyle}
+                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                         onChange={(e) => this.setState({ city: e.target.value })} />
+            </div>
+            <div className="stateContainer">
+              <TextField floatingLabelText="State"
+                         fullWidth={true}
+                         underlineFocusStyle={styles.underlineStyle}
+                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                         onChange={(e) => this.setState({ state: e.target.value })} />
+            </div>
+            <div className="zipContainer">
+              <TextField floatingLabelText="ZIP"
+                         fullWidth={true}
+                         underlineFocusStyle={styles.underlineStyle}
+                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                         onChange={(e) => this.setState({ zip: e.target.value })} />
+            </div>
           </div>
-          <div>
-            <label htmlFor="address2">Street Address 2</label>
-            <input id="address2"
-                   value={this.state.addressLine2}
-                   onChange={e => this.setState({ addressLine2: e.target.value })} />
+          <div className="phoneEmailContainer">
+            <div className="phoneContainer">
+              <TextField floatingLabelText="Phone Number"
+                         fullWidth={true}
+                         underlineFocusStyle={styles.underlineStyle}
+                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                         onChange={(e) => this.setState({ phone: e.target.value })} />
+            </div>
+            <div className="emailContainer">
+              <TextField floatingLabelText="Email"
+                         fullWidth={true}
+                         underlineFocusStyle={styles.underlineStyle}
+                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                         onChange={(e) => this.setState({ email: e.target.value })} />
+            </div>
           </div>
-          <div>
-            <label htmlFor="city">City</label>
-            <input id="city"
-                   value={this.state.city}
-                   onChange={e => this.setState({ city: e.target.value })} />
-          </div>
-          <div>
-            <label htmlFor="state">State</label>
-            <input id="state"
-                   value={this.state.state}
-                   onChange={e => this.setState({ state: e.target.value })} />
-          </div>
-          <div>
-            <label htmlFor="zip">ZIP</label>
-            <input id="zip"
-                   value={this.state.zip}
-                   onChange={e => this.setState({ zip: e.target.value })} />
-          </div>
-          <button type="submit">Submit</button>
-        </form>
+          <button onClick={this.handleSubmit.bind(this)} className="button">Submit</button>
+        {/* </form> */}
         {/* <button onClick={this.context.logout}>Log out</button> */}
       </div>
     );

@@ -1,4 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import TextField from 'material-ui/TextField';
+import { orange800 } from 'material-ui/styles/colors';
+import Button from '../Buttons';
 import './login.styles.scss';
 
 class LogIn extends Component {
@@ -47,12 +50,35 @@ class ReturnAccount extends Component {
   }
 
   render() {
+
+    const styles = {
+      underlineStyle: {
+        borderColor: orange800
+      },
+      floatingLabelStyle: {
+        color: orange800
+      },
+      floatingLabelFocusStyle: {
+        color: orange800
+      }
+    };
+
     return (
-      <div className="newUserContainer">
-        <h3>Log In</h3>
-        <input placeholder="username" onChange={(e) => this.setState({ username: e.target.value })} />
-        <input placeholder="password" onChange={(e) => this.setState({ password: e.target.value })} />
-        <button onClick={this.handleLogin.bind(this)}>Submit</button>
+      <div className="returningUserContainer">
+        <div>
+          <h3 className="header">Log In</h3>
+          <TextField floatingLabelText="username"
+                     fullWidth={true}
+                     underlineFocusStyle={styles.underlineStyle}
+                     floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                     onChange={(e) => this.setState({ username: e.target.value })} />
+          <TextField floatingLabelText="password"
+                     fullWidth={true}
+                     underlineFocusStyle={styles.underlineStyle}
+                     floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                     onChange={(e) => this.setState({ password: e.target.value })} />
+        </div>
+        <button onClick={this.handleLogin.bind(this)} className="button">Sign In</button>
       </div>
     );
   }
@@ -84,13 +110,40 @@ class NewAccount extends Component {
   }
 
   render() {
+
+    const styles = {
+      underlineStyle: {
+        borderColor: orange800
+      },
+      floatingLabelStyle: {
+        color: orange800
+      },
+      floatingLabelFocusStyle: {
+        color: orange800
+      }
+    };
+
     return (
-      <div className="returningUserContainer">
-        <h3>Create Account</h3>
-        <input placeholder="username" onChange={(e) => this.setState({ username: e.target.value })} />
-        <input placeholder="new password" onChange={(e) => this.setState({ password: e.target.value })} />
-        <input placeholder="confirm password" onChange={(e) => this.setState({ confirmPassword: e.target.value })} />
-        <button onClick={this.handleSubmit.bind(this)}>Submit</button>
+      <div className="newUserContainer">
+        <div>
+          <h3 className="header">Create Account</h3>
+          <TextField floatingLabelText="username"
+                     fullWidth={true}
+                     underlineFocusStyle={styles.underlineStyle}
+                     floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                     onChange={(e) => this.setState({ username: e.target.value })} />
+          <TextField floatingLabelText="create a password"
+                     fullWidth={true}
+                     underlineFocusStyle={styles.underlineStyle}
+                     floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                     onChange={(e) => this.setState({ password: e.target.value })} />
+         <TextField floatingLabelText="confirm password"
+                    fullWidth={true}
+                    underlineFocusStyle={styles.underlineStyle}
+                    floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                    onChange={(e) => this.setState({ confirmPassword: e.target.value })} />
+        </div>
+        <button onClick={this.handleSubmit.bind(this)} className="button">Create Account</button>
       </div>
     );
   }

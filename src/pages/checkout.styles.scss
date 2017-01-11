@@ -1,0 +1,96 @@
+@import '../constants';
+
+.shippingInfoContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+
+  .shipHeader {
+    @include header-font;
+    margin: 25px;
+  }
+
+  .nameContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  .firstNameContainer {
+    width: 49%;
+  }
+
+  .lastNameContainer {
+    width: 49%;
+  }
+
+  .addressContainer {
+    width: 90%;
+  }
+
+  .locationContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  .cityContainer {
+    width: 48%;
+  }
+
+  .stateContainer {
+    width: 25%;
+  }
+
+  .zipContainer {
+    width: 25%;
+  }
+
+  .phoneEmailContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  .phoneContainer {
+    width: 49%;
+  }
+
+  .emailContainer {
+    width: 49%;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    appearance: none;
+    outline: 0;
+    border: solid;
+    border-color: $bgc-orange;
+    border-radius: 5px;
+    border-width: 2px;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: 50px;
+    font-family: $main-font-family;
+    color: $bgc-orange;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1em;
+    letter-spacing: 2px;
+    background-color: white;
+    cursor: pointer;
+    margin-top: 50px;
+
+    &:hover {
+      background-color: $bgc-orange;
+      color: white;
+    }
+  }
+}
