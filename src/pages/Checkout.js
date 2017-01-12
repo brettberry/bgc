@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ShippingInfoModel from '../../shipping/src/models/ShippingInfoModel';
 import CartItemCollection from '../models/CartItemCollection';
-import TextField from 'material-ui/TextField';
-import { orange800 } from 'material-ui/styles/colors';
 import braintree from 'braintree-web';
 import './checkout.styles.scss';
 
@@ -105,97 +103,62 @@ class Checkout extends Component {
   }
 
   render() {
-
-    const styles = {
-      underlineStyle: {
-        borderColor: orange800
-      },
-      floatingLabelStyle: {
-        color: orange800
-      },
-      floatingLabelFocusStyle: {
-        color: orange800
-      }
-    };
-
     return (
       <div className="shippingInfoContainer">
         <form onSubmit={this.handleSubmit.bind(this)} className="form">
           <h1 className="shipHeader">Shipping Information</h1>
           <div className="nameContainer">
-            {/* <div className="firstNameContainer"> */}
-              <input className="firstNameInput"
-                     placeholder="First Name"
+            <label className="inputLabel halfWidth">
+              <span className="inputSpan">First Name</span>
+              <input className="formInput"
                      onChange={(e) => this.setState({ firstName: e.target.value })} />
-              <input className="firstNameInput"
-                     placeholder="Last Name"
+            </label>
+            <label className="inputLabel halfWidth">
+              <span className="inputSpan">Last Name</span>
+              <input className="formInput"
                      onChange={(e) => this.setState({ lastName: e.target.value })} />
-              {/* <TextField floatingLabelText="First Name"
-                         fullWidth={true}
-                         underlineFocusStyle={styles.underlineStyle}
-                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                         onChange={(e) => this.setState({ firstName: e.target.value })} /> */}
-            {/* </div> */}
-            {/* <div className="lastNameContainer"> */}
-              {/* <TextField floatingLabelText="Last Name"
-                         fullWidth={true}
-                         underlineFocusStyle={styles.underlineStyle}
-                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                         onChange={(e) => this.setState({ lastName: e.target.value })} /> */}
-            {/* </div> */}
+            </label>
           </div>
           <div className="addressContainer">
-            <TextField floatingLabelText="Street Address"
-                       fullWidth={true}
-                       underlineFocusStyle={styles.underlineStyle}
-                       floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                       onChange={(e) => this.setState({ addressLine1: e.target.value })} />
-          </div>
-          <div className="addressContainer">
-            <TextField floatingLabelText="Street Address"
-                       fullWidth={true}
-                       underlineFocusStyle={styles.underlineStyle}
-                       floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                       onChange={(e) => this.setState({ addressLine2: e.target.value })} />
+            <label className="inputLabel fullWidth">
+              <span className="inputSpan">Address</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ addressLine1: e.target.value })} />
+            </label>
+            <label className="inputLabel fullWidth">
+              <span className="inputSpan">Address</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ addressLine2: e.target.value })} />
+            </label>
           </div>
           <div className="locationContainer">
-            <div className="cityContainer">
-              <TextField floatingLabelText="City"
-                         fullWidth={true}
-                         underlineFocusStyle={styles.underlineStyle}
-                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                         onChange={(e) => this.setState({ city: e.target.value })} />
-            </div>
-            <div className="stateContainer">
-              <TextField floatingLabelText="State"
-                         fullWidth={true}
-                         underlineFocusStyle={styles.underlineStyle}
-                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                         onChange={(e) => this.setState({ state: e.target.value })} />
-            </div>
-            <div className="zipContainer">
-              <TextField floatingLabelText="ZIP"
-                         fullWidth={true}
-                         underlineFocusStyle={styles.underlineStyle}
-                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                         onChange={(e) => this.setState({ zip: e.target.value })} />
-            </div>
+            <label className="inputLabel halfWidth">
+              <span className="inputSpan">City</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ city: e.target.value })} />
+            </label>
+            <label className="inputLabel quarterWidth">
+              <span className="inputSpan">State</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ state: e.target.value })} />
+            </label>
+            <label className="inputLabel quarterWidth">
+              <span className="inputSpan">ZIP</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ zip: e.target.value })} />
+            </label>
           </div>
           <div className="phoneEmailContainer">
-            <div className="phoneContainer">
-              <TextField floatingLabelText="Phone Number"
-                         fullWidth={true}
-                         underlineFocusStyle={styles.underlineStyle}
-                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                         onChange={(e) => this.setState({ phone: e.target.value })} />
-            </div>
-            <div className="emailContainer">
-              <TextField floatingLabelText="Email"
-                         fullWidth={true}
-                         underlineFocusStyle={styles.underlineStyle}
-                         floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                         onChange={(e) => this.setState({ email: e.target.value })} />
-            </div>
+            <label className="inputLabel halfWidth">
+              <span className="inputSpan">Phone Number</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ phone: e.target.value })} />
+            </label>
+            <label className="inputLabel halfWidth">
+              <span className="inputSpan">Email</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ email: e.target.value })} />
+            </label>
           </div>
           <h1 className="shipHeader">Payment Information</h1>
           <div id="braintree_ui" className="braintreeUI"/>
