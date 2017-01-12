@@ -120,24 +120,29 @@ class Checkout extends Component {
 
     return (
       <div className="shippingInfoContainer">
-        {/* <form onSubmit={this.handleSubmit.bind(this)}> */}
-          <div id="braintree_ui"/>
+        <form onSubmit={this.handleSubmit.bind(this)} className="form">
           <h1 className="shipHeader">Shipping Information</h1>
           <div className="nameContainer">
-            <div className="firstNameContainer">
-              <TextField floatingLabelText="First Name"
+            {/* <div className="firstNameContainer"> */}
+              <input className="firstNameInput"
+                     placeholder="First Name"
+                     onChange={(e) => this.setState({ firstName: e.target.value })} />
+              <input className="firstNameInput"
+                     placeholder="Last Name"
+                     onChange={(e) => this.setState({ lastName: e.target.value })} />
+              {/* <TextField floatingLabelText="First Name"
                          fullWidth={true}
                          underlineFocusStyle={styles.underlineStyle}
                          floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                         onChange={(e) => this.setState({ firstName: e.target.value })} />
-            </div>
-            <div className="lastNameContainer">
-              <TextField floatingLabelText="Last Name"
+                         onChange={(e) => this.setState({ firstName: e.target.value })} /> */}
+            {/* </div> */}
+            {/* <div className="lastNameContainer"> */}
+              {/* <TextField floatingLabelText="Last Name"
                          fullWidth={true}
                          underlineFocusStyle={styles.underlineStyle}
                          floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                         onChange={(e) => this.setState({ lastName: e.target.value })} />
-            </div>
+                         onChange={(e) => this.setState({ lastName: e.target.value })} /> */}
+            {/* </div> */}
           </div>
           <div className="addressContainer">
             <TextField floatingLabelText="Street Address"
@@ -192,8 +197,10 @@ class Checkout extends Component {
                          onChange={(e) => this.setState({ email: e.target.value })} />
             </div>
           </div>
-          <button onClick={this.handleSubmit.bind(this)} className="button">Submit</button>
-        {/* </form> */}
+          <h1 className="shipHeader">Payment Information</h1>
+          <div id="braintree_ui" className="braintreeUI"/>
+          <button type="submit" onClick={this.handleSubmit.bind(this)} className="button">Submit</button>
+        </form>
         {/* <button onClick={this.context.logout}>Log out</button> */}
       </div>
     );

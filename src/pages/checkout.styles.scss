@@ -6,6 +6,10 @@
   width: 100%;
   align-items: center;
 
+  .form {
+    width: 100%;
+  }
+
   .shipHeader {
     @include header-font;
     margin: 25px;
@@ -16,6 +20,24 @@
     flex-direction: row;
     justify-content: space-between;
     width: 90%;
+  }
+
+  .firstNameInput {
+    font-size: 16pt;
+    font-weight: 200;
+    outline: none;
+    border-top: solid 1px #DEE2E5;
+    border-bottom: solid 1px #DEE2E5;
+    border-left: none;
+    border-right: none;
+    height: 64px;
+    width: 100%;
+    padding: 0 14px;
+    margin: 50px;
+
+    &:focus {
+      background-color: #f9f9f9;
+    }
   }
 
   .firstNameContainer {
@@ -62,6 +84,13 @@
 
   .emailContainer {
     width: 49%;
+  }
+
+  .braintreeUI {
+    margin: 50px;
+    border-style: solid;
+    border-width: 0 1px;
+    border-color: $bgc-light-grey;
   }
 
   .button {
