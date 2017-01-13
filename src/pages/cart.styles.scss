@@ -72,7 +72,7 @@
 
   .cartHeader {
     font-family: $main-font-family;
-    color: $bgc-medium-grey;
+    color: black;
     font-size: 2.5em;
     font-weight: 300;
     padding: 50px;
@@ -134,7 +134,7 @@
 .totalHeader {
   @include subheader-font;
   text-align: right;
-  margin-right: 20px;
+  margin: 0 20px 10px 0;
   font-size: 1em;
 }
 
@@ -143,7 +143,6 @@
   justify-content: flex-end;
   @include subheader-font;
   width: 100%;
-  text-align: right;
   padding: 0 50px;
 }
 

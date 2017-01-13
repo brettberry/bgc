@@ -45,8 +45,16 @@ class Cart extends Component {
           <div className="horizontalRule" />
         </table>
         <div className="cartTotal">
-          <h3 className="totalHeader">Total:</h3>
-          <h3 className="totalHeader">${this.context.cart.getCartTotal().toFixed(2)}</h3>
+          <p className="totalHeader">Subtotal:</p>
+          <p className="totalHeader">${this.context.cart.getCartTotal().toFixed(2)}</p>
+        </div>
+        <div className="cartTotal">
+          <p className="totalHeader">Shipping:</p>
+          <p className="totalHeader">$2.95</p>
+        </div>
+        <div className="cartTotal">
+          <p className="totalHeader">Total:</p>
+          <p className="totalHeader">${(this.context.cart.getCartTotal() + 2.95).toFixed(2)}</p>
         </div>
         <Link to={'/checkout'} className="checkoutLink">
           <Button text="Checkout" className="cartButton" />

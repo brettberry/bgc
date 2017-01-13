@@ -87,7 +87,7 @@ class CartModalContents extends Component {
             <div className="productDetailsContainer">
               <h1 className="itemSelected">{product.getFullName()}</h1>
               <h1 className="itemDetails">Quantity: {quantity}</h1>
-              <h1 className="itemDetails">${product.getPrice().getAmount().toFixed(2)} each</h1>
+              <h1 className="itemDetails">${product.getPrice().getDiscount() || product.getPrice().getAmount()} each</h1>
             </div>
           </div>
           <h3 className="itemSelectedTotal">${this.getItemTotal()}</h3>
@@ -106,7 +106,7 @@ class CartModalContents extends Component {
             <h3 className="total">Total:</h3>
             <h3 className="total">${(this.context.cart.getCartTotal() + 2.95).toFixed(2)}</h3>
           </div>
-          <Link to="/checkout" className="link">
+          <Link to="/cart" className="link">
             <Button text="Check Out" />
           </Link>
         </div>
@@ -121,7 +121,10 @@ class CartModalContents extends Component {
   }
 
   getItemTotal() {
-    const subtotal = this.props.product.getPrice().getAmount() * this.props.quantity;
+    const product = this.props.product;
+    const quantity = this.props.quantity;
+    const itemPrice = product.getPrice().getDiscount() || product.getPrice().getAmount();
+    const subtotal = itemPrice * quantity;
     return subtotal.toFixed(2);
   }
 }

@@ -61,6 +61,10 @@
     top: 25px;
     transform: translate3d(0,6px,0);
     transition: transform 111ms ease-out,opacity 111ms ease-out;
+
+    &:focus {
+      color: black;
+    }
   }
 
   .formInput {
@@ -74,8 +78,8 @@
     background-color: transparent;
     height: 64px;
     width: 100%;
-    padding: 0 14px;
-    margin: 0;
+    padding: 14px;
+    padding-bottom: 0px;
 
     &:focus {
       background-color: #f9f9f9;
@@ -100,6 +104,12 @@
     justify-content: space-between;
     width: 100%;
     border-left: solid 1px #DEE2E5;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
   }
 
   .button {
@@ -132,9 +142,72 @@
     }
   }
 
-  .braintreeUI {
-    // border-left: solid 1px #DEE2E5;
-    // border-right: solid 1px #DEE2E5;
-
+  .shippingOptionContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
   }
+
+  .shippingOption {
+    font-family: $main-font-family;
+    font-size: 1.25em;
+    color: $bgc-medium-grey;
+    font-weight: 200;
+    text-align: center;
+  }
+
+  .check {
+    appearance: none;
+    outline: none;
+    width: 50px;
+    height: 50px;
+  }
+
+  .paymentHeader {
+    @include header-font;
+    margin-top: 50px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .paymentDirections {
+    font-family: $main-font-family;
+    font-size: 1.25em;
+    color: $bgc-medium-grey;
+    font-weight: 200;
+    text-align: center;
+  }
+
+  .braintreeUI {
+    border: solid 1px #DEE2E5;
+    padding-top: 25px;
+    margin-bottom: -5px;
+  }
+
+  .amountDueHeader {
+    @include subheader-font;
+    margin-top: 50px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .link {
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .viewCart {
+    @include default-font;
+    color: $bgc-orange;
+    margin: 5px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
 }
