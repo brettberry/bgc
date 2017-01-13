@@ -91,19 +91,6 @@
       fill: $bgc-dark-orange;
     }
   }
-
-  .accountText {
-    @include default-font;
-    font-size: 1em;
-    font-weight: 400;
-    letter-spacing: 1px;
-    margin: 0;
-
-    &:hover {
-      color: $bgc-dark-orange;
-      cursor: pointer;
-    }
-  }
 }
 
 .divider {
@@ -121,4 +108,56 @@
 
 .loginLink {
   text-decoration: none;
+}
+
+.accountMenu {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.showAccountMenu {
+  .accountMenu {
+    opacity: 1;
+    pointer-events: all;
+    transition: all 0.25s ease;
+  }
+}
+
+.accountItem {
+  @include default-font;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+
+  &:hover {
+    color: $bgc-dark-orange;
+    cursor: pointer;
+  }
+}
+
+.accountMenuContainer {
+  background: white;
+  position: fixed;
+  padding: 25px;
+  top: 99px;
+  right: 0;
+  width: 250px;
+  border: solid;
+  border-width: 1px;
+  border-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .accountOption {
+    @include default-font;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+
+    &:hover {
+      color: $bgc-orange;
+    }
+  }
 }

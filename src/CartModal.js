@@ -19,7 +19,8 @@ const styles = {
   borderWidth: 5,
   borderColor: '#ebb052',
   borderRadius: 10,
-  padding: '25px'
+  padding: '25px',
+  paddingTop: 0
 };
 
 class CartModal extends Component {
@@ -76,6 +77,7 @@ class CartModalContents extends Component {
     return (
       <div className="cartModalContainer">
         <MdClose className="exit" onClick={this.props.closeModal} />
+        <p className="continueShopping" onClick={this.props.closeModal}>continue shopping</p>
         <div className="itemsAddedContainer">
           <FaCheckCircle className="checkmark" />
           <h1 className="itemsAddedMsg">{this.getQuantityMessage()}</h1>
@@ -109,8 +111,6 @@ class CartModalContents extends Component {
           <Link to="/cart" className="link">
             <Button text="Check Out" />
           </Link>
-        </div>
-        <div className="modalContents">
         </div>
       </div>
     );

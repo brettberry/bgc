@@ -7,6 +7,19 @@
     align-items: center;
   }
 
+  .continueShopping {
+    @include default-font;
+    color: $bgc-medium-grey;
+    position: absolute;
+    bottom: 0;
+    right: 25px;
+    cursor: pointer;
+
+    &:hover {
+      color: $bgc-orange;
+    }
+  }
+
   .itemDetailsContainer {
     display: flex;
     margin: 20px 0;
