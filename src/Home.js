@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-import Footer from './Footer';
 import './buttons.styles.scss';
 import './home.styles.scss';
 import Demo from './HomePageDemo';
@@ -24,7 +23,6 @@ class Home extends Component {
           <Banner2 />
         </TabletProvider>
         <ShopCategories />
-        <Footer />
       </div>
     );
   }

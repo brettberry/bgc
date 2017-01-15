@@ -7,6 +7,7 @@ import TabletProvider from './TabletProvider';
 import MobileProvider from './MobileProvider';
 import CartProvider from './CartProvider';
 import AuthProvider from './AuthProvider';
+import Footer from './Footer';
 import './app.styles.scss';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -25,6 +26,7 @@ export default class App extends Component {
                 <ShippingProvider>
                   <NavBarRenderer>
                     {children}
+                    <Footer />
                   </NavBarRenderer>
                 </ShippingProvider>
               </MobileProvider>
