@@ -6,56 +6,9 @@
   align-items: center;
   justify-content: space-between;
 
-  &.dark {
-    .accountText {
-      color: $bgc-medium-grey;
-    }
-
-    .divider {
-      background-color: rgba($bgc-medium-grey, 0.5);
-    }
-
-    .cartIcon {
-      fill: $bgc-medium-grey;
-    }
-
-    .searchIcon {
-      fill: $bgc-medium-grey;
-    }
-
-    .cartQuantity {
-      background-color: $bgc-orange;
-    }
-  }
-
-  &.light {
-    .accountText {
-      color: white;
-    }
-
-    .divider {
-      background-color: rgba(white, 0.5);
-
-      &.hide {
-        width: 0;
-      }
-    }
-
-    .cartIcon {
-      fill: white;
-    }
-
-    .searchIcon {
-      width: 0;
-    }
-
-    .cartQuantity {
-      background-color: $bgc-dark-orange;
-    }
-  }
-
   .cartQuantity {
     position: absolute;
+    background-color: $bgc-orange;
     top: -10px;
     right: -10px;
     display: flex;
@@ -82,7 +35,7 @@
   }
 
   .cartIcon {
-    fill: white;
+    fill: $bgc-medium-grey;
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -96,14 +49,10 @@
 .divider {
   width: 1px;
   height: 40px;
-  background-color: rgba(white, 0.5);
+  background-color: rgba($bgc-medium-grey, 0.5);
   border: none;
   margin-left: 15px;
   margin-right: 15px;
-}
-
-.cartContainer {
-  position: relative;
 }
 
 .loginLink {
@@ -164,6 +113,7 @@
 
 .cartLink {
   text-decoration: none;
+  position: relative;
 }
 
 .cartDropDown {
@@ -203,13 +153,17 @@
   justify-content: center;
   align-items: center;
 
+  .link {
+    text-decoration: none;
+  }
+
   .cartTotal {
     @include subheader-font;
     display: flex;
     flex-direction: column;
     align-self: center;
     text-align: right;
-    padding: 0 25px;
+    padding: 5px 25px;
   }
 
   .cartButton {
@@ -244,6 +198,15 @@
   .item {
     @include default-font;
     font-weight: 300;
+
+    &:hover {
+      color: $bgc-orange;
+    }
+  }
+
+  .itemLink {
+    text-decoration: none;
+    cursor: pointer;
   }
 
   .unitPrice {

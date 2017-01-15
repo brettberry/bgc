@@ -33,10 +33,10 @@
   pointer-events: none;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   transition: opacity 0.2s 0.3s ease-in;
-  padding: 0 15px;
+  padding: 0 25px;
 }
 
 .iconContainer {
@@ -67,7 +67,7 @@
     margin: 0;
     color: white;
     font-size: 2em;
-    margin-right: 30px;
+    margin-right: 20px;
   }
 }
 
@@ -75,7 +75,8 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  width: 65%;
+  flex: 1;
+  margin-right: 85px;
 
   .resultsContainer {
     position: absolute;
@@ -169,6 +170,5 @@
     fill: $bgc-medium-grey;
     width: 23px;
     height: 23px;
-    cursor: pointer;
   }
 }

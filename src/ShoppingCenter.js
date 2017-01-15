@@ -51,17 +51,18 @@ class ShoppingCenter extends Component {
         <div>
           <div className={classnames('shoppingContainer', className)}>
             <FaSearch className="searchIcon" onClick={onSearchClick} />
-            <div className="divider hide" />
-            <Link to={"/cart"}
-                  className={classnames('cartLink', this.state.showCartDropDown && 'showCartDropDown')}
-                  onMouseEnter={() => this.showCartDropDown()}
-                  onMouseLeave={() => this.closeCartDropDown()}>
-              <div className="cartContainer">
+            <div className="divider" />
+            <div className={this.state.showCartDropDown && 'showCartDropDown'}
+                 onMouseEnter={() => this.showCartDropDown()}
+                 onMouseLeave={() => this.closeCartDropDown()}>
+              <Link to={"/cart"} className="cartLink">
                 <FaShoppingCart className="cartIcon" />
                 {showCartQuantity && <div className="cartQuantity animated bounceIn">{cartQuantity}</div>}
-              </div>
-              <CartDropDown className="cartDropDown" cart={this.context.cart}/>
-            </Link>
+              </Link>
+              <CartDropDown className="cartDropDown"
+                            cart={this.context.cart}
+                            closeCartDropDown={this.closeCartDropDown.bind(this)} />
+            </div>
             <div className="divider" />
             <Link to={"/my-account"}
                   className={classnames('loginLink', this.state.showAccountMenu && 'showAccountMenu')}
@@ -97,7 +98,8 @@ class CartDropDown extends Component {
 
   static propTypes = {
     className: PropTypes.string,
-    cart: PropTypes.instanceOf(CartItemCollection)
+    cart: PropTypes.instanceOf(CartItemCollection),
+    closeCartDropDown: PropTypes.func.isRequired
   }
 
   getThumbnailImage(item) {
@@ -114,19 +116,32 @@ class CartDropDown extends Component {
         </div>
         <div className="cartActions">
           <div className="cartTotal">{`Total: $${cart.getCartTotal().toFixed(2)}`}</div>
-          <Button text="View Cart" className="cartButton" />
-          <Button text="Checkout" className="checkoutButton" />
+          <Link to="/cart" className="link">
+            <Button text="View Cart"
+                    className="cartButton"
+                    onClick={() => this.props.closeCartDropDown()} />
+          </Link>
+          <Link to="/checkout" className="link">
+            <Button text="Checkout"
+                    className="checkoutButton"
+                    onClick={() => this.props.closeCartDropDown()} />
+          </Link>
         </div>
       </div>
     );
   }
 
   renderItem(item, index) {
+    const product = item.getProduct();
     return (
       <div key={index} className="miniCartItemContainer">
         <div className="thumbnailImageDiv" style={this.getThumbnailImage(item)} />
         <div className="details">
-          <div className="item">{item.getFullName()}</div>
+          <Link to={`/products/${product.getCategory()}/${product.getPathName()}`}
+                className="itemLink"
+                onClick={() => this.props.closeCartDropDown()}>
+            <div className="item">{item.getFullName()}</div>
+          </Link>
           <div className="unitPrice">Price: ${(item.getSubtotal() / item.getQuantity()).toFixed(2)}</div>
           <div className="quantity">Quantity: {item.getQuantity()}</div>
         </div>

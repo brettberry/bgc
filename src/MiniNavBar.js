@@ -3,14 +3,12 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
 import classnames from 'classnames';
 import FaSearch from 'react-icons/lib/fa/search';
-import ShoppingCenter from './ShoppingCenter';
 import map from 'lodash/map';
 import ProductCollection from './models/ProductCollection';
 import clickOutside from 'react-click-outside';
 import data from './data.json';
 import $ from 'jquery';
 import './miniNavBar.styles.scss';
-import './shoppingCenter.styles.scss';
 
 const products = new ProductCollection(data.products);
 
@@ -33,7 +31,6 @@ class MiniNavBar extends Component {
             <h1 className="bgc">BGC</h1>
           </Link>
           <SearchComponent products={products} ref="search" />
-          <ShoppingCenter className="light"/>
         </div>
       </div>
     );

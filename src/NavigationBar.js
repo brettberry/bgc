@@ -28,7 +28,7 @@ class NavigationBar extends Component {
         <h1 className="bgc">Berry Game Calls</h1>
       </Link>
       <Menu />
-      <ShoppingCenter className="dark" onSearchClick={this.handleSearchClick.bind(this)} />
+      <ShoppingCenter onSearchClick={this.handleSearchClick.bind(this)} />
     </div>
    );
   }
