@@ -138,7 +138,7 @@
 
 .accountMenuContainer {
   background: white;
-  position: fixed;
+  position: absolute;
   padding: 25px;
   top: 99px;
   right: 0;
@@ -159,5 +159,110 @@
     &:hover {
       color: $bgc-orange;
     }
+  }
+}
+
+.cartLink {
+  text-decoration: none;
+}
+
+.cartDropDown {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.showCartDropDown {
+  .cartDropDown {
+    opacity: 1;
+    pointer-events: all;
+    transition: all 0.25s ease;
+  }
+}
+
+.cartDropDownContainer {
+  background: white;
+  position: absolute;
+  top: 99px;
+  right: 40px;
+  width: 350px;
+  border: solid;
+  border-width: 1px;
+  border-color: #ddd;
+  padding: 20px 0;
+}
+
+.productScrollView {
+  max-height: 325px;
+  overflow-y: auto;
+  padding-left: 10px;
+}
+
+.cartActions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .cartTotal {
+    @include subheader-font;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: right;
+    padding: 0 25px;
+  }
+
+  .cartButton {
+    margin-top: 10px;
+    width: 300px;
+  }
+
+  .checkoutButton {
+    margin-top: 10px;
+    width: 300px;
+  }
+}
+
+.miniCartItemContainer {
+  display: flex;
+
+  .thumbnailImageDiv {
+    width: 75px;
+    height: 75px;
+    margin: 10px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+  }
+
+  .item {
+    @include default-font;
+    font-weight: 300;
+  }
+
+  .unitPrice {
+    @include default-font;
+    font-weight: 200;
+    font-size: 0.85em;
+    color: $bgc-medium-grey;
+    margin-top: 5px;
+  }
+
+  .quantity {
+    @include default-font;
+    font-weight: 200;
+    font-size: 0.85em;
+    color: $bgc-medium-grey;
+    margin-top: 2px;
+  }
+
+  .itemTotal {
+    @include subheader-font;
   }
 }
