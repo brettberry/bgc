@@ -58,10 +58,6 @@ class CartModalContents extends Component {
     product: PropTypes.instanceOf(ProductModel)
   }
 
-  static contextTypes = {
-    cart: PropTypes.instanceOf(CartItemCollection)
-  }
-
   handleClickOutside() {
     this.props.closeModal();
   }
@@ -94,24 +90,7 @@ class CartModalContents extends Component {
           </div>
           <h3 className="itemSelectedTotal">${this.getItemTotal()}</h3>
         </div>
-        <div className="totalsCheckoutContainer">
-          <div className="subtotalContainer">
-            <h3 className="subtotal">Subtotal:</h3>
-            <h3 className="subtotal">${this.context.cart.getCartTotal().toFixed(2)}</h3>
-          </div>
-          <div className="subtotalContainer">
-            <h3 className="subtotal">Shipping:</h3>
-            <h3 className="subtotal">$2.95</h3>
-          </div>
-          <div className="horizontalRule" />
-          <div className="subtotalContainer">
-            <h3 className="total">Total:</h3>
-            <h3 className="total">${(this.context.cart.getCartTotal() + 2.95).toFixed(2)}</h3>
-          </div>
-          <Link to="/cart" className="link">
-            <Button text="Check Out" />
-          </Link>
-        </div>
+        <ModalOrderSummary />
       </div>
     );
   }
@@ -126,6 +105,37 @@ class CartModalContents extends Component {
     const itemPrice = product.getPrice().getDiscount() || product.getPrice().getAmount();
     const subtotal = itemPrice * quantity;
     return subtotal.toFixed(2);
+  }
+}
+
+class ModalOrderSummary extends Component {
+
+  static contextTypes = {
+    cart: PropTypes.instanceOf(CartItemCollection)
+  }
+
+  render() {
+    const cart = this.context.cart;
+    return (
+      <div className="totalsCheckoutContainer">
+        <div className="subtotalContainer">
+          <h3 className="subtotal">Subtotal</h3>
+          <h3 className="subtotal">${cart.getCartTotal().toFixed(2)}</h3>
+        </div>
+        <div className="subtotalContainer">
+          <h3 className="subtotal">Shipping</h3>
+          <h3 className="subtotal">$2.95</h3>
+        </div>
+        <div className="horizontalRule" />
+        <div className="subtotalContainer">
+          <h3 className="total">Total</h3>
+          <h3 className="total">${(cart.getCartTotal() + 2.95).toFixed(2)}</h3>
+        </div>
+        <Link to="/cart" className="link">
+          <Button text="Check Out" />
+        </Link>
+      </div>
+    );
   }
 }
 

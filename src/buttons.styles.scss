@@ -4,36 +4,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-style: solid;
-  border-width: 2px;
   border-radius: 5px;
-  border-color: $bgc-medium-grey;
-  width: 150px;
+  border-color: $bgc-orange;
+  background-color: $bgc-orange;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+  transition: all 0.2s ease;
+  width: 175px;
   height: 50px;
 
   .buttonText {
     @include default-font;
     text-transform: uppercase;
     text-align: center;
+    color: white;
     font-size: 1em;
     letter-spacing: 2px;
   }
 
   &:hover {
-    border-color: $bgc-orange;
-    background-color: $bgc-orange;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
-    transition: all 0.2s ease;
-
-    .buttonText {
-      color: white;
-    }
+    background-color: $bgc-dark-orange;
+    border-color: $bgc-dark-orange;
   }
 
   &:active {
-    background-color: $bgc-dark-orange;
-    border-color: $bgc-dark-orange;
     transform: translateY(3px);
   }
 }
