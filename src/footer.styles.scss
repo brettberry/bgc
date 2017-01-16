@@ -116,7 +116,7 @@
       justify-content: flex-start;
     }
 
-    .itemContainer {
+    .infoContainer {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -128,7 +128,7 @@
       }
     }
 
-    .item {
+    .iconText {
       @include subheader-font;
       font-size: 1em;
       color: $bgc-background-color;

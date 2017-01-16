@@ -7,13 +7,12 @@
 
 .navBar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   height: 99px;
   top: 0;
   background-color: white;
-  padding: 0 40px;
 
   @include tabletLandscape {
     padding: 0 25px;
@@ -99,11 +98,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 40%;
+  width: 33%;
   height: 100%;
 
   @include tabletLandscape {
-    width: 50%;
+    width: 40%;
   }
 }
 

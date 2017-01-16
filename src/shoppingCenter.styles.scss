@@ -5,6 +5,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  width: 200px;
 
   .cartQuantity {
     position: absolute;
@@ -134,11 +135,9 @@
   background: white;
   position: absolute;
   top: 99px;
-  right: 40px;
+  right: 0;
   width: 350px;
-  border: solid;
-  border-width: 1px;
-  border-color: #ddd;
+  border: solid 1px #ddd;
   padding: 20px 0;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.07);
 }
@@ -154,6 +153,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-top: solid 1px #ddd;
 
   .link {
     text-decoration: none;
@@ -165,7 +165,7 @@
     flex-direction: column;
     align-self: center;
     text-align: right;
-    padding: 5px 25px;
+    padding: 15px 25px 5px 25px;
   }
 
   .cartButton {
