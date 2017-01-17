@@ -7,7 +7,6 @@ import TabletProvider from './TabletProvider';
 import MobileProvider from './MobileProvider';
 import CartProvider from './CartProvider';
 import AuthProvider from './AuthProvider';
-import Footer from './Footer';
 import './app.styles.scss';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -16,7 +15,6 @@ injectTapEventPlugin();
 
 export default class App extends Component {
   render() {
-    const { children } = this.props;
     return (
       <MuiThemeProvider>
         <CartProvider>
@@ -25,8 +23,8 @@ export default class App extends Component {
               <MobileProvider>
                 <ShippingProvider>
                   <NavBarRenderer>
-                    {children}
-                    <Footer />
+                    {this.props.main}
+                    {this.props.footer}
                   </NavBarRenderer>
                 </ShippingProvider>
               </MobileProvider>
