@@ -24,13 +24,18 @@ class QuantityPicker extends Component {
     };
   }
 
-
   changeNumber(value) {
     const number = toNumber(value);
     const numberInRange = clamp(number, 1, 1000);
     if (isFinite(numberInRange)) {
       this.setState({ number: numberInRange });
       this.props.onQuantityChange(numberInRange);
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.initialQuanity !== this.props.initialQuanity) {
+      this.setState({ number: this.props.initialQuanity });
     }
   }
 

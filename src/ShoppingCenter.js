@@ -22,22 +22,22 @@ class ShoppingCenter extends Component {
 
   showMenu() {
     this.setState({ showAccountMenu: true });
-    clearTimeout(this.timeout);
+    clearTimeout(this.accountTimeout);
   }
 
   closeMenu() {
-    this.timeout = setTimeout(() => {
+    this.accountTimeout = setTimeout(() => {
       this.setState({ showAccountMenu: false });
     }, 100);
   }
 
   showCartDropDown() {
     this.setState({ showCartDropDown: true });
-    clearTimeout(this.timeout);
+    clearTimeout(this.cartTimeout);
   }
 
   closeCartDropDown() {
-    this.timeout = setTimeout(() => {
+    this.cartTimeout = setTimeout(() => {
       this.setState({ showCartDropDown: false });
     }, 100);
   }

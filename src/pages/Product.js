@@ -103,6 +103,12 @@ class Details extends Component {
     this.setState({ showModal: true });
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.product !== this.props.product) {
+      this.setState({ quantity: 1 });
+    }
+  }
+
   render() {
     const { product } = this.props;
     const price = product.getPrice().getAmount().toFixed(2);
@@ -117,7 +123,7 @@ class Details extends Component {
         </div>
         <h3 className="shipping">+ Flatrate shipping: $2.95</h3>
         <div className="buttonContainer">
-          <QuantityPicker onQuantityChange={(quantity) => this.setState({ quantity: quantity })} />
+          <QuantityPicker onQuantityChange={(quantity) => this.setState({ quantity: quantity })} initialQuanity={this.state.quantity}/>
           <Button text="Add To Cart" className="cartButton" onClick={this.handleClickAddToCart.bind(this)} />
         </div>
         <div className="descriptionContainer">

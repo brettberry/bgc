@@ -54,22 +54,19 @@ class CartModal extends Component {
 class CartModalContents extends Component {
 
   static propTypes = {
-    quantity: PropTypes.number,
-    product: PropTypes.instanceOf(ProductModel)
+    product: PropTypes.instanceOf(ProductModel),
+    quantity: PropTypes.number
   }
 
   handleClickOutside() {
     this.props.closeModal();
   }
 
-  getThumbnailImage(item) {
-      const productImg = item.getMedia();
-      return { backgroundImage: productImg[0] };
+  getQuantityMessage() {
+    return this.props.quantity === 1 ? `You just added 1 item to your cart` : `You just added ${this.props.quantity} items to your cart`;
   }
 
   render() {
-    const product = this.props.product;
-    const quantity = this.props.quantity;
     return (
       <div className="cartModalContainer">
         <MdClose className="exit" onClick={this.props.closeModal} />
@@ -78,25 +75,23 @@ class CartModalContents extends Component {
           <FaCheckCircle className="checkmark" />
           <h1 className="itemsAddedMsg">{this.getQuantityMessage()}</h1>
         </div>
-        <div className="itemDetailsContainer">
-          <div className="itemContainer">
-            <div className="productThumbnail"
-                 style={this.getThumbnailImage(product)} />
-            <div className="productDetailsContainer">
-              <h1 className="itemSelected">{product.getFullName()}</h1>
-              <h1 className="itemDetails">Quantity: {quantity}</h1>
-              <h1 className="itemDetails">${product.getPrice().getDiscount() || product.getPrice().getAmount()} each</h1>
-            </div>
-          </div>
-          <h3 className="itemSelectedTotal">${this.getItemTotal()}</h3>
-        </div>
+        <ItemSelected product={this.props.product} quantity={this.props.quantity} />
         <ModalOrderSummary />
       </div>
     );
   }
+}
 
-  getQuantityMessage() {
-    return this.props.quantity === 1 ? `You just added 1 item to your cart` : `You just added ${this.props.quantity} items to your cart`;
+class ItemSelected extends Component {
+
+  static propTypes = {
+    quantity: PropTypes.number,
+    product: PropTypes.instanceOf(ProductModel)
+  }
+
+  getThumbnailImage(item) {
+    const productImg = item.getMedia();
+    return { backgroundImage: productImg[0] };
   }
 
   getItemTotal() {
@@ -105,6 +100,25 @@ class CartModalContents extends Component {
     const itemPrice = product.getPrice().getDiscount() || product.getPrice().getAmount();
     const subtotal = itemPrice * quantity;
     return subtotal.toFixed(2);
+  }
+
+  render() {
+    const product = this.props.product;
+    const quantity = this.props.quantity;
+    return (
+      <div className="itemDetailsContainer">
+        <div className="itemContainer">
+          <div className="productThumbnail"
+               style={this.getThumbnailImage(product)} />
+          <div className="productDetailsContainer">
+            <h1 className="itemSelected">{product.getFullName()}</h1>
+            <h1 className="itemDetails">Quantity: {quantity}</h1>
+            <h1 className="itemDetails">${product.getPrice().getDiscount() || product.getPrice().getAmount()} each</h1>
+          </div>
+        </div>
+        <h3 className="itemSelectedTotal">${this.getItemTotal()}</h3>
+      </div>
+    );
   }
 }
 
