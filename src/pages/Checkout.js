@@ -5,8 +5,6 @@ import Checkbox from 'material-ui/Checkbox';
 import { Link } from 'react-router';
 import braintree from 'braintree-web';
 import './checkout.styles.scss';
-import { Step, Stepper, StepLabel } from 'material-ui/Stepper';
-import ArrowForwardIcon from 'material-ui/svg-icons/navigation/arrow-forward';
 
 class Checkout extends Component {
 
@@ -33,14 +31,7 @@ class Checkout extends Component {
     state: '',
     zip: '',
     phone: '',
-    email: '',
-    stepIndex: 0
-  }
-
-  constructor(props) {
-    super(props);
-    this.handleNext = this.handleNext.bind(this);
-    this.handlePrev = this.handlePrev.bind(this);
+    email: ''
   }
 
   componentDidMount() {
@@ -113,61 +104,9 @@ class Checkout extends Component {
     this.context.saveShippingInfo(shippingInfo);
   }
 
-  getStepContent(stepIndex) {
-    switch (stepIndex) {
-      case 0:
-        return (
-          <p>
-            {'step 1'}
-          </p>);
-      case 1:
-        return (
-          <p>
-            {'step 2'}
-          </p>);
-      case 2:
-        return (
-          <p>
-            {'step 3'}
-          </p>);
-    }
-  }
-
-  handleNext() {
-   const { stepIndex } = this.state;
-   if (stepIndex < 2) {
-     this.setState({ stepIndex: stepIndex + 1 });
-   }
- }
-
- handlePrev() {
-   const { stepIndex } = this.state;
-   if (stepIndex > 0) {
-     this.setState({ stepIndex: stepIndex - 1 });
-   }
- }
-
   render() {
-    const { stepIndex } = this.state;
     return (
       <div className="shippingInfoContainer">
-        <div style={{ width: '100%', maxWidth: 1000, margin: 'auto' }}>
-          <Stepper activeStep={stepIndex} connector={ <ArrowForwardIcon /> }>
-            <Step>
-              <StepLabel>View Cart</StepLabel>
-            </Step>
-            <Step>
-              <StepLabel>Enter Billing & Shipping Information</StepLabel>
-            </Step>
-            <Step>
-              <StepLabel>Add Payment Information</StepLabel>
-            </Step>
-            <Step>
-              <StepLabel>Confirm Order</StepLabel>
-            </Step>
-          </Stepper>
-          {this.getStepContent(stepIndex)}
-        </div>
         <form onSubmit={this.handleSubmit.bind(this)} className="form">
           <BillingInformation />
           <ShippingInformation />

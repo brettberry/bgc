@@ -16,7 +16,7 @@ class Cart extends Component {
         </div>
         <CartDetails />
         <OrderSummary />
-        <Link to={'/checkout'} className="checkoutLink">
+        <Link to={'/account/checkout'} className="checkoutLink">
           <Button text="Checkout" className="cartButton" />
         </Link>
       </div>

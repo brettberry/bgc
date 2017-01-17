@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import TextField from 'material-ui/TextField';
-import { orange800 } from 'material-ui/styles/colors';
+import { grey800 } from 'material-ui/styles/colors';
 import Button from '../Buttons';
 import './login.styles.scss';
 
@@ -22,8 +22,14 @@ class LogIn extends Component {
   render() {
     return (
       <div className="loginContainer">
-        <ReturnAccount onSubmit={this.handleSubmit.bind(this)} />
-        <NewAccount onSubmit={this.handleSubmit.bind(this)} />
+        <div className="titleContainer">
+          <h3 className="welcome">Welcome to</h3>
+          <h1 className="header">Berry Game Calls</h1>
+        </div>
+        <div className="registerContainer">
+          <ReturnAccount onSubmit={this.handleSubmit.bind(this)} />
+          <NewAccount onSubmit={this.handleSubmit.bind(this)} />
+        </div>
       </div>
     );
   }
@@ -53,13 +59,13 @@ class ReturnAccount extends Component {
 
     const styles = {
       underlineStyle: {
-        borderColor: orange800
+        borderColor: grey800
       },
       floatingLabelStyle: {
-        color: orange800
+        color: grey800
       },
       floatingLabelFocusStyle: {
-        color: orange800
+        color: grey800
       }
     };
 
@@ -78,7 +84,9 @@ class ReturnAccount extends Component {
                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                      onChange={(e) => this.setState({ password: e.target.value })} />
         </div>
-        <button onClick={this.handleLogin.bind(this)} className="button">Sign In</button>
+        <Button text="Sign In"
+                className="loginButton"
+                onClick={this.handleLogin.bind(this)} />
       </div>
     );
   }
@@ -113,13 +121,13 @@ class NewAccount extends Component {
 
     const styles = {
       underlineStyle: {
-        borderColor: orange800
+        borderColor: grey800
       },
       floatingLabelStyle: {
-        color: orange800
+        color: grey800
       },
       floatingLabelFocusStyle: {
-        color: orange800
+        color: grey800
       }
     };
 
@@ -143,7 +151,9 @@ class NewAccount extends Component {
                     floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                     onChange={(e) => this.setState({ confirmPassword: e.target.value })} />
         </div>
-        <button onClick={this.handleSubmit.bind(this)} className="button">Create Account</button>
+        <Button text="Create Account"
+                className="newAccountButton"
+                onClick={this.handleSubmit.bind(this)} />
       </div>
     );
   }
