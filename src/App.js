@@ -19,16 +19,16 @@ export default class App extends Component {
       <MuiThemeProvider>
         <CartProvider>
           <AuthProvider>
-            <TabletProvider>
-              <MobileProvider>
-                <ShippingProvider>
+            <ShippingProvider>
+              <TabletProvider>
+                <MobileProvider>
                   <NavBarRenderer>
                     {this.props.main}
                     {this.props.footer}
                   </NavBarRenderer>
-                </ShippingProvider>
-              </MobileProvider>
-            </TabletProvider>
+                </MobileProvider>
+              </TabletProvider>
+            </ShippingProvider>
           </AuthProvider>
         </CartProvider>
       </MuiThemeProvider>

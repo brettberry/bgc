@@ -1,9 +1,9 @@
 import React from 'react';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import $ from 'jquery';
-
 import Home from './Home';
 import App from './App';
+import AccountApp from './AccountApp';
 import Footer from './Footer';
 import { Products, Product, Demos, About, Gallery, Events, Tags, MobileDemos,
          LogIn, Cart, Checkout, Success } from './pages';
@@ -21,9 +21,11 @@ export default function RouteProvider() {
         <Route path="about" components={{ main: About, footer: Footer }} />
         <Route path="gallery" components={{ main: Gallery }} />
         <Route path="events" components={{ main: Events, footer: Footer }} />
+      </Route>
+      <Route path="/account" component={AccountApp} onChange={changeRoute}>
         <Route path="login" components={{ main: LogIn, footer: Footer }} />
         <Route path="cart" components={{ main: Cart, footer: Footer }} />
-        <Route path="checkout" components={{ main: Checkout, footer: Footer }} />
+        <Route path="checkout" components={{ main: Checkout, footer: Footer }}/>
         <Route path="checkout/success" components={{ main: Success, footer: Footer }} />
       </Route>
     </Router>
