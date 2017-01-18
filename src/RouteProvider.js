@@ -21,10 +21,11 @@ export default function RouteProvider() {
         <Route path="about" components={{ main: About, footer: Footer }} />
         <Route path="gallery" components={{ main: Gallery }} />
         <Route path="events" components={{ main: Events, footer: Footer }} />
+        <Route path="cart" components={{ main: Cart }} />
       </Route>
       <Route path="/account" component={AccountApp} onChange={changeRoute}>
         <Route path="login" components={{ main: LogIn, footer: Footer }} />
-        <Route path="cart" components={{ main: Cart, footer: Footer }} />
+        {/* <Route path="cart" components={{ main: Cart, footer: Footer }} /> */}
         <Route path="checkout" components={{ main: Checkout, footer: Footer }}/>
         <Route path="checkout/success" components={{ main: Success, footer: Footer }} />
       </Route>

@@ -7,6 +7,24 @@
   justify-content: center;
   height: 100%;
 
+  .link {
+    text-decoration: none;
+  }
+
+  .back {
+    @include default-font;
+    position: absolute;
+    cursor: pointer;
+    font-weight: 300;
+    top: 0;
+    left: 0;
+    margin: 25px;
+
+    &:hover {
+      color: $bgc-orange;
+    }
+  }
+
   .titleContainer {
     display: flex;
     flex-direction: column;
@@ -50,6 +68,14 @@
   .loginButton, .newAccountButton {
     width: 100%;
   }
+}
+
+.passwordReset {
+  font-family: $main-font-family;
+  color: $bgc-orange;
+  text-align: center;
+  font-size: 0.8em;
+  margin: 15px;
 }
 
 .returningUserContainer, .newUserContainer {

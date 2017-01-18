@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import TextField from 'material-ui/TextField';
 import { grey800 } from 'material-ui/styles/colors';
+import { Link } from 'react-router';
 import Button from '../Buttons';
 import './login.styles.scss';
 
@@ -22,6 +23,10 @@ class LogIn extends Component {
   render() {
     return (
       <div className="loginContainer">
+        <Link className="link"
+              to="/">
+          <h3 className="back">Back to browse</h3>
+        </Link>
         <div className="titleContainer">
           <h3 className="welcome">Welcome to</h3>
           <h1 className="header">Berry Game Calls</h1>
@@ -83,6 +88,7 @@ class ReturnAccount extends Component {
                      underlineFocusStyle={styles.underlineStyle}
                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                      onChange={(e) => this.setState({ password: e.target.value })} />
+          <p className="passwordReset">Forgot password?</p>
         </div>
         <Button text="Sign In"
                 className="loginButton"

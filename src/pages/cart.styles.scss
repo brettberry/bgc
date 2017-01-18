@@ -1,6 +1,12 @@
 
 @import '../constants';
 
+.border {
+  margin: 20px 50px;
+  padding: 20px;
+  border: solid 1px #ddd;
+}
+
 .cartItemContainer {
   display: flex;
   flex-direction: row;
@@ -61,7 +67,7 @@
   .removeContainer {
     width: 200px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 
     .remove {
       fill: $bgc-medium-grey;
@@ -76,15 +82,36 @@
   }
 }
 
+.shopLink {
+  text-decoration: none;
+}
+
+.continue {
+  font-family: $main-font-family;
+  color: $bgc-orange;
+  margin: 50px;
+  margin-top: 15px;
+  text-align: right;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .cartHeaderContainer {
-  background-color: lighten($bgc-orange, 20);
+
+  .homeLink {
+    text-decoration: none;
+  }
 
   .cartHeader {
-    font-family: $main-font-family;
+    @include subheader-font;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     color: black;
-    font-size: 2.5em;
-    font-weight: 300;
     padding: 50px;
+    padding-bottom: 0;
     margin: 0;
   }
 }
@@ -94,7 +121,6 @@
   flex-direction: column;
   align-self: center;
   align-items: center;
-  margin: 25px 50px;
 }
 
 .thead {
@@ -131,7 +157,7 @@
 }
 
 .removeTitle {
-  text-align: right;
+  text-align: center;
 }
 
 .horizontalRule {
@@ -143,8 +169,7 @@
 .orderSummary {
   display: flex;
   justify-content: flex-end;
-  margin: 50px;
-  margin-bottom: 25px;
+  margin: 25px 50px;
 }
 
 .cartTotal {
@@ -170,7 +195,6 @@
 
   .totalHeader {
     @include default-font;
-    font-weight: 100;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin: 10px;
@@ -178,7 +202,6 @@
 
   .totalValue {
     @include default-font;
-    font-weight: 100;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin: 10px;
@@ -197,5 +220,4 @@
   display: flex;
   justify-content: flex-end;
   padding-right: 50px;
-  margin-bottom: 25px;
 }

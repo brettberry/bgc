@@ -14,10 +14,15 @@ class Cart extends Component {
         <div className="cartHeaderContainer">
           <h1 className="cartHeader">Your Cart</h1>
         </div>
-        <CartDetails />
+        <div className="border">
+          <CartDetails />
+        </div>
         <OrderSummary />
         <Link to={'/account/checkout'} className="checkoutLink">
           <Button text="Checkout" className="cartButton" />
+        </Link>
+        <Link to="/products" className="shopLink">
+          <p className="continue">continue shopping</p>
         </Link>
       </div>
     );
@@ -45,7 +50,7 @@ class CartDetails extends Component {
             <th className="itemDescriptionHeader">Item</th>
             <th className="itemHeader">Unit Price</th>
             <th className="itemHeader">Quantity</th>
-            <th className="itemHeader">Subtotal</th>
+            <th className="itemHeader">Item Subtotal</th>
             <th className="itemHeader removeTitle">Remove</th>
           </tr>
         </thead>
