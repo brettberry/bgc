@@ -18,7 +18,6 @@ class Home extends Component {
           <Banner />
         </MobileProvider>
         <Demo />
-        {/* <Images /> */}
         <TabletProvider>
           <Banner2 />
         </TabletProvider>
@@ -94,14 +93,6 @@ class Banner extends Component {
       </div>
     );
   }
-}
-
-function Images() {
-  return (
-    <div>
-      <img src="../glen-elk-2016.jpg" className="mainPageImg" />
-    </div>
-  );
 }
 
 function ShopCategories() {

@@ -4,6 +4,7 @@ import CartItemCollection from '../models/CartItemCollection';
 import Button from '../Buttons';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import FaLock from 'react-icons/lib/fa/lock';
+import classnames from 'classnames';
 import Checkbox from 'material-ui/Checkbox';
 import { Link } from 'react-router';
 import braintree from 'braintree-web';
@@ -14,7 +15,6 @@ class Checkout extends Component {
 
   static contextTypes = {
     getCurrentUser: PropTypes.func,
-    logout: PropTypes.func,
     router: PropTypes.object,
     saveShippingInfo: PropTypes.func,
     shippingInfo: PropTypes.instanceOf(ShippingInfoModel),
@@ -122,7 +122,7 @@ class Checkout extends Component {
           <form onSubmit={this.handleSubmit.bind(this)} className="form">
             <BillingInformation />
             <ShippingInformation />
-            <PaymentInformation cart={this.context.cart}/>
+            <PaymentInformation />
             <ReviewOrder />
             <div className="buttonContainer">
               <Button text="Place Order"
@@ -130,158 +130,10 @@ class Checkout extends Component {
                       onClick={this.handleSubmit.bind(this)} />
             </div>
           </form>
-          {/* <button onClick={this.context.logout}>Log out</button> */}
         </div>
       </div>
     );
   }
-}
-
-function BillingInformation() {
-  return (
-    <div>
-      <div className="sectionTitleContainer">
-        <StepBubble value="1" />
-        <h1 className="header">Billing Information</h1>
-      </div>
-      <div className="nameContainer">
-        <label className="inputLabel halfWidth">
-          <span className="inputSpan">First Name</span>
-          <input className="formInput"
-                 onChange={(e) => this.setState({ firstName: e.target.value })} />
-        </label>
-        <label className="inputLabel halfWidth">
-          <span className="inputSpan">Last Name</span>
-          <input className="formInput"
-                 onChange={(e) => this.setState({ lastName: e.target.value })} />
-        </label>
-      </div>
-      <div className="addressContainer">
-        <label className="inputLabel fullWidth">
-          <span className="inputSpan">Address</span>
-          <input className="formInput"
-                 onChange={(e) => this.setState({ addressLine1: e.target.value })} />
-        </label>
-        <label className="inputLabel fullWidth">
-          <span className="inputSpan">Apt, suite, etc (optional)</span>
-          <input className="formInput"
-                 onChange={(e) => this.setState({ addressLine2: e.target.value })} />
-        </label>
-      </div>
-      <div className="locationContainer">
-        <label className="inputLabel halfWidth">
-          <span className="inputSpan">City</span>
-          <input className="formInput"
-                 onChange={(e) => this.setState({ city: e.target.value })} />
-        </label>
-        <label className="inputLabel quarterWidth">
-          <span className="inputSpan">State</span>
-          <input className="formInput"
-                 onChange={(e) => this.setState({ state: e.target.value })} />
-        </label>
-        <label className="inputLabel quarterWidth">
-          <span className="inputSpan">ZIP</span>
-          <input className="formInput"
-                 onChange={(e) => this.setState({ zip: e.target.value })} />
-        </label>
-      </div>
-      <div className="phoneEmailContainer">
-        <label className="inputLabel halfWidth">
-          <span className="inputSpan">Phone Number</span>
-          <input className="formInput"
-                 onChange={(e) => this.setState({ phone: e.target.value })} />
-        </label>
-        <label className="inputLabel halfWidth">
-          <span className="inputSpan">Email</span>
-          <input className="formInput"
-                 onChange={(e) => this.setState({ email: e.target.value })} />
-        </label>
-      </div>
-    </div>
-  );
-}
-
-function ShippingInformation() {
-  const styles = {
-    checkbox: {
-      width: 25
-    }
-  };
-
-  return (
-    <div>
-      <div className="sectionTitleContainer shipping">
-        <StepBubble value="2" />
-        <h1 className="header shipping">Shipping Information</h1>
-      </div>
-      <div className="shippingOptionContainer">
-        <Checkbox style={styles.checkbox}
-                  iconStyle={{ fill: '#ebb052' }} />
-        <p className="shippingOption">ship to billing address</p>
-      </div>
-      <div className="nameContainer">
-        <label className="inputLabel halfWidth">
-          <span className="inputSpan">First Name</span>
-          <input className="formInput"
-                 onChange={(e) => this.setState({ firstName: e.target.value })} />
-        </label>
-        <label className="inputLabel halfWidth">
-          <span className="inputSpan">Last Name</span>
-          <input className="formInput"
-                 onChange={(e) => this.setState({ lastName: e.target.value })} />
-        </label>
-      </div>
-      <div className="addressContainer">
-        <label className="inputLabel fullWidth">
-          <span className="inputSpan">Address</span>
-          <input className="formInput"
-                 onChange={(e) => this.setState({ addressLine1: e.target.value })} />
-        </label>
-        <label className="inputLabel fullWidth">
-          <span className="inputSpan">Apt, suite, etc (optional)</span>
-          <input className="formInput"
-                 onChange={(e) => this.setState({ addressLine2: e.target.value })} />
-        </label>
-      </div>
-      <div className="locationContainer">
-        <label className="inputLabel halfWidth">
-          <span className="inputSpan">City</span>
-          <input className="formInput"
-                 onChange={(e) => this.setState({ city: e.target.value })} />
-        </label>
-        <label className="inputLabel quarterWidth">
-          <span className="inputSpan">State</span>
-          <input className="formInput"
-                 onChange={(e) => this.setState({ state: e.target.value })} />
-        </label>
-        <label className="inputLabel quarterWidth">
-          <span className="inputSpan">ZIP</span>
-          <input className="formInput"
-                 onChange={(e) => this.setState({ zip: e.target.value })} />
-        </label>
-      </div>
-    </div>
-  );
-}
-
-function PaymentInformation({ cart }) {
-  return (
-    <div>
-      <div className="paymentSectionTitleContainer">
-        <StepBubble value="3" />
-        <h1 className="paymentHeader">Payment Method</h1>
-      </div>
-      <div className="payDetailsContainer">
-        <FaLock className="lock" />
-        <p className="paymentDirections">Check out with</p>
-          <a href="https://www.paypal.com/us/webapps/mpp/paypal-popup"
-             target="_blank"
-             className="paymentDirections paypal">&nbsp;Paypal</a>
-        <p className="paymentDirections">, or fill out the secure form below.</p>
-      </div>
-      <div id="braintree_ui" className="braintreeUI"/>
-    </div>
-  );
 }
 
 function StepBubble({ value }) {
@@ -292,10 +144,196 @@ function StepBubble({ value }) {
   );
 }
 
+class BillingInformation extends Component {
+
+  state = {
+    showBillingForm: true
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="sectionTitleContainer"
+             onClick={() => this.setState({ showBillingForm: !this.state.showBillingForm })}>
+          <StepBubble value="1" />
+          <h1 className="header">Billing Information</h1>
+        </div>
+        <div className={classnames(this.state.showBillingForm ? 'billingFormContainer showForm' : 'billingFormContainer hideForm')}>
+          <div className="nameContainer">
+            <label className="inputLabel halfWidth">
+              <span className="inputSpan">First Name</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ firstName: e.target.value })} />
+            </label>
+            <label className="inputLabel halfWidth">
+              <span className="inputSpan">Last Name</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ lastName: e.target.value })} />
+            </label>
+          </div>
+          <div className="addressContainer">
+            <label className="inputLabel fullWidth">
+              <span className="inputSpan">Address</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ addressLine1: e.target.value })} />
+            </label>
+            <label className="inputLabel fullWidth">
+              <span className="inputSpan">Apt, suite, etc (optional)</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ addressLine2: e.target.value })} />
+            </label>
+          </div>
+          <div className="locationContainer">
+            <label className="inputLabel halfWidth">
+              <span className="inputSpan">City</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ city: e.target.value })} />
+            </label>
+            <label className="inputLabel quarterWidth">
+              <span className="inputSpan">State</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ state: e.target.value })} />
+            </label>
+            <label className="inputLabel quarterWidth">
+              <span className="inputSpan">ZIP</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ zip: e.target.value })} />
+            </label>
+          </div>
+          <div className="phoneEmailContainer">
+            <label className="inputLabel halfWidth">
+              <span className="inputSpan">Phone Number</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ phone: e.target.value })} />
+            </label>
+            <label className="inputLabel halfWidth">
+              <span className="inputSpan">Email</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ email: e.target.value })} />
+            </label>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+class ShippingInformation extends Component {
+
+  state = {
+    showShippingForm: false
+  }
+
+  render() {
+
+    const styles = {
+      checkbox: {
+        width: 25
+      }
+    };
+
+    return (
+      <div>
+        <div className="sectionTitleContainer shipping"
+             onClick={() => this.setState({ showShippingForm: !this.state.showShippingForm })}>
+          <StepBubble value="2" />
+          <h1 className="header shipping">Shipping Information</h1>
+        </div>
+        <div className={classnames(this.state.showShippingForm ? 'shippingFormContainer showForm' : 'shippingFormContainer hideForm')}>
+          <div className="shippingOptionContainer">
+            <Checkbox style={styles.checkbox}
+                      iconStyle={{ fill: '#ebb052' }} />
+            <p className="shippingOption">ship to billing address</p>
+          </div>
+          <div className="nameContainer">
+            <label className="inputLabel halfWidth">
+              <span className="inputSpan">First Name</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ firstName: e.target.value })} />
+            </label>
+            <label className="inputLabel halfWidth">
+              <span className="inputSpan">Last Name</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ lastName: e.target.value })} />
+            </label>
+          </div>
+          <div className="addressContainer">
+            <label className="inputLabel fullWidth">
+              <span className="inputSpan">Address</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ addressLine1: e.target.value })} />
+            </label>
+            <label className="inputLabel fullWidth">
+              <span className="inputSpan">Apt, suite, etc (optional)</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ addressLine2: e.target.value })} />
+            </label>
+          </div>
+          <div className="locationContainer">
+            <label className="inputLabel halfWidth">
+              <span className="inputSpan">City</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ city: e.target.value })} />
+            </label>
+            <label className="inputLabel quarterWidth">
+              <span className="inputSpan">State</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ state: e.target.value })} />
+            </label>
+            <label className="inputLabel quarterWidth">
+              <span className="inputSpan">ZIP</span>
+              <input className="formInput"
+                     onChange={(e) => this.setState({ zip: e.target.value })} />
+            </label>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+class PaymentInformation extends Component {
+
+  static contextTypes = {
+    cart: PropTypes.instanceOf(CartItemCollection)
+  }
+
+  state = {
+    showPaymentForm: false
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="paymentSectionTitleContainer"
+             onClick={() => this.setState({ showPaymentForm: !this.state.showPaymentForm })}>
+          <StepBubble value="3" />
+          <h1 className="paymentHeader">Payment Method</h1>
+        </div>
+        <div className={classnames(this.state.showPaymentForm ? 'paymentFormContainer showForm' : 'paymentFormContainer hideForm')}>
+          <div className="payDetailsContainer">
+            <FaLock className="lock" />
+            <p className="paymentDirections">Check out with&nbsp;</p>
+              <a href="https://www.paypal.com/us/webapps/mpp/paypal-popup"
+                 target="_blank"
+                 className="paymentDirections paypal">Paypal</a>
+            <p className="paymentDirections">, or fill out the secure form below.</p>
+          </div>
+          <div id="braintree_ui" className="braintreeUI"/>
+        </div>
+      </div>
+    );
+  }
+}
+
 class ReviewOrder extends Component {
 
   static contextTypes = {
     cart: PropTypes.instanceOf(CartItemCollection)
+  }
+
+  state = {
+    showOrderForm: false
   }
 
   getThumbnailImage(item) {
@@ -306,17 +344,23 @@ class ReviewOrder extends Component {
   render() {
     return (
       <div>
-        <div className="sectionTitleContainer">
+        <div className="sectionTitleContainer"
+             onClick={() => this.setState({ showOrderForm: !this.state.showOrderForm })}>
           <StepBubble value="4" />
           <h1 className="header">Review Order</h1>
         </div>
-        <div className="reviewItemsContainer">
-          {map(this.context.cart.toArray(), this.renderCartItem.bind(this))}
+        <div className={classnames(this.state.showOrderForm ? 'reviewOrderContainer showForm' : 'reviewOrderContainer hideForm')}>
+          <div className="orderContainer">
+            <div className="reviewItemsContainer">
+              {map(this.context.cart.toArray(), this.renderCartItem.bind(this))}
+            </div>
+            <OrderSummary />
+          </div>
+          <h1 className="amountDueHeader">Amount Due: ${(this.context.cart.getCartTotal() + 2.95).toFixed(2)}</h1>
+          <Link to="/cart" className="link">
+            <p className="viewCart">edit order</p>
+          </Link>
         </div>
-        <h1 className="amountDueHeader">Amount Due: ${(this.context.cart.getCartTotal() + 2.95).toFixed(2)}</h1>
-        <Link to="/cart" className="link">
-          <p className="viewCart">edit order</p>
-        </Link>
       </div>
     );
   }
@@ -329,6 +373,40 @@ class ReviewOrder extends Component {
           <div className="item">{item.getFullName()}</div>
         </div>
         <div className="quantity">x {item.getQuantity()}</div>
+      </div>
+    );
+  }
+}
+
+class OrderSummary extends Component {
+
+  static contextTypes = {
+    cart: PropTypes.instanceOf(CartItemCollection)
+  }
+
+  render() {
+    const cart = this.context.cart;
+    return (
+      <div className="myOrderSummary">
+        <div className="totalContainer">
+          <div className="cartTotal">
+            <p className="item">Subtotal</p>
+            <p className="itemValue">${cart.getCartTotal().toFixed(2)}</p>
+          </div>
+          <div className="cartTotal">
+            <p className="item">Tax</p>
+            <p className="itemValue">$0.00</p>
+          </div>
+          <div className="cartTotal">
+            <p className="item">Shipping</p>
+            <p className="itemValue">$2.95</p>
+          </div>
+          <div className="horizontalRule" />
+          <div className="cartTotal">
+            <p className="totalHeader">Total</p>
+            <p className="totalValue">${(cart.getCartTotal() + 2.95).toFixed(2)}</p>
+          </div>
+        </div>
       </div>
     );
   }

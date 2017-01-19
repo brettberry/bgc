@@ -8,6 +8,10 @@ import map from 'lodash/map';
 import './cart.styles.scss';
 
 class Cart extends Component {
+
+  static contextTypes = {
+    cart: PropTypes.instanceOf(CartItemCollection)
+  }
   render() {
     return (
       <div>
@@ -16,8 +20,12 @@ class Cart extends Component {
         </div>
         <div className="border">
           <CartDetails />
+          <div className="horizontalRule" />
+          <div className="cartTotalContainer">
+            <h2 className="cartTotalLabel">Subtotal:&nbsp;</h2>
+            <h2 className="cartSubtotal">${ this.context.cart.getCartTotal().toFixed(2)}</h2>
+          </div>
         </div>
-        <OrderSummary />
         <Link to={'/account/checkout'} className="checkoutLink">
           <Button text="Checkout" className="cartButton" />
         </Link>
@@ -83,40 +91,6 @@ class CartDetails extends Component {
         <div className="removeContainer">
           <FaClose className="remove"
                    onClick={() => this.context.removeCartItem(item)} />
-        </div>
-      </div>
-    );
-  }
-}
-
-class OrderSummary extends Component {
-
-  static contextTypes = {
-    cart: PropTypes.instanceOf(CartItemCollection)
-  }
-
-  render() {
-    const cart = this.context.cart;
-    return (
-      <div className="orderSummary">
-        <div className="totalContainer">
-          <div className="cartTotal">
-            <p className="item">Subtotal</p>
-            <p className="itemValue">${cart.getCartTotal().toFixed(2)}</p>
-          </div>
-          <div className="cartTotal">
-            <p className="item">Est. Tax</p>
-            <p className="itemValue">$0.00</p>
-          </div>
-          <div className="cartTotal">
-            <p className="item">Shipping</p>
-            <p className="itemValue">$2.95</p>
-          </div>
-          <div className="horizontalRule" />
-          <div className="cartTotal">
-            <p className="totalHeader">Total</p>
-            <p className="totalValue">${(cart.getCartTotal() + 2.95).toFixed(2)}</p>
-          </div>
         </div>
       </div>
     );

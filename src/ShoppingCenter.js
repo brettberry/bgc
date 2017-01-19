@@ -55,7 +55,7 @@ class ShoppingCenter extends Component {
             <div className={this.state.showCartDropDown && 'showCartDropDown'}
                  onMouseEnter={() => this.showCartDropDown()}
                  onMouseLeave={() => this.closeCartDropDown()}>
-              <Link to={"/account/cart"} className="cartLink">
+              <Link to={"/cart"} className="cartLink">
                 <FaShoppingCart className="cartIcon" />
                 {showCartQuantity && <div className="cartQuantity animated bounceIn">{cartQuantity}</div>}
               </Link>
@@ -84,11 +84,16 @@ class AccountMenu extends Component {
     className: PropTypes.string
   }
 
+  static contextTypes = {
+    logout: PropTypes.func
+  }
+
   render() {
     return (
       <div className={classnames('accountMenuContainer', this.props.className)}>
         <p className="accountOption">View Account</p>
-        <p className="accountOption">Log Out</p>
+        <p className="accountOption"
+           onClick={this.context.logout}>Log Out</p>
       </div>
     );
   }

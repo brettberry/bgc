@@ -145,7 +145,7 @@ class ModalOrderSummary extends Component {
           <h3 className="total">Total</h3>
           <h3 className="total">${(cart.getCartTotal() + 2.95).toFixed(2)}</h3>
         </div>
-        <Link to="/account/cart" className="link">
+        <Link to="/cart" className="link">
           <Button text="Check Out" />
         </Link>
       </div>

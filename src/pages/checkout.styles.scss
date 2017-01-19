@@ -4,11 +4,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
 
-  &.shipping {
-    margin-top: 50px;
+.paymentSectionTitleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.payDetailsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.billingFormContainer, .shippingFormContainer,
+.paymentFormContainer, .reviewOrderContainer {
+  overflow: hidden;
+  transition: all 600ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+  &.hideForm {
+    max-height: 0;
+  }
+
+  &.showForm {
+    max-height: 1000px;
   }
 }
+
 
 .checkoutHeaderBar {
   background-color: $bgc-orange;
@@ -56,11 +84,28 @@
     text-align: center;
     margin: 50px 25px;
 
+    &:hover {
+      color: $bgc-orange;
+    }
+
     &.shipping {
       @include header-font;
       text-align: center;
-      margin: 0;
-      margin-left: 25px;
+      margin: 50px 25px;
+
+      &:hover {
+        color: $bgc-orange;
+      }
+    }
+  }
+
+  .paymentHeader {
+    @include header-font;
+    margin-left: 25px;
+    text-align: center;
+
+    &:hover {
+      color: $bgc-orange;
     }
   }
 
@@ -185,27 +230,6 @@
     height: 50px;
   }
 
-  .paymentSectionTitleContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 0;
-  }
-
-  .paymentHeader {
-    @include header-font;
-    margin-left: 25px;
-    text-align: center;
-  }
-
-  .payDetailsContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-  }
-
   .paymentDirections {
     font-family: $main-font-family;
     font-size: 1.25em;
@@ -270,6 +294,7 @@
   align-items: center;
   border: solid 1px #ddd;
   padding: 25px 50px;
+  flex: 2;
 
   .itemContainer {
     display: flex;
@@ -280,7 +305,6 @@
     width: 100%;
 
     .description {
-      width: 500px;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -304,7 +328,6 @@
       @include subheader-font;
       font-size: 1.25em;
       text-align: right;
-      width: 200px;
       align-self: center;
     }
   }
@@ -325,4 +348,60 @@
     font-weight: 300;
     text-align: center;
   }
+}
+
+.orderContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .myOrderSummary {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 25px;
+    flex: 1;
+  }
+}
+
+.cartTotal {
+  display: flex;
+  justify-content: space-between;
+
+  .item {
+    @include default-font;
+    font-weight: 100;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 10px;
+  }
+
+  .itemValue {
+    @include default-font;
+    font-weight: 100;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 10px;
+  }
+
+
+  .totalHeader {
+    @include default-font;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 10px;
+  }
+
+  .totalValue {
+    @include default-font;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 10px;
+  }
+}
+
+.totalContainer {
+  border: solid 1px #ddd;
+  padding: 25px;
+  width: 100%;
+  max-height: 300px;
 }

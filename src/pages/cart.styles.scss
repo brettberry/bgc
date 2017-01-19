@@ -5,6 +5,17 @@
   margin: 20px 50px;
   padding: 20px;
   border: solid 1px #ddd;
+
+  .cartTotalContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .cartTotalLabel, .cartSubtotal {
+    @include subheader-font;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+  }
 }
 
 .cartItemContainer {
@@ -161,57 +172,9 @@
 }
 
 .horizontalRule {
-  background-color: $bgc-light-grey;
-  height: 2px;
+  background-color: #ddd;
+  height: 1px;
   width: 100%;
-}
-
-.orderSummary {
-  display: flex;
-  justify-content: flex-end;
-  margin: 25px 50px;
-}
-
-.cartTotal {
-  display: flex;
-  justify-content: space-between;
-
-  .item {
-    @include default-font;
-    font-weight: 100;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 10px;
-  }
-
-  .itemValue {
-    @include default-font;
-    font-weight: 100;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 10px;
-  }
-
-
-  .totalHeader {
-    @include default-font;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 10px;
-  }
-
-  .totalValue {
-    @include default-font;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 10px;
-  }
-}
-
-.totalContainer {
-  border: solid 1px #ddd;
-  width: 350px;
-  padding: 25px;
 }
 
 .checkoutLink {
