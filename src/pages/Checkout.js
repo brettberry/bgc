@@ -1,9 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import ShippingInfoModel from '../../shipping/src/models/ShippingInfoModel';
 import CartItemCollection from '../models/CartItemCollection';
+import Button from '../Buttons';
+import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import Checkbox from 'material-ui/Checkbox';
 import { Link } from 'react-router';
 import braintree from 'braintree-web';
+import map from 'lodash/map';
 import './checkout.styles.scss';
 
 class Checkout extends Component {
@@ -98,6 +101,7 @@ class Checkout extends Component {
       zip: this.state.zip,
       id: shippingId
     };
+
     if (shippingId) {
       return this.context.updateShippingInfo(shippingInfo);
     }
@@ -106,16 +110,27 @@ class Checkout extends Component {
 
   render() {
     return (
-      <div className="shippingInfoContainer">
-        <form onSubmit={this.handleSubmit.bind(this)} className="form">
-          <BillingInformation />
-          <ShippingInformation />
-          <PaymentInformation cart={this.context.cart}/>
-          <div className="buttonContainer">
-            <button type="submit" onClick={this.handleSubmit.bind(this)} className="button">Place order</button>
-          </div>
-        </form>
-        {/* <button onClick={this.context.logout}>Log out</button> */}
+      <div>
+        <div className="checkoutHeaderBar">
+          <h1 className="logo">Berry Game Calls</h1>
+          <Link to="/cart">
+            <FaShoppingCart className="cart" />
+          </Link>
+        </div>
+        <div className="shippingInfoContainer">
+          <form onSubmit={this.handleSubmit.bind(this)} className="form">
+            <BillingInformation />
+            <ShippingInformation />
+            <PaymentInformation cart={this.context.cart}/>
+            <ReviewOrder />
+            <div className="buttonContainer">
+              <Button text="Place Order"
+                      className="placeOrderButton"
+                      onClick={this.handleSubmit.bind(this)} />
+            </div>
+          </form>
+          {/* <button onClick={this.context.logout}>Log out</button> */}
+        </div>
       </div>
     );
   }
@@ -124,7 +139,10 @@ class Checkout extends Component {
 function BillingInformation() {
   return (
     <div>
-      <h1 className="shipHeader">Billing Information</h1>
+      <div className="sectionTitleContainer">
+        <StepBubble value="1" />
+        <h1 className="shipHeader">Billing Information</h1>
+      </div>
       <div className="nameContainer">
         <label className="inputLabel halfWidth">
           <span className="inputSpan">First Name</span>
@@ -183,7 +201,6 @@ function BillingInformation() {
 }
 
 function ShippingInformation() {
-
   const styles = {
     checkbox: {
       width: 25
@@ -192,7 +209,10 @@ function ShippingInformation() {
 
   return (
     <div>
-      <h1 className="paymentHeader">Shipping Information</h1>
+      <div className="sectionTitleContainer">
+        <StepBubble value="2" />
+        <h1 className="shipHeader">Shipping Information</h1>
+      </div>
       <div className="shippingOptionContainer">
         <Checkbox style={styles.checkbox}
                   iconStyle={{ fill: '#ebb052' }} />
@@ -246,15 +266,64 @@ function ShippingInformation() {
 function PaymentInformation({ cart }) {
   return (
     <div>
-      <h1 className="paymentHeader">Payment Information</h1>
+      <div className="paymentSectionTitleContainer">
+        <StepBubble value="3" />
+        <h1 className="paymentHeader">Payment Method</h1>
+      </div>
       <p className="paymentDirections">Check out with Paypal, or enter your payment information below.</p>
       <div id="braintree_ui" className="braintreeUI"/>
-      <h1 className="amountDueHeader">Amount Due: ${(cart.getCartTotal() + 2.95).toFixed(2)}</h1>
-      <Link to="/cart" className="link">
-        <p className="viewCart">view cart</p>
-      </Link>
     </div>
   );
+}
+
+function StepBubble({ value }) {
+  return (
+    <div className="circle">
+      <h2 className="number">{value}</h2>
+    </div>
+  );
+}
+
+class ReviewOrder extends Component {
+
+  static contextTypes = {
+    cart: PropTypes.instanceOf(CartItemCollection)
+  }
+
+  getThumbnailImage(item) {
+      const productImg = item.getMedia();
+      return { backgroundImage: productImg[0] };
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="sectionTitleContainer">
+          <StepBubble value="4" />
+          <h1 className="shipHeader">Review Order</h1>
+        </div>
+        <div className="reviewItemsContainer">
+          {map(this.context.cart.toArray(), this.renderCartItem.bind(this))}
+        </div>
+        <h1 className="amountDueHeader">Amount Due: ${(this.context.cart.getCartTotal() + 2.95).toFixed(2)}</h1>
+        <Link to="/cart" className="link">
+          <p className="viewCart">edit order</p>
+        </Link>
+      </div>
+    );
+  }
+
+  renderCartItem(item, index) {
+    return (
+      <div key={index} className="itemContainer">
+        <div className="description">
+          <div className="img" style={this.getThumbnailImage(item)} />
+          <div className="item">{item.getFullName()}</div>
+        </div>
+        <div className="quantity">x {item.getQuantity()}</div>
+      </div>
+    );
+  }
 }
 
 export default Checkout;

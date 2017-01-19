@@ -1,5 +1,40 @@
 @import '../constants';
 
+.sectionTitleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkoutHeaderBar {
+  background-color: $bgc-orange;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    @include header-font;
+    font-size: 2em;
+    color: white;
+    padding: 25px 50px;
+    margin: 0;
+  }
+
+  .cart {
+    width: 30px;
+    height: 30px;
+    fill: white;
+    margin: 25px 50px;
+    cursor: pointer;
+
+    &:hover {
+      fill: rgba(white, 0.75);
+    }
+  }
+}
+
 .shippingInfoContainer {
   display: flex;
   flex-direction: column;
@@ -14,7 +49,7 @@
 
   .shipHeader {
     @include header-font;
-    margin: 50px;
+    margin: 50px 25px;
     text-align: center;
   }
 
@@ -109,37 +144,11 @@
   .buttonContainer {
     display: flex;
     justify-content: center;
-    margin-bottom: 100px;
+    margin: 50px;
   }
 
-  .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    appearance: none;
-    outline: 0;
-    border: solid;
-    border-color: $bgc-orange;
-    border-radius: 5px;
-    border-width: 2px;
-    margin: 0;
-    padding: 0;
+  .placeOrderButton {
     width: 50%;
-    height: 50px;
-    font-family: $main-font-family;
-    color: $bgc-orange;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 1em;
-    letter-spacing: 2px;
-    background-color: white;
-    cursor: pointer;
-    margin-top: 50px;
-
-    &:hover {
-      background-color: $bgc-orange;
-      color: white;
-    }
   }
 
   .shippingOptionContainer {
@@ -165,10 +174,17 @@
     height: 50px;
   }
 
-  .paymentHeader {
-    @include header-font;
+  .paymentSectionTitleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 50px;
     margin-bottom: 0;
+  }
+
+  .paymentHeader {
+    @include header-font;
+    margin-left: 25px;
     text-align: center;
   }
 
@@ -207,7 +223,71 @@
 
     &:hover {
       text-decoration: underline;
+      cursor: pointer;
     }
   }
+}
 
+.reviewItemsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #ddd;
+  padding: 25px 50px;
+
+  .itemContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    margin: 10px;
+    width: 100%;
+
+    .description {
+      width: 500px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .img {
+      width: 75px;
+      height: 75px;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .item {
+      @include subheader-font;
+      font-size: 1.25em;
+      padding-left: 15px;
+    }
+
+    .quantity {
+      @include subheader-font;
+      font-size: 1.25em;
+      text-align: right;
+      width: 200px;
+      align-self: center;
+    }
+  }
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bgc-orange;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+
+  .number {
+    @include subheader-font;
+    color: white;
+    font-weight: 300;
+    text-align: center;
+  }
 }
