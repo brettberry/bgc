@@ -3,6 +3,7 @@ import ShippingInfoModel from '../../shipping/src/models/ShippingInfoModel';
 import CartItemCollection from '../models/CartItemCollection';
 import Button from '../Buttons';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
+import FaLock from 'react-icons/lib/fa/lock';
 import Checkbox from 'material-ui/Checkbox';
 import { Link } from 'react-router';
 import braintree from 'braintree-web';
@@ -141,7 +142,7 @@ function BillingInformation() {
     <div>
       <div className="sectionTitleContainer">
         <StepBubble value="1" />
-        <h1 className="shipHeader">Billing Information</h1>
+        <h1 className="header">Billing Information</h1>
       </div>
       <div className="nameContainer">
         <label className="inputLabel halfWidth">
@@ -209,9 +210,9 @@ function ShippingInformation() {
 
   return (
     <div>
-      <div className="sectionTitleContainer">
+      <div className="sectionTitleContainer shipping">
         <StepBubble value="2" />
-        <h1 className="shipHeader">Shipping Information</h1>
+        <h1 className="header shipping">Shipping Information</h1>
       </div>
       <div className="shippingOptionContainer">
         <Checkbox style={styles.checkbox}
@@ -270,7 +271,14 @@ function PaymentInformation({ cart }) {
         <StepBubble value="3" />
         <h1 className="paymentHeader">Payment Method</h1>
       </div>
-      <p className="paymentDirections">Check out with Paypal, or enter your payment information below.</p>
+      <div className="payDetailsContainer">
+        <FaLock className="lock" />
+        <p className="paymentDirections">Check out with</p>
+          <a href="https://www.paypal.com/us/webapps/mpp/paypal-popup"
+             target="_blank"
+             className="paymentDirections paypal">&nbsp;Paypal</a>
+        <p className="paymentDirections">, or fill out the secure form below.</p>
+      </div>
       <div id="braintree_ui" className="braintreeUI"/>
     </div>
   );
@@ -300,7 +308,7 @@ class ReviewOrder extends Component {
       <div>
         <div className="sectionTitleContainer">
           <StepBubble value="4" />
-          <h1 className="shipHeader">Review Order</h1>
+          <h1 className="header">Review Order</h1>
         </div>
         <div className="reviewItemsContainer">
           {map(this.context.cart.toArray(), this.renderCartItem.bind(this))}

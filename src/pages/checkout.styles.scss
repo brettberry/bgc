@@ -4,6 +4,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &.shipping {
+    margin-top: 50px;
+  }
 }
 
 .checkoutHeaderBar {
@@ -47,10 +51,17 @@
     width: 100%;
   }
 
-  .shipHeader {
+  .header {
     @include header-font;
-    margin: 50px 25px;
     text-align: center;
+    margin: 50px 25px;
+
+    &.shipping {
+      @include header-font;
+      text-align: center;
+      margin: 0;
+      margin-left: 25px;
+    }
   }
 
   .nameContainer {
@@ -188,12 +199,36 @@
     text-align: center;
   }
 
+  .payDetailsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
   .paymentDirections {
     font-family: $main-font-family;
     font-size: 1.25em;
     color: $bgc-medium-grey;
     font-weight: 200;
     text-align: center;
+    text-decoration: none;
+
+    &.paypal {
+      cursor: pointer;
+      color: $bgc-orange;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .lock {
+    width: 25px;
+    height: 25px;
+    fill: lighten($bgc-medium-grey, 25);
+    margin-right: 5px;
   }
 
   .braintreeUI {

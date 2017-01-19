@@ -24,10 +24,9 @@ export default function RouteProvider() {
         <Route path="cart" components={{ main: Cart }} />
       </Route>
       <Route path="/account" component={AccountApp} onChange={changeRoute}>
-        <Route path="login" components={{ main: LogIn, footer: Footer }} />
-        {/* <Route path="cart" components={{ main: Cart, footer: Footer }} /> */}
-        <Route path="checkout" components={{ main: Checkout, footer: Footer }}/>
-        <Route path="checkout/success" components={{ main: Success, footer: Footer }} />
+        <Route path="login" components={{ main: LogIn }} />
+        <Route path="checkout" components={{ main: Checkout }}/>
+        <Route path="checkout/success" components={{ main: Success }} />
       </Route>
     </Router>
   );

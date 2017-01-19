@@ -105,7 +105,7 @@ class OrderSummary extends Component {
             <p className="itemValue">${cart.getCartTotal().toFixed(2)}</p>
           </div>
           <div className="cartTotal">
-            <p className="item">Tax</p>
+            <p className="item">Est. Tax</p>
             <p className="itemValue">$0.00</p>
           </div>
           <div className="cartTotal">
