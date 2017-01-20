@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { Router, Route, browserHistory, IndexRoute, IndexRedirect } from 'react-router';
 import $ from 'jquery';
 import Home from './Home';
 import App from './App';
@@ -24,6 +24,7 @@ export default function RouteProvider() {
         <Route path="cart" components={{ main: Cart }} />
       </Route>
       <Route path="/account" component={AccountApp} onChange={changeRoute}>
+        <IndexRedirect to="checkout" />
         <Route path="login" components={{ main: LogIn }} />
         <Route path="checkout" components={{ main: Checkout }}/>
         <Route path="checkout/success" components={{ main: Success }} />

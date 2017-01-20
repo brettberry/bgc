@@ -64,13 +64,12 @@ class ShoppingCenter extends Component {
                             closeCartDropDown={this.closeCartDropDown.bind(this)} />
             </div>
             <div className="divider" />
-            <Link to={"/account"}
-                  className={classnames('loginLink', this.state.showAccountMenu && 'showAccountMenu')}
-                  onMouseEnter={() => this.showMenu()}
-                  onMouseLeave={() => this.closeMenu()}>
+            <div className={classnames('loginLink', this.state.showAccountMenu && 'showAccountMenu')}
+                 onMouseEnter={() => this.showMenu()}
+                 onMouseLeave={() => this.closeMenu()}>
               <h3 className="accountItem">My <br/> Account</h3>
               <AccountMenu className="accountMenu" />
-            </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -121,7 +120,7 @@ class CartDropDown extends Component {
         </div>
         <div className="cartActions">
           <div className="cartTotal">{`Total: $${cart.getCartTotal().toFixed(2)}`}</div>
-          <Link to="/account/cart" className="link">
+          <Link to="/cart" className="link">
             <Button text="View Cart"
                     className="cartButton"
                     onClick={() => this.props.closeCartDropDown()} />

@@ -22,7 +22,7 @@ module.exports = {
         './src/main.js'
     ]),
     context: __dirname,
-    devtool: 'eval',
+    devtool: 'inline-source-map',
     node: {
         __filename: true,
         __dirname: true

@@ -39,20 +39,9 @@ class Checkout extends Component {
   }
 
   componentDidMount() {
-    this.loadUser()
-      .then(() => this.context.getShippingInfo())
+    this.context.getShippingInfo()
       .then(() => this.setupFormData())
       .then(() => this.loadBraintreeToken());
-  }
-
-  loadUser() {
-    return this.context.getCurrentUser()
-      .catch(() => {
-        this.context.router.push({
-          pathname: '/login',
-          query: { redirectTo: '/checkout' }
-        });
-      });
   }
 
   loadBraintreeToken() {
@@ -113,7 +102,10 @@ class Checkout extends Component {
     return (
       <div>
         <div className="checkoutHeaderBar">
-          <h1 className="logo">Berry Game Calls</h1>
+          <div className="checkoutHeaderContainer">
+            <h1 className="logo">Berry Game Calls</h1>
+            <h3 className="checkoutSubtitle">Checkout</h3>
+          </div>
           <Link to="/cart">
             <FaShoppingCart className="cart" />
           </Link>
@@ -159,6 +151,7 @@ class BillingInformation extends Component {
           <h1 className="header">Billing Information</h1>
         </div>
         <div className={classnames(this.state.showBillingForm ? 'billingFormContainer showForm' : 'billingFormContainer hideForm')}>
+          <p className="formDetails">Enter your billing information below.</p>
           <div className="nameContainer">
             <label className="inputLabel halfWidth">
               <span className="inputSpan">First Name</span>
@@ -234,7 +227,7 @@ class ShippingInformation extends Component {
 
     return (
       <div>
-        <div className="sectionTitleContainer shipping"
+        <div className="sectionTitleContainer"
              onClick={() => this.setState({ showShippingForm: !this.state.showShippingForm })}>
           <StepBubble value="2" />
           <h1 className="header shipping">Shipping Information</h1>
@@ -243,7 +236,7 @@ class ShippingInformation extends Component {
           <div className="shippingOptionContainer">
             <Checkbox style={styles.checkbox}
                       iconStyle={{ fill: '#ebb052' }} />
-            <p className="shippingOption">ship to billing address</p>
+            <p className="formDetails">ship to billing address</p>
           </div>
           <div className="nameContainer">
             <label className="inputLabel halfWidth">
@@ -305,19 +298,19 @@ class PaymentInformation extends Component {
   render() {
     return (
       <div>
-        <div className="paymentSectionTitleContainer"
+        <div className="sectionTitleContainer"
              onClick={() => this.setState({ showPaymentForm: !this.state.showPaymentForm })}>
           <StepBubble value="3" />
-          <h1 className="paymentHeader">Payment Method</h1>
+          <h1 className="header">Payment Method</h1>
         </div>
         <div className={classnames(this.state.showPaymentForm ? 'paymentFormContainer showForm' : 'paymentFormContainer hideForm')}>
           <div className="payDetailsContainer">
             <FaLock className="lock" />
-            <p className="paymentDirections">Check out with&nbsp;</p>
+            <p className="formDetails">Check out with&nbsp;</p>
               <a href="https://www.paypal.com/us/webapps/mpp/paypal-popup"
                  target="_blank"
-                 className="paymentDirections paypal">Paypal</a>
-            <p className="paymentDirections">, or fill out the secure form below.</p>
+                 className="formDetails paypal">Paypal</a>
+            <p className="formDetails">, or fill out the secure form below.</p>
           </div>
           <div id="braintree_ui" className="braintreeUI"/>
         </div>

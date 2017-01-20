@@ -1,8 +1,21 @@
-import { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import User from '../auth/src/models/User';
 import Promise from 'bluebird';
 
 class AuthProvider extends Component {
+
+  static contextTypes = {
+    router: PropTypes.object,
+    location: PropTypes.object
+  }
+
+  static propTypes = {
+    redirectIfNoUser: PropTypes.bool
+  }
+
+  static defaultProps = {
+    redirectIfNoUser: false
+  }
 
   static childContextTypes = {
     user: PropTypes.instanceOf(User),
@@ -26,7 +39,33 @@ class AuthProvider extends Component {
     };
   }
 
+  componentWillMount() {
+    this.getUserPromise = null;
+    if (!this.props.redirectIfNoUser) {
+      return;
+    }
+    this.getUserPromise = this.getCurrentUser()
+      .catch(() => {
+        this.context.router.push({
+          pathname: '/account/login',
+          query: { redirectTo: this.context.router.createHref(this.context.location) }
+        });
+      });
+  }
+
+  /* check if we are waiting for a user. If not waiting for user, show children.
+  If waiting, show loading spinner. If not waiting, show children. */
+
   render() {
+    if (!this.getUserPromise) {
+      return this.props.children;
+    }
+    //FIXME: add loading spinner
+    if (this.getUserPromise.isPending()) {
+      return (
+        <div/>
+      );
+    }
     return this.props.children;
   }
 
@@ -83,7 +122,12 @@ class AuthProvider extends Component {
       .then(() => fetch('//localhost:5002/auth/users/me', {
         credentials: 'include'
       }))
-      .then(res => res.json())
+      .then(res => {
+        if (res.status !== 200) {
+          throw new Error('User not logged in');
+        }
+        return res.json();
+      })
       .then(body => {
         const user = new User(body);
         this.setState({ user: user });

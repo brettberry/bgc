@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import ShippingProvider from './ShippingProvider';
 import CartProvider from './CartProvider';
 import AuthProvider from './AuthProvider';
@@ -9,7 +9,7 @@ export default class AccountApp extends Component {
     return (
       <MuiThemeProvider>
         <CartProvider>
-          <AuthProvider>
+          <AuthProvider redirectIfNoUser>
             <ShippingProvider>
               {this.props.main}
             </ShippingProvider>
