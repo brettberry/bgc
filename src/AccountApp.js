@@ -9,7 +9,7 @@ export default class AccountApp extends Component {
     return (
       <MuiThemeProvider>
         <CartProvider>
-          <AuthProvider redirectIfNoUser>
+          <AuthProvider redirectIfNoUser location={this.props.location}>
             <ShippingProvider>
               {this.props.main}
             </ShippingProvider>

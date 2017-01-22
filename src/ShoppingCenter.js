@@ -20,6 +20,11 @@ class ShoppingCenter extends Component {
     showCartDropDown: false
   }
 
+  componentWillUnmount() {
+    clearTimeout(this.accountTimeout);
+    clearTimeout(this.cartTimeout);
+  }
+
   showMenu() {
     this.setState({ showAccountMenu: true });
     clearTimeout(this.accountTimeout);

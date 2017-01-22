@@ -5008,6 +5008,19 @@ html, body, main {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer; }
+  .sectionTitleContainer:hover {
+    background-color: rgba(235, 176, 82, 0.5); }
+  .sectionTitleContainer.formActive {
+    background-color: rgba(235, 176, 82, 0.5); }
+  .sectionTitleContainer .chevron {
+    position: absolute;
+    right: 0;
+    margin: 0 75px;
+    fill: #ebb052;
+    width: 50px;
+    height: 50px; }
+    .sectionTitleContainer .chevron:hover {
+      fill: #936111; }
 
 .payDetailsContainer {
   display: -webkit-box;
@@ -5023,6 +5036,7 @@ html, body, main {
 .billingFormContainer, .shippingFormContainer,
 .paymentFormContainer, .reviewOrderContainer {
   overflow: hidden;
+  padding: 0 75px 20px 75px;
   -webkit-transition: all 600ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 600ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
   .billingFormContainer.hideForm, .shippingFormContainer.hideForm,
@@ -5032,19 +5046,49 @@ html, body, main {
   .paymentFormContainer.showForm, .reviewOrderContainer.showForm {
     max-height: 1000px; }
 
-.checkoutHeader {
-  font-family: Source Sans Pro, Avenir Next, Avenir, Helvetica, "sans-serif";
-  font-weight: lighter;
-  font-size: 1.5em;
-  color: #263238;
-  text-align: center; }
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .checkoutHeader {
-      -webkit-font-smoothing: antialiased; } }
-  .checkoutHeader::-moz-selection {
-    background-color: rgba(235, 176, 82, 0.4); }
-  .checkoutHeader::selection {
-    background-color: rgba(235, 176, 82, 0.4); }
+.checkoutHeaderContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .checkoutHeaderContainer .logo {
+    font-family: Source Sans Pro, Avenir Next, Avenir, Helvetica, "sans-serif";
+    font-weight: 300;
+    font-size: 34pt;
+    margin: 0;
+    color: #263238;
+    letter-spacing: 3px;
+    font-size: 2em;
+    color: white;
+    padding: 0 50px;
+    margin: 0; }
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .checkoutHeaderContainer .logo {
+        -webkit-font-smoothing: antialiased; } }
+    .checkoutHeaderContainer .logo::-moz-selection {
+      background-color: rgba(235, 176, 82, 0.4); }
+    .checkoutHeaderContainer .logo::selection {
+      background-color: rgba(235, 176, 82, 0.4); }
+  .checkoutHeaderContainer .checkoutSubtitle {
+    font-family: Source Sans Pro, Avenir Next, Avenir, Helvetica, "sans-serif";
+    font-weight: 400;
+    font-size: 1em;
+    margin: 0;
+    color: #546e7a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    text-transform: lowercase; }
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .checkoutHeaderContainer .checkoutSubtitle {
+        -webkit-font-smoothing: antialiased; } }
 
 .checkoutHeaderBar {
   background-color: #ebb052;
@@ -5061,25 +5105,8 @@ html, body, main {
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
-  .checkoutHeaderBar .logo {
-    font-family: Source Sans Pro, Avenir Next, Avenir, Helvetica, "sans-serif";
-    font-weight: 300;
-    font-size: 34pt;
-    margin: 0;
-    color: #263238;
-    letter-spacing: 3px;
-    font-size: 2em;
-    color: white;
-    padding: 25px 50px;
-    margin: 0; }
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      .checkoutHeaderBar .logo {
-        -webkit-font-smoothing: antialiased; } }
-    .checkoutHeaderBar .logo::-moz-selection {
-      background-color: rgba(235, 176, 82, 0.4); }
-    .checkoutHeaderBar .logo::selection {
-      background-color: rgba(235, 176, 82, 0.4); }
+          align-items: center;
+  padding: 10px 0; }
   .checkoutHeaderBar .cart {
     width: 30px;
     height: 30px;
@@ -5098,7 +5125,7 @@ html, body, main {
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 1500px;
-  width: 90%;
+  width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -5115,7 +5142,7 @@ html, body, main {
     width: 600px;
     text-align: left;
     margin: 25px;
-    padding-left: 20px; }
+    margin-left: 150px; }
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
       .shippingInfoContainer .header {
         -webkit-font-smoothing: antialiased; } }
@@ -5123,8 +5150,6 @@ html, body, main {
       background-color: rgba(235, 176, 82, 0.4); }
     .shippingInfoContainer .header::selection {
       background-color: rgba(235, 176, 82, 0.4); }
-    .shippingInfoContainer .header:hover {
-      color: #ebb052; }
   .shippingInfoContainer .nameContainer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -5334,7 +5359,6 @@ html, body, main {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
-    margin: 10px;
     width: 100%; }
     .reviewItemsContainer .itemContainer .description {
       display: -webkit-box;
@@ -5385,6 +5409,9 @@ html, body, main {
         background-color: rgba(235, 176, 82, 0.4); }
 
 .circle {
+  position: absolute;
+  left: 0;
+  margin: 0 75px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5424,7 +5451,8 @@ html, body, main {
           flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  padding-top: 25px; }
   .orderContainer .myOrderSummary {
     display: -webkit-box;
     display: -ms-flexbox;

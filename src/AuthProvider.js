@@ -5,12 +5,12 @@ import Promise from 'bluebird';
 class AuthProvider extends Component {
 
   static contextTypes = {
-    router: PropTypes.object,
-    location: PropTypes.object
+    router: PropTypes.object
   }
 
   static propTypes = {
-    redirectIfNoUser: PropTypes.bool
+    redirectIfNoUser: PropTypes.bool,
+    location: PropTypes.object
   }
 
   static defaultProps = {
@@ -26,7 +26,8 @@ class AuthProvider extends Component {
   }
 
   state = {
-    user: null
+    user: null,
+    isLoading: false
   }
 
   getChildContext() {
@@ -44,12 +45,15 @@ class AuthProvider extends Component {
     if (!this.props.redirectIfNoUser) {
       return;
     }
+    this.setState({ isLoading: true });
     this.getUserPromise = this.getCurrentUser()
+      .then(() => this.setState({ isLoading: false }))
       .catch(() => {
         this.context.router.push({
           pathname: '/account/login',
-          query: { redirectTo: this.context.router.createHref(this.context.location) }
+          query: { redirectTo: this.context.router.createHref(this.props.location) }
         });
+        this.setState({ isLoading: false });
       });
   }
 
@@ -57,11 +61,8 @@ class AuthProvider extends Component {
   If waiting, show loading spinner. If not waiting, show children. */
 
   render() {
-    if (!this.getUserPromise) {
-      return this.props.children;
-    }
     //FIXME: add loading spinner
-    if (this.getUserPromise.isPending()) {
+    if (this.state.isLoading) {
       return (
         <div/>
       );
@@ -77,6 +78,7 @@ class AuthProvider extends Component {
       }))
       .then(() => {
         this.setState({ user: null });
+        window.location.reload(true);
       });
   }
 
