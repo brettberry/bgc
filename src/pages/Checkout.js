@@ -9,6 +9,8 @@ import Checkbox from 'material-ui/Checkbox';
 import { Link } from 'react-router';
 import braintree from 'braintree-web';
 import map from 'lodash/map';
+import FaChevronUp from 'react-icons/lib/fa/chevron-up';
+import FaChevronDown from 'react-icons/lib/fa/chevron-down';
 import './checkout.styles.scss';
 
 class Checkout extends Component {
@@ -149,6 +151,7 @@ class BillingInformation extends Component {
              onClick={() => this.setState({ showBillingForm: !this.state.showBillingForm })}>
           <StepBubble value="1" />
           <h1 className="header">Billing Information</h1>
+          {this.state.showBillingForm ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}
         </div>
         <div className={classnames(this.state.showBillingForm ? 'billingFormContainer showForm' : 'billingFormContainer hideForm')}>
           <p className="formDetails">Enter your billing information below.</p>
@@ -231,6 +234,7 @@ class ShippingInformation extends Component {
              onClick={() => this.setState({ showShippingForm: !this.state.showShippingForm })}>
           <StepBubble value="2" />
           <h1 className="header shipping">Shipping Information</h1>
+          {this.state.showShippingForm ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}
         </div>
         <div className={classnames(this.state.showShippingForm ? 'shippingFormContainer showForm' : 'shippingFormContainer hideForm')}>
           <div className="shippingOptionContainer">
@@ -298,10 +302,11 @@ class PaymentInformation extends Component {
   render() {
     return (
       <div>
-        <div className="sectionTitleContainer"
+        <div className={this.showPaymentForm ? 'sectionTitleContainer formActive' : 'sectionTitleContainer'}
              onClick={() => this.setState({ showPaymentForm: !this.state.showPaymentForm })}>
           <StepBubble value="3" />
           <h1 className="header">Payment Method</h1>
+          {this.state.showPaymentForm ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}
         </div>
         <div className={classnames(this.state.showPaymentForm ? 'paymentFormContainer showForm' : 'paymentFormContainer hideForm')}>
           <div className="payDetailsContainer">
@@ -341,6 +346,7 @@ class ReviewOrder extends Component {
              onClick={() => this.setState({ showOrderForm: !this.state.showOrderForm })}>
           <StepBubble value="4" />
           <h1 className="header">Review Order</h1>
+          {this.state.showOrderForm ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}
         </div>
         <div className={classnames(this.state.showOrderForm ? 'reviewOrderContainer showForm' : 'reviewOrderContainer hideForm')}>
           <div className="orderContainer">
