@@ -71,6 +71,7 @@
 }
 
 .checkoutHeaderBar {
+  position: fixed;
   background-color: $bgc-orange;
   width: 100%;
   display: flex;
@@ -78,6 +79,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
+  z-index: 1;
+  top: 0;
 
   .cart {
     width: 30px;
@@ -99,6 +102,7 @@
   width: 100%;
   align-items: center;
   margin: 0 auto;
+  margin-top: 100px;
 
   .form {
     width: 100%;

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import ShippingInfoModel from '../../shipping/src/models/ShippingInfoModel';
 import CartItemCollection from '../models/CartItemCollection';
 import Button from '../Buttons';
@@ -11,6 +12,7 @@ import braintree from 'braintree-web';
 import map from 'lodash/map';
 import FaChevronUp from 'react-icons/lib/fa/chevron-up';
 import FaChevronDown from 'react-icons/lib/fa/chevron-down';
+import $ from 'jquery';
 import './checkout.styles.scss';
 
 class Checkout extends Component {
@@ -117,12 +119,7 @@ class Checkout extends Component {
             <BillingInformation />
             <ShippingInformation />
             <PaymentInformation />
-            <ReviewOrder />
-            <div className="buttonContainer">
-              <Button text="Place Order"
-                      className="placeOrderButton"
-                      onClick={this.handleSubmit.bind(this)} />
-            </div>
+            <ReviewOrder handleSubmit={this.handleSubmit.bind(this)}/>
           </form>
         </div>
       </div>
@@ -147,13 +144,13 @@ class BillingInformation extends Component {
   render() {
     return (
       <div>
-        <div className="sectionTitleContainer"
+        <div className={classnames('sectionTitleContainer', this.state.showBillingForm && 'formActive')}
              onClick={() => this.setState({ showBillingForm: !this.state.showBillingForm })}>
           <StepBubble value="1" />
           <h1 className="header">Billing Information</h1>
           {this.state.showBillingForm ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}
         </div>
-        <div className={classnames(this.state.showBillingForm ? 'billingFormContainer showForm' : 'billingFormContainer hideForm')}>
+        <div className={classnames('billingFormContainer', this.state.showBillingForm ? 'showForm' : 'hideForm')}>
           <p className="formDetails">Enter your billing information below.</p>
           <div className="nameContainer">
             <label className="inputLabel halfWidth">
@@ -220,6 +217,13 @@ class ShippingInformation extends Component {
     showShippingForm: false
   }
 
+  handleSectionClick() {
+    this.setState({ showShippingForm: !this.state.showShippingForm });
+    const currentElement = ReactDOM.findDOMNode(this);
+    const scrollTop = $(currentElement).offset().top;
+    $(document.body).scrollTop(scrollTop - 100);
+  }
+
   render() {
 
     const styles = {
@@ -231,7 +235,7 @@ class ShippingInformation extends Component {
     return (
       <div>
         <div className="sectionTitleContainer"
-             onClick={() => this.setState({ showShippingForm: !this.state.showShippingForm })}>
+             onClick={this.handleSectionClick.bind(this)}>
           <StepBubble value="2" />
           <h1 className="header shipping">Shipping Information</h1>
           {this.state.showShippingForm ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}
@@ -327,7 +331,8 @@ class PaymentInformation extends Component {
 class ReviewOrder extends Component {
 
   static contextTypes = {
-    cart: PropTypes.instanceOf(CartItemCollection)
+    cart: PropTypes.instanceOf(CartItemCollection),
+    handleSubmit: PropTypes.func
   }
 
   state = {
@@ -359,6 +364,11 @@ class ReviewOrder extends Component {
           <Link to="/cart" className="link">
             <p className="viewCart">edit order</p>
           </Link>
+          <div className="buttonContainer">
+            <Button text="Place Order"
+                    className="placeOrderButton"
+                    onClick={this.props.handleSubmit} />
+          </div>
         </div>
       </div>
     );
