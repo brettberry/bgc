@@ -264,22 +264,6 @@
 
     .cartButton {
       margin: 30px 0;
-
-      @include tabletLandscape {
-        @include touchscreenButton;
-      }
-
-      @include tablet {
-        @include touchscreenButton;
-      }
-
-      @include phone {
-        @include touchscreenButton;
-      }
-
-      @include smallPhone {
-        @include touchscreenButton;
-      }
     }
   }
 

@@ -82,25 +82,18 @@
   .viewAllButton {
     margin-top: 50px;
 
-    @include tabletLandscape {
-      @include touchscreenButton;
-    }
-
     @include tablet {
-      @include touchscreenButton;
       margin: 0;
       width: 100%;
     }
 
     @include phone {
-      @include touchscreenButton;
       margin: 0;
       width: 90%;
       align-self: center;
     }
 
     @include smallPhone {
-      @include touchscreenButton;
       margin: 0;
       width: 90%;
       align-self: center;

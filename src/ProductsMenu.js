@@ -67,7 +67,7 @@ function Reeds({ reeds, onItemClick }) {
   return (
     <div className="reedsContainer">
       <Link to="/products/tags/reeds" className="productsLink" onClick={onItemClick}>
-        <p className="columnTitle">Elk Mouth Reeds</p>
+        <p className="columnTitle">Mouth Reeds</p>
       </Link>
       <div>{map(reeds.toArray(), (reed, key) =>
         <Link key={key} to={`/products/${reed.getCategory()}/${reed.getPathName()}`} className="productsLink" onClick={onItemClick}>

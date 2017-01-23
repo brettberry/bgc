@@ -72,42 +72,6 @@
       margin: 0;
     }
   }
-
-  .searchContainer {
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    margin-top: 25px;
-    z-index: 1000000;
-
-    .mobileSearch {
-      fill: $bgc-medium-grey;
-      width: 40px;
-      height: 40px;
-      margin: 10px;
-    }
-
-    .searchField {
-      @include default-font;
-      appearance: none;
-      outline: 0;
-      border: none;
-      font-size: 1.75em;
-      text-align: left;
-      height: 40px;
-      display: flex;
-      margin: 10px;
-      width: 100%;
-      border-style: solid;
-      border-width: 0 0 2px 0;
-      border-color: $bgc-medium-grey;
-      padding: 20px 0;
-
-      &::placeholder {
-        opacity: 0.6;
-      }
-    }
-  }
 }
 
 .mobileNavContainer {

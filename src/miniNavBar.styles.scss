@@ -37,6 +37,18 @@
   align-items: center;
   transition: opacity 0.2s 0.3s ease-in;
   padding: 0 25px;
+
+  @include smallPhone {
+    justify-content: space-between;
+  }
+
+  @include phone {
+    justify-content: space-between;
+  }
+
+  @include tablet {
+    justify-content: space-between;
+  }
 }
 
 .iconContainer {

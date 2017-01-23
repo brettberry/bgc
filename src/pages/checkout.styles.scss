@@ -1,5 +1,9 @@
 @import '../constants';
 
+.checkoutPageContainer {
+  height: 150%;
+}
+
 .sectionTitleContainer {
   display: flex;
   justify-content: flex-start;
@@ -22,8 +26,14 @@
     width: 50px;
     height: 50px;
 
-    &:hover {
-      fill: darken($bgc-orange, 30);
+    &.rotateUp {
+      transform: rotate(180deg);
+      transition: transform 0.375s ease;
+    }
+
+    &.rotateDown {
+      transform: rotate(-180deg);
+      transition: transform 0.375s ease;
     }
   }
 }
@@ -42,6 +52,7 @@
 
   &.hideForm {
     max-height: 0;
+    padding: 0;
   }
 
   &.showForm {
@@ -230,7 +241,7 @@
 
     &.paypal {
       cursor: pointer;
-      color: $bgc-orange;
+      text-decoration: none;
     }
   }
 
@@ -286,7 +297,7 @@
   justify-content: center;
   align-items: center;
   border: solid 1px #ddd;
-  padding: 25px 50px;
+  padding: 25px 30px;
   flex: 2;
 
   .itemContainer {
@@ -295,6 +306,7 @@
     align-items: center;
     flex: 1;
     width: 100%;
+    margin: 5px;
 
     .description {
       display: flex;
@@ -336,6 +348,7 @@
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  box-shadow: 0 0 4px rgba(0,0,0,.04), 0 4px 8px rgba(0,0,0,.1);
 
   .number {
     @include subheader-font;

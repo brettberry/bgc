@@ -148,23 +148,19 @@
     .detailsButton {
 
       @include tabletLandscape {
-        @include touchscreenButton;
         width: 100%;
       }
 
       @include tablet {
-        @include touchscreenButton;
         width: 100%;
       }
 
       @include phone {
-        @include touchscreenButton;
         width: 100%;
         margin: 10px 0;
       }
 
       @include smallPhone {
-        @include touchscreenButton;
         width: 100%;
         margin: 10px 0;
       }
@@ -174,21 +170,17 @@
 
       @include tabletLandscape {
         width: 100%;
-        @include touchscreenButton;
       }
 
       @include tablet {
-        @include touchscreenButton;
         width: 100%;
       }
 
       @include phone {
-        @include touchscreenButton;
         width: 100%;
       }
 
       @include smallPhone {
-        @include touchscreenButton;
         width: 100%;
       }
     }

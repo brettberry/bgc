@@ -12,28 +12,42 @@ class Cart extends Component {
   static contextTypes = {
     cart: PropTypes.instanceOf(CartItemCollection)
   }
+
   render() {
     return (
       <div>
         <div className="cartHeaderContainer">
           <h1 className="cartHeader">Your Cart</h1>
+          <div>{this.getCartContents()}</div>
         </div>
-        <div className="border">
-          <CartDetails />
-          <div className="horizontalRule" />
-          <div className="cartTotalContainer">
-            <h2 className="cartTotalLabel">Subtotal:&nbsp;</h2>
-            <h2 className="cartSubtotal">${ this.context.cart.getCartTotal().toFixed(2)}</h2>
-          </div>
-        </div>
-        <Link to={'/account/checkout'} className="checkoutLink">
-          <Button text="Checkout" className="cartButton" />
-        </Link>
-        <Link to="/products" className="shopLink">
-          <p className="continue">continue shopping</p>
-        </Link>
       </div>
     );
+  }
+
+  getCartContents() {
+    if (this.context.cart.length !== 0) {
+      return (
+        <div>
+          <div className="border">
+            <CartDetails />
+            <div className="horizontalRule" />
+            <div className="cartTotalContainer">
+              <h2 className="cartTotalLabel">Subtotal:&nbsp;</h2>
+              <h2 className="cartSubtotal">${ this.context.cart.getCartTotal().toFixed(2)}</h2>
+            </div>
+          </div>
+          <Link to={'/account/checkout'} className="checkoutLink">
+            <Button text="Checkout" className="cartButton" />
+          </Link>
+          <Link to="/products" className="shopLink">
+            <p className="continue">continue shopping</p>
+          </Link>
+        </div>
+    );
+  }
+  return (
+    <div className="cartEmptyMsg">Your cart is currently empty.</div>
+  );
   }
 }
 
@@ -52,23 +66,21 @@ class CartDetails extends Component {
 
   render() {
     return (
-      <table className="table">
-        <thead className="thead">
-          <tr>
-            <th className="itemDescriptionHeader">Item</th>
-            <th className="itemHeader">Unit Price</th>
-            <th className="itemHeader">Quantity</th>
-            <th className="itemHeader">Item Subtotal</th>
-            <th className="itemHeader removeTitle">Remove</th>
-          </tr>
-        </thead>
-        <div className="horizontalRule" />
-        <tbody className="tableBody">
-          <tr className="cartItems">
-            {map(this.context.cart.toArray(), this.renderCartItem.bind(this))}
-          </tr>
-        </tbody>
-      </table>
+        <div className="table">
+          <div className="headingContainer">
+            <div className="itemDescriptionHeader">Item</div>
+            <div className="itemHeader">Unit Price</div>
+            <div className="itemHeader">Quantity</div>
+            <div className="itemHeader">Item Subtotal</div>
+            <div className="itemHeader removeTitle">Remove</div>
+          </div>
+          <div className="horizontalRule" />
+          <div className="tableBody">
+            <div className="cartItems">
+              {map(this.context.cart.toArray(), this.renderCartItem.bind(this))}
+            </div>
+          </div>
+        </div>
     );
   }
 

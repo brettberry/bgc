@@ -54,12 +54,6 @@ class MobileExpandedMenu extends Component {
           <Link to="/events" className="link">
             <h3 className="item" onClick={this.props.onClose}>Events</h3>
           </Link>
-          <div className="searchContainer">
-            <FaSearch className="mobileSearch" />
-            <input className="searchField"
-                   placeholder="Search products"
-                   autoFocus={false} />
-          </div>
         </div>
       </div>
     );

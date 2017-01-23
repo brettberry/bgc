@@ -134,7 +134,8 @@
   align-items: center;
 }
 
-.thead {
+.headingContainer {
+  display: flex;
   width: 100%;
 }
 
@@ -183,4 +184,15 @@
   display: flex;
   justify-content: flex-end;
   padding-right: 50px;
+}
+
+.cartEmptyMsg {
+  @include header-font;
+  color: $bgc-medium-light-grey;
+  width: 100%;
+  padding: 100px;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  align-self: center;
 }

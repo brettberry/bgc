@@ -77,7 +77,7 @@
                 "url(/samplePhotos/fox.jpg)",
                 "url(/samplePhotos/scenery.jpg)"],
       "category": "bugles",
-      "tags": ["rt-reeds", "bugles", "popular"]
+      "tags": ["rt-reeds", "popular"]
     },
     {
       "fullName": "Thunder Bugle Black RT-Reed",
@@ -90,7 +90,7 @@
                 "url(/samplePhotos/fox.jpg)",
                 "url(/samplePhotos/scenery.jpg)"],
       "category": "bugles",
-      "tags": ["rt-reeds", "bugles"]
+      "tags": ["rt-reeds"]
     },
     {
       "fullName": "Thunder Bugle Green RT-Reed",
@@ -103,7 +103,7 @@
                 "url(/samplePhotos/fox.jpg)",
                 "url(/samplePhotos/scenery.jpg)"],
       "category": "bugles",
-      "tags": ["rt-reeds", "bugles", "popular"]
+      "tags": ["rt-reeds", "popular"]
     },
     {
       "fullName": "Thunder Bugle Red RT-Reed",
@@ -116,7 +116,7 @@
                 "url(/samplePhotos/fox.jpg)",
                 "url(/samplePhotos/scenery.jpg)"],
       "category": "bugles",
-      "tags": ["rt-reeds", "bugles"]
+      "tags": ["rt-reeds"]
     },
     {
       "fullName": "Golden Dome Large Bull",
@@ -208,6 +208,19 @@
                 "url(/samplePhotos/scenery.jpg)"],
       "category": "reeds",
       "tags": ["x-series", "reeds"]
+    },
+    {
+      "fullName": "X-Series Cow Mew Call",
+      "pathName": "x-series-cow-mew",
+      "price": {
+        "amount": 8.45
+      },
+      "description": "",
+      "media": ["url(/samplePhotos/deer.jpg)",
+                "url(/samplePhotos/fox.jpg)",
+                "url(/samplePhotos/scenery.jpg)"],
+      "category": "reeds",
+      "tags": ["x-series", "reeds", "cow-calls"]
     },
     {
       "fullName": "Small Bull Single Reed",

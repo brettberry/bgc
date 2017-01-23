@@ -104,7 +104,7 @@ class Checkout extends Component {
 
   render() {
     return (
-      <div>
+      <div className="checkoutPageContainer">
         <div className="checkoutHeaderBar">
           <div className="checkoutHeaderContainer">
             <h1 className="logo">Berry Game Calls</h1>
@@ -148,7 +148,8 @@ class BillingInformation extends Component {
              onClick={() => this.setState({ showBillingForm: !this.state.showBillingForm })}>
           <StepBubble value="1" />
           <h1 className="header">Billing Information</h1>
-          {this.state.showBillingForm ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}
+          <FaChevronDown className={classnames('chevron', this.state.showBillingForm && 'rotateUp')} />
+          {/* {this.state.showBillingForm ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />} */}
         </div>
         <div className={classnames('billingFormContainer', this.state.showBillingForm ? 'showForm' : 'hideForm')}>
           <p className="formDetails">Enter your billing information below.</p>
@@ -221,7 +222,7 @@ class ShippingInformation extends Component {
     this.setState({ showShippingForm: !this.state.showShippingForm });
     const currentElement = ReactDOM.findDOMNode(this);
     const scrollTop = $(currentElement).offset().top;
-    $(document.body).scrollTop(scrollTop - 100);
+    $(document.body).scrollTop(scrollTop - 207);
   }
 
   render() {
@@ -234,10 +235,10 @@ class ShippingInformation extends Component {
 
     return (
       <div>
-        <div className="sectionTitleContainer"
+        <div className={classnames('sectionTitleContainer', this.state.showShippingForm && 'formActive')}
              onClick={this.handleSectionClick.bind(this)}>
           <StepBubble value="2" />
-          <h1 className="header shipping">Shipping Information</h1>
+          <h1 className="header shipping">Shipping Address</h1>
           {this.state.showShippingForm ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}
         </div>
         <div className={classnames(this.state.showShippingForm ? 'shippingFormContainer showForm' : 'shippingFormContainer hideForm')}>
@@ -303,11 +304,18 @@ class PaymentInformation extends Component {
     showPaymentForm: false
   }
 
+  handleSectionClick() {
+    this.setState({ showPaymentForm: !this.state.showPaymentForm });
+    // const currentElement = ReactDOM.findDOMNode(this);
+    // const scrollTop = $(currentElement).offset().top;
+    // $(document.body).scrollTop(scrollTop - 100);
+  }
+
   render() {
     return (
       <div>
-        <div className={this.showPaymentForm ? 'sectionTitleContainer formActive' : 'sectionTitleContainer'}
-             onClick={() => this.setState({ showPaymentForm: !this.state.showPaymentForm })}>
+        <div className={classnames('sectionTitleContainer', this.state.showPaymentForm && 'formActive')}
+             onClick={this.handleSectionClick.bind(this)}>
           <StepBubble value="3" />
           <h1 className="header">Payment Method</h1>
           {this.state.showPaymentForm ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}
@@ -339,6 +347,13 @@ class ReviewOrder extends Component {
     showOrderForm: false
   }
 
+  handleSectionClick() {
+    this.setState({ showOrderForm: !this.state.showOrderForm });
+    // const currentElement = ReactDOM.findDOMNode(this);
+    // const scrollTop = $(currentElement).offset().top;
+    // $(document.body).scrollTop(scrollTop - 100);
+  }
+
   getThumbnailImage(item) {
       const productImg = item.getMedia();
       return { backgroundImage: productImg[0] };
@@ -347,8 +362,8 @@ class ReviewOrder extends Component {
   render() {
     return (
       <div>
-        <div className="sectionTitleContainer"
-             onClick={() => this.setState({ showOrderForm: !this.state.showOrderForm })}>
+        <div className={classnames('sectionTitleContainer', this.state.showOrderForm && 'formActive')}
+             onClick={this.handleSectionClick.bind(this)}>
           <StepBubble value="4" />
           <h1 className="header">Review Order</h1>
           {this.state.showOrderForm ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}

@@ -53,28 +53,26 @@ class ShoppingCenter extends Component {
     const showCartQuantity = cartQuantity > 0;
     return (
       <div>
-        <div>
-          <div className={classnames('shoppingContainer', className)}>
-            <FaSearch className="searchIcon" onClick={onSearchClick} />
-            <div className="divider" />
-            <div className={this.state.showCartDropDown && 'showCartDropDown'}
-                 onMouseEnter={() => this.showCartDropDown()}
-                 onMouseLeave={() => this.closeCartDropDown()}>
-              <Link to={"/cart"} className="cartLink">
-                <FaShoppingCart className="cartIcon" />
-                {showCartQuantity && <div className="cartQuantity animated bounceIn">{cartQuantity}</div>}
-              </Link>
-              <CartDropDown className="cartDropDown"
-                            cart={this.context.cart}
-                            closeCartDropDown={this.closeCartDropDown.bind(this)} />
-            </div>
-            <div className="divider" />
-            <div className={classnames('loginLink', this.state.showAccountMenu && 'showAccountMenu')}
-                 onMouseEnter={() => this.showMenu()}
-                 onMouseLeave={() => this.closeMenu()}>
-              <h3 className="accountItem">My <br/> Account</h3>
-              <AccountMenu className="accountMenu" />
-            </div>
+        <div className={classnames('shoppingContainer', className)}>
+          <FaSearch className="searchIcon" onClick={onSearchClick} />
+          <div className="divider" />
+          <div className={this.state.showCartDropDown && 'showCartDropDown'}
+               onMouseEnter={() => this.showCartDropDown()}
+               onMouseLeave={() => this.closeCartDropDown()}>
+            <Link to={"/cart"} className="cartLink">
+              <FaShoppingCart className="cartIcon" />
+              {showCartQuantity && <div className="cartQuantity animated bounceIn">{cartQuantity}</div>}
+            </Link>
+            <CartDropDown className="cartDropDown"
+                          cart={this.context.cart}
+                          closeCartDropDown={this.closeCartDropDown.bind(this)} />
+          </div>
+          <div className="divider" />
+          <div className={classnames('loginLink', this.state.showAccountMenu && 'showAccountMenu')}
+               onMouseEnter={() => this.showMenu()}
+               onMouseLeave={() => this.closeMenu()}>
+            <h3 className="accountItem">My <br/> Account</h3>
+            <AccountMenu className="accountMenu" />
           </div>
         </div>
       </div>
@@ -131,7 +129,7 @@ class CartDropDown extends Component {
                     onClick={() => this.props.closeCartDropDown()} />
           </Link>
           <Link to="/account/checkout" className="link">
-            <Button text="Checkout"
+            <Button text="Check out"
                     className="checkoutButton"
                     onClick={() => this.props.closeCartDropDown()} />
           </Link>

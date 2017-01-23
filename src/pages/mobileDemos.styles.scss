@@ -118,22 +118,6 @@
 
     .shopButton {
       align-self: center;
-
-      @include tabletLandscape {
-        @include touchscreenButton;
-      }
-
-      @include tablet {
-        @include touchscreenButton;
-      }
-
-      @include phone {
-        @include touchscreenButton;
-      }
-
-      @include smallPhone {
-        @include touchscreenButton;
-      }
     }
   }
 }
