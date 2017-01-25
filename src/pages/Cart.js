@@ -69,9 +69,9 @@ class CartDetails extends Component {
         <div className="table">
           <div className="headingContainer">
             <div className="itemDescriptionHeader">Item</div>
-            <div className="itemHeader">Unit Price</div>
+            <div className="itemHeader">Price</div>
             <div className="itemHeader">Quantity</div>
-            <div className="itemHeader">Item Subtotal</div>
+            <div className="itemHeader">Subtotal</div>
             <div className="itemHeader removeTitle">Remove</div>
           </div>
           <div className="horizontalRule" />

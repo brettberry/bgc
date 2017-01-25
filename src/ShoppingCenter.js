@@ -63,9 +63,9 @@ class ShoppingCenter extends Component {
               <FaShoppingCart className="cartIcon" />
               {showCartQuantity && <div className="cartQuantity animated bounceIn">{cartQuantity}</div>}
             </Link>
-            <CartDropDown className="cartDropDown"
+            {this.context.cart.length > 0 && <CartDropDown className="cartDropDown"
                           cart={this.context.cart}
-                          closeCartDropDown={this.closeCartDropDown.bind(this)} />
+                          closeCartDropDown={this.closeCartDropDown.bind(this)} />}
           </div>
           <div className="divider" />
           <div className={classnames('loginLink', this.state.showAccountMenu && 'showAccountMenu')}

@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  min-height: 100%;
 
   .link {
     text-decoration: none;
@@ -30,8 +30,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-bottom: 50px;
-    padding-top: 0;
+    padding: 0;
+    margin-top: 75px;
   }
 
   .welcome {
@@ -44,17 +44,41 @@
     @include header-font;
     color: $bgc-orange;
     font-size: 3em;
+
+    @include phone {
+      font-size: 2em;
+    }
+
+    @include smallPhone {
+      font-size: 2em;
+    }
   }
 }
 
 .registerContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
   border: solid 1px #ddd;
+  min-height: 500px;
+  align-items: stretch;
+  margin: 50px;
+
+  @include tablet {
+    flex-direction: column;
+  }
+
+  @include phone {
+    flex-direction: column;
+    margin: 50px 25px;
+  }
+
+  @include smallPhone {
+    flex-direction: column;
+    margin: 25px 10px;
+    min-height: 425px;
+  }
 
   input {
-    width: 500px;
     font-size: 2em;
   }
 
@@ -83,10 +107,34 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 500px;
-  width: 50%;
   padding: 50px 75px;
+  flex: 1;
+
+  @include phone {
+    padding: 40px 20px;
+  }
+
+  @include smallPhone {
+    padding: 40px 20px;
+    min-height: 425px;
+  }
 }
 
 .returningUserContainer {
   border-right: solid 1px #ddd;
+
+  @include tablet {
+    border-right: none;
+    border-bottom: solid 1px #ddd;
+  }
+
+  @include phone {
+    border-right: none;
+    border-bottom: solid 1px #ddd;
+  }
+
+  @include smallPhone {
+    border-right: none;
+    border-bottom: solid 1px #ddd;
+  }
 }

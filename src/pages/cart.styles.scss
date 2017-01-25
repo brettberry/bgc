@@ -20,19 +20,24 @@
 
 .cartItemContainer {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  flex: 1;
 
   .link {
     text-decoration: none;
+    display: flex;
+    width: 100%;
   }
 
   .itemDescription {
-    width: 500px;
+    min-width: 400px;
+    max-width: 1200px;
+    width: 100%;
     display: flex;
-    flex-direction: row;
     align-items: center;
+
+    @include tablet {
+      min-width: 125px;
+    }
   }
 
   .thumbnailImageDiv {
@@ -41,6 +46,10 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+
+    @include tablet {
+      width: 0;
+    }
   }
 
   .item {
@@ -52,31 +61,44 @@
       color: $bgc-orange;
       cursor: pointer;
     }
+
+    @include tablet {
+      padding-left: 0;
+
+    }
   }
 
   .unitPrice {
     @include subheader-font;
     font-size: 1.25em;
-    width: 200px;
     align-self: center;
     padding-left: 10px;
+    min-width: 100px;
+    max-width: 300px;
+    width: 100%;
   }
 
   .quantityContainer {
-    width: 200px;
     padding-left: 10px;
+    min-width: 100px;
+    max-width: 300px;
+    width: 100%;
   }
 
   .itemTotal {
     @include subheader-font;
     font-size: 1.25em;
-    width: 200px;
     align-self: center;
     padding-left: 10px;
+    min-width: 100px;
+    max-width: 300px;
+    width: 100%;
   }
 
   .removeContainer {
-    width: 200px;
+    min-width: 50px;
+    max-width: 300px;
+    width: 100%;
     display: flex;
     justify-content: center;
 
@@ -111,7 +133,6 @@
 }
 
 .cartHeaderContainer {
-
   .homeLink {
     text-decoration: none;
   }
@@ -154,8 +175,14 @@
   font-size: 1em;
   font-weight: 200;
   text-align: left;
-  width: 500px;
   padding: 10px 0;
+  min-width: 400px;
+  max-width: 1200px;
+  width: 100%;
+
+  @include tablet {
+    min-width: 125px;
+  }
 }
 
 .itemHeader {
@@ -164,12 +191,17 @@
   font-size: 1em;
   font-weight: 200;
   text-align: left;
-  width: 200px;
-  padding: 10px 0;
+  padding: 10px 0 10px 10px;
+  min-width: 100px;
+  max-width: 300px;
+  width: 100%;
 }
 
 .removeTitle {
   text-align: center;
+  min-width: 50px;
+  max-width: 300px;
+  width: 100%;
 }
 
 .horizontalRule {
