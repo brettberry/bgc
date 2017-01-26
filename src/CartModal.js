@@ -10,17 +10,17 @@ import { Link } from 'react-router';
 import './cartModal.styles.scss';
 
 const styles = {
-  minWidth: 500,
+  minWidth: 300,
   maxWidth: 800,
   width: '100%',
-  height: 500,
-  top: -40,
+  height: 550,
+  top: -30,
   borderStyle: 'solid',
   borderWidth: 5,
   borderColor: '#ebb052',
   borderRadius: 10,
-  padding: '25px',
-  paddingTop: 0
+  padding: 25,
+  paddingTop: 35
 };
 
 class CartModal extends Component {

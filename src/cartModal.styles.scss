@@ -1,10 +1,16 @@
 @import './constants';
 
 .cartModalContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 
   .itemsAddedContainer {
     display: flex;
     align-items: center;
+    width: 100%;
   }
 
   .continueShopping {
@@ -22,8 +28,9 @@
 
   .itemDetailsContainer {
     display: flex;
-    margin: 20px 0;
+    margin: 0;
     justify-content: space-between;
+    width: 100%;
 
     .productDetailsContainer {
       display: flex;
@@ -37,6 +44,14 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
+
+      @include phone {
+        width: 0;
+      }
+
+      @include smallPhone {
+        width: 0;
+      }
     }
 
     .itemSelected {
@@ -44,6 +59,10 @@
       font-weight: 400;
       font-size: 1.5em;
       margin: 0;
+
+      @include smallPhone {
+        font-size: 1.25em;
+      }
     }
 
     .itemSelectedTotal {
@@ -51,6 +70,10 @@
       font-weight: 400;
       font-size: 1.5em;
       margin: 0;
+
+      @include smallPhone {
+        font-size: 1.25em;
+      }
     }
 
     .itemDetails {
@@ -71,6 +94,15 @@
   .itemsAddedMsg {
     font-family: $main-font-family;
     font-weight: 300;
+    margin: 0;
+
+    @include phone {
+      font-size: 1.25em;
+    }
+
+    @include smallPhone {
+      font-size: 1.25em;
+    }
   }
 
   .exit {
@@ -81,6 +113,20 @@
     top: 20px;
     right: 20px;
     cursor: pointer;
+
+    @include phone {
+      // top: 10;
+      // right: 10;
+      width: 25px;
+      height: 25px;
+    }
+
+    @include smallPhone {
+      // top: 10;
+      // right: 10;
+      width: 25px;
+      height: 25px;
+    }
   }
 }
 
@@ -98,12 +144,14 @@
   border: solid;
   border-width: 1px;
   border-color: $bgc-light-grey;
+  width: 100%;
 
   .subtotalContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    margin-bottom: 10px;
 
     .subtotal {
       font-family: $main-font-family;
@@ -111,7 +159,7 @@
       font-weight: 300;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin: 0 10px 10px 10px;
+      margin: 0;
     }
   }
 
@@ -127,7 +175,7 @@
     font-size: 1em;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin: 10px;
+    margin-top: 10px;
   }
 
   .link {
@@ -136,5 +184,13 @@
     align-self: flex-end;
     text-decoration: none;
     margin-top: 10px;
+
+    @include phone {
+      align-self: center;
+    }
+
+    @include smallPhone {
+      align-self: center;
+    }
   }
 }

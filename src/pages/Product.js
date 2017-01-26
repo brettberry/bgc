@@ -38,27 +38,21 @@ function ProductView({ product }) {
     <div className="productView">
       <h1 className="name">{productName}</h1>
       <div className="contentContainer">
-        <Images />
+        <Images product={product}/>
         <Details product={product}/>
       </div>
     </div>
   );
 }
 
-const images = ['url(/samplePhotos/deer.jpg)',
-               'url(/samplePhotos/fox.jpg)',
-               'url(/samplePhotos/scenery.jpg)'];
-
 class Images extends Component {
+
+  static propTypes = {
+    product: PropTypes.instanceOf(ProductModel)
+  }
 
   state = {
     activeIndex: 0
-  }
-
-  getBackgroundImage(index) {
-    return {
-      backgroundImage: images[index]
-    };
   }
 
   handleImageClick(index) {
@@ -68,16 +62,24 @@ class Images extends Component {
   }
 
   render() {
+    const product = this.props.product;
     return (
       <div className="imgContainer">
         <div className="thumbnailsContainer">
-          <div className="thumbnail" style={this.getBackgroundImage(0)} onClick={() => this.handleImageClick(0)} />
-          <div className="thumbnail" style={this.getBackgroundImage(1)} onClick={() => this.handleImageClick(1)} />
-          <div className="thumbnail" style={this.getBackgroundImage(2)} onClick={() => this.handleImageClick(2)} />
+          <div className="thumbnail" style={this.getBackgroundImage(0, product)} onClick={() => this.handleImageClick(0)} />
+          <div className="thumbnail" style={this.getBackgroundImage(1, product)} onClick={() => this.handleImageClick(1)} />
+          <div className="thumbnail" style={this.getBackgroundImage(2, product)} onClick={() => this.handleImageClick(2)} />
         </div>
-        <div className="mainImg" style={this.getBackgroundImage(this.state.activeIndex)} />
+        <div className="mainImg" style={this.getBackgroundImage(this.state.activeIndex, product)} />
       </div>
     );
+  }
+
+  getBackgroundImage(index, myProduct) {
+    const images = myProduct.getMedia();
+    return {
+      backgroundImage: images[index]
+    };
   }
 }
 
