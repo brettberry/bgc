@@ -391,9 +391,9 @@
         "amount": 16.95
       },
       "description": "The Sleazy Cow Call produces a raspy cow-in-estrus call that drives bulls crazy. This call is great for locating bulls at long distances or bulls that become call shy. The Sleazy Cow Call was used in our DVD’s, “Hot Bulls Classics” and “Hot Bulls III” with great success.",
-      "media": ["url(/samplePhotos/deer.jpg)",
-                "url(/samplePhotos/fox.jpg)",
-                "url(/samplePhotos/scenery.jpg)"],
+      "media": ["url(/productPhotos/sleazy-cow-call-1.jpg)",
+                "url(/productPhotos/sleazy-cow-call-2.jpg)",
+                "url(/productPhotos/sleazy-cow-call-3.jpg)"],
       "category": "cow-calls",
       "tags": ["cow-calls", "popular", "featured"]
     },
@@ -404,9 +404,8 @@
         "amount": 14.95
       },
       "description": " Unmatched Versatility – The open reed design allows the caller to produce a range of sounds from high pitched cow and calf sounds to bull mews and even cow-in-estrus calls.  The Fatal Attraction Cow Call was used during the making of “Hot Bulls 4” and “Elk Hunters Training Day” wih great success!",
-      "media": ["url(/samplePhotos/deer.jpg)",
-                "url(/samplePhotos/fox.jpg)",
-                "url(/samplePhotos/scenery.jpg)"],
+      "media": ["url(/productPhotos/fatal-attraction-1.jpg)",
+                "url(/productPhotos/fatal-attraction-1.jpg)"],
       "category": "cow-calls",
       "tags": ["cow-calls", "featured"]
     },

@@ -55,6 +55,13 @@ class Images extends Component {
     activeIndex: 0
   }
 
+  getBackgroundImage(index, myProduct) {
+    const images = myProduct.getMedia();
+    return {
+      backgroundImage: images[index]
+    };
+  }
+
   handleImageClick(index) {
     this.setState({
       activeIndex: index
@@ -73,13 +80,6 @@ class Images extends Component {
         <div className="mainImg" style={this.getBackgroundImage(this.state.activeIndex, product)} />
       </div>
     );
-  }
-
-  getBackgroundImage(index, myProduct) {
-    const images = myProduct.getMedia();
-    return {
-      backgroundImage: images[index]
-    };
   }
 }
 
