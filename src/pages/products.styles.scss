@@ -170,11 +170,12 @@
     align-items: center;
     width: 100%;
     height: 90%;
+    padding: 25px;
 
     .productImage {
       width: 90%;
       height: 90%;
-      background-size: cover;
+      background-size: contain;
       background-position: center center;
       background-repeat: no-repeat;
     }
