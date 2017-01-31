@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import './products.styles.scss';
 import data from '../data.json';
 import map from 'lodash/map';

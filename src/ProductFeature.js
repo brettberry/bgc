@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import ProductModel from './models/ProductModel';
 import { Link } from 'react-router';
 import map from 'lodash/map';
 import classnames from 'classnames';
@@ -10,6 +11,7 @@ import './productFeature.styles.scss';
 const products = new ProductCollection(data.products);
 
 class Featured extends Component {
+
   render() {
     const featured = products.filterByTag('featured');
     return (
@@ -24,6 +26,8 @@ class Featured extends Component {
           {map(featured.toArray(), (feature, key) =>
             <FeaturedItem feature={feature} key={key} />
           )}
+          <h2 className="header">Proud to be</h2>
+          <h2 className="header highlight">&nbsp;Made in the USA.</h2>
         </div>
       </div>
     );
@@ -31,29 +35,45 @@ class Featured extends Component {
 }
 
 
-function FeaturedItem({ feature, key }) {
-  const price = feature.getPrice().getAmount().toFixed(2);
-  const discount = feature.getPrice().getDiscount() && feature.getPrice().getDiscount().toFixed(2);
-  const showDiscount = !!discount;
-  const priceClasses = classnames('price', showDiscount && 'strike');
-  const sampleImage = 'url(/samplePhotos/flower.jpg)';
+class FeaturedItem extends Component {
 
-  return (
-    <div className="featuredContainer">
-      <Link key={key} to={`/products/${feature.getCategory()}/${feature.getPathName()}`} className="link">
-        <div className="featuredDiv">
-          <h3 className="title">{feature.getFullName()}</h3>
-          <div className="priceContainer">
-            <p className={priceClasses}>${price}</p>
-            {showDiscount && <p className="discount">${discount}</p>}
+  static propTypes = {
+    feature: PropTypes.instanceOf(ProductModel),
+    key: PropTypes.number
+  }
+
+  getBackgroundImage(myProduct) {
+    const images = myProduct.getMedia();
+    return {
+      backgroundImage: images[0]
+    };
+  }
+
+  render() {
+    const feature = this.props.feature;
+    const key = this.props.key;
+    const price = feature.getPrice().getAmount().toFixed(2);
+    const discount = feature.getPrice().getDiscount() && feature.getPrice().getDiscount().toFixed(2);
+    const showDiscount = !!discount;
+    const priceClasses = classnames('price', showDiscount && 'strike');
+
+    return (
+      <div className="featuredContainer">
+        <Link key={key} to={`/products/${feature.getCategory()}/${feature.getPathName()}`} className="link">
+          <div className="featuredDiv">
+            <h3 className="title">{feature.getFullName()}</h3>
+            <div className="priceContainer">
+              <p className={priceClasses}>${price}</p>
+              {showDiscount && <p className="discount">${discount}</p>}
+            </div>
+            <div className="productImgContainer">
+              <div className="productImage" style={this.getBackgroundImage(feature)} />
+            </div>
           </div>
-          <div className="productImgContainer">
-            <div className="productImage" style={{ backgroundImage: sampleImage }} />
-          </div>
-        </div>
-      </Link>
-    </div>
-  );
+        </Link>
+      </div>
+    );
+  }
 }
 
 export default Featured;

@@ -42,7 +42,7 @@
       width: 100px;
       height: 100px;
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: contain;
       background-position: center;
 
       @include phone {
@@ -115,15 +115,11 @@
     cursor: pointer;
 
     @include phone {
-      // top: 10;
-      // right: 10;
       width: 25px;
       height: 25px;
     }
 
     @include smallPhone {
-      // top: 10;
-      // right: 10;
       width: 25px;
       height: 25px;
     }

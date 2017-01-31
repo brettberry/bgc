@@ -58,7 +58,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    width: 60%;
+    width: 50%;
 
     @include tabletLandscape {
       width: 100%;
@@ -172,7 +172,7 @@
   .details {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 50%;
     margin-left: 25px;
 
     @include tabletLandscape {

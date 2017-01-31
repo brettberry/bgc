@@ -215,7 +215,7 @@ class BillingInformation extends Component {
 class ShippingInformation extends Component {
 
   state = {
-    showShippingForm: false
+    showShippingForm: true
   }
 
   handleSectionClick() {
@@ -301,7 +301,7 @@ class PaymentInformation extends Component {
   }
 
   state = {
-    showPaymentForm: false
+    showPaymentForm: true
   }
 
   handleSectionClick() {
@@ -344,7 +344,7 @@ class ReviewOrder extends Component {
   }
 
   state = {
-    showOrderForm: false
+    showOrderForm: true
   }
 
   handleSectionClick() {

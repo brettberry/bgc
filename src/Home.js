@@ -14,9 +14,9 @@ class Home extends Component {
       <div>
         <Slider />
         <Featured />
-        <MobileProvider>
+        {/* <MobileProvider>
           <Banner />
-        </MobileProvider>
+        </MobileProvider> */}
         <Demo />
         <TabletProvider>
           <Banner2 />
@@ -96,15 +96,13 @@ class Banner extends Component {
 }
 
 function ShopCategories() {
-  const sampleImage = 'url(/samplePhotos/flower.jpg)';
-
   return (
     <div className="categoryContainer">
       <div className="categories">
         <Link to="/products/tags/bugles" className="link">
           <div className="category">
             <div className="imageContainer">
-              <div className="productImage" style={{ backgroundImage: sampleImage }} />
+              <div className="productImage" style={{ backgroundImage: 'url(/productPhotos/mini-thunder-bugle.jpg)' }} />
             </div>
             <p className="title">Bugles</p>
           </div>
@@ -112,15 +110,15 @@ function ShopCategories() {
         <Link to="/products/tags/reeds" className="link">
           <div className="category">
             <div className="imageContainer">
-              <div className="productImage" style={{ backgroundImage: sampleImage }} />
+              <div className="productImage" style={{ backgroundImage: 'url(/productPhotos/tb-rt-reeds-all.jpg)' }} />
             </div>
-            <p className="title">Mouth Reeds</p>
+            <p className="title">Reeds</p>
           </div>
         </Link>
         <Link to="/products/tags/dvds" className="link">
           <div className="category">
             <div className="imageContainer">
-              <div className="productImage" style={{ backgroundImage: sampleImage }} />
+              <div className="productImage" style={{ backgroundImage: 'url(/productPhotos/training-day-2-cover-front.jpg)' }} />
             </div>
             <p className="title">Movies</p>
           </div>

@@ -44,7 +44,7 @@ class Slider extends Component {
     return (
       <div className="sliderContainer">
         <div className="chevronContainer left" onClick={this.pageLeft.bind(this)}>
-          <FaChevronLeft className= "chevron"/>
+          {/* <FaChevronLeft className= "chevron"/> */}
         </div>
         <ReactCSSTransitionGroup className={transitionClasses}
                                  transitionName="sliderTransition"
@@ -53,7 +53,7 @@ class Slider extends Component {
             {this.renderObjects()}
         </ReactCSSTransitionGroup>
         <div className="chevronContainer right" onClick={this.pageRight.bind(this)}>
-          <FaChevronRight className="chevron" />
+          {/* <FaChevronRight className="chevron" /> */}
         </div>
       </div>
     );
@@ -72,7 +72,7 @@ class Slider extends Component {
 
 function Object1() {
   return (
-    <div className="slider first">
+    <div className="slider" style={{ backgroundImage: 'url(/bannerAds/gold-banner-ad.jpg)' }}>
       <div className="dotContainer">
         <div className="dot active" />
         <div className="dot" />
@@ -84,7 +84,7 @@ function Object1() {
 
 function Object2() {
   return (
-    <div className="slider second">
+    <div className="slider" style={{ backgroundImage: 'url(/bannerAds/seminar-flyer.jpg)' }}>
       <div className="dotContainer">
         <div className="dot" />
         <div className="dot active" />
@@ -96,7 +96,7 @@ function Object2() {
 
 function Object3() {
   return (
-    <div className="slider third">
+    <div className="slider" style={{ backgroundImage: 'url(/bannerAds/seminar-flyer-2.jpg)' }}>
       <div className="dotContainer">
         <div className="dot" />
         <div className="dot" />
