@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import classnames from 'classnames';
-import FaSearch from 'react-icons/lib/fa/search';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import FaBars from 'react-icons/lib/fa/bars';
 import './miniNavBar.styles.scss';
@@ -32,7 +31,9 @@ class MobileMiniNavBar extends Component {
             <h1 className="bgc">BGC</h1>
           </Link>
           <div className="iconContainer">
-            <FaShoppingCart className="cartIcon" />
+            <Link to="/cart">
+              <FaShoppingCart className="cartIcon" />
+            </Link>
             <FaBars className="hamburgerIcon" onClick={this.handleBarsClick.bind(this)} />
           </div>
         </div>

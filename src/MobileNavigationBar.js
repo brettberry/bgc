@@ -36,7 +36,9 @@ class MobileNavigationBar extends Component {
             <h1 className="bgc">Berry Game Calls</h1>
           </Link>
           <div className="iconContainer">
-            <FaShoppingCart className="cart" />
+            <Link to="/cart">
+              <FaShoppingCart className="cart" />
+            </Link>
             <FaBars className="hamburger" onClick={this.handleBarsClick.bind(this)} />
           </div>
         </div>

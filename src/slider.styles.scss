@@ -6,6 +6,14 @@
   height: 700px;
   width: 100%;
 
+  @include phone {
+    height: 250px;
+  }
+
+  @include smallPhone {
+    height: 250px;
+  }
+
   .chevronContainer {
     position: absolute;
     width: 50px;
@@ -70,6 +78,14 @@
     padding-bottom: 25px;
     opacity: 1;
     pointer-events: none;
+
+    @include phone {
+      padding-bottom: 5px;
+    }
+
+    @include smallPhone {
+      padding-bottom: 5px;
+    }
 
     .dot {
       height: 9px;
