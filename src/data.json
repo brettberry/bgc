@@ -7,7 +7,7 @@
         "amount": 37.50
       },
       "description": "The revolutionary Thunder Bugle is one of the best external elk calls ever made. The thin replaceable RT-Reeds snap into the mouthpiece in seconds.  With four different types of RT-Reeds you can produce a variety of sounds quickly.  Simply blow a breath of air through the call and apply top lip, bottom lip, or even tongue pressure and you will be producing tones so easily.  With a little practice you will be sounding like the real thing in no time.  The Thunder Bugle comes with two RT-Reeds, a camo cover, and a cap to protect the reed.",
-      "media": [],
+      "media": ["url(/productPhotos/thunder-bugle.jpg)", "url(/productPhotos/tb-back-pkg.jpg)"],
       "category": "bugles",
       "tags": ["bugles", "popular"]
     },
@@ -18,7 +18,7 @@
         "amount": 49.95
       },
       "description": "Designed by world champion elk caller Glen Berry. Thunder Bugle Pro Includes stretchy cord lanyard, camo cover a cap to protect the RT- REED it has a white RT-REED install in the mouthpiece, black RT-REED, green RT-REED and red RT-REED included in the Package.",
-      "media": [],
+      "media": ["url(/productPhotos/tb-pro-back-pkg.jpg)"],
       "category": "bugles",
       "tags": ["bugles", "featured"]
     },
@@ -40,7 +40,7 @@
         "amount": 24.95
       },
       "description": "The Golden Tone Grunt Tube is a revolutionary design. The flex point gives you the opportunity to easily access the call with little movement. The accelerated air helps produces those perfect tones, sounding like the real thing! The echo chamber gets that bottom end, guttural sound of a bull elk. Sound like a world champion elk caller with the new Golden Tone Grunt Tube. You can easily convert the Golden Tone Grunt Tube into a Thunder Bugle Pro by Removing the TB mouthpiece from your Thunder Bugle And sliding it over the end of the Golden Tone Grunt Tube. Comes with Predator Green Deception tight stretch camo cover, and easy carry elastic lanyard. Size: 4 inches at Bell end and 1 inch at mouthpiece end 24 inches long.",
-      "media": ["url(/productPhotos/golden-tone-grunt-ad.jpg)"],
+      "media": ["url(/productPhotos/golden-tone-grunt-tube.jpg)", "url(/productPhotos/golden-tone-grunt-tube-2.jpg)", "url(/productPhotos/golden-tone-grunt-tube-back-pkg.jpg)"],
       "category": "bugles",
       "tags": ["bugles", "popular", "featured"]
     },
@@ -64,7 +64,7 @@
         "amount": 7.95
       },
       "description": "The Thunder Bugle White single RT- Reed Consist of 1 thin layer of latex, this Reed is designed to get a small to Medium bull sounds with excited bull tone range. RT- Reeds come in a Two Pack! (Caution These are not mouth Reeds. RT-REEDS are replacement reeds for Thunder Bugle)",
-      "media": [],
+      "media": ["url(/productPhotos/rt-reed-back-pkg.jpg)"],
       "category": "bugles",
       "tags": ["rt-reeds", "popular", "reeds"]
     },
@@ -75,7 +75,7 @@
         "amount": 7.95
       },
       "description": "The Thunder Bugle Black single RT- Reed Consist of 1 thick layer of latex, this Reed is designed to get a Medium to larger bull sounds with excited bull tone range. RT- Reeds come in a Two Pack! (Caution These are not mouth Reeds. RT-REEDS are replacement reeds for Thunder Bugle)",
-      "media": [],
+      "media": ["url(/productPhotos/rt-reed-back-pkg.jpg)"],
       "category": "bugles",
       "tags": ["rt-reeds", "reeds"]
     },
@@ -86,7 +86,7 @@
         "amount": 7.95
       },
       "description": "The Thunder Bugle Green Double RT- Reed Consist of 2 layers of latex, this Reed is designed to get a Medium bull sounds with excited bull tone range. RT- Reeds come in a Two Pack! (Caution These are not mouth Reeds. RT-REEDS are replacement reeds for Thunder Bugle)",
-      "media": [],
+      "media": ["url(/productPhotos/rt-reed-back-pkg.jpg)"],
       "category": "bugles",
       "tags": ["rt-reeds", "popular", "reeds"]
     },
@@ -97,7 +97,7 @@
         "amount": 7.95
       },
       "description": "The Thunder Bugle Red Triple Rt-Reed Consist of 3 layers of latex, this Reed is designed to get deeper sounds with more volume and tone range. RT- Reeds come in a Two Pack. (Caution These are not mouth Reeds. RT-REEDS are replacement reeds for Thunder Bugle)",
-      "media": [],
+      "media": ["url(/productPhotos/rt-reed-back-pkg.jpg)"],
       "category": "bugles",
       "tags": ["rt-reeds", "reeds"]
     },
@@ -108,8 +108,7 @@
         "amount": 7.95
       },
       "description": "Glen Berry designed the unique X-Series mouth reeds with great success.  He used this proven X-design and evolved this concept into the new Golden Dome with a contoured elevated design to help produce the realistic elk sounds of bugles, grunts and cow and calf mews!  Easy to use and effective. Sound like the real thing and produce those perfect tones with the NEW Golden Dome!  The large bull reed has two layers of latex to help produce more volume.",
-      "media": ["url(/productPhotos/golden-dome-large-reed.jpg)",
-                "url(/productPhotos/golden-dome-large-package.jpg)"],
+      "media": ["url(/productPhotos/golden-dome-large-reed.jpg)", "url(/productPhotos/golden-dome-large-package.jpg)", "url(/productPhotos/golden-dome-back-pkg.jpg)"],
       "category": "reeds",
       "tags": ["golden-dome", "popular", "reeds"]
     },
@@ -121,7 +120,8 @@
       },
       "description": "Glen Berry designed the unique X-Series mouth reeds with great success.  He used this proven X-design and evolved this concept into the new Golden Dome with a contoured elevated design to help produce the realistic elk sounds of bugles, grunts and cow and calf mews! Easy to use and effective.  Sound like the real thing and produce those perfect tones with the NEW Golden Dome! The medium bull reed has a medium thickness of latex to help produce the high pitch sounds of raghorn bulls and cow and calf sounds.",
       "media": ["url(/productPhotos/golden-dome-medium-reed.jpg)",
-                "url(/productPhotos/golden-dome-medium-package.jpg)"],
+                "url(/productPhotos/golden-dome-medium-package.jpg)",
+                "url(/productPhotos/golden-dome-back-pkg.jpg)"],
       "category": "reeds",
       "tags": ["golden-dome", "reeds"]
     },
@@ -133,7 +133,8 @@
       },
       "description": "Glen Berry designed the unique X-Series mouth reeds with great success.  He used this proven X-design and evolved this concept into the new Golden Dome with a contoured elevated design to help produce the realistic elk sounds of bugles, grunts and cow and calf mews! Easy to use and effective. Sound like the real thing and produce those perfect tones with the NEW Golden Dome! The small bull reed has a thin layer of latex to help produce the high pitch sounds of smaller bulls and cow and calf sounds.",
       "media": ["url(/productPhotos/golden-dome-small-reed.jpg)",
-                "url(/productPhotos/golden-dome-small-package.jpg)"],
+                "url(/productPhotos/golden-dome-small-package.jpg)",
+                "url(/productPhotos/golden-dome-back-pkg.jpg)"],
       "category": "reeds",
       "tags": ["golden-dome", "reeds"]
     },
@@ -144,7 +145,7 @@
         "amount": 8.45
       },
       "description": " This reed takes very little air pressure to produce a high pitch.  Add voice with it and get realistic sounds of a young hot bull.",
-      "media": [],
+      "media": ["url(/productPhotos/x-series-back-pkg.jpg)"],
       "category": "reeds",
       "tags": ["x-series", "reeds"]
     },
@@ -155,7 +156,7 @@
         "amount": 8.45
       },
       "description": "This reed has a separation between the X and the green sound reed, producing the deeper tones of a young herd bull, this call also makes great elk calf sounds.",
-      "media": ["url(/productPhotos/x-series-herd-bull-reed.jpg)"],
+      "media": ["url(/productPhotos/x-series-herd-bull-reed.jpg)", "url(/productPhotos/x-series-back-pkg.jpg)"],
       "category": "reeds",
       "tags": ["x-series", "reeds"]
     },
@@ -166,7 +167,7 @@
         "amount": 8.45
       },
       "description": "This reed has a separation between the sound reed and the X, producing a higher to medium pitched cow call and the grunts, bugles and mews of a satellite bull.",
-      "media": ["url(/productPhotos/x-series-satellite-bull-reed.jpg)"],
+      "media": ["url(/productPhotos/x-series-satellite-bull-reed.jpg)", "url(/productPhotos/x-series-back-pkg.jpg)"],
       "category": "reeds",
       "tags": ["x-series", "reeds"]
     },
@@ -177,7 +178,7 @@
         "amount": 8.45
       },
       "description": "This reed has a separation between the sound reed and X, producing the high pitched shrill of a roosevelt bull and allowing the sound to carry through the thick coastal vegetation.",
-      "media": ["url(/productPhotos/x-series-roosevelt-reed.jpg)"],
+      "media": ["url(/productPhotos/x-series-roosevelt-reed.jpg)", "url(/productPhotos/x-series-back-pkg.jpg)"],
       "category": "reeds",
       "tags": ["x-series", "reeds"]
     },
@@ -188,7 +189,7 @@
         "amount": 8.45
       },
       "description": "",
-      "media": ["url(/productPhotos/x-series-cow.jpg)"],
+      "media": ["url(/productPhotos/x-series-cow.jpg)", "url(/productPhotos/x-series-back-pkg.jpg)"],
       "category": "reeds",
       "tags": ["x-series", "reeds", "cow-calls"]
     },
@@ -199,7 +200,7 @@
         "amount": 7.95
       },
       "description": "",
-      "media": ["url(/productPhotos/big-bull-single-reed.jpg)"],
+      "media": ["url(/productPhotos/big-bull-single-reed.jpg)", "url(/productPhotos/big-bull-reeds-back-pkg.jpg)"],
       "category": "reeds",
       "tags": ["big-bull", "reeds"]
     },
@@ -210,7 +211,7 @@
         "amount": 7.95
       },
       "description": "This call features a thick/thin combination of latex that is stretched and spaced to produce a medium range of calls.",
-      "media": [],
+      "media": ["url(/productPhotos/big-bull-reeds-back-pkg.jpg)"],
       "category": "reeds",
       "tags": ["big-bull", "reeds"]
     },
@@ -221,7 +222,7 @@
         "amount": 7.95
       },
       "description": "",
-      "media": ["url(/productPhotos/big-bull-large-bull.jpg)"],
+      "media": ["url(/productPhotos/big-bull-large-bull.jpg)", "url(/productPhotos/big-bull-reeds-back-pkg.jpg)"],
       "category": "reeds",
       "tags": ["big-bull", "reeds"]
     },
@@ -233,7 +234,8 @@
       },
       "description": "The Berry Deceiver is designed by Glen Berry to produces great medium bull elk sounds. This call has a 30 thousands gap between the second and third layer.",
       "media": ["url(/productPhotos/berry-deceiver-reed.jpg)",
-                "url(/productPhotos/berry-deceiver-reed-package.jpg)"],
+                "url(/productPhotos/berry-deceiver-reed-package.jpg)",
+                "url(/productPhotos/big-bull-reeds-back-pkg.jpg)"],
       "category": "reeds",
       "tags": ["big-bull", "reeds"]
     },
@@ -244,7 +246,7 @@
         "amount": 7.95
       },
       "description": "The Sleazy Cow Call Mouth Reed features a single layer of latex for the sound reed,  a 30 thousands gap between the second layer set at 45 degrees this combination produces a raspy cow-in-estrus call. A great hands free Call!",
-      "media": ["url(/productPhotos/sleazy-cow-reed.jpg)"],
+      "media": ["url(/productPhotos/sleazy-cow-reed.jpg)", "url(/productPhotos/big-bull-reeds-back-pkg.jpg)"],
       "category": "reeds",
       "tags": ["big-bull", "reeds", "cow-calls"]
     },
@@ -269,7 +271,7 @@
         "discount": 9.95
       },
       "description": "Join Glen Berry on exciting do-it-yourself bowhunts for rocky mountain elk in Oregon, Idaho and Wyoming in this 60 minute instructional DVD. With each encounter, Glen will teach the techniques he uses to coax these bulls into close range. With the camera over-the-shoulder, watch as Glen arrows a giant herd bull! This is an entertaining and instructional DVD that will help make you a better elk hunter. 60 Minutes – DVD",
-      "media": [],
+      "media": ["url(/productPhotos/training-day-dvd.jpg)"],
       "category": "dvds",
       "tags": ["dvds", "sale", "popular"]
     },
@@ -377,7 +379,8 @@
       },
       "description": " Unmatched Versatility – The open reed design allows the caller to produce a range of sounds from high pitched cow and calf sounds to bull mews and even cow-in-estrus calls.  The Fatal Attraction Cow Call was used during the making of “Hot Bulls 4” and “Elk Hunters Training Day” wih great success!",
       "media": ["url(/productPhotos/fatal-attraction-1.jpg)",
-                "url(/productPhotos/fatal-attraction-2.jpg)"],
+                "url(/productPhotos/fatal-attraction-2.jpg)",
+                "url(/productPhotos/fatal-attraction-back-pkg.jpg)"],
       "category": "cow-calls",
       "tags": ["cow-calls", "featured"]
     },
@@ -424,7 +427,7 @@
         "amount": 5.95
       },
       "description": "The Berry Wind Drifter powder drifts in the slightest breeze. Comes in a1-1/4 oz Round green plastic bottle with a flip top. A must for watching the wind!",
-      "media": ["url(/productPhotos/berry-wind-drifter.jpg)"],
+      "media": ["url(/productPhotos/berry-wind-drifter.jpg)", "url(/productPhotos/wind-drifter-back-pkg.jpg)"],
       "category": "other",
       "tags": ["other"]
     },
