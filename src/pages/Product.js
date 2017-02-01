@@ -142,6 +142,7 @@ class Details extends Component {
 }
 
 class RelatedProducts extends Component {
+
   state = {
     offset: 0,
     reverse: false
@@ -199,17 +200,23 @@ class RelatedProducts extends Component {
     );
   }
 
+  getBackgroundImage(myProduct) {
+    const images = myProduct.getMedia();
+    return {
+      backgroundImage: images[0]
+    };
+  }
+
   renderItems() {
     const offset = Math.abs(this.state.offset);
     const itemsArray = slice(this.getItems(), offset, offset + 3);
-    const sampleImage = 'url(/samplePhotos/flower.jpg)';
 
     return map(itemsArray, (item) =>
       <div key={item.getPathName()} className="relatedItem">
         <Link to={`/products/${item.getCategory()}/${item.getPathName()}`} className="link">
           <h3 className="title">{item.getFullName()}</h3>
           <div className="productImgContainer">
-            <div className="productImage" style={{ backgroundImage: sampleImage }} />
+            <div className="productImage" style={this.getBackgroundImage(item)} />
           </div>
         </Link>
       </div>

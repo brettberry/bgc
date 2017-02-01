@@ -119,7 +119,6 @@
       width: 100%;
       height: 33%;
       cursor: pointer;
-      // background-color: $bgc-medium-light-grey;
 
       @include tablet {
         height: 100%;
@@ -386,7 +385,7 @@
       .productImage {
         width: 80%;
         height: 80%;
-        background-size: cover;
+        background-size: contain;
         background-position: center center;
         background-repeat: no-repeat;
       }
