@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import Cart from './pages/Cart';
+import CartDetails from './CartDetails';
+import MobileCart from './MobileCart';
 
 class CartRenderer extends Component {
 
@@ -17,14 +18,16 @@ class CartRenderer extends Component {
 
   renderTablet() {
     return (
-      <div />
+      <div>
+        <MobileCart />
+      </div>
     );
   }
 
   renderDesktop() {
     return (
       <div>
-        <Cart />
+        <CartDetails />
       </div>
     );
   }

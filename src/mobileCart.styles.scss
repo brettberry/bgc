@@ -1,0 +1,160 @@
+@import './constants';
+
+.mobileCartContainer {
+  display: flex;
+  flex-direction: column;
+
+  .mobileQuantityContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+
+    .qtyText {
+      @include default-font;
+      font-weight: 300;
+      font-size: 1em;
+      color: black;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+
+      @include smallPhone {
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  .changeContents {
+    display: flex;
+  }
+
+  .mobileRemoveContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+
+    .removeText {
+      @include default-font;
+      font-weight: 300;
+      font-size: 1em;
+      color: black;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      @include smallPhone {
+        font-size: 0.9em;
+      }
+    }
+
+    .remove {
+      fill: $bgc-medium-grey;
+      height: 25px;
+      width: 25px;
+      margin: 10px;
+      fill: darken(red, 10);
+    }
+  }
+}
+
+.mobileTotalContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .totalLabel, .subtotal {
+    @include subheader-font;
+    letter-spacing: 1px;
+    margin: 0;
+    padding-top: 5px;
+  }
+}
+
+.mobileBorder {
+  margin: 10px;
+  padding: 15px;
+  border: solid 1px #ddd;
+}
+
+.mobileItemLink {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+
+  .item {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  .thumbnailImage {
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .productDetails {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    flex: 1;
+  }
+
+  .name, .mobileItemTotal {
+    @include default-font;
+    font-weight: 300;
+    font-size: 1em;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    @include smallPhone {
+      font-size: 0.9em;
+    }
+  }
+
+  .mobileUnitPrice {
+    @include default-font;
+    font-weight: 300;
+    font-size: 0.9em;
+    color: black;
+    width: 100%;
+  }
+
+  .mobileItemTotal {
+    flex: 1;
+    text-align: right;
+    align-items: flex-start;
+  }
+}
+
+.mobileHorizontalRule {
+  background-color: #ddd;
+  height: 1px;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.mobileCheckoutLink {
+  padding: 20px;
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mobileCheckoutButton {
+  width: 100%;
+}
+
+.continue {
+  text-align: center;
+}

@@ -31,9 +31,8 @@
   }
 
   .itemDescription {
-    min-width: 500px;
+    min-width: 400px;
     max-width: 1200px;
-    padding-left: 25px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -137,6 +136,24 @@
     padding: 50px;
     padding-bottom: 0;
     margin: 0;
+
+    @include tablet {
+      padding: 20px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @include phone {
+      padding: 20px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @include smallPhone {
+      padding: 20px;
+      margin-top: 10px;
+      text-align: center;
+    }
   }
 }
 
@@ -168,10 +185,9 @@
   font-weight: 200;
   text-align: left;
   padding: 10px 0;
-  min-width: 500px;
+  min-width: 400px;
   max-width: 1200px;
   width: 100%;
-  padding-left: 25px;
 }
 
 .itemHeader {

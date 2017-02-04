@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import CartItemCollection from '../models/CartItemCollection';
 import CartDetails from '../CartDetails';
+import CartRenderer from '../CartRenderer';
+import TabletProvider from '../TabletProvider';
 import './cart.styles.scss';
 
 class Cart extends Component {
@@ -24,10 +26,13 @@ class Cart extends Component {
     if (this.context.cart.length !== 0) {
       return (
         <div>
-          <CartDetails />
+          <TabletProvider>
+            <CartRenderer />
+          </TabletProvider>
         </div>
       );
     }
+
     return (
       <div className="cartEmptyMsg">Your cart is currently empty.</div>
     );

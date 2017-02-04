@@ -29,7 +29,7 @@ class CartDetails extends Component {
               <div className="itemDescriptionHeader">Item</div>
               <div className="itemHeader">Price</div>
               <div className="itemHeader">Quantity</div>
-              <div className="itemHeader">Subtotal</div>
+              <div className="itemHeader">Total</div>
               <div className="itemHeader removeTitle">Remove</div>
             </div>
             <div className="horizontalRule" />
