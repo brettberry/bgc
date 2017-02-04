@@ -13,6 +13,9 @@ $bgc-light-grey: #f2f2f2;
 $bgc-yellow: #ffdc85;
 $bgc-medium-light-grey: darken($bgc-light-grey, 5);
 $green: #00C853;
+$table-border-color: #ddd;
+$form-grey: #DEE2E5;
+$form-text-grey: #6E787F;
 
 @mixin retina {
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {

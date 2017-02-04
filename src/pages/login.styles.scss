@@ -58,7 +58,7 @@
 .registerContainer {
   display: flex;
   justify-content: center;
-  border: solid 1px #ddd;
+  border: solid 1px $table-border-color;
   min-height: 500px;
   align-items: stretch;
   margin: 50px;
@@ -121,20 +121,20 @@
 }
 
 .returningUserContainer {
-  border-right: solid 1px #ddd;
+  border-right: solid 1px $table-border-color;
 
   @include tablet {
     border-right: none;
-    border-bottom: solid 1px #ddd;
+    border-bottom: solid 1px $table-border-color;
   }
 
   @include phone {
     border-right: none;
-    border-bottom: solid 1px #ddd;
+    border-bottom: solid 1px $table-border-color;
   }
 
   @include smallPhone {
     border-right: none;
-    border-bottom: solid 1px #ddd;
+    border-bottom: solid 1px $table-border-color;
   }
 }

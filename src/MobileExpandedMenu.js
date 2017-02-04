@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import MdClose from 'react-icons/lib/md/close';
 import MdChevronLeft from 'react-icons/lib/md/chevron-left';
-import FaSearch from 'react-icons/lib/fa/search';
 import { Link } from 'react-router';
 import './mobileNavigationBar.styles.scss';
 
@@ -76,7 +75,7 @@ class MobileExpandedMenu extends Component {
             <h3 className="item" onClick={this.props.onClose}>Bugles</h3>
           </Link>
           <Link to="/products/tags/reeds" className="link">
-            <h3 className="item" onClick={this.props.onClose}>Mouth Reeds</h3>
+            <h3 className="item" onClick={this.props.onClose}>Reeds</h3>
           </Link>
           <Link to="/products/tags/cow-calls" className="link">
             <h3 className="item" onClick={this.props.onClose}>Cow Calls</h3>

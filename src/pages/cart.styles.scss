@@ -4,7 +4,7 @@
 .border {
   margin: 20px 50px;
   padding: 20px;
-  border: solid 1px #ddd;
+  border: solid 1px $table-border-color;
 
   .cartTotalContainer {
     display: flex;
@@ -31,7 +31,7 @@
   }
 
   .itemDescription {
-    min-width: 400px;
+    min-width: 450px;
     max-width: 1200px;
     width: 100%;
     display: flex;
@@ -118,6 +118,18 @@
   text-align: right;
   cursor: pointer;
 
+  @include tablet {
+    text-align: center;
+  }
+
+  @include phone {
+    text-align: center;
+  }
+
+  @include smallPhone {
+    text-align: center;
+  }
+
   &:hover {
     text-decoration: underline;
   }
@@ -185,7 +197,7 @@
   font-weight: 200;
   text-align: left;
   padding: 10px 0;
-  min-width: 400px;
+  min-width: 450px;
   max-width: 1200px;
   width: 100%;
 }
@@ -207,11 +219,10 @@
   min-width: 50px;
   max-width: 300px;
   width: 100%;
-  padding-right: 25px;
 }
 
 .horizontalRule {
-  background-color: #ddd;
+  background-color: $table-border-color;
   height: 1px;
   width: 100%;
 }

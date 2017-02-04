@@ -125,7 +125,9 @@ class Details extends Component {
         </div>
         <h3 className="shipping">+ Flatrate shipping: $2.95</h3>
         <div className="buttonContainer">
-          <QuantityPicker onQuantityChange={(quantity) => this.setState({ quantity: quantity })} initialQuanity={this.state.quantity}/>
+          <div className="qtyContainer">
+            <QuantityPicker onQuantityChange={(quantity) => this.setState({ quantity: quantity })} initialQuanity={this.state.quantity}/>
+          </div>
           <Button text="Add To Cart" className="cartButton" onClick={this.handleClickAddToCart.bind(this)} />
         </div>
         <div className="descriptionContainer">

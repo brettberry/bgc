@@ -6,14 +6,11 @@
   top: 99px;
   border-width: 1px;
   border-style: solid;
-  border-color: #ddd;
+  border-color: $table-border-color;
   pointer-events: none;
   opacity: 0;
   z-index: 100;
   padding: 10px 20px;
-
-  // Mozilla only
-  // transform: translateX(-50%);
 
   @include tabletLandscape {
     width: 20%;
