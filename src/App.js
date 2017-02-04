@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import NavigationBar from './NavigationBar';
 import ShippingProvider from './ShippingProvider';
-import TabletNavigationBar from './TabletNavigationBar';
 import MobileNavigationBar from './MobileNavigationBar';
 import TabletProvider from './TabletProvider';
 import MobileProvider from './MobileProvider';
@@ -62,7 +61,6 @@ class NavBarRenderer extends Component {
     const { children } = this.props;
     return (
       <div>
-        {/* <TabletNavigationBar /> */}
         <MobileNavigationBar className="navBarHeader" />
         {children}
       </div>

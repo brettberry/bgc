@@ -9,12 +9,14 @@
   .cartTotalContainer {
     display: flex;
     justify-content: flex-end;
+    width: 100%;
   }
 
   .cartTotalLabel, .cartSubtotal {
     @include subheader-font;
-    margin-bottom: 0;
     letter-spacing: 1px;
+    margin: 0;
+    margin-top: 20px;
   }
 }
 
@@ -29,15 +31,12 @@
   }
 
   .itemDescription {
-    min-width: 400px;
+    min-width: 500px;
     max-width: 1200px;
+    padding-left: 25px;
     width: 100%;
     display: flex;
     align-items: center;
-
-    @include tablet {
-      min-width: 125px;
-    }
   }
 
   .thumbnailImageDiv {
@@ -46,10 +45,6 @@
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-
-    @include tablet {
-      width: 0;
-    }
   }
 
   .item {
@@ -60,11 +55,6 @@
     &:hover {
       color: $bgc-orange;
       cursor: pointer;
-    }
-
-    @include tablet {
-      padding-left: 0;
-
     }
   }
 
@@ -100,7 +90,8 @@
     max-width: 300px;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-right: 25px;
 
     .remove {
       fill: $bgc-medium-grey;
@@ -117,6 +108,7 @@
 
 .shopLink {
   text-decoration: none;
+  width: 100%;
 }
 
 .continue {
@@ -176,13 +168,10 @@
   font-weight: 200;
   text-align: left;
   padding: 10px 0;
-  min-width: 400px;
+  min-width: 500px;
   max-width: 1200px;
   width: 100%;
-
-  @include tablet {
-    min-width: 125px;
-  }
+  padding-left: 25px;
 }
 
 .itemHeader {
@@ -198,10 +187,11 @@
 }
 
 .removeTitle {
-  text-align: center;
+  text-align: right;
   min-width: 50px;
   max-width: 300px;
   width: 100%;
+  padding-right: 25px;
 }
 
 .horizontalRule {

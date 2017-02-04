@@ -52,7 +52,7 @@ function Bugles({ bugles, onItemClick }) {
   return (
     <div className="buglesContainer">
       <Link to="/products/tags/bugles" className="productsLink" onClick={onItemClick}>
-        <p className="columnTitle">Bugles and Accessories</p>
+        <p className="columnTitle">Bugles</p>
       </Link>
         <div>{map(bugles.toArray(), (bugle, key) =>
           <Link key={key} to={`/products/${bugle.getCategory()}/${bugle.getPathName()}`} className="productsLink" onClick={onItemClick}>
@@ -67,7 +67,7 @@ function Reeds({ reeds, onItemClick }) {
   return (
     <div className="reedsContainer">
       <Link to="/products/tags/reeds" className="productsLink" onClick={onItemClick}>
-        <p className="columnTitle">Mouth Reeds</p>
+        <p className="columnTitle">Reeds</p>
       </Link>
       <div>{map(reeds.toArray(), (reed, key) =>
         <Link key={key} to={`/products/${reed.getCategory()}/${reed.getPathName()}`} className="productsLink" onClick={onItemClick}>
