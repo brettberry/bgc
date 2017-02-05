@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import FaSearch from 'react-icons/lib/fa/search';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import CartItemCollection from './models/CartItemCollection';
-import FaClose from 'react-icons/lib/fa/close';
 import { Link } from 'react-router';
 import map from 'lodash/map';
 import './shoppingCenter.styles.scss';
@@ -93,7 +92,7 @@ class AccountMenu extends Component {
   render() {
     return (
       <div className={classnames('accountMenuContainer', this.props.className)}>
-        <p className="accountOption">View Account</p>
+        {/* <p className="accountOption">View Account</p> */}
         <p className="accountOption"
            onClick={this.context.logout}>Log Out</p>
       </div>

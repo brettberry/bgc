@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import TextField from 'material-ui/TextField';
-import { grey800 } from 'material-ui/styles/colors';
 import { Link } from 'react-router';
 import Button from '../Buttons';
 import './login.styles.scss';
@@ -64,13 +63,13 @@ class ReturnAccount extends Component {
 
     const styles = {
       underlineStyle: {
-        borderColor: grey800
+        borderColor: '#ebb052'
       },
       floatingLabelStyle: {
-        color: grey800
+        color: '#ebb052'
       },
       floatingLabelFocusStyle: {
-        color: grey800
+        color: '#ebb052'
       }
     };
 
@@ -127,13 +126,13 @@ class NewAccount extends Component {
 
     const styles = {
       underlineStyle: {
-        borderColor: grey800
+        borderColor: '#ebb052'
       },
       floatingLabelStyle: {
-        color: grey800
+        color: '#ebb052'
       },
       floatingLabelFocusStyle: {
-        color: grey800
+        color: '#ebb052'
       }
     };
 
