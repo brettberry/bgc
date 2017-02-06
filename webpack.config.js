@@ -79,17 +79,27 @@ module.exports = {
             filename: 'index.html',
             template: path.join(__dirname, 'index.html')
         }),
+        isProduction && new webpack.optimize.DedupePlugin(),
+        isProduction && new webpack.optimize.AggressiveMergingPlugin(),
+        isProduction && new webpack.optimize.OccurenceOrderPlugin(),
         isProduction && new webpack.optimize.UglifyJsPlugin({
+            mangle: true,
             compress: {
-                warnings: true
-            }
+                warnings: true,
+                pure_getters: true,
+                unsafe: true,
+                unsafe_comps: true,
+                screw_ie8: true
+            },
+            output: {
+                comments: false
+            },
+            exclude: [/\.min\.js$/gi]
         }),
         isDev && new webpack.HotModuleReplacementPlugin(),
         new ExtractTextPlugin('react.css', { allChunks: true }),
         new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': isProduction ? JSON.stringify('production') : JSON.stringify('dev')
-            }
+            'process.env.NODE_ENV': isProduction ? JSON.stringify('production') : JSON.stringify('dev')
         })
     ])
 };

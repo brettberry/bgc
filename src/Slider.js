@@ -72,7 +72,7 @@ class Slider extends Component {
 
 function Object1() {
   return (
-    <div className="slider" style={{ backgroundImage: 'url(/bannerAds/gold-banner-ad.jpg)' }}>
+    <div className="slider" style={{ backgroundImage: 'url(/sliderImagess/gold-banner.jpg)' }}>
       <div className="dotContainer">
         <div className="dot active" />
         <div className="dot" />
@@ -84,7 +84,7 @@ function Object1() {
 
 function Object2() {
   return (
-    <div className="slider" style={{ backgroundImage: 'url(/bannerAds/seminar-flyer.jpg)' }}>
+    <div className="slider" style={{ backgroundImage: 'url(/sliderImagess/seminar-flyer.jpg)' }}>
       <div className="dotContainer">
         <div className="dot" />
         <div className="dot active" />
@@ -96,7 +96,7 @@ function Object2() {
 
 function Object3() {
   return (
-    <div className="slider" style={{ backgroundImage: 'url(/bannerAds/seminar-flyer-2.jpg)' }}>
+    <div className="slider" style={{ backgroundImage: 'url(/sliderImagess/seminar-flyer-2.jpg)' }}>
       <div className="dotContainer">
         <div className="dot" />
         <div className="dot" />
