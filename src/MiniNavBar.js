@@ -1,13 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router';
-import classnames from 'classnames';
-import FaSearch from 'react-icons/lib/fa/search';
-import map from 'lodash/map';
-import ProductCollection from './models/ProductCollection';
-import clickOutside from 'react-click-outside';
-import data from './data.json';
 import $ from 'jquery';
+import { Link } from 'react-router';
+import clickOutside from 'react-click-outside';
+import classnames from 'classnames';
+import map from 'lodash/map';
+import FaSearch from 'react-icons/lib/fa/search';
+
+import ProductCollection from './models/ProductCollection';
+import data from './data.json';
 import './miniNavBar.styles.scss';
 
 const products = new ProductCollection(data.products);
@@ -90,7 +91,6 @@ class Search extends Component {
 }
 
 class SearchDropDown extends Component {
-
   render() {
     return (
       <div className="resultsContainer">

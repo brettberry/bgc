@@ -3,22 +3,22 @@
 .footer {
   display: flex;
   flex-direction: column;
-  background-color: $bgc-dark-grey;
   align-items: center;
+  background-color: $bgc-dark-grey;
 
   .header {
     @include subheader-font;
     font-size: 1.4em;
-    padding: 25px 0;
     color: rgba($bgc-background-color, 0.7);
     text-transform: uppercase;
     letter-spacing: 2px;
+    padding: 25px 0;
     margin: 0;
   }
 
   .horizontalRule {
-    height: 1px;
     width: 95%;
+    height: 1px;
     background-color: rgba($bgc-background-color, 0.3);
   }
 
@@ -82,12 +82,12 @@
 
   .subheader {
     @include subheader-font;
+    text-align: center;
+    text-transform: uppercase;
     font-size: 1.2em;
     color: $bgc-background-color;
-    text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 20px;
-    text-align: center;
 
     @include tablet {
       text-align: center;
@@ -95,20 +95,20 @@
     }
 
     @include phone {
-      text-align: center;
-      margin: 0;
       width: 100%;
+      text-align: center;
+      font-size: 1em;
       padding-right: 30px;
       padding-bottom: 20px;
-      font-size: 1em;
+      margin: 0;
       margin-top: 25px;
     }
 
     @include smallPhone {
-      text-align: center;
-      margin: 0;
       width: 100%;
+      text-align: center;
       font-size: 1em;
+      margin: 0;
       margin-top: 25px;
     }
   }
@@ -133,13 +133,13 @@
     }
 
     .iconText {
+      display: flex;
+      align-self: flex-start;
       @include subheader-font;
       font-size: 1em;
       color: $bgc-background-color;
       letter-spacing: 1px;
       margin: 10px 15px;
-      display: flex;
-      align-self: flex-start;
 
       &:hover {
         color: $bgc-orange;
@@ -155,20 +155,20 @@
     }
 
     .icon {
-      fill: rgba($bgc-background-color, 0.5);
-      margin: 11px 0;
       width: 25px;
       height: 25px;
+      fill: rgba($bgc-background-color, 0.5);
+      margin: 11px 0;
     }
 
     .text {
-      @include subheader-font;
-      font-size: 1em;
-      color: $bgc-background-color;
-      letter-spacing: 1px;
-      margin: 0 0 20px 41px;
       display: flex;
       align-self: flex-start;
+      @include subheader-font;
+      color: $bgc-background-color;
+      font-size: 1em;
+      letter-spacing: 1px;
+      margin: 0 0 20px 41px;
 
       &:hover {
         color: $bgc-orange;
@@ -188,8 +188,8 @@
 .rightContents {
   display: flex;
   flex-direction: column;
-  width: 50%;
   justify-content: flex-end;
+  width: 50%;
 
   @include tablet {
     display: flex;
@@ -214,12 +214,12 @@
 
   .subheader {
     @include subheader-font;
-    font-size: 1.2em;
     color: $bgc-background-color;
+    font-size: 1.2em;
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 20px;
-    text-align: center;
   }
 
   .itemContainer {
@@ -234,26 +234,26 @@
   }
 
   .icon {
-    fill: rgba($bgc-background-color, 0.5);
-    margin: 16px 0 16px 0;
     width: 25px;
     height: 25px;
+    fill: rgba($bgc-background-color, 0.5);
+    margin: 16px 0 16px 0;
   }
 
   .input {
+    width: 90%;
     @include subheader-font;
     font-size: 1em;
-    appearance: none;
-    outline: 0;
     border: solid;
     border-width: 2px;
     border-radius: 5px;
     border-color: $bgc-light-grey;
     background: $bgc-light-grey;
-    width: 90%;
     margin: 8px;
     margin-left: 16px;
     padding: 5px;
+    appearance: none;
+    outline: 0;
 
     &:focus {
       border-color: $bgc-orange;
@@ -273,19 +273,19 @@
   }
 
   .textArea {
+    width: 90%;
+    min-height: 180px;
     @include subheader-font;
     font-size: 1em;
-    appearance: none;
-    outline: 0;
+    background: $bgc-light-grey;
     border: solid;
     border-width: 2px;
     border-radius: 5px;
     border-color: $bgc-light-grey;
-    background: $bgc-light-grey;
     margin: 8px 0 16px 16px;
     padding: 5px;
-    width: 90%;
-    min-height: 180px;
+    appearance: none;
+    outline: 0;
 
     &:focus {
       border-color: $bgc-orange;
@@ -326,17 +326,17 @@
   background-color: darken($bgc-dark-grey, 5);
 
   .icon {
-    fill: rgba($bgc-background-color, 0.5);
-    margin: 16px 0 16px 0;
     width: 15px;
     height: 15px;
+    fill: rgba($bgc-background-color, 0.5);
+    margin: 16px 0 16px 0;
   }
 
   .copyright {
     @include subheader-font;
+    color: rgba($bgc-background-color, 0.4);
     font-size: 1em;
     font-weight: 200;
-    color: rgba($bgc-background-color, 0.4);
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-left: 8px;

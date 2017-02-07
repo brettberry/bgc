@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import './products.styles.scss';
 import data from '../data.json';
 import map from 'lodash/map';
-import TabletProvider from '../TabletProvider';
+
 import { ProductCollection } from '../models';
+import TabletProvider from '../TabletProvider';
 import ProductGrid from '../ProductGrid';
 import SidebarRenderer from '../SidebarRenderer';
+import './products.styles.scss';
+
 
 const products = new ProductCollection(data.products);
 

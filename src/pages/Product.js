@@ -1,19 +1,21 @@
 import React, { Component, PropTypes } from 'react';
-import QuantityPicker from '../QuantityPicker';
-import Button from '../Buttons';
-import './product.styles.scss';
-import data from '../data.json';
-import { ProductCollection } from '../models';
-import ProductModel from '../models/ProductModel';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Link } from 'react-router';
 import classnames from 'classnames';
 import map from 'lodash/map';
 import slice from 'lodash/slice';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import { Link } from 'react-router';
 import FaChevronRight from 'react-icons/lib/fa/chevron-right';
 import FaChevronLeft from 'react-icons/lib/fa/chevron-left';
+
+import { ProductCollection } from '../models';
+import ProductModel from '../models/ProductModel';
 import TabletProvider from '../TabletProvider';
 import CartModal from '../CartModal';
+import QuantityPicker from '../QuantityPicker';
+import Button from '../Buttons';
+import data from '../data.json';
+
+import './product.styles.scss';
 
 const products = new ProductCollection(data.products);
 

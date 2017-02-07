@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
+import map from 'lodash/map';
+import FaClose from 'react-icons/lib/fa/close';
+
 import CartItemCollection from './models/CartItemCollection';
 import QuantityPicker from './QuantityPicker';
-import FaClose from 'react-icons/lib/fa/close';
 import Button from './Buttons';
-import map from 'lodash/map';
-import { Link } from 'react-router';
 import './mobileCart.styles.scss';
 
 class MobileCart extends Component {
@@ -16,8 +17,8 @@ class MobileCart extends Component {
   }
 
   getThumbnailImage(item) {
-      const productImg = item.getMedia();
-      return { backgroundImage: productImg[0] };
+    const productImg = item.getMedia();
+    return { backgroundImage: productImg[0] };
   }
 
   render() {

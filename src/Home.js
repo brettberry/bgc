@@ -1,12 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-import './buttons.styles.scss';
-import './home.styles.scss';
 import Demo from './HomePageDemo';
 import Slider from './Slider';
 import Featured from './ProductFeature';
 import TabletProvider from './TabletProvider';
-import MobileProvider from './MobileProvider';
+import './buttons.styles.scss';
+import './home.styles.scss';
 
 class Home extends Component {
   render() {
@@ -43,30 +42,28 @@ class Banner extends Component {
 
   renderMobile() {
     return (
-      <div>
-        <div className="mobileBanner1">
-          <div className="first">
-            <h1 className="header">Join the Revolution</h1>
-            <div className="inline">
-              <h1 className="header">of</h1>
-              <h1 className="header highlight">&nbsp;self-made</h1>
-              <h1 className="header">&nbsp;hunters.</h1>
-            </div>
+      <div className="mobileBanner1">
+        <div className="first">
+          <h1 className="header">Join the Revolution</h1>
+          <div className="inline">
+            <h1 className="header">of</h1>
+            <h1 className="header highlight">&nbsp;self-made</h1>
+            <h1 className="header">&nbsp;hunters.</h1>
           </div>
-          <div className="second">
-            <h1 className="header">Who know</h1>
-            <h1 className="header">"do-it-yourself"</h1>
-            <h1 className="header">isn't a phrase,</h1>
-            <div className="inline">
-              <h1 className="header">but a</h1>
-              <h1 className="header highlight">&nbsp;way of life.</h1>
-            </div>
+        </div>
+        <div className="second">
+          <h1 className="header">Who know</h1>
+          <h1 className="header">"do-it-yourself"</h1>
+          <h1 className="header">isn't a phrase,</h1>
+          <div className="inline">
+            <h1 className="header">but a</h1>
+            <h1 className="header highlight">&nbsp;way of life.</h1>
           </div>
-          <div className="third">
-            <h1 className="header">Those who hear the</h1>
-            <h1 className="header highlight">call of the wild,</h1>
-            <h1 className="header">&nbsp;and respond.</h1>
-          </div>
+        </div>
+        <div className="third">
+          <h1 className="header">Those who hear the</h1>
+          <h1 className="header highlight">call of the wild,</h1>
+          <h1 className="header">&nbsp;and respond.</h1>
         </div>
       </div>
     );

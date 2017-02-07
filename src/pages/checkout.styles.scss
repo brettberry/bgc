@@ -21,10 +21,10 @@
   .chevron {
     position: absolute;
     right: 0;
-    margin: 0 75px;
-    fill: $bgc-orange;
     width: 50px;
     height: 50px;
+    margin: 0 75px;
+    fill: $bgc-orange;
 
     &.rotateUp {
       transform: rotate(180deg);
@@ -37,15 +37,15 @@
     }
 
     @include phone {
-      margin: 0 15px;
       width: 30px;
       height: 30px;
+      margin: 0 15px;
     }
 
     @include smallPhone {
-      margin: 0 15px;
       width: 25px;
       height: 25px;
+      margin: 0 15px;
     }
   }
 }
@@ -112,23 +112,23 @@
 }
 
 .checkoutHeaderBar {
-  position: fixed;
-  background-color: $bgc-orange;
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
-  z-index: 1;
+  position: fixed;
   top: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 10px 0;
+  background-color: $bgc-orange;
 
   .cart {
     width: 30px;
     height: 30px;
-    fill: white;
     margin: 25px 50px;
     cursor: pointer;
+    fill: white;
 
     &:hover {
       fill: rgba(white, 0.75);
@@ -139,9 +139,9 @@
     }
 
     @include smallPhone {
-      margin: 20px;
       width: 25px;
       height: 25px;
+      margin: 20px;
     }
   }
 }
@@ -149,9 +149,9 @@
 .shippingInfoContainer {
   display: flex;
   flex-direction: column;
-  max-width: 1500px;
-  width: 100%;
   align-items: center;
+  width: 100%;
+  max-width: 1500px;
   margin: 0 auto;
   margin-top: 100px;
 
@@ -201,14 +201,14 @@
   .inputLabel {
     display: block;
     position: relative;
+    height: 64px;
+    overflow: hidden;
     font-family: $form-font-family;
     border-right: solid 1px $form-grey;
     border-top: solid 1px $form-grey;
     border-bottom: solid 1px $form-grey;
-    overflow: hidden;
     margin-top: -1px;
     padding: 0;
-    height: 64px;
 
     &.halfWidth {
       width: 50%;
@@ -248,16 +248,15 @@
   }
 
   .inputSpan {
+    position: absolute;
     display: block;
-    color: $form-text-grey;
+    left: 14px;
+    top: 25px;
     font-size: 16px;
     font-weight: 100;
     letter-spacing: 1px;
-    position: absolute;
-    left: 14px;
-    top: 25px;
     transform: translate3d(0,6px,0);
-    // transition: transform 111ms ease-out,opacity 111ms ease-out;
+    color: $form-text-grey;
 
     @include phone {
       font-size: 14px;
@@ -270,15 +269,13 @@
 
   .formInput {
     display: block;
+    width: 100%;
+    height: 64px;
     font-weight: 200;
     font-size: 16px;
-    height: 30px;
-    width: 100%;
     outline: none;
     border: none;
     background-color: transparent;
-    height: 64px;
-    width: 100%;
     padding: 14px;
     padding-bottom: 0px;
 
@@ -360,9 +357,9 @@
   .formDetails {
     font-family: $main-font-family;
     font-size: 1.1em;
-    color: $bgc-medium-grey;
     font-weight: 200;
     text-align: left;
+    color: $bgc-medium-grey;
     white-space: nowrap;
 
     &.paypal {
@@ -380,10 +377,10 @@
   }
 
   .check {
-    appearance: none;
-    outline: none;
     width: 50px;
     height: 50px;
+    appearance: none;
+    outline: none;
   }
 
   .lock {
@@ -401,16 +398,16 @@
 
   .amountDueHeader {
     @include subheader-font;
+    text-align: center;
     margin-top: 50px;
     margin-bottom: 0;
-    text-align: center;
   }
 
   .link {
-    text-decoration: none;
-    width: 100%;
     display: flex;
     justify-content: center;
+    text-decoration: none;
+    width: 100%;
   }
 
   .viewCart {
@@ -430,9 +427,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex: 2;
   border: solid 1px $table-border-color;
   padding: 25px 30px;
-  flex: 2;
 
   @include phone {
     flex: 1;
@@ -471,8 +468,8 @@
       }
 
       @include smallPhone {
-        width: 0px;
-        height: 0px;
+        width: 0;
+        height: 0;
       }
     }
 
@@ -482,7 +479,7 @@
       padding-left: 15px;
 
       @include phone {
-        font-size: 1.1em;
+        font-size: 1em;
         padding-left: 10px;
       }
 
@@ -499,7 +496,7 @@
       align-self: center;
 
       @include phone {
-        font-size: 1.1em;
+        font-size: 1em;
         padding-left: 10px;
       }
 
@@ -512,28 +509,28 @@
 }
 
 .circle {
-  position: absolute;
-  left: 0;
-  margin: 0 75px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $bgc-orange;
-  border-radius: 50%;
+  position: absolute;
+  left: 0;
   width: 50px;
   height: 50px;
+  margin: 0 75px;
+  border-radius: 50%;
+  background-color: $bgc-orange;
   box-shadow: 0 0 4px rgba(0,0,0,.04), 0 4px 8px rgba(0,0,0,.1);
 
   @include phone {
-    margin: 0 15px;
     width: 45px;
     height: 45px;
+    margin: 0 15px;
   }
 
   @include smallPhone {
-    margin: 0 15px;
     width: 35px;
     height: 35px;
+    margin: 0 15px;
   }
 
   .number {
@@ -565,8 +562,8 @@
   .myOrderSummary {
     display: flex;
     justify-content: flex-end;
-    margin-left: 25px;
     flex: 1;
+    margin-left: 25px;
 
     @include phone {
       margin-left: 0;
@@ -592,23 +589,7 @@
     margin: 10px;
   }
 
-  .itemValue {
-    @include default-font;
-    font-weight: 100;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 10px;
-  }
-
-
-  .totalHeader {
-    @include default-font;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 10px;
-  }
-
-  .totalValue {
+  .total {
     @include default-font;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -617,10 +598,10 @@
 }
 
 .totalContainer {
-  border: solid 1px $table-border-color;
-  padding: 25px;
   width: 100%;
   max-height: 300px;
+  padding: 25px;
+  border: solid 1px $table-border-color;
 
   @include phone {
     padding: 15px;

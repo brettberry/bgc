@@ -8,15 +8,15 @@
   width: 200px;
 
   .cartQuantity {
-    position: absolute;
-    background-color: $bgc-orange;
-    top: -10px;
-    right: -10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: -10px;
+    right: -10px;
     width: 20px;
     height: 20px;
+    background-color: $bgc-orange;
     border-radius: 50%;
     @include default-font;
     color: white;
@@ -25,9 +25,9 @@
   }
 
   .searchIcon {
-    fill: $bgc-medium-grey;
     width: 28px;
     height: 28px;
+    fill: $bgc-medium-grey;
     cursor: pointer;
 
     &:hover {
@@ -36,9 +36,9 @@
   }
 
   .cartIcon {
-    fill: $bgc-medium-grey;
     width: 30px;
     height: 30px;
+    fill: $bgc-medium-grey;
     cursor: pointer;
 
     &:hover {
@@ -87,19 +87,19 @@
 }
 
 .accountMenuContainer {
-  background: white;
-  position: absolute;
-  padding: 25px;
-  top: 99px;
-  right: 0;
-  width: 250px;
-  border: solid;
-  border-width: 1px;
-  border-color: $table-border-color;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  top: 99px;
+  right: 0;
+  width: 250px;
+  background: white;
+  border: solid;
+  border-width: 1px;
+  border-color: $table-border-color;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.07);
+  padding: 25px;
 
   .accountOption {
     @include default-font;
@@ -114,8 +114,8 @@
 }
 
 .cartLink {
-  text-decoration: none;
   position: relative;
+  text-decoration: none;
 }
 
 .cartDropDown {
@@ -126,20 +126,20 @@
 .showCartDropDown {
   .cartDropDown {
     opacity: 1;
-    pointer-events: all;
     transition: all 0.25s ease;
+    pointer-events: all;
   }
 }
 
 .cartDropDownContainer {
-  background: white;
   position: absolute;
   top: 99px;
   right: 0;
   width: 350px;
+  background: white;
   border: solid 1px $table-border-color;
-  padding: 20px 0;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.07);
+  padding: 20px 0;
 }
 
 .productScrollView {
@@ -152,8 +152,8 @@
 .cartActions {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   border-top: solid 1px $table-border-color;
 
   .link {
@@ -161,22 +161,18 @@
   }
 
   .cartTotal {
-    @include subheader-font;
     display: flex;
     flex-direction: column;
     align-self: center;
-    text-align: right;
     padding: 15px 25px 5px 25px;
+
+    @include subheader-font;
+    text-align: right;
   }
 
-  .cartButton {
-    margin-top: 10px;
+  .cartButton, .checkoutButton {
     width: 300px;
-  }
-
-  .checkoutButton {
     margin-top: 10px;
-    width: 300px;
   }
 }
 
@@ -186,10 +182,10 @@
   .thumbnailImageDiv {
     width: 75px;
     height: 75px;
-    margin: 10px;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    margin: 10px;
   }
 
   .details {
@@ -214,17 +210,17 @@
 
   .unitPrice {
     @include default-font;
+    color: $bgc-medium-grey;
     font-weight: 200;
     font-size: 0.85em;
-    color: $bgc-medium-grey;
     margin-top: 5px;
   }
 
   .quantity {
     @include default-font;
+    color: $bgc-medium-grey;
     font-weight: 200;
     font-size: 0.85em;
-    color: $bgc-medium-grey;
     margin-top: 2px;
   }
 

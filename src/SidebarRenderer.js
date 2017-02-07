@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Sidebar from './Sidebar';
 
-
 class SidebarRenderer extends Component {
 
   static propTypes = {

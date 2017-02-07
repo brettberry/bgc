@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import Button from './Buttons';
-import data from './data.json';
-import './HomePageDemo.styles.scss';
-import { ProductCollection } from './models';
 import { Link } from 'react-router';
 import $ from 'jquery';
+
+import { ProductCollection } from './models';
+import Button from './Buttons';
+import data from './data.json';
+import './homePageDemo.styles.scss';
 
 const products = new ProductCollection(data.products);
 

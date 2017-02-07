@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import User from '../auth/src/models/User';
 import Promise from 'bluebird';
+import User from '../auth/src/models/User';
 
 class AuthProvider extends Component {
 

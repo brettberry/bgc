@@ -1,11 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-import ProductModel from './models/ProductModel';
 import { Link } from 'react-router';
-import map from 'lodash/map';
 import classnames from 'classnames';
-import data from './data.json';
+import map from 'lodash/map';
+
 import { ProductCollection } from './models';
+import ProductModel from './models/ProductModel';
 import Button from './Buttons';
+import data from './data.json';
 import './productFeature.styles.scss';
 
 const products = new ProductCollection(data.products);
@@ -50,8 +51,7 @@ class FeaturedItem extends Component {
   }
 
   render() {
-    const feature = this.props.feature;
-    const key = this.props.key;
+    const { feature, key } = this.props;
     const price = feature.getPrice().getAmount().toFixed(2);
     const discount = feature.getPrice().getDiscount() && feature.getPrice().getDiscount().toFixed(2);
     const showDiscount = !!discount;

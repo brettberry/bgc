@@ -1,11 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import classnames from 'classnames';
-import './productsMenu.styles.scss';
-import data from './data.json';
-import { ProductCollection } from './models';
-import map from 'lodash/map';
 import clickOutside from 'react-click-outside';
+import map from 'lodash/map';
+
+import { ProductCollection } from './models';
+import data from './data.json';
+import './productsMenu.styles.scss';
 
 const products = new ProductCollection(data.products);
 

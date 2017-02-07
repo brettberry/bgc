@@ -3,9 +3,10 @@ import { Link } from 'react-router';
 import classnames from 'classnames';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import FaBars from 'react-icons/lib/fa/bars';
+
+import MobileExpandedMenu from './MobileExpandedMenu';
 import './miniNavBar.styles.scss';
 import './mobileNavigationBar.styles.scss';
-import MobileExpandedMenu from './MobileExpandedMenu';
 
 class MobileMiniNavBar extends Component {
 

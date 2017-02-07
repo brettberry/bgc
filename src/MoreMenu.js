@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import classnames from 'classnames';
-import './moreMenu.styles.scss';
 import clickOutside from 'react-click-outside';
+import './moreMenu.styles.scss';
 
 class MoreMenu extends Component {
 

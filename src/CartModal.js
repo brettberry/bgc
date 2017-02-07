@@ -1,12 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import Modal from 'simple-react-modal';
 import clickOutside from 'react-click-outside';
-import MdClose from 'react-icons/lib/md/close';
-import FaCheckCircle from 'react-icons/lib/fa/check-circle';
-import ProductModel from './models/ProductModel';
-import CartItemCollection from './models/CartItemCollection';
-import Button from './Buttons';
 import { Link } from 'react-router';
+import FaCheckCircle from 'react-icons/lib/fa/check-circle';
+import MdClose from 'react-icons/lib/md/close';
+
+import CartItemCollection from './models/CartItemCollection';
+import ProductModel from './models/ProductModel';
+import Button from './Buttons';
 import './cartModal.styles.scss';
 
 const styles = {
@@ -28,8 +29,8 @@ class CartModal extends Component {
   static propTypes = {
     showModal: PropTypes.bool.isRequired,
     closeModal: PropTypes.func.isRequired,
-    quantity: PropTypes.number,
-    product: PropTypes.instanceOf(ProductModel)
+    product: PropTypes.instanceOf(ProductModel),
+    quantity: PropTypes.number
   }
 
   render() {
@@ -63,7 +64,8 @@ class CartModalContents extends Component {
   }
 
   getQuantityMessage() {
-    return this.props.quantity === 1 ? `You just added 1 item to your cart` : `You just added ${this.props.quantity} items to your cart`;
+    const { quantity } = this.props;
+    return quantity === 1 ? `You just added 1 item to your cart` : `You just added ${quantity} items to your cart`;
   }
 
   render() {
@@ -85,8 +87,8 @@ class CartModalContents extends Component {
 class ItemSelected extends Component {
 
   static propTypes = {
-    quantity: PropTypes.number,
-    product: PropTypes.instanceOf(ProductModel)
+    product: PropTypes.instanceOf(ProductModel),
+    quantity: PropTypes.number
   }
 
   getThumbnailImage(item) {
@@ -95,16 +97,14 @@ class ItemSelected extends Component {
   }
 
   getItemTotal() {
-    const product = this.props.product;
-    const quantity = this.props.quantity;
+    const { product, quantity } = this.props;
     const itemPrice = product.getPrice().getDiscount() || product.getPrice().getAmount();
     const subtotal = itemPrice * quantity;
     return subtotal.toFixed(2);
   }
 
   render() {
-    const product = this.props.product;
-    const quantity = this.props.quantity;
+    const { product, quantity } = this.props;
     return (
       <div className="itemDetailsContainer">
         <div className="itemContainer">

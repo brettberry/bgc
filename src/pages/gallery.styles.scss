@@ -13,10 +13,10 @@
 .photoContainer {
   display: flex;
   flex-direction: row;
-  height: 400px;
-  width: 100%;
   flex-basis: 25%;
   flex-wrap: wrap;
+  height: 400px;
+  width: 100%;
 
   @include tabletLandscape {
     flex-basis: 33%;
@@ -107,12 +107,12 @@
 
   .exit {
     position: fixed;
+    top: 0;
+    right: 0;
     width: 50px;
     height: 50px;
     margin: 20px;
     fill: rgba($bgc-light-grey, 0.5);
-    right: 0;
-    top: 0;
     pointer-events: all;
     cursor: pointer;
 
@@ -132,31 +132,31 @@
 
   .photoLeft {
     position: fixed;
+    top: calc(50% - 50px);
+    left: 0;
     width: 100px;
     height: 100px;
     fill: $bgc-medium-grey;
-    left: 0;
-    top: calc(50% - 50px);
     pointer-events: all;
     cursor: pointer;
     margin: 0 50px;
 
     @include tablet {
-      margin: 0;
       width: 75px;
       height: 75px;
+      margin: 0;
     }
 
     @include phone {
-      margin: 0;
       width: 75px;
       height: 75px;
+      margin: 0;
     }
 
     @include smallPhone {
-      margin: 0;
       width: 50px;
       height: 50px;
+      margin: 0;
     }
 
     &:hover {
@@ -166,31 +166,31 @@
 
   .photoRight {
     position: fixed;
+    top: calc(50% - 50px);
+    right: 0;
     width: 100px;
     height: 100px;
     margin: 0 50px;
     fill: $bgc-medium-grey;
-    right: 0;
-    top: calc(50% - 50px);
     pointer-events: all;
     cursor: pointer;
 
     @include tablet {
-      margin: 0;
       width: 75px;
       height: 75px;
+      margin: 0;
     }
 
     @include phone {
-      margin: 0;
       width: 75px;
       height: 75px;
+      margin: 0;
     }
 
     @include smallPhone {
-      margin: 0;
       width: 50px;
       height: 50px;
+      margin: 0;
     }
 
     &:hover {

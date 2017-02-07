@@ -2,15 +2,15 @@
 
 .moreDropDown {
   position: absolute;
-  background-color: white;
   top: 99px;
+  z-index: 100;
+  background-color: white;
   border-width: 1px;
   border-style: solid;
   border-color: $table-border-color;
-  pointer-events: none;
   opacity: 0;
-  z-index: 100;
   padding: 10px 20px;
+  pointer-events: none;
 
   @include tabletLandscape {
     width: 20%;

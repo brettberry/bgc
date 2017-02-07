@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 import { Link } from 'react-router';
 import Waypoint from 'react-waypoint';
+import $ from 'jquery';
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import FaBars from 'react-icons/lib/fa/bars';
+
 import MobileExpandedMenu from './MobileExpandedMenu';
 import MobileMiniNavBar from './MobileMiniNavBar';
 import './mobileNavigationBar.styles.scss';

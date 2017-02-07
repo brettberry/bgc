@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
-import Button from '../Buttons';
 import { Link } from 'react-router';
-import Modal from 'simple-react-modal';
-import clickOutside from 'react-click-outside';
 import $ from 'jquery';
-import data from '../data.json';
+
 import { DemosCollection } from '../models';
-import MdClose from 'react-icons/lib/md/close';
+import data from '../data.json';
+import Button from '../Buttons';
+import './demos.styles.scss';
 
 const videos = new DemosCollection(data.demos);
 
 class Demos extends Component {
+
   render() {
     const xSeriesDemo = videos.findByTitle('reeds-demo');
     const bugleDemo = videos.findByTitle('bugle-demo');
     const trainingDay2Demo = videos.findByTitle('training-day-2-demo');
     const trainingDayDemo = videos.findByTitle('training-day-demo');
-    // const speedgoatsDemo = videos.findByTitle('speedgoats-demo');
     const turkeyDemo1 = videos.findByTitle('turkey-demo-1');
     const turkeyDemo2 = videos.findByTitle('turkey-demo-2');
 
@@ -42,11 +41,6 @@ class Demos extends Component {
                     link={trainingDayDemo.getPath()}
                     image={trainingDayDemo.getImage()}
                     video={trainingDayDemo.getUrl()} />
-        {/* <DemoObject title={speedgoatsDemo.getTitle()}
-                    description={speedgoatsDemo.getDescription()}
-                    link={speedgoatsDemo.getPath()}
-                    image={speedgoatsDemo.getImage()}
-                    video={speedgoatsDemo.getUrl()} /> */}
         <DemoObject title={turkeyDemo1.getTitle()}
                     description={turkeyDemo1.getDescription()}
                     link={turkeyDemo1.getPath()}
@@ -62,89 +56,51 @@ class Demos extends Component {
   }
 }
 
-class DemoObject extends Component {
+  class DemoObject extends Component {
 
-  state = {
-    showModal: false
-  }
+    state = {
+      frameWidth: 0,
+      frameHeight: 0
+    }
 
-  render() {
-    const { title, description, link, video } = this.props;
-    const { showModal } = this.state;
-    const ModalComponent = clickOutside(ModalContents);
+    constructor(props) {
+      super(props);
+      this._updateDimensions = this.updateDimensions.bind(this);
+    }
 
-    return (
-      <div className="videoContainer">
-        <div className="thumbnail"
-             style={this.getThumbnailStyle()}
-             onClick={() => this.setState({ showModal: !showModal })} />
-        <div className="detailsContainer">
-          <h3 className="title">{title}</h3>
-          <p className="description">{description}</p>
-          <div className="buttonContainer">
-            <Button text="Watch" onClick={() => this.setState({ showModal: !showModal })} className="watchButton" />
-            <Modal show={showModal}
-                   containerClassName="videoModal"
-                   closeOnOuterClick={false}>
-              <ModalComponent video={video} closeModal={() => this.setState({ showModal: false })} />
-            </Modal>
-            <Link to={link} className="link">
+    componentDidMount() {
+      this.updateDimensions();
+      $(window).on('resize', this._updateDimensions);
+    }
+
+    componentWillUnmount() {
+      $(window).off('resize', this._updateDimensions);
+    }
+
+    updateDimensions() {
+      const screenWidth = $(window).width();
+      const frameWidth = screenWidth * 0.8;
+      const frameHeight = frameWidth * 0.5625;
+      this.setState({ frameWidth, frameHeight });
+    }
+
+    render() {
+      const { title, description, link, video } = this.props;
+      const { frameWidth, frameHeight } = this.state;
+
+      return (
+        <div className="videoContainer">
+          <div className="titleContainer">
+            <h3 className="title">{title}</h3>
+            <Link to={link} className="shopLink">
               <Button text="Shop" className="shopButton" />
             </Link>
           </div>
+          <iframe width={frameWidth} height={frameHeight} src={video} frameBorder="0" allowFullScreen />
+          <p className="description">{description}</p>
         </div>
-      </div>
-    );
+      );
+    }
   }
 
-  getThumbnailStyle() {
-    return {
-      backgroundImage: `url(${this.props.image})`
-    };
-  }
-}
-
-class ModalContents extends Component {
-
-  state = {
-    frameWidth: 0,
-    frameHeight: 0
-  }
-
-  constructor(props) {
-    super(props);
-    this._updateDimensions = this.updateDimensions.bind(this);
-  }
-
-  handleClickOutside() {
-    this.props.closeModal();
-  }
-
-  componentDidMount() {
-    this.updateDimensions();
-    $(window).on('resize', this._updateDimensions);
-  }
-
-  componentWillUnmount() {
-    $(window).off('resize', this._updateDimensions);
-  }
-
-  updateDimensions() {
-    const screenWidth = $(window).width();
-    const frameWidth = screenWidth * 0.6;
-    const frameHeight = frameWidth * 0.5625;
-    this.setState({ frameWidth, frameHeight });
-  }
-
-  render() {
-    const { frameWidth, frameHeight } = this.state;
-    return (
-      <div>
-        <MdClose className="exit" />
-        <iframe height={frameHeight} width={frameWidth} src={this.props.video} frameBorder="0" allowFullScreen />
-      </div>
-    );
-  }
-}
-
-export default Demos;
+  export default Demos;

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import TextField from 'material-ui/TextField';
 import { Link } from 'react-router';
+import TextField from 'material-ui/TextField';
 import Button from '../Buttons';
 import './login.styles.scss';
 
@@ -22,8 +22,7 @@ class LogIn extends Component {
   render() {
     return (
       <div className="loginContainer">
-        <Link className="link"
-              to="/">
+        <Link className="link" to="/">
           <h3 className="back">Back to browse</h3>
         </Link>
         <div className="titleContainer">
@@ -84,6 +83,7 @@ class ReturnAccount extends Component {
                      onChange={(e) => this.setState({ username: e.target.value })} />
           <TextField floatingLabelText="password"
                      fullWidth={true}
+                     type="password"
                      underlineFocusStyle={styles.underlineStyle}
                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                      onChange={(e) => this.setState({ password: e.target.value })} />
@@ -147,11 +147,13 @@ class NewAccount extends Component {
                      onChange={(e) => this.setState({ username: e.target.value })} />
           <TextField floatingLabelText="create a password"
                      fullWidth={true}
+                     type="password"
                      underlineFocusStyle={styles.underlineStyle}
                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                      onChange={(e) => this.setState({ password: e.target.value })} />
          <TextField floatingLabelText="confirm password"
                     fullWidth={true}
+                    type="password"
                     underlineFocusStyle={styles.underlineStyle}
                     floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                     onChange={(e) => this.setState({ confirmPassword: e.target.value })} />

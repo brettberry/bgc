@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './mobileSidebar.styles.scss';
-import FaChevronCircleUp from 'react-icons/lib/fa/chevron-circle-up';
 import { Link } from 'react-router';
+import FaChevronCircleUp from 'react-icons/lib/fa/chevron-circle-up';
+import './mobileSidebar.styles.scss';
+
 
 const categories = ['All Products', 'Most Popular', 'Online Specials',
                     'Thunder Bugles', 'Golden Dome', 'X-Series', 'Big Bull Reeds',

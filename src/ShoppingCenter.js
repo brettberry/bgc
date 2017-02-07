@@ -1,11 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-import Button from './Buttons';
-import classnames from 'classnames';
-import FaSearch from 'react-icons/lib/fa/search';
-import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
-import CartItemCollection from './models/CartItemCollection';
 import { Link } from 'react-router';
+import classnames from 'classnames';
 import map from 'lodash/map';
+
+import CartItemCollection from './models/CartItemCollection';
+import Button from './Buttons';
+import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
+import FaSearch from 'react-icons/lib/fa/search';
 import './shoppingCenter.styles.scss';
 
 class ShoppingCenter extends Component {

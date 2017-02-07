@@ -5,7 +5,7 @@ import Home from './Home';
 import App from './App';
 import AccountApp from './AccountApp';
 import Footer from './Footer';
-import { Products, Product, Demos, About, Gallery, Events, Tags, MobileDemos,
+import { Products, Product, Demos, About, Gallery, Events, Tags,
          LogIn, Cart, Checkout, Success } from './pages';
 
 export default function RouteProvider() {
@@ -17,7 +17,7 @@ export default function RouteProvider() {
         <Route path="products/tags/:tagName" components={{ main: Tags }} />
         <Route path="products/:group/:productName" components={{ main: Product, footer: Footer }} />
         <Route path="products/:group" />
-        <Route path="demos" components={{ main: MobileDemos, footer: Footer }} />
+        <Route path="demos" components={{ main: Demos, footer: Footer }} />
         <Route path="about" components={{ main: About, footer: Footer }} />
         <Route path="gallery" components={{ main: Gallery }} />
         <Route path="events" components={{ main: Events, footer: Footer }} />

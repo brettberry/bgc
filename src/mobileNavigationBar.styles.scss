@@ -4,10 +4,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: white;
   width: 100%;
   height: 100%;
-  z-index: 100000;
+  z-index: 1000;
+  background-color: white;
 
   @include smallPhone {
     padding-top: 50px;
@@ -15,13 +15,13 @@
 
   .exit {
     position: absolute;
-    cursor: pointer;
     top: 0;
     right: 0;
-    fill: $bgc-medium-grey;
     width: 50px;
     height: 50px;
+    fill: $bgc-medium-grey;
     margin: 20px;
+    cursor: pointer;
 
     @include smallPhone {
       width: 40px;
@@ -34,9 +34,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    fill: $bgc-medium-grey;
     width: 64px;
     height: 64px;
+    fill: $bgc-medium-grey;
     margin: 13px 0;
 
     @include smallPhone {
@@ -50,13 +50,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100%;
     align-items: center;
     align-self: center;
-    height: 100%;
 
     .horizontalRule {
-      height: 1px;
       width: 80%;
+      height: 1px;
       background-color: $bgc-medium-light-grey;
       margin: 10px;
     }
@@ -68,8 +68,8 @@
     }
 
     .link {
-      text-decoration: none;
       margin: 0;
+      text-decoration: none;
     }
   }
 }
@@ -83,9 +83,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  top: 0;
   width: 100%;
   height: 75px;
-  top: 0;
   background-color: white;
   padding: 0 15px;
 
@@ -110,17 +110,17 @@
   }
 
   .link {
-    text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    text-decoration: none;
     margin: 0;
 
     .bgc {
       @include header-font;
       text-align: left;
-      margin: 0;
       font-size: 1.75em;
+      margin: 0;
 
       @include smallPhone {
         font-size: 1.25em;

@@ -1,6 +1,7 @@
+import sumBy from 'lodash/sumBy';
 import Collection from './Collection';
 import CartItemModel from './CartItemModel';
-import sumBy from 'lodash/sumBy';
+
 
 export default class CartItemCollection extends Collection {
 

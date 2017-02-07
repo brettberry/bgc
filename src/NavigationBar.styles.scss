@@ -7,11 +7,11 @@
 
 .navBar {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-around;
+  top: 0;
   width: 100%;
   height: 99px;
-  top: 0;
   background-color: white;
 
   @include tabletLandscape {
@@ -51,11 +51,11 @@
   }
 
   .homeLink {
-    text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin: 0;
+    text-decoration: none;
   }
 }
 
@@ -64,12 +64,12 @@
 }
 
 .menuLink {
-  text-decoration: none;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  text-decoration: none;
 }
 
 .bgc {
@@ -110,8 +110,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 100%;
   width: 30%;
+  height: 100%;
 }
 
 .menuItem {
@@ -197,14 +197,14 @@
 }
 
 .alertBar {
-  top: 99px;
   display: flex;
   align-content: center;
   justify-content: flex-end;
+  top: 99px;
   width: 100%;
   height: 36px;
-  background-color: $bgc-orange;
   z-index: 0;
+  background-color: $bgc-orange;
 }
 
 .alertMessage {
@@ -212,9 +212,9 @@
   color: white;
   font-weight: 400;
   font-size: 0.9em;
+  letter-spacing: 0.5px;
   margin: 8px;
   padding-right: 25px;
-  letter-spacing: 0.5px;
 
   @include phone {
     padding-right: 10px;

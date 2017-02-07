@@ -1,0 +1,123 @@
+@import '../constants';
+
+.demosContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $bgc-background-color;
+
+  .videoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    min-height: 300px;
+    background-color: white;
+    padding: 0 75px;
+
+    @include tablet {
+      padding: 0 25px;
+    }
+
+    @include phone {
+      padding: 0 25px;
+    }
+
+    @include smallPhone {
+      padding: 0 25px;
+    }
+
+    .titleContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;
+      padding: 20px 0;
+
+      @include tabletLandscape {
+        flex-direction: column;
+        width: 95%;
+      }
+
+      @include tablet {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      @include phone {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      @include smallPhone {
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+
+    .title {
+      @include subheader-font;
+      font-size: 2.5em;
+      font-weight: 300;
+      margin: 20px 0;
+
+      @include tabletLandscape {
+        font-size: 1.75em;
+      }
+
+      @include tablet {
+        font-size: 1.75em;
+      }
+
+      @include phone {
+        text-align: center;
+        font-size: 1.5em;
+        width: 100%;
+      }
+
+      @include smallPhone {
+        text-align: center;
+        font-size: 1.5em;
+        width: 100%;
+      }
+    }
+
+    .description {
+      @include default-font;
+      font-weight: 300;
+      font-size: 1.1em;
+      line-height: 1.5;
+      margin: 20px 0;
+      padding: 0;
+      width: 90%;
+
+      @include tabletLandscape {
+        width: 100%;
+      }
+
+      @include tablet {
+        width: 100%;
+      }
+
+      @include phone {
+        width: 100%;
+      }
+
+      @include smallPhone {
+        width: 100%;
+      }
+    }
+
+    .shopLink {
+      display: flex;
+      justify-content: flex-end;
+      text-decoration: none;
+    }
+
+    .shopButton {
+      align-self: center;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 import MdClose from 'react-icons/lib/md/close';
 import MdChevronLeft from 'react-icons/lib/md/chevron-left';
-import { Link } from 'react-router';
 import './mobileNavigationBar.styles.scss';
 
 class MobileExpandedMenu extends Component {

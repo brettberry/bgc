@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import './sidebar.styles.scss';
-import FaChevronCircleUp from 'react-icons/lib/fa/chevron-circle-up';
 import { Link } from 'react-router';
 import classnames from 'classnames';
+import FaChevronCircleUp from 'react-icons/lib/fa/chevron-circle-up';
+import './sidebar.styles.scss';
+
 
 export default class Sidebar extends Component {
   render() {

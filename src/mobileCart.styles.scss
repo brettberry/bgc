@@ -7,17 +7,17 @@
   .mobileQuantityContainer {
     display: flex;
     flex-direction: column;
-    width: 50%;
     align-items: center;
+    width: 50%;
 
     .qtyText {
       @include default-font;
-      font-weight: 300;
-      font-size: 1em;
       color: black;
+      font-size: 1em;
+      font-weight: 300;
       text-transform: uppercase;
-      letter-spacing: 1px;
       text-align: center;
+      letter-spacing: 1px;
 
       @include smallPhone {
         font-size: 0.9em;
@@ -30,18 +30,18 @@
   }
 
   .mobileRemoveContainer {
-    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     flex: 1;
+    width: 50%;
 
     .removeText {
       @include default-font;
+      color: black;
       font-weight: 300;
       font-size: 1em;
-      color: black;
       text-transform: uppercase;
       letter-spacing: 1px;
 
@@ -51,9 +51,8 @@
     }
 
     .remove {
-      fill: $bgc-medium-grey;
-      height: 25px;
       width: 25px;
+      height: 25px;
       margin: 10px;
       fill: darken(red, 10);
     }
@@ -75,9 +74,9 @@
 }
 
 .mobileBorder {
+  border: solid 1px $table-border-color;
   margin: 10px;
   padding: 15px;
-  border: solid 1px $table-border-color;
 }
 
 .mobileItemLink {
@@ -86,11 +85,11 @@
   text-decoration: none;
 
   .item {
-    width: 100%;
     display: flex;
     align-items: flex-start;
-    padding: 0;
+    width: 100%;
     margin-top: 10px;
+    padding: 0;
   }
 
   .thumbnailImage {
@@ -104,15 +103,15 @@
   .productDetails {
     display: flex;
     flex-direction: column;
-    padding-left: 10px;
     flex: 1;
+    padding-left: 10px;
   }
 
   .name, .mobileItemTotal {
     @include default-font;
+    color: black;
     font-weight: 300;
     font-size: 1em;
-    color: black;
     text-transform: uppercase;
     letter-spacing: 1px;
 
@@ -122,33 +121,33 @@
   }
 
   .mobileUnitPrice {
+    width: 100%;
     @include default-font;
     font-weight: 300;
     font-size: 0.9em;
     color: black;
-    width: 100%;
   }
 
   .mobileItemTotal {
     flex: 1;
-    text-align: right;
     align-items: flex-start;
+    text-align: right;
   }
 }
 
 .mobileHorizontalRule {
   background-color: $table-border-color;
-  height: 1px;
   width: 100%;
+  height: 1px;
   margin: 10px 0;
 }
 
 .mobileCheckoutLink {
-  padding: 20px;
-  text-decoration: none;
-  width: 100%;
   display: flex;
   justify-content: flex-end;
+  width: 100%;
+  padding: 20px;
+  text-decoration: none;
 }
 
 .mobileCheckoutButton {

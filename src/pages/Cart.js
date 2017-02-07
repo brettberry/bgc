@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import CartItemCollection from '../models/CartItemCollection';
-import CartDetails from '../CartDetails';
 import CartRenderer from '../CartRenderer';
 import TabletProvider from '../TabletProvider';
 import './cart.styles.scss';
@@ -13,11 +12,9 @@ class Cart extends Component {
 
   render() {
     return (
-      <div>
-        <div className="cartHeaderContainer">
-          <h1 className="cartHeader">Your Cart</h1>
-          <div>{this.getCartContents()}</div>
-        </div>
+      <div className="cartHeaderContainer">
+        <h1 className="cartHeader">Your Cart</h1>
+        <div>{this.getCartContents()}</div>
       </div>
     );
   }
@@ -25,16 +22,16 @@ class Cart extends Component {
   getCartContents() {
     if (this.context.cart.length !== 0) {
       return (
-        <div>
-          <TabletProvider>
-            <CartRenderer />
-          </TabletProvider>
-        </div>
+        <TabletProvider>
+          <CartRenderer />
+        </TabletProvider>
       );
     }
 
     return (
-      <div className="cartEmptyMsg">Your cart is currently empty.</div>
+      <div className="cartEmptyMsg">
+        Your cart is currently empty.
+      </div>
     );
   }
 }

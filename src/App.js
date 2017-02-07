@@ -1,14 +1,14 @@
 import React, { Component, PropTypes } from 'react';
-import NavigationBar from './NavigationBar';
-import ShippingProvider from './ShippingProvider';
-import MobileNavigationBar from './MobileNavigationBar';
-import TabletProvider from './TabletProvider';
-import MobileProvider from './MobileProvider';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import CartProvider from './CartProvider';
 import AuthProvider from './AuthProvider';
+import ShippingProvider from './ShippingProvider';
+import TabletProvider from './TabletProvider';
+import MobileProvider from './MobileProvider';
+import MobileNavigationBar from './MobileNavigationBar';
+import NavigationBar from './NavigationBar';
 import './app.styles.scss';
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 

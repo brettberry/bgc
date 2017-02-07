@@ -1,18 +1,20 @@
 import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
+import { Link } from 'react-router';
+import braintree from 'braintree-web';
+import classnames from 'classnames';
+import map from 'lodash/map';
+// import $ from 'jquery';
+// import ReactDOM from 'react-dom';
+
+import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
+import FaLock from 'react-icons/lib/fa/lock';
+import Checkbox from 'material-ui/Checkbox';
+import FaChevronUp from 'react-icons/lib/fa/chevron-up';
+import FaChevronDown from 'react-icons/lib/fa/chevron-down';
+
 import ShippingInfoModel from '../../shipping/src/models/ShippingInfoModel';
 import CartItemCollection from '../models/CartItemCollection';
 import Button from '../Buttons';
-import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
-import FaLock from 'react-icons/lib/fa/lock';
-import classnames from 'classnames';
-import Checkbox from 'material-ui/Checkbox';
-import { Link } from 'react-router';
-import braintree from 'braintree-web';
-import map from 'lodash/map';
-import FaChevronUp from 'react-icons/lib/fa/chevron-up';
-import FaChevronDown from 'react-icons/lib/fa/chevron-down';
-import $ from 'jquery';
 import './checkout.styles.scss';
 
 class Checkout extends Component {
@@ -219,13 +221,12 @@ class ShippingInformation extends Component {
 
   handleSectionClick() {
     this.setState({ showShippingForm: !this.state.showShippingForm });
-    const currentElement = ReactDOM.findDOMNode(this);
-    const scrollTop = $(currentElement).offset().top;
-    $(document.body).scrollTop(scrollTop - 207);
+    // const currentElement = ReactDOM.findDOMNode(this);
+    // const scrollTop = $(currentElement).offset().top;
+    // $(document.body).scrollTop(scrollTop - 207);
   }
 
   render() {
-
     const styles = {
       checkbox: {
         width: 25
@@ -400,20 +401,20 @@ class OrderSummary extends Component {
         <div className="totalContainer">
           <div className="cartTotal">
             <p className="item">Subtotal</p>
-            <p className="itemValue">${cart.getCartTotal().toFixed(2)}</p>
+            <p className="item">${cart.getCartTotal().toFixed(2)}</p>
           </div>
           <div className="cartTotal">
             <p className="item">Tax</p>
-            <p className="itemValue">$0.00</p>
+            <p className="item">$0.00</p>
           </div>
           <div className="cartTotal">
             <p className="item">Shipping</p>
-            <p className="itemValue">$2.95</p>
+            <p className="item">$2.95</p>
           </div>
           <div className="horizontalRule" />
           <div className="cartTotal">
-            <p className="totalHeader">Total</p>
-            <p className="totalValue">${(cart.getCartTotal() + 2.95).toFixed(2)}</p>
+            <p className="total">Total</p>
+            <p className="total">${(cart.getCartTotal() + 2.95).toFixed(2)}</p>
           </div>
         </div>
       </div>

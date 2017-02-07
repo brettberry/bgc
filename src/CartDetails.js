@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
+import map from 'lodash/map';
+import FaClose from 'react-icons/lib/fa/close';
+
 import CartItemCollection from './models/CartItemCollection';
 import QuantityPicker from './QuantityPicker';
-import FaClose from 'react-icons/lib/fa/close';
-import map from 'lodash/map';
-import { Link } from 'react-router';
 import Button from './Buttons';
 import './pages/cart.styles.scss';
 

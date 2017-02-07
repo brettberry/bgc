@@ -1,12 +1,12 @@
 @import './constants';
 
 .productBannerContainer {
-  height: 300px;
-  background-color: $bgc-medium-light-grey;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  height: 300px;
+  background-color: $bgc-medium-light-grey;
 
   @include phone {
     height: 250px;
@@ -26,12 +26,13 @@
   .header {
     display: flex;
     @include subheader-font;
-    margin: 0;
+    color: $bgc-medium-grey;
     font-size: 3em;
     font-weight: 400;
-    color: $bgc-medium-grey;
     text-transform: uppercase;
     letter-spacing: 3px;
+    margin: 0;
+
 
     &.highlight {
       color: $bgc-dark-orange;
@@ -61,9 +62,9 @@
 }
 
   .viewLink {
-    text-decoration: none;
     display: flex;
     justify-content: center;
+    text-decoration: none;
 
     @include tablet {
       width: 50%;
@@ -83,31 +84,31 @@
     margin-top: 50px;
 
     @include tablet {
-      margin: 0;
       width: 100%;
+      margin: 0;
     }
 
     @include phone {
-      margin: 0;
-      width: 90%;
       align-self: center;
+      width: 90%;
+      margin: 0;
     }
 
     @include smallPhone {
-      margin: 0;
-      width: 90%;
       align-self: center;
+      width: 90%;
+      margin: 0;
     }
   }
 
   .featured {
     display: flex;
-    justify-content: center;
-    flex: 1;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
-    padding: 0 50px 50px 50px;
+    flex: 1;
     background-color: $bgc-medium-light-grey;
+    padding: 0 50px 50px 50px;
 
     @include phone {
       padding: 0;
@@ -120,10 +121,9 @@
     .header {
       display: flex;
       @include subheader-font;
-      margin: 0;
+      color: $bgc-medium-grey;
       font-size: 3em;
       font-weight: 400;
-      color: $bgc-medium-grey;
       text-transform: uppercase;
       letter-spacing: 3px;
       margin: 50px 0;
@@ -157,10 +157,10 @@
 
   .featuredContainer {
     display: flex;
-    flex-basis: 33%;
-    height: 450px;
     justify-content: center;
     align-items: center;
+    flex-basis: 33%;
+    height: 450px;
 
     @include tabletLandscape {
       flex-basis: 50%;
@@ -182,24 +182,24 @@
 
     .link {
       display: flex;
-      text-decoration: none;
-      width: 100%;
-      height: 100%;
       align-items: center;
       justify-content: center;
+      width: 100%;
+      height: 100%;
       background-color: $bgc-medium-light-grey;
+      text-decoration: none;
       margin: 0;
     }
 
     .featuredDiv {
+      align-items: flex-end;
+      justify-content: flex-end;
       width: 90%;
       height: 90%;
-      padding: 25px;
       background-color: white;
       border-radius: 3px;
       box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
-      align-items: flex-end;
-      justify-content: flex-end;
+      padding: 25px;
 
       .title {
         @include subheader-font;
@@ -234,12 +234,12 @@
 
         .discount {
           @include subheader-font;
+          color: red;
           font-size: 1.25em;
           font-weight: 400;
           margin: 0;
           margin-top: 10px;
           margin-left: 10px;
-          color: red;
         }
       }
 
@@ -254,9 +254,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 10px;
       width: 100%;
       height: 90%;
+      padding: 10px;
 
       .productImage {
         width: 100%;

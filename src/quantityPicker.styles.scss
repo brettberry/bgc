@@ -12,32 +12,31 @@
 
     .up {
       border-color: $bgc-medium-grey;
-      cursor: pointer;
       transition: all 0.3s ease;
+      cursor: pointer;
     }
 
     .down {
       border-color: $bgc-medium-grey;
-      cursor: pointer;
       transition: all 0.3s ease;
+      cursor: pointer;
     }
   }
 
   .input {
+    width: 50px;
+    height: 50px;
     @include subheader-font;
+    text-align: center;
     font-size: 1.25em;
-    appearance: none;
-    outline: 0;
     border: solid;
     border-width: 2px;
     border-radius: 5px 0 0 5px;
     border-color: $bgc-light-grey;
-    background: none;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    // margin: 30px 0;
     border-right: 0;
+    background: none;
+    appearance: none;
+    outline: 0;
   }
 }
 
@@ -46,44 +45,45 @@
   flex-direction: column;
 
   .up {
-    @include subheader-font;
-    font-size: 1em;
-    appearance: none;
-    outline: 0;
-    border: solid;
-    border-width: 2px;
-    border-color: $bgc-light-grey;
-    background: none;
-    height: 25px;
-    width: 25px;
-    border-bottom: 0;
-    border-radius: 0 5px 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 25px;
+    height: 25px;
+
+    @include subheader-font;
+    font-size: 1em;
+    background: none;
+    border: solid;
+    border-width: 2px;
+    border-color: $bgc-light-grey;
+    border-bottom: 0;
+    border-radius: 0 5px 0 0;
+    appearance: none;
+    outline: 0;
   }
 
   .down {
-    @include subheader-font;
-    font-size: 1em;
-    appearance: none;
-    outline: 0;
-    border: solid;
-    border-width: 2px;
-    border-color: $bgc-light-grey;
-    background: none;
-    height: 25px;
-    width: 25px;
-    margin-bottom: 0 30px 30px 0;
-    border-radius: 0 0 5px 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 25px;
+    height: 25px;
+    @include subheader-font;
+    font-size: 1em;
+    border: solid;
+    border-width: 2px;
+    border-color: $bgc-light-grey;
+    border-radius: 0 0 5px 0;
+    background: none;
+    margin-bottom: 0 30px 30px 0;
+    appearance: none;
+    outline: 0;
   }
 
   .pickerChevron {
-    fill: $bgc-dark-grey;
     width: 10px;
     height: 10px;
+    fill: $bgc-dark-grey;
   }
 }

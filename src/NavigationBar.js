@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 import { Link } from 'react-router';
-import Waypoint from 'react-waypoint';
-import ProductsMenu from './ProductsMenu';
-import MiniNavBar from './MiniNavBar';
-import ShoppingCenter from './ShoppingCenter';
-import './navigationBar.styles.scss';
 import classnames from 'classnames';
+import Waypoint from 'react-waypoint';
+import $ from 'jquery';
+
+import ProductsMenu from './ProductsMenu';
+import ShoppingCenter from './ShoppingCenter';
+import MiniNavBar from './MiniNavBar';
+import './navigationBar.styles.scss';
 
 class NavigationBar extends Component {
 

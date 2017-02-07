@@ -5,8 +5,8 @@
   flex-direction: column;
   justify-content: space-around;
   align-self: center;
-  margin: 0;
   width: 100%;
+  margin: 0;
   padding: 30px 40px;
 
   @include phone {
@@ -61,28 +61,28 @@
     width: 50%;
 
     @include tabletLandscape {
-      width: 100%;
       justify-content: center;
+      width: 100%;
     }
 
     @include tablet {
-      width: 100%;
       justify-content: center;
       flex-direction: column;
+      width: 100%;
       margin: 20px 0;
     }
 
     @include phone {
-      width: 100%;
       justify-content: center;
       flex-direction: column;
+      width: 100%;
       margin: 20px 0;
     }
 
     @include smallPhone {
-      width: 100%;
       flex-direction: column;
       justify-content: center;
+      width: 100%;
       margin: 20px 0;
     }
 
@@ -122,18 +122,18 @@
       cursor: pointer;
 
       @include tablet {
-        height: 100%;
         width: 33%;
+        height: 100%;
       }
 
       @include phone {
-        height: 100%;
         width: 33%;
+        height: 100%;
       }
 
       @include smallPhone {
-        height: 100%;
         width: 33%;
+        height: 100%;
       }
     }
 
@@ -322,9 +322,9 @@
 
   .relatedInnerDiv {
     display: flex;
-    position: relative;
     flex-direction: row;
     justify-content: center;
+    position: relative;
     width: 85%;
     height: 390px;
 
@@ -338,6 +338,7 @@
     justify-content: center;
     width: 350px;
     height: 350px;
+    white-space: nowrap;
     background-color: white;
     border-style: solid;
     border-width: 1px;
@@ -346,7 +347,6 @@
     box-shadow: 3px 3px 10px $bgc-medium-light-grey;
     margin: 20px;
     padding: 20px;
-    white-space: nowrap;
 
     @include tabletLandscape {
       width: 250px;

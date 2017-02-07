@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import FaChevronLeft from 'react-icons/lib/fa/chevron-left';
-import FaChevronRight from 'react-icons/lib/fa/chevron-right';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import classnames from 'classnames';
+// import FaChevronLeft from 'react-icons/lib/fa/chevron-left';
+// import FaChevronRight from 'react-icons/lib/fa/chevron-right';
 import './slider.styles.scss';
 
 class Slider extends Component {
@@ -72,7 +72,7 @@ class Slider extends Component {
 
 function Object1() {
   return (
-    <div className="slider" style={{ backgroundImage: 'url(/sliderImagess/gold-banner.jpg)' }}>
+    <div className="slider" style={{ backgroundImage: 'url(/sliderImages/gold-banner.jpg)' }}>
       <div className="dotContainer">
         <div className="dot active" />
         <div className="dot" />
@@ -84,7 +84,7 @@ function Object1() {
 
 function Object2() {
   return (
-    <div className="slider" style={{ backgroundImage: 'url(/sliderImagess/seminar-flyer.jpg)' }}>
+    <div className="slider" style={{ backgroundImage: 'url(/sliderImages/seminar-flyer.jpg)' }}>
       <div className="dotContainer">
         <div className="dot" />
         <div className="dot active" />
@@ -96,7 +96,7 @@ function Object2() {
 
 function Object3() {
   return (
-    <div className="slider" style={{ backgroundImage: 'url(/sliderImagess/seminar-flyer-2.jpg)' }}>
+    <div className="slider" style={{ backgroundImage: 'url(/sliderImages/seminar-flyer-2.jpg)' }}>
       <div className="dotContainer">
         <div className="dot" />
         <div className="dot" />

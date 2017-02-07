@@ -1,11 +1,11 @@
 @import './constants';
 
 .bannerContainer {
-  background-color: $bgc-medium-light-grey;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: $bgc-medium-light-grey;
   padding-bottom: 100px;
 
   .rowContainer {
@@ -16,10 +16,9 @@
   .header1 {
     display: flex;
     @include subheader-font;
-    margin: 0;
+    color: $bgc-medium-grey;
     font-size: 2em;
     font-weight: 400;
-    color: $bgc-medium-grey;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin: 5px 0;
@@ -53,14 +52,14 @@
   .header3 {
     display: flex;
     @include subheader-font;
-    margin: 0;
+    color: $bgc-medium-grey;
     font-size: 2.5em;
     font-weight: 400;
-    color: $bgc-medium-grey;
     text-transform: uppercase;
     letter-spacing: 3px;
     white-space: nowrap;
     padding-top: 100px;
+    margin: 0;
 
     &.highlight {
       color: $bgc-dark-orange;
@@ -87,10 +86,10 @@
 .titleContainer {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   align-self: center;
   width: 100%;
-  justify-content: space-between;
   padding-top: 50px;
 
   @include tablet {
@@ -108,10 +107,10 @@
   .title {
     display: flex;
     @include subheader-font;
+    color: $bgc-medium-grey;
+    font-size: 2.5em;
     margin-top: 75px;
     margin: 50px;
-    font-size: 2.5em;
-    color: $bgc-medium-grey;
 
     @include tablet {
       font-size: 1.75em;
@@ -131,10 +130,10 @@
 }
 
 .mobileBannerContainer {
-  background-color: $bgc-medium-light-grey;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: $bgc-medium-light-grey;
   padding: 50px 0;
 
   .rowContainer {
@@ -150,12 +149,12 @@
   .mobileHeader {
     display: flex;
     @include subheader-font;
-    margin: 0;
+    color: $bgc-medium-grey;
     font-size: 2em;
     font-weight: 400;
-    color: $bgc-medium-grey;
     text-transform: uppercase;
     letter-spacing: 3px;
+    margin: 0;
     white-space: nowrap;
     animation: switch 5s infinite;
 
@@ -175,12 +174,12 @@
   .banner2Header {
     display: flex;
     @include subheader-font;
-    margin: 0;
+    color: $bgc-medium-grey;
     font-size: 2em;
     font-weight: 400;
-    color: $bgc-medium-grey;
     text-transform: uppercase;
     letter-spacing: 3px;
+    margin: 0;
     white-space: nowrap;
 
     @include phone {
@@ -201,8 +200,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 0;
   width: 100%;
+  z-index: 0;
 
   .categories {
     display: flex;
@@ -210,8 +209,8 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    padding: 75px 0 45px 0;
     background-color: $bgc-orange;
+    padding: 75px 0 45px 0;
 
     @include phone {
       flex-direction: column;
@@ -268,12 +267,12 @@
     }
 
     .title {
+      display: flex;
       @include subheader-font;
       font-size: 1.5em;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-weight: 400;
-      display: flex;
     }
 
     &:hover {
@@ -290,23 +289,23 @@
 }
 
 .mobileBanner1 {
-  background-color: $bgc-medium-light-grey;
+  position: relative;
   width: 100%;
   height: 250px;
-  position: relative;
+  background-color: $bgc-medium-light-grey;
 
   .header {
     display: flex;
     align-items: center;
     justify-content: center;
     @include subheader-font;
-    margin: 0;
+    color: $bgc-medium-grey;
+    text-align: center;
+    text-transform: uppercase;
     font-size: 1.5em;
     font-weight: 400;
-    color: $bgc-medium-grey;
-    text-transform: uppercase;
     letter-spacing: 3px;
-    text-align: center;
+    margin: 0;
 
     &.highlight {
       color: $bgc-dark-orange;
@@ -324,54 +323,54 @@
   }
 
   .first {
-    position: absolute;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    top: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
     animation-name: switch;
     animation-duration: 12s;
     animation-delay: 0;
     animation-iteration-count: infinite;
     animation-timing-function: ease;
+    opacity: 0;
   }
 
   .second {
-    position: absolute;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    top: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
     animation-name: switch;
     animation-duration: 12s;
     animation-delay: 4s;
     animation-iteration-count: infinite;
     animation-timing-function: ease;
+    opacity: 0;
   }
 
   .third {
-    position: absolute;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    top: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
     animation-name: switch;
     animation-duration: 12s;
     animation-delay: 8s;
     animation-iteration-count: infinite;
     animation-timing-function: ease;
+    opacity: 0;
   }
 }
 

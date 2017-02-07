@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 import { Link } from 'react-router';
-import Waypoint from 'react-waypoint';
-import ProductsMenu from './ProductsMenu';
-import MiniNavBar, { ShoppingCenter } from './MiniNavBar';
-import './navigationBar.styles.scss';
-import MoreMenu from './MoreMenu';
 import classnames from 'classnames';
-import clickOutside from 'react-click-outside';
+import Waypoint from 'react-waypoint';
+import $ from 'jquery';
+
+import MiniNavBar, { ShoppingCenter } from './MiniNavBar';
+import ProductsMenu from './ProductsMenu';
+import MoreMenu from './MoreMenu';
+import './navigationBar.styles.scss';
 
 class TabletNavigationBar extends Component {
 

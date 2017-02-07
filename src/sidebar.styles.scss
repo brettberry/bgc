@@ -1,18 +1,18 @@
 @import './constants';
 
 .sidebarContainer {
-  position: fixed;
-  z-index: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  position: fixed;
+  top: 0;
+  min-width: 225px;
+  width: 250px;
+  height: 100%;
+  z-index: 0;
   background-color: white;
   border-radius: 3px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-  width: 250px;
-  min-width: 225px;
-  height: 100%;
-  top: 0;
   padding-top: 90px;
   padding-bottom: 35px;
 
@@ -23,8 +23,8 @@
 
     &:hover, &.active {
       margin-left: 20px;
-      cursor: pointer;
       transition: all 0.3s ease;
+      cursor: pointer;
 
       .downArrow {
         transform: rotate(90deg);
@@ -37,21 +37,21 @@
     }
 
     .downArrow {
-      fill: $bgc-orange;
       width: 25px;
       height: 25px;
+      fill: $bgc-orange;
+      opacity: 0.75;
       transform: rotate(180deg);
       margin-left: 25px;
-      opacity: 0.75;
     }
 
     .callType {
       @include default-font;
-      font-size: 1.1em;
       color: black;
-      margin: 0;
+      font-size: 1.1em;
       font-weight: 300;
       padding-left: 20px;
+      margin: 0;
     }
   }
 }
