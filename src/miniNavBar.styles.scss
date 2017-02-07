@@ -30,8 +30,8 @@
 
 .navBarContents {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 0 25px;
   transition: opacity 0.2s 0.3s ease-in;
@@ -157,7 +157,7 @@
   font-size: 1.2em;
   text-align: left;
 
-  border: none;
+  border: solid;
   border-color: $bgc-orange;
   border-radius: 20px 0 0 20px;
   margin: 0;
@@ -172,8 +172,8 @@
 
 .searchButton {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 65px;
   height: 40px;
   background-color: $bgc-yellow;

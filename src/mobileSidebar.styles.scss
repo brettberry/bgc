@@ -27,8 +27,8 @@
 
   .category {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     height: 100%;
 
     @include default-font;

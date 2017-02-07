@@ -64,14 +64,14 @@
 }
 
 .modalContainer {
-  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .photoView {
@@ -102,8 +102,8 @@
   justify-content: center;
   width: 0 !important;
   padding: 0 !important;
-  pointer-events: none;
   margin: 0;
+  pointer-events: none;
 
   .exit {
     position: fixed;
@@ -137,9 +137,9 @@
     width: 100px;
     height: 100px;
     fill: $bgc-medium-grey;
+    margin: 0 50px;
     pointer-events: all;
     cursor: pointer;
-    margin: 0 50px;
 
     @include tablet {
       width: 75px;

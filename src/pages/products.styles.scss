@@ -19,26 +19,26 @@
 
   @include tablet {
     justify-content: center;
-    margin-left: 0;
     padding: 0;
+    margin-left: 0;
   }
 
   @include phone {
     justify-content: center;
-    margin-left: 0;
     padding: 0;
+    margin-left: 0;
   }
 
   @include smallPhone {
     justify-content: center;
-    margin-left: 0;
     padding: 0;
+    margin-left: 0;
   }
 
   .container {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-basis: 50%;
 
     @include tabletLandscape {
@@ -167,10 +167,10 @@
     @include subheader-font;
     font-size: 1.25em;
     font-weight: 300;
+    color: red;
     margin: 0;
     margin-top: 10px;
     margin-left: 10px;
-    color: red;
   }
 
   .productImgContainer {

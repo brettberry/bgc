@@ -49,10 +49,10 @@
   .menuContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 100%;
     align-items: center;
     align-self: center;
+    justify-content: center;
+    height: 100%;
 
     .horizontalRule {
       width: 80%;
@@ -81,8 +81,8 @@
 
 .mobileNavBar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   top: 0;
   width: 100%;
   height: 75px;

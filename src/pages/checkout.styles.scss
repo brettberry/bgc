@@ -23,8 +23,8 @@
     right: 0;
     width: 50px;
     height: 50px;
-    margin: 0 75px;
     fill: $bgc-orange;
+    margin: 0 75px;
 
     &.rotateUp {
       transform: rotate(180deg);
@@ -127,8 +127,8 @@
     width: 30px;
     height: 30px;
     margin: 25px 50px;
-    cursor: pointer;
     fill: white;
+    cursor: pointer;
 
     &:hover {
       fill: rgba(white, 0.75);
@@ -164,22 +164,22 @@
   }
 
   .header {
-    @include header-font;
     width: 600px;
+    @include header-font;
     text-align: left;
     margin: 25px;
     margin-left: 150px;
 
     @include phone {
-      margin-left: 75px;
       font-size: 1.5em;
       letter-spacing: 2px;
+      margin-left: 75px;
     }
 
     @include smallPhone {
-      margin-left: 65px;
       font-size: 1.25em;
       letter-spacing: 2px;
+      margin-left: 65px;
     }
   }
 
@@ -248,15 +248,15 @@
   }
 
   .inputSpan {
-    position: absolute;
     display: block;
-    left: 14px;
+    position: absolute;
     top: 25px;
+    left: 14px;
+    color: $form-text-grey;
     font-size: 16px;
     font-weight: 100;
     letter-spacing: 1px;
     transform: translate3d(0,6px,0);
-    color: $form-text-grey;
 
     @include phone {
       font-size: 14px;
@@ -406,8 +406,8 @@
   .link {
     display: flex;
     justify-content: center;
-    text-decoration: none;
     width: 100%;
+    text-decoration: none;
   }
 
   .viewCart {

@@ -2,9 +2,9 @@
 @import '../constants';
 
 .border {
+  border: solid 1px $table-border-color;
   margin: 20px 50px;
   padding: 20px;
-  border: solid 1px $table-border-color;
 
   .cartTotalContainer {
     display: flex;
@@ -25,17 +25,17 @@
   align-items: center;
 
   .link {
-    text-decoration: none;
     display: flex;
     width: 100%;
+    text-decoration: none;
   }
 
   .itemDescription {
+    display: flex;
+    align-items: center;
     min-width: 450px;
     max-width: 1200px;
     width: 100%;
-    display: flex;
-    align-items: center;
   }
 
   .thumbnailImageDiv {
@@ -61,41 +61,41 @@
     @include subheader-font;
     font-size: 1.25em;
     align-self: center;
-    padding-left: 10px;
     min-width: 100px;
     max-width: 300px;
     width: 100%;
+    padding-left: 10px;
   }
 
   .quantityContainer {
-    padding-left: 10px;
     min-width: 100px;
     max-width: 300px;
     width: 100%;
+    padding-left: 10px;
   }
 
   .itemTotal {
+    min-width: 100px;
+    max-width: 300px;
+    width: 100%;
     @include subheader-font;
     font-size: 1.25em;
     align-self: center;
     padding-left: 10px;
-    min-width: 100px;
-    max-width: 300px;
-    width: 100%;
   }
 
   .removeContainer {
+    display: flex;
+    justify-content: flex-end;
     min-width: 50px;
     max-width: 300px;
     width: 100%;
-    display: flex;
-    justify-content: flex-end;
     padding-right: 25px;
 
     .remove {
-      fill: $bgc-medium-grey;
-      height: 25px;
       width: 25px;
+      height: 25px;
+      fill: $bgc-medium-grey;
       cursor: pointer;
 
       &:hover {
@@ -106,8 +106,8 @@
 }
 
 .shopLink {
-  text-decoration: none;
   width: 100%;
+  text-decoration: none;
 }
 
 .continue {
@@ -150,21 +150,21 @@
     margin: 0;
 
     @include tablet {
+      text-align: center;
       padding: 20px;
       margin-top: 10px;
-      text-align: center;
     }
 
     @include phone {
+      text-align: center;
       padding: 20px;
       margin-top: 10px;
-      text-align: center;
     }
 
     @include smallPhone {
+      text-align: center;
       padding: 20px;
       margin-top: 10px;
-      text-align: center;
     }
   }
 }
@@ -191,57 +191,60 @@
 }
 
 .itemDescriptionHeader {
+  min-width: 450px;
+  max-width: 1200px;
+  width: 100%;
+
   @include menu-font;
   color: $bgc-medium-grey;
   font-size: 1em;
   font-weight: 200;
   text-align: left;
   padding: 10px 0;
-  min-width: 450px;
-  max-width: 1200px;
-  width: 100%;
 }
 
 .itemHeader {
+  min-width: 100px;
+  max-width: 300px;
+  width: 100%;
+
   @include menu-font;
   color: $bgc-medium-grey;
   font-size: 1em;
   font-weight: 200;
   text-align: left;
   padding: 10px 0 10px 10px;
-  min-width: 100px;
-  max-width: 300px;
-  width: 100%;
 }
 
 .removeTitle {
-  text-align: right;
   min-width: 50px;
   max-width: 300px;
   width: 100%;
+  text-align: right;
 }
 
 .horizontalRule {
-  background-color: $table-border-color;
-  height: 1px;
   width: 100%;
+  height: 1px;
+  background-color: $table-border-color;
 }
 
 .checkoutLink {
-  text-decoration: none;
-  width: 100%;
   display: flex;
   justify-content: flex-end;
+  width: 100%;
   padding-right: 50px;
+  text-decoration: none;
 }
 
 .cartEmptyMsg {
-  @include header-font;
-  color: $bgc-medium-light-grey;
-  width: 100%;
-  padding: 100px;
-  margin: 0;
-  text-align: center;
   display: flex;
   align-self: center;
+  width: 100%;
+
+  @include header-font;
+  color: $bgc-medium-light-grey;
+  text-align: center;
+  padding: 100px;
+  margin: 0;
 }

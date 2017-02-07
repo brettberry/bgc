@@ -2,9 +2,9 @@
 
 .bannerContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: $bgc-medium-light-grey;
   padding-bottom: 100px;
 
@@ -131,8 +131,8 @@
 
 .mobileBannerContainer {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   background-color: $bgc-medium-light-grey;
   padding: 50px 0;
 
@@ -206,8 +206,8 @@
   .categories {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
     width: 100%;
     background-color: $bgc-orange;
     padding: 75px 0 45px 0;
@@ -224,8 +224,8 @@
   .category {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
 
@@ -270,9 +270,9 @@
       display: flex;
       @include subheader-font;
       font-size: 1.5em;
+      font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 2px;
-      font-weight: 400;
     }
 
     &:hover {
@@ -394,8 +394,8 @@
 
 .imageContainer {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
 
   .mainPageImg {
