@@ -35,7 +35,7 @@ class CartModal extends Component {
 
   render() {
     const ModalComponent = clickOutside(CartModalContents);
-    const { showModal } = this.props;
+    const { showModal, closeModal, product, quantity } = this.props;
     return (
       <div>
         <Modal show={showModal}
@@ -43,9 +43,7 @@ class CartModal extends Component {
                containerStyle={styles}
                style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
                closeOnOuterClick={false}>
-          <ModalComponent closeModal={this.props.closeModal}
-                          quantity={this.props.quantity}
-                          product={this.props.product} />
+          <ModalComponent closeModal={closeModal} quantity={quantity} product={product} />
         </Modal>
       </div>
     );
@@ -69,15 +67,16 @@ class CartModalContents extends Component {
   }
 
   render() {
+    const { closeModal, product, quantity } = this.props;
     return (
       <div className="cartModalContainer">
-        <MdClose className="exit" onClick={this.props.closeModal} />
-        <p className="continueShopping" onClick={this.props.closeModal}>continue shopping</p>
+        <MdClose className="exit" onClick={closeModal} />
+        <p className="continueShopping" onClick={closeModal}>continue shopping</p>
         <div className="itemsAddedContainer">
           <FaCheckCircle className="checkmark" />
           <h1 className="itemsAddedMsg">{this.getQuantityMessage()}</h1>
         </div>
-        <ItemSelected product={this.props.product} quantity={this.props.quantity} />
+        <ItemSelected product={product} quantity={quantity} />
         <ModalOrderSummary />
       </div>
     );

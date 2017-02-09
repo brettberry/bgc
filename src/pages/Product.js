@@ -215,6 +215,7 @@ class RelatedProducts extends Component {
     const offset = Math.abs(this.state.offset);
     const itemsArray = slice(this.getItems(), offset, offset + 3);
 
+    //TODO: make this it's own component
     return map(itemsArray, (item) =>
       <div key={item.getPathName()} className="relatedItem">
         <Link to={`/products/${item.getCategory()}/${item.getPathName()}`} className="link">

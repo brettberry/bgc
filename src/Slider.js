@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import classnames from 'classnames';
+import map from 'lodash/map';
 // import FaChevronLeft from 'react-icons/lib/fa/chevron-left';
 // import FaChevronRight from 'react-icons/lib/fa/chevron-right';
 import './slider.styles.scss';
+import data from './data.json';
+
 
 class Slider extends Component {
 
@@ -61,49 +64,31 @@ class Slider extends Component {
 
   renderObjects() {
     const offset = Math.abs(this.state.offset);
-    const objects = [
-      <Object1 key="object1" />,
-      <Object2 key="object2" />,
-      <Object3 key="object3" />
-    ];
+    const objects = map(data.sliderImages, (slideImage, key) => {
+        return <Slide image={slideImage} key={key} />;
+    });
     return objects[offset];
   }
 }
 
-function Object1() {
-  return (
-    <div className="slider" style={{ backgroundImage: 'url(/sliderImages/gold-banner.jpg)' }}>
-      <div className="dotContainer">
-        <div className="dot active" />
-        <div className="dot" />
-        <div className="dot" />
-      </div>
-    </div>
-  );
-}
+class Slide extends Component {
 
-function Object2() {
-  return (
-    <div className="slider" style={{ backgroundImage: 'url(/sliderImages/seminar-flyer.jpg)' }}>
-      <div className="dotContainer">
-        <div className="dot" />
-        <div className="dot active" />
-        <div className="dot" />
-      </div>
-    </div>
-  );
-}
+  static props = {
+    image: PropTypes.string,
+    key: PropTypes.number
+  }
 
-function Object3() {
-  return (
-    <div className="slider" style={{ backgroundImage: 'url(/sliderImages/seminar-flyer-2.jpg)' }}>
-      <div className="dotContainer">
-        <div className="dot" />
-        <div className="dot" />
-        <div className="dot active" />
+  render() {
+    return (
+      <div className="slider" style={{ backgroundImage: this.props.image }}>
+        <div className="dotContainer">
+          <div className="dot active" />
+          <div className="dot" />
+          <div className="dot" />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Slider;

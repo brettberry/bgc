@@ -93,6 +93,7 @@ class Banner extends Component {
 }
 
 function ShopCategories() {
+  //TODO: refactor into a map?
   return (
     <div className="categoryContainer">
       <div className="categories">

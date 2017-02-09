@@ -4,9 +4,9 @@ import classnames from 'classnames';
 import FaChevronCircleUp from 'react-icons/lib/fa/chevron-circle-up';
 import './sidebar.styles.scss';
 
-
 export default class Sidebar extends Component {
   render() {
+    //TODO: use map from json file to simplify this code??
     return (
       <div className="sidebarContainer">
         <SidebarMenuComponent item={"All Products"} path={"/products"} />

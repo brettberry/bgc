@@ -1,4 +1,55 @@
 {
+  "sliderImages": [
+  "url(/sliderImages/gold-banner.jpg)",
+  "url(/sliderImages/seminar-flyer.jpg)",
+  "url(/sliderImages/seminar-flyer-2.jpg)"
+],
+  "tags": [
+    {
+      "tag": "All Products",
+      "path": ""
+    },
+    {
+      "tag": "Most Popular",
+      "path": "bugles"
+    },
+    {
+      "tag": "Online Specials",
+      "path": "sale"
+    },
+    {
+      "tag": "Bugles",
+      "path": "bugles"
+    },
+    {
+      "tag": "RT-Reeds",
+      "path": "rt-reeds"
+    },
+    {
+      "tag": "Golden Dome",
+      "path": "golden-dome"
+    },
+    {
+      "tag": "X-Series",
+      "path": "x-series"
+    },
+    {
+      "tag": "Big Bull Reeds",
+      "path": "big-bull"
+    },
+    {
+      "tag": "Cow Calls",
+      "path": "cow-calls"
+    },
+    {
+      "tag": "Hunting Movies",
+      "path": "dvds"
+    },
+    {
+      "tag": "Accessories",
+      "path": "other"
+    }
+  ],
   "products": [
     {
       "fullName": "Berry Thunder Bugle",

@@ -11,6 +11,7 @@ const videos = new DemosCollection(data.demos);
 
 class Demos extends Component {
 
+  //TODO: use mapping to simplify
   render() {
     const xSeriesDemo = videos.findByTitle('reeds-demo');
     const bugleDemo = videos.findByTitle('bugle-demo');

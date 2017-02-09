@@ -19,6 +19,7 @@ class QuantityPicker extends Component {
 
   constructor(props) {
     super(props);
+
     this.state = {
       number: props.initialQuanity
     };
@@ -27,6 +28,7 @@ class QuantityPicker extends Component {
   changeNumber(value) {
     const number = toNumber(value);
     const numberInRange = clamp(number, 1, 1000);
+
     if (isFinite(numberInRange)) {
       this.setState({ number: numberInRange });
       this.props.onQuantityChange(numberInRange);

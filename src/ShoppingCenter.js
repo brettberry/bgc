@@ -115,7 +115,7 @@ class CartDropDown extends Component {
   }
 
   render() {
-    const cart = this.props.cart;
+    const { cart } = this.props;
     return (
       <div className={classnames('cartDropDownContainer', this.props.className)}>
         <div className="productScrollView">

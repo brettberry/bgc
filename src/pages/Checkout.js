@@ -5,7 +5,6 @@ import classnames from 'classnames';
 import map from 'lodash/map';
 // import $ from 'jquery';
 // import ReactDOM from 'react-dom';
-
 import FaShoppingCart from 'react-icons/lib/fa/shopping-cart';
 import FaLock from 'react-icons/lib/fa/lock';
 import Checkbox from 'material-ui/Checkbox';
