@@ -27,7 +27,9 @@ class ProductGrid extends Component {
 
     return (
       <div className="container">
-        <Link key={this.props.key} to={`/products/${product.getCategory()}/${product.getPathName()}`} className="link">
+        <Link to={`/products/${product.getCategory()}/${product.getPathName()}`}
+              key={this.props.key}
+              className="link">
             <div className="product">
               <h3 className="title">{name}</h3>
               <div className="priceContainer">
@@ -35,7 +37,8 @@ class ProductGrid extends Component {
                 { showDiscount && <p className="discount">${discount}</p>}
               </div>
               <div className="productImgContainer">
-                <div className="productImage" style={this.getBackgroundImage(product)} />
+                <div className="productImage"
+                     style={this.getBackgroundImage(product)}/>
               </div>
             </div>
         </Link>

@@ -31,7 +31,7 @@ class MiniNavBar extends Component {
           <Link to="/" className="bgcLink">
             <h1 className="bgc">BGC</h1>
           </Link>
-          <SearchComponent products={products} ref="search" />
+          <SearchComponent products={products} ref="search"/>
         </div>
       </div>
     );
@@ -86,7 +86,7 @@ class Search extends Component {
     if (this.state.searchResults.toArray().length === 0) {
       return;
     }
-    return <SearchDropDown searchResults={this.state.searchResults} />;
+    return <SearchDropDown searchResults={this.state.searchResults}/>;
   }
 }
 
@@ -101,7 +101,9 @@ class SearchDropDown extends Component {
 
   renderSearchResult(item, key) {
     return (
-      <Link to={`/products/${item.getCategory()}/${item.getPathName()}`} className="link" key={key}>
+      <Link to={`/products/${item.getCategory()}/${item.getPathName()}`}
+            className="link"
+            key={key}>
         <div className="searchItemContainer">
           <div className="searchItem">{item.getFullName()}</div>
           <div className="description">{ellipsify(item.getDescription())}</div>

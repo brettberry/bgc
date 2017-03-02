@@ -43,7 +43,9 @@ class CartModal extends Component {
                containerStyle={styles}
                style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
                closeOnOuterClick={false}>
-          <ModalComponent closeModal={closeModal} quantity={quantity} product={product} />
+          <ModalComponent closeModal={closeModal}
+                          quantity={quantity}
+                          product={product}/>
         </Modal>
       </div>
     );
@@ -70,14 +72,14 @@ class CartModalContents extends Component {
     const { closeModal, product, quantity } = this.props;
     return (
       <div className="cartModalContainer">
-        <MdClose className="exit" onClick={closeModal} />
+        <MdClose className="exit" onClick={closeModal}/>
         <p className="continueShopping" onClick={closeModal}>continue shopping</p>
         <div className="itemsAddedContainer">
-          <FaCheckCircle className="checkmark" />
+          <FaCheckCircle className="checkmark"/>
           <h1 className="itemsAddedMsg">{this.getQuantityMessage()}</h1>
         </div>
-        <ItemSelected product={product} quantity={quantity} />
-        <ModalOrderSummary />
+        <ItemSelected product={product} quantity={quantity}/>
+        <ModalOrderSummary/>
       </div>
     );
   }
@@ -102,17 +104,23 @@ class ItemSelected extends Component {
     return subtotal.toFixed(2);
   }
 
+  getItemCost() {
+    const { product } = this.props;
+    const cost = product.getPrice().getDiscount() || product.getPrice().getAmount();
+    return cost.toFixed(2);
+  }
+
   render() {
     const { product, quantity } = this.props;
     return (
       <div className="itemDetailsContainer">
         <div className="itemContainer">
           <div className="productThumbnail"
-               style={this.getThumbnailImage(product)} />
+               style={this.getThumbnailImage(product)}/>
           <div className="productDetailsContainer">
             <h1 className="itemSelected">{product.getFullName()}</h1>
             <h1 className="itemDetails">Quantity: {quantity}</h1>
-            <h1 className="itemDetails">${product.getPrice().getDiscount() || product.getPrice().getAmount()} each</h1>
+            <h1 className="itemDetails">${this.getItemCost()} each</h1>
           </div>
         </div>
         <h3 className="itemSelectedTotal">${this.getItemTotal()}</h3>
@@ -139,13 +147,13 @@ class ModalOrderSummary extends Component {
           <h3 className="subtotal">Shipping</h3>
           <h3 className="subtotal">$2.95</h3>
         </div>
-        <div className="horizontalRule" />
+        <div className="horizontalRule"/>
         <div className="subtotalContainer">
           <h3 className="total">Total</h3>
           <h3 className="total">${(cart.getCartTotal() + 2.95).toFixed(2)}</h3>
         </div>
         <Link to="/cart" className="link">
-          <Button text="Check Out" />
+          <Button text="Check Out" className="checkoutButton"/>
         </Link>
       </div>
     );

@@ -33,13 +33,13 @@ class CartDetails extends Component {
               <div className="itemHeader">Total</div>
               <div className="itemHeader removeTitle">Remove</div>
             </div>
-            <div className="horizontalRule" />
+            <div className="horizontalRule"/>
             <div className="tableBody">
               <div className="cartItems">
                 {map(this.context.cart.toArray(), this.renderCartItem.bind(this))}
               </div>
             </div>
-            <div className="horizontalRule" />
+            <div className="horizontalRule"/>
             <div className="cartTotalContainer">
               <h2 className="cartTotalLabel">Subtotal:&nbsp;</h2>
               <h2 className="cartSubtotal">${ this.context.cart.getCartTotal().toFixed(2)}</h2>
@@ -47,7 +47,7 @@ class CartDetails extends Component {
           </div>
         </div>
         <Link to={'/account/checkout'} className="checkoutLink">
-          <Button text="Checkout" className="cartButton" />
+          <Button text="Checkout" className="cartButton"/>
         </Link>
         <Link to="/products" className="shopLink">
           <p className="continue">continue shopping</p>
@@ -62,19 +62,20 @@ class CartDetails extends Component {
         <Link className="link"
               to={`/products/${item.getProduct().getCategory()}/${item.getProduct().getPathName()}`}>
           <div className="itemDescription">
-            <div className="thumbnailImageDiv" style={this.getThumbnailImage(item)} />
+            <div className="thumbnailImageDiv"
+                 style={this.getThumbnailImage(item)}/>
             <div className="item">{item.getFullName()}</div>
           </div>
         </Link>
         <div className="unitPrice">${(item.getSubtotal() / item.getQuantity()).toFixed(2)}</div>
         <div className="quantityContainer">
           <QuantityPicker initialQuanity={item.getQuantity()}
-                          onQuantityChange={quantity => this.context.updateCartItem(item, quantity)} />
+                          onQuantityChange={quantity => this.context.updateCartItem(item, quantity)}/>
         </div>
         <div className="itemTotal">{`$${item.getSubtotal().toFixed(2)}`}</div>
         <div className="removeContainer">
           <FaClose className="remove"
-                   onClick={() => this.context.removeCartItem(item)} />
+                   onClick={() => this.context.removeCartItem(item)}/>
         </div>
       </div>
     );

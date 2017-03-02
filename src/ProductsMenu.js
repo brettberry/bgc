@@ -56,7 +56,9 @@ function Bugles({ bugles, onItemClick }) {
         <p className="columnTitle">Bugles</p>
       </Link>
         <div>{map(bugles.toArray(), (bugle, key) =>
-          <Link key={key} to={`/products/${bugle.getCategory()}/${bugle.getPathName()}`} className="productsLink" onClick={onItemClick}>
+          <Link key={key} to={`/products/${bugle.getCategory()}/${bugle.getPathName()}`}
+                className="productsLink"
+                onClick={onItemClick}>
             <p className="productNames">{bugle.getFullName()}</p>
           </Link>)
         }</div>
@@ -71,7 +73,9 @@ function Reeds({ reeds, onItemClick }) {
         <p className="columnTitle">Reeds</p>
       </Link>
       <div>{map(reeds.toArray(), (reed, key) =>
-        <Link key={key} to={`/products/${reed.getCategory()}/${reed.getPathName()}`} className="productsLink" onClick={onItemClick}>
+        <Link key={key} to={`/products/${reed.getCategory()}/${reed.getPathName()}`}
+              className="productsLink"
+              onClick={onItemClick}>
           <p className="productNames">{reed.getFullName()}</p>
         </Link>)
       }</div>
@@ -86,7 +90,9 @@ function DVDs({ dvds, onItemClick }) {
         <h3 className="columnTitle">Hunting DVDs</h3>
       </Link>
       <div>{map(dvds.toArray(), (dvd, key) =>
-        <Link key={key} to={`/products/${dvd.getCategory()}/${dvd.getPathName()}`} className="productsLink" onClick={onItemClick}>
+        <Link key={key} to={`/products/${dvd.getCategory()}/${dvd.getPathName()}`}
+              className="productsLink"
+              onClick={onItemClick}>
           <p className="productNames">{dvd.getFullName()}</p>
         </Link>)
       }</div>
@@ -110,8 +116,10 @@ function Other({ cowCalls, other, onItemClick }) {
         <h3 className="columnTitle">Other</h3>
       </Link>
       <div>{map(other.toArray(), (otherItem, key) =>
-        <Link key={key} to={`/products/${otherItem.getCategory()}/${otherItem.getPathName()}`}
-              className="productsLink" onClick={onItemClick}>
+        <Link key={key}
+              to={`/products/${otherItem.getCategory()}/${otherItem.getPathName()}`}
+              className="productsLink"
+              onClick={onItemClick}>
           <p className="productNames">{otherItem.getFullName()}</p>
         </Link>)
       }</div>

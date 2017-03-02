@@ -33,9 +33,10 @@ class MobileMiniNavBar extends Component {
           </Link>
           <div className="iconContainer">
             <Link to="/cart">
-              <FaShoppingCart className="cartIcon" />
+              <FaShoppingCart className="cartIcon"/>
             </Link>
-            <FaBars className="hamburgerIcon" onClick={this.handleBarsClick.bind(this)} />
+            <FaBars className="hamburgerIcon"
+                    onClick={this.handleBarsClick.bind(this)}/>
           </div>
         </div>
         {this.renderMobileMenu()}
@@ -48,7 +49,7 @@ class MobileMiniNavBar extends Component {
       return;
     }
     return (
-      <MobileExpandedMenu onClose={this.handleBarsClick.bind(this)} />
+      <MobileExpandedMenu onClose={this.handleBarsClick.bind(this)}/>
     );
   }
 }
@@ -57,8 +58,8 @@ export function ShoppingCenter({ className }) {
   return (
     <div>
       <div className={classnames('shoppingContainer', className)}>
-        <FaShoppingCart className="cartIcon" />
-        <div className="divider" />
+        <FaShoppingCart className="cartIcon"/>
+        <div className="divider"/>
         <h3 className="accountText">My <br/> Account</h3>
       </div>
     </div>

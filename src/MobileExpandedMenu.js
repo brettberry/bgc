@@ -34,7 +34,7 @@ class MobileExpandedMenu extends Component {
   renderMainMenu() {
     return (
       <div className="mobileMenu">
-        <MdClose className="exit" onClick={this.props.onClose} />
+        <MdClose className="exit" onClick={this.props.onClose}/>
         <div className="menuContainer">
           <Link to="/" className="link">
             <h3 className="item" onClick={this.props.onClose}>Home</h3>
@@ -64,13 +64,13 @@ class MobileExpandedMenu extends Component {
     }
     return (
       <div className="mobileMenu">
-        <MdChevronLeft className="backButton" onClick={this.handleShowMainMenu.bind(this)} />
-        <MdClose className="exit" onClick={this.props.onClose} />
+        <MdChevronLeft className="backButton" onClick={this.handleShowMainMenu.bind(this)}/>
+        <MdClose className="exit" onClick={this.props.onClose}/>
         <div className="menuContainer">
           <Link to="/products" className="link">
             <h3 className="item" onClick={this.props.onClose}>All Products</h3>
           </Link>
-            <div className="horizontalRule" />
+            <div className="horizontalRule"/>
           <Link to="/products/tags/bugles" className="link">
             <h3 className="item" onClick={this.props.onClose}>Bugles</h3>
           </Link>

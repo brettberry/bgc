@@ -65,7 +65,7 @@ class Slider extends Component {
   renderObjects() {
     const offset = Math.abs(this.state.offset);
     const objects = map(data.sliderImages, (slideImage, key) => {
-        return <Slide image={slideImage} key={key} />;
+        return <Slide image={slideImage} key={key}/>;
     });
     return objects[offset];
   }
@@ -78,13 +78,14 @@ class Slide extends Component {
     key: PropTypes.number
   }
 
+  //TODO: Fix dots
   render() {
     return (
       <div className="slider" style={{ backgroundImage: this.props.image }}>
         <div className="dotContainer">
-          <div className="dot active" />
-          <div className="dot" />
-          <div className="dot" />
+          <div className="dot active"/>
+          <div className="dot"/>
+          <div className="dot"/>
         </div>
       </div>
     );

@@ -16,10 +16,10 @@ class Footer extends Component {
     return (
       <div className="footer">
         <div className="contactContainer">
-          <LeftSide />
-          <RightSide />
+          <LeftSide/>
+          <RightSide/>
         </div>
-        <Copyright />
+        <Copyright/>
       </div>
     );
   }
@@ -31,7 +31,7 @@ function LeftSide() {
       <h3 className="subheader">Berry Game Calls</h3>
       <div className="section">
         <div className="infoContainer">
-          <FaPhone className="icon" />
+          <FaPhone className="icon"/>
           <p className="iconText">Monday-Friday 9am-5pm PST</p>
         </div>
         <p className="text">1 (800) 434-2855 </p>
@@ -39,14 +39,14 @@ function LeftSide() {
       </div>
       <div className="section">
         <div className="infoContainer">
-          <FaEnvelope className="icon" />
+          <FaEnvelope className="icon"/>
           <p className="iconText">PO Box 416</p>
         </div>
         <p className="text">Medical Lake, WA 99022</p>
       </div>
       <div className="section">
         <div className="infoContainer">
-          <FaFacebook className="icon" />
+          <FaFacebook className="icon"/>
           <a target="_blank"
              className="anchor"
              href="https://www.facebook.com/BerryGameCalls/?fref=ts">
@@ -56,7 +56,7 @@ function LeftSide() {
       </div>
       <div className="section">
         <div className="infoContainer">
-          <FaYoutube className="icon" />
+          <FaYoutube className="icon"/>
           <a target="_blank"
              className="anchor"
              href="https://www.youtube.com/user/BERRYGAMECALLS">
@@ -73,7 +73,7 @@ function RightSide() {
     <div className="rightContents">
       <h3 className="subheader">Send us a message</h3>
       <div className="itemContainer">
-        <FaUser className="icon" />
+        <FaUser className="icon"/>
         <input className="input"
                placeholder="Name"/>
       </div>
@@ -83,7 +83,7 @@ function RightSide() {
                placeholder="Email"/>
       </div>
       <div className="itemContainer">
-        <FaComment className="icon" />
+        <FaComment className="icon"/>
         <textarea className="textArea"
                   placeholder="Message"/>
       </div>
@@ -97,7 +97,7 @@ function RightSide() {
 function Copyright() {
   return (
     <div className="copyrightContainer">
-      <FaCopyright className="icon" />
+      <FaCopyright className="icon"/>
       <p className="copyright">2016 Brett Berry</p>
     </div>
   );

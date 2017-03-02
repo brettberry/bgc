@@ -10,15 +10,6 @@ class Cart extends Component {
     cart: PropTypes.instanceOf(CartItemCollection)
   }
 
-  render() {
-    return (
-      <div className="cartHeaderContainer">
-        <h1 className="cartHeader">Your Cart</h1>
-        <div>{this.getCartContents()}</div>
-      </div>
-    );
-  }
-
   getCartContents() {
     if (this.context.cart.length !== 0) {
       return (
@@ -31,6 +22,15 @@ class Cart extends Component {
     return (
       <div className="cartEmptyMsg">
         Your cart is currently empty.
+      </div>
+    );
+  }
+
+  render() {
+    return (
+      <div className="cartHeaderContainer">
+        <h1 className="cartHeader">Your Cart</h1>
+        <div>{this.getCartContents()}</div>
       </div>
     );
   }

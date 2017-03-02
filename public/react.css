@@ -1591,8 +1591,7 @@
   color: #546e7a;
   font-size: 1.2em;
   text-align: left;
-  border: solid;
-  border-color: #ebb052;
+  border: none;
   border-radius: 20px 0 0 20px;
   margin: 0;
   padding: 10px 10px 10px 20px;
@@ -4131,7 +4130,7 @@ html, body, main {
       @media all and (max-width: 320px) {
         .demosContainer .videoContainer .description {
           width: 100%; } }
-    .demosContainer .videoContainer .shopLink {
+    .demosContainer .videoContainer .shopBGCLink {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;

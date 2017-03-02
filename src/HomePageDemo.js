@@ -45,7 +45,11 @@ class Demo extends Component {
         <span className="title">Meet the Revolutionary Berry Thunder Bugle</span>
         <div className="demoSection">
           <div className="demo">
-            <iframe height={frameHeight} width={frameWidth} src={"https://www.youtube.com/embed/bLAz_kbihLE"} frameBorder="0" allowFullScreen />
+            <iframe height={frameHeight}
+                    width={frameWidth}
+                    src={"https://www.youtube.com/embed/bLAz_kbihLE"}
+                    frameBorder="0"
+                    allowFullScreen/>
           </div>
           <div className="demoInfo">
             <p className="info">{thunderBugle.getDescription()}</p>

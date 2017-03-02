@@ -38,16 +38,16 @@ class MobileNavigationBar extends Component {
           </Link>
           <div className="iconContainer">
             <Link to="/cart">
-              <FaShoppingCart className="cart" />
+              <FaShoppingCart className="cart"/>
             </Link>
-            <FaBars className="hamburger" onClick={this.handleBarsClick.bind(this)} />
+            <FaBars className="hamburger" onClick={this.handleBarsClick.bind(this)}/>
           </div>
         </div>
         <Waypoint scrollableAncestor={window}
                   onLeave={() => this.setState({ showResponsiveNavBar: true })}
-                  onEnter={() => this.setState({ showResponsiveNavBar: false })} />
-        <Alert />
-        <MobileMiniNavBar showResponsiveNavBar={this.state.showResponsiveNavBar} />
+                  onEnter={() => this.setState({ showResponsiveNavBar: false })}/>
+        <Alert/>
+        <MobileMiniNavBar showResponsiveNavBar={this.state.showResponsiveNavBar}/>
         {this.renderMobileMenu()}
       </div>
     );
@@ -58,7 +58,7 @@ class MobileNavigationBar extends Component {
       return;
     }
     return (
-      <MobileExpandedMenu onClose={this.handleBarsClick.bind(this)} />
+      <MobileExpandedMenu onClose={this.handleBarsClick.bind(this)}/>
     );
   }
 }

@@ -61,7 +61,7 @@ class NavBarRenderer extends Component {
     const { children } = this.props;
     return (
       <div>
-        <MobileNavigationBar className="navBarHeader" />
+        <MobileNavigationBar className="navBarHeader"/>
         {children}
       </div>
     );
@@ -71,7 +71,7 @@ class NavBarRenderer extends Component {
     const { children } = this.props;
     return (
       <div>
-        <NavigationBar className="navBarHeader" />
+        <NavigationBar className="navBarHeader"/>
         {children}
       </div>
     );
@@ -81,7 +81,7 @@ class NavBarRenderer extends Component {
     const { children } = this.props;
     return (
       <div>
-        <MobileNavigationBar className="navBarHeader" />
+        <MobileNavigationBar className="navBarHeader"/>
         {children}
       </div>
     );

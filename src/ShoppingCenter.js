@@ -54,25 +54,25 @@ class ShoppingCenter extends Component {
     return (
       <div>
         <div className={classnames('shoppingContainer', className)}>
-          <FaSearch className="searchIcon" onClick={onSearchClick} />
+          <FaSearch className="searchIcon" onClick={onSearchClick}/>
           <div className="divider" />
           <div className={this.state.showCartDropDown && 'showCartDropDown'}
                onMouseEnter={() => this.showCartDropDown()}
                onMouseLeave={() => this.closeCartDropDown()}>
             <Link to={"/cart"} className="cartLink">
-              <FaShoppingCart className="cartIcon" />
+              <FaShoppingCart className="cartIcon"/>
               {showCartQuantity && <div className="cartQuantity animated bounceIn">{cartQuantity}</div>}
             </Link>
             {this.context.cart.length > 0 && <CartDropDown className="cartDropDown"
                           cart={this.context.cart}
-                          closeCartDropDown={this.closeCartDropDown.bind(this)} />}
+                          closeCartDropDown={this.closeCartDropDown.bind(this)}/>}
           </div>
           <div className="divider" />
           <div className={classnames('loginLink', this.state.showAccountMenu && 'showAccountMenu')}
                onMouseEnter={() => this.showMenu()}
                onMouseLeave={() => this.closeMenu()}>
             <h3 className="accountItem">My <br/> Account</h3>
-            <AccountMenu className="accountMenu" />
+            <AccountMenu className="accountMenu"/>
           </div>
         </div>
       </div>
@@ -126,12 +126,12 @@ class CartDropDown extends Component {
           <Link to="/cart" className="link">
             <Button text="View Cart"
                     className="cartButton"
-                    onClick={() => this.props.closeCartDropDown()} />
+                    onClick={() => this.props.closeCartDropDown()}/>
           </Link>
           <Link to="/account/checkout" className="link">
             <Button text="Check out"
                     className="checkoutButton"
-                    onClick={() => this.props.closeCartDropDown()} />
+                    onClick={() => this.props.closeCartDropDown()}/>
           </Link>
         </div>
       </div>
@@ -142,7 +142,7 @@ class CartDropDown extends Component {
     const product = item.getProduct();
     return (
       <div key={index} className="miniCartItemContainer">
-        <div className="thumbnailImageDiv" style={this.getThumbnailImage(item)} />
+        <div className="thumbnailImageDiv" style={this.getThumbnailImage(item)}/>
         <div className="details">
           <Link to={`/products/${product.getCategory()}/${product.getPathName()}`}
                 className="itemLink"

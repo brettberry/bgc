@@ -127,6 +127,15 @@
       letter-spacing: 3px;
       margin: 50px 0;
 
+      @include phone {
+          margin: 20px 0;
+      }
+
+      @include smallPhone {
+          margin: 20px 0;
+      }
+
+
       &.highlight {
         color: $bgc-dark-orange;
       }

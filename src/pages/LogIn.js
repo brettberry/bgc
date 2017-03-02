@@ -30,8 +30,8 @@ class LogIn extends Component {
           <h1 className="header">Berry Game Calls</h1>
         </div>
         <div className="registerContainer">
-          <ReturnAccount onSubmit={this.handleSubmit.bind(this)} />
-          <NewAccount onSubmit={this.handleSubmit.bind(this)} />
+          <ReturnAccount onSubmit={this.handleSubmit.bind(this)}/>
+          <NewAccount onSubmit={this.handleSubmit.bind(this)}/>
         </div>
       </div>
     );
@@ -80,18 +80,18 @@ class ReturnAccount extends Component {
                      fullWidth={true}
                      underlineFocusStyle={styles.underlineStyle}
                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                     onChange={(e) => this.setState({ username: e.target.value })} />
+                     onChange={(e) => this.setState({ username: e.target.value })}/>
           <TextField floatingLabelText="password"
                      fullWidth={true}
                      type="password"
                      underlineFocusStyle={styles.underlineStyle}
                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                     onChange={(e) => this.setState({ password: e.target.value })} />
+                     onChange={(e) => this.setState({ password: e.target.value })}/>
           <p className="passwordReset">Forgot password?</p>
         </div>
         <Button text="Sign In"
                 className="loginButton"
-                onClick={this.handleLogin.bind(this)} />
+                onClick={this.handleLogin.bind(this)}/>
       </div>
     );
   }
@@ -144,23 +144,23 @@ class NewAccount extends Component {
                      fullWidth={true}
                      underlineFocusStyle={styles.underlineStyle}
                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                     onChange={(e) => this.setState({ username: e.target.value })} />
+                     onChange={(e) => this.setState({ username: e.target.value })}/>
           <TextField floatingLabelText="create a password"
                      fullWidth={true}
                      type="password"
                      underlineFocusStyle={styles.underlineStyle}
                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                     onChange={(e) => this.setState({ password: e.target.value })} />
+                     onChange={(e) => this.setState({ password: e.target.value })}/>
          <TextField floatingLabelText="confirm password"
                     fullWidth={true}
                     type="password"
                     underlineFocusStyle={styles.underlineStyle}
                     floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                    onChange={(e) => this.setState({ confirmPassword: e.target.value })} />
+                    onChange={(e) => this.setState({ confirmPassword: e.target.value })}/>
         </div>
         <Button text="Create Account"
                 className="newAccountButton"
-                onClick={this.handleSubmit.bind(this)} />
+                onClick={this.handleSubmit.bind(this)}/>
       </div>
     );
   }

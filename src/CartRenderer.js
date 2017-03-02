@@ -19,7 +19,7 @@ class CartRenderer extends Component {
   renderTablet() {
     return (
       <div>
-        <MobileCart />
+        <MobileCart/>
       </div>
     );
   }
@@ -27,7 +27,7 @@ class CartRenderer extends Component {
   renderDesktop() {
     return (
       <div>
-        <CartDetails />
+        <CartDetails/>
       </div>
     );
   }

@@ -11,16 +11,16 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Slider />
-        <Featured />
+        <Slider/>
+        <Featured/>
         {/* <MobileProvider>
           <Banner />
         </MobileProvider> */}
-        <Demo />
+        <Demo/>
         <TabletProvider>
-          <Banner2 />
+          <Banner2/>
         </TabletProvider>
-        <ShopCategories />
+        <ShopCategories/>
       </div>
     );
   }
@@ -100,7 +100,8 @@ function ShopCategories() {
         <Link to="/products/tags/bugles" className="link">
           <div className="category">
             <div className="imageContainer">
-              <div className="productImage" style={{ backgroundImage: 'url(/productPhotos/mini-thunder-bugle.jpg)' }} />
+              <div className="productImage"
+                   style={{ backgroundImage: 'url(/productPhotos/mini-thunder-bugle.jpg)' }}/>
             </div>
             <p className="title">Bugles</p>
           </div>
@@ -108,7 +109,8 @@ function ShopCategories() {
         <Link to="/products/tags/reeds" className="link">
           <div className="category">
             <div className="imageContainer">
-              <div className="productImage" style={{ backgroundImage: 'url(/productPhotos/tb-rt-reeds-all.jpg)' }} />
+              <div className="productImage"
+                   style={{ backgroundImage: 'url(/productPhotos/tb-rt-reeds-all.jpg)' }}/>
             </div>
             <p className="title">Reeds</p>
           </div>
@@ -116,7 +118,8 @@ function ShopCategories() {
         <Link to="/products/tags/dvds" className="link">
           <div className="category">
             <div className="imageContainer">
-              <div className="productImage" style={{ backgroundImage: 'url(/productPhotos/training-day-2-cover-front.jpg)' }} />
+              <div className="productImage"
+                   style={{ backgroundImage: 'url(/productPhotos/training-day-2-cover-front.jpg)' }}/>
             </div>
             <p className="title">Movies</p>
           </div>

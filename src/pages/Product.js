@@ -128,9 +128,12 @@ class Details extends Component {
         <h3 className="shipping">+ Flatrate shipping: $2.95</h3>
         <div className="buttonContainer">
           <div className="qtyContainer">
-            <QuantityPicker onQuantityChange={(quantity) => this.setState({ quantity: quantity })} initialQuanity={this.state.quantity}/>
+            <QuantityPicker onQuantityChange={(quantity) => this.setState({ quantity: quantity })}
+                            initialQuanity={this.state.quantity}/>
           </div>
-          <Button text="Add To Cart" className="cartButton" onClick={this.handleClickAddToCart.bind(this)} />
+          <Button text="Add To Cart"
+                  className="cartButton"
+                  onClick={this.handleClickAddToCart.bind(this)} />
         </div>
         <div className="descriptionContainer">
           <h3 className="descriptionTitle">Description</h3>
@@ -196,7 +199,8 @@ class RelatedProducts extends Component {
               {this.renderItems()}
             </div>
           </ReactCSSTransitionGroup>
-          { showButtons && <button className="paginationButton right" onClick={this.pageRight.bind(this)}>
+          { showButtons && <button className="paginationButton right"
+                                   onClick={this.pageRight.bind(this)}>
             <FaChevronRight className="nextItemsChevron" />
           </button> }
         </div>
@@ -218,10 +222,12 @@ class RelatedProducts extends Component {
     //TODO: make this it's own component
     return map(itemsArray, (item) =>
       <div key={item.getPathName()} className="relatedItem">
-        <Link to={`/products/${item.getCategory()}/${item.getPathName()}`} className="link">
+        <Link to={`/products/${item.getCategory()}/${item.getPathName()}`}
+              className="link">
           <h3 className="title">{item.getFullName()}</h3>
           <div className="productImgContainer">
-            <div className="productImage" style={this.getBackgroundImage(item)} />
+            <div className="productImage"
+                 style={this.getBackgroundImage(item)} />
           </div>
         </Link>
       </div>

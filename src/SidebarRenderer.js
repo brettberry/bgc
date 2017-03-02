@@ -17,14 +17,14 @@ class SidebarRenderer extends Component {
 
   renderTablet() {
     return (
-      <div />
+      <div/>
     );
   }
 
   renderDesktop() {
     return (
       <div>
-        <Sidebar />
+        <Sidebar/>
       </div>
     );
   }

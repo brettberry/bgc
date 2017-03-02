@@ -24,11 +24,11 @@ export default class MobileSidebar extends Component {
     return (
       <div className="bottomBar">
         <Link to={paths[(index - 1) % paths.length]}>
-          <FaChevronCircleUp className="leftArrow" />
+          <FaChevronCircleUp className="leftArrow"/>
         </Link>
         <h3 className="category">{categories[index]}</h3>
         <Link to={paths[(index + 1) % paths.length]}>
-          <FaChevronCircleUp className="rightArrow" />
+          <FaChevronCircleUp className="rightArrow"/>
         </Link>
       </div>
     );

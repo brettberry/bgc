@@ -33,7 +33,7 @@ class PhotoGallery extends Component {
         <div className="photo"
              style={{ backgroundImage: image }}
              onClick={() => this.setState({ showModal: true, index: key })}
-             key={key} />)
+             key={key}/>)
     );
   }
 
@@ -49,7 +49,7 @@ class PhotoGallery extends Component {
           <ModalComponent closeModal={() => this.setState({ showModal: false })}
                           index={this.state.index}
                           photoLeft={() => this.setState({ index: (index - 1) % images.length })}
-                          photoRight={() => this.setState({ index: (index + 1) % images.length })} />
+                          photoRight={() => this.setState({ index: (index + 1) % images.length })}/>
         </Modal>
       </div>
     );
@@ -66,13 +66,13 @@ class PhotoModalContents extends Component {
     const { index } = this.props;
     return (
       <div className="modalContainer">
-        <MdClose className="exit" onClick={this.props.closeModal} />
+        <MdClose className="exit" onClick={this.props.closeModal}/>
         <div className="modalContents">
-          <div className="photoView" style={{ backgroundImage: images[Math.abs(index)] }} />
+          <div className="photoView" style={{ backgroundImage: images[Math.abs(index)] }}/>
           <div className="caption">Sample text</div>
         </div>
-        <MDChevronLeft className="photoLeft" onClick={this.props.photoLeft} />
-        <MDChevronRight className="photoRight" onClick={this.props.photoRight} />
+        <MDChevronLeft className="photoLeft" onClick={this.props.photoLeft}/>
+        <MDChevronRight className="photoRight" onClick={this.props.photoRight}/>
       </div>
     );
   }

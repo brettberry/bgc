@@ -16,10 +16,10 @@ export default class Products extends Component {
     return (
       <div className="productsContainer">
         <TabletProvider>
-          <SidebarRenderer />
+          <SidebarRenderer/>
         </TabletProvider>
         <div className="productGrid">{map(products.toArray(), (product, key) =>
-          <ProductGrid product={product} key={key} />)}
+          <ProductGrid product={product} key={key}/>)}
         </div>
       </div>
     );

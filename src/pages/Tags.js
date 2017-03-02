@@ -17,10 +17,10 @@ class Tags extends Component {
     return (
       <div className="productsContainer">
         <TabletProvider>
-          <SidebarRenderer />
+          <SidebarRenderer/>
         </TabletProvider>
         <div className="productGrid">{map(productName.toArray(), (product, key) =>
-          <ProductGrid product={product} key={key} />)}
+          <ProductGrid product={product} key={key}/>)}
         </div>
       </div>
     );

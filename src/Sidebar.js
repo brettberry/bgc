@@ -9,17 +9,17 @@ export default class Sidebar extends Component {
     //TODO: use map from json file to simplify this code??
     return (
       <div className="sidebarContainer">
-        <SidebarMenuComponent item={"All Products"} path={"/products"} />
-        <SidebarMenuComponent item={"Most Popular"} path={"/products/tags/popular"} />
-        <SidebarMenuComponent item={"Online Specials"} path={"/products/tags/sale"} />
-        <SidebarMenuComponent item={"Thunder Bugles"} path={"/products/tags/bugles"} />
-        <SidebarMenuComponent item={"RT-Reeds"} path={"/products/tags/rt-reeds"} />
-        <SidebarMenuComponent item={"Golden Dome"} path={"/products/tags/golden-dome"} />
-        <SidebarMenuComponent item={"X-Series"} path={"/products/tags/x-series"} />
-        <SidebarMenuComponent item={"Big Bull Reeds"} path={"/products/tags/big-bull"} />
-        <SidebarMenuComponent item={"Cow Calls"} path={"/products/tags/cow-calls"} />
-        <SidebarMenuComponent item={"Hunting Movies"} path={"/products/tags/dvds"} />
-        <SidebarMenuComponent item={"Accessories"} path={"/products/tags/other"} />
+        <SidebarMenuComponent item={"All Products"} path={"/products"}/>
+        <SidebarMenuComponent item={"Most Popular"} path={"/products/tags/popular"}/>
+        <SidebarMenuComponent item={"Online Specials"} path={"/products/tags/sale"}/>
+        <SidebarMenuComponent item={"Thunder Bugles"} path={"/products/tags/bugles"}/>
+        <SidebarMenuComponent item={"RT-Reeds"} path={"/products/tags/rt-reeds"}/>
+        <SidebarMenuComponent item={"Golden Dome"} path={"/products/tags/golden-dome"}/>
+        <SidebarMenuComponent item={"X-Series"} path={"/products/tags/x-series"}/>
+        <SidebarMenuComponent item={"Big Bull Reeds"} path={"/products/tags/big-bull"}/>
+        <SidebarMenuComponent item={"Cow Calls"} path={"/products/tags/cow-calls"}/>
+        <SidebarMenuComponent item={"Hunting Movies"} path={"/products/tags/dvds"}/>
+        <SidebarMenuComponent item={"Accessories"} path={"/products/tags/other"}/>
       </div>
     );
   }

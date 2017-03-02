@@ -38,7 +38,7 @@ class MobileCart extends Component {
           </div>
         </div>
         <Link to={'/account/checkout'} className="mobileCheckoutLink">
-          <Button text="Checkout" className="mobileCheckoutButton" />
+          <Button text="Checkout" className="mobileCheckoutButton"/>
         </Link>
         <Link to="/products" className="shopLink">
           <p className="continue">continue shopping</p>
@@ -53,7 +53,7 @@ class MobileCart extends Component {
         <Link className="mobileItemLink"
               to={`/products/${item.getProduct().getCategory()}/${item.getProduct().getPathName()}`}>
           <div className="item">
-            <div className="thumbnailImage" style={this.getThumbnailImage(item)} />
+            <div className="thumbnailImage" style={this.getThumbnailImage(item)}/>
             <div className="productDetails">
               <div className="name">{item.getFullName()}</div>
               <div className="mobileUnitPrice">${(item.getSubtotal() / item.getQuantity()).toFixed(2)} each</div>
@@ -65,13 +65,13 @@ class MobileCart extends Component {
           <div className="mobileQuantityContainer">
             <h3 className="qtyText">Change Quantity</h3>
             <QuantityPicker initialQuanity={item.getQuantity()}
-                            onQuantityChange={quantity => this.context.updateCartItem(item, quantity)} />
+                            onQuantityChange={quantity => this.context.updateCartItem(item, quantity)}/>
           </div>
           <div className="mobileRemoveContainer">
             <h3 className="removeText"
                 onClick={() => this.context.removeCartItem(item)}>Remove Item</h3>
             <FaClose className="remove"
-                     onClick={() => this.context.removeCartItem(item)} />
+                     onClick={() => this.context.removeCartItem(item)}/>
           </div>
         </div>
         <div className="mobileHorizontalRule" />

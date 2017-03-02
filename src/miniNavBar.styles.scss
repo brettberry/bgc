@@ -156,9 +156,7 @@
   @include default-font;
   font-size: 1.2em;
   text-align: left;
-
-  border: solid;
-  border-color: $bgc-orange;
+  border: none;
   border-radius: 20px 0 0 20px;
   margin: 0;
   padding: 10px 10px 10px 20px;

@@ -47,7 +47,7 @@ class QuantityPicker extends Component {
       <div className="pickerContainer">
         <input onChange={e => this.changeNumber(e.target.value)}
                value={number}
-               className="input" />
+               className="input"/>
         <div className="pickerButtonContainer">
           <button onClick={() => this.changeNumber(number + 1)}
                   className="up">
@@ -55,7 +55,7 @@ class QuantityPicker extends Component {
           </button>
           <button onClick={() => this.changeNumber(number - 1)}
                   className="down">
-            <FaChevronDown className="pickerChevron" />
+            <FaChevronDown className="pickerChevron"/>
           </button>
         </div>
       </div>

@@ -181,10 +181,16 @@
 
     @include phone {
       align-self: center;
+      width: 100%;
     }
 
     @include smallPhone {
       align-self: center;
+      width: 100%;
+    }
+
+    .checkoutButton {
+        width: 100%;
     }
   }
 }

@@ -112,14 +112,14 @@ class Checkout extends Component {
             <h3 className="checkoutSubtitle">Checkout</h3>
           </div>
           <Link to="/cart">
-            <FaShoppingCart className="cart" />
+            <FaShoppingCart className="cart"/>
           </Link>
         </div>
         <div className="shippingInfoContainer">
           <form onSubmit={this.handleSubmit.bind(this)} className="form">
-            <BillingInformation />
-            <ShippingInformation />
-            <PaymentInformation />
+            <BillingInformation/>
+            <ShippingInformation/>
+            <PaymentInformation/>
             <ReviewOrder handleSubmit={this.handleSubmit.bind(this)}/>
           </form>
         </div>
@@ -147,62 +147,62 @@ class BillingInformation extends Component {
       <div>
         <div className={classnames('sectionTitleContainer', this.state.showBillingForm && 'formActive')}
              onClick={() => this.setState({ showBillingForm: !this.state.showBillingForm })}>
-          <StepBubble value="1" />
+          <StepBubble value="1"/>
           <h1 className="header">Billing Information</h1>
-          <FaChevronDown className={classnames('chevron', this.state.showBillingForm && 'rotateUp')} />
+          <FaChevronDown className={classnames('chevron', this.state.showBillingForm && 'rotateUp')}/>
         </div>
         <div className={classnames('billingFormContainer', this.state.showBillingForm ? 'showForm' : 'hideForm')}>
           <p className="formDetails">Enter your billing information below.</p>
           <div className="nameContainer">
             <label className="inputLabel halfWidth">
               <input className="formInput"
-                     onChange={(e) => this.setState({ firstName: e.target.value })} />
+                     onChange={(e) => this.setState({ firstName: e.target.value })}/>
               <span className="inputSpan">First Name</span>
             </label>
             <label className="inputLabel halfWidth">
               <input className="formInput"
-                     onChange={(e) => this.setState({ lastName: e.target.value })} />
+                     onChange={(e) => this.setState({ lastName: e.target.value })}/>
               <span className="inputSpan">Last Name</span>
             </label>
           </div>
           <div className="addressContainer">
             <label className="inputLabel fullWidth">
               <input className="formInput"
-                     onChange={(e) => this.setState({ addressLine1: e.target.value })} />
+                     onChange={(e) => this.setState({ addressLine1: e.target.value })}/>
               <span className="inputSpan">Address</span>
             </label>
             <label className="inputLabel fullWidth">
               <input className="formInput"
-                     onChange={(e) => this.setState({ addressLine2: e.target.value })} />
+                     onChange={(e) => this.setState({ addressLine2: e.target.value })}/>
               <span className="inputSpan">Apt, suite, etc (optional)</span>
             </label>
           </div>
           <div className="locationContainer">
             <label className="inputLabel halfWidth">
               <input className="formInput"
-                     onChange={(e) => this.setState({ city: e.target.value })} />
+                     onChange={(e) => this.setState({ city: e.target.value })}/>
               <span className="inputSpan">City</span>
             </label>
             <label className="inputLabel quarterWidth">
               <input className="formInput"
-                     onChange={(e) => this.setState({ state: e.target.value })} />
+                     onChange={(e) => this.setState({ state: e.target.value })}/>
               <span className="inputSpan">State</span>
             </label>
             <label className="inputLabel quarterWidth">
               <input className="formInput"
-                     onChange={(e) => this.setState({ zip: e.target.value })} />
+                     onChange={(e) => this.setState({ zip: e.target.value })}/>
               <span className="inputSpan">ZIP</span>
             </label>
           </div>
           <div className="phoneEmailContainer">
             <label className="inputLabel halfWidth">
               <input className="formInput"
-                     onChange={(e) => this.setState({ phone: e.target.value })} />
+                     onChange={(e) => this.setState({ phone: e.target.value })}/>
               <span className="inputSpan">Phone Number</span>
             </label>
             <label className="inputLabel halfWidth">
               <input className="formInput"
-                     onChange={(e) => this.setState({ email: e.target.value })} />
+                     onChange={(e) => this.setState({ email: e.target.value })}/>
               <span className="inputSpan">Email</span>
             </label>
           </div>
@@ -238,52 +238,52 @@ class ShippingInformation extends Component {
              onClick={this.handleSectionClick.bind(this)}>
           <StepBubble value="2" />
           <h1 className="header shipping">Shipping Address</h1>
-          {this.state.showShippingForm ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}
+          {this.state.showShippingForm ? <FaChevronUp className="chevron"/> : <FaChevronDown className="chevron"/>}
         </div>
         <div className={classnames(this.state.showShippingForm ? 'shippingFormContainer showForm' : 'shippingFormContainer hideForm')}>
           <div className="shippingOptionContainer">
             <Checkbox style={styles.checkbox}
-                      iconStyle={{ fill: '#ebb052' }} />
+                      iconStyle={{ fill: '#ebb052' }}/>
             <p className="formDetails">ship to billing address</p>
           </div>
           <div className="nameContainer">
             <label className="inputLabel halfWidth">
               <input className="formInput"
-                     onChange={(e) => this.setState({ firstName: e.target.value })} />
+                     onChange={(e) => this.setState({ firstName: e.target.value })}/>
               <span className="inputSpan">First Name</span>
             </label>
             <label className="inputLabel halfWidth">
               <input className="formInput"
-                     onChange={(e) => this.setState({ lastName: e.target.value })} />
+                     onChange={(e) => this.setState({ lastName: e.target.value })}/>
               <span className="inputSpan">Last Name</span>
             </label>
           </div>
           <div className="addressContainer">
             <label className="inputLabel fullWidth">
               <input className="formInput"
-                     onChange={(e) => this.setState({ addressLine1: e.target.value })} />
+                     onChange={(e) => this.setState({ addressLine1: e.target.value })}/>
               <span className="inputSpan">Address</span>
             </label>
             <label className="inputLabel fullWidth">
               <input className="formInput"
-                     onChange={(e) => this.setState({ addressLine2: e.target.value })} />
+                     onChange={(e) => this.setState({ addressLine2: e.target.value })}/>
               <span className="inputSpan">Apt, suite, etc (optional)</span>
             </label>
           </div>
           <div className="locationContainer">
             <label className="inputLabel halfWidth">
               <input className="formInput"
-                     onChange={(e) => this.setState({ city: e.target.value })} />
+                     onChange={(e) => this.setState({ city: e.target.value })}/>
               <span className="inputSpan">City</span>
             </label>
             <label className="inputLabel quarterWidth">
               <input className="formInput"
-                     onChange={(e) => this.setState({ state: e.target.value })} />
+                     onChange={(e) => this.setState({ state: e.target.value })}/>
               <span className="inputSpan">State</span>
             </label>
             <label className="inputLabel quarterWidth">
               <input className="formInput"
-                     onChange={(e) => this.setState({ zip: e.target.value })} />
+                     onChange={(e) => this.setState({ zip: e.target.value })}/>
               <span className="inputSpan">ZIP</span>
             </label>
           </div>
@@ -308,13 +308,13 @@ class PaymentInformation extends Component {
       <div>
         <div className={classnames('sectionTitleContainer', this.state.showPaymentForm && 'formActive')}
              onClick={() => this.setState({ showPaymentForm: !this.state.showPaymentForm })}>
-          <StepBubble value="3" />
+          <StepBubble value="3"/>
           <h1 className="header">Payment Method</h1>
-          {this.state.showPaymentForm ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}
+          {this.state.showPaymentForm ? <FaChevronUp className="chevron"/> : <FaChevronDown className="chevron"/>}
         </div>
         <div className={classnames(this.state.showPaymentForm ? 'paymentFormContainer showForm' : 'paymentFormContainer hideForm')}>
           <div className="payDetailsContainer">
-            <FaLock className="lock" />
+            <FaLock className="lock"/>
             <p className="formDetails">Check out with&nbsp;</p>
               <a href="https://www.paypal.com/us/webapps/mpp/paypal-popup"
                  target="_blank"
@@ -351,14 +351,14 @@ class ReviewOrder extends Component {
              onClick={() => this.setState({ showOrderForm: !this.state.showOrderForm })}>
           <StepBubble value="4" />
           <h1 className="header">Review Order</h1>
-          {this.state.showOrderForm ? <FaChevronUp className="chevron" /> : <FaChevronDown className="chevron" />}
+          {this.state.showOrderForm ? <FaChevronUp className="chevron"/> : <FaChevronDown className="chevron"/>}
         </div>
         <div className={classnames(this.state.showOrderForm ? 'reviewOrderContainer showForm' : 'reviewOrderContainer hideForm')}>
           <div className="orderContainer">
             <div className="reviewItemsContainer">
               {map(this.context.cart.toArray(), this.renderCartItem.bind(this))}
             </div>
-            <OrderSummary />
+            <OrderSummary/>
           </div>
           <h1 className="amountDueHeader">Amount Due: ${(this.context.cart.getCartTotal() + 2.95).toFixed(2)}</h1>
           <Link to="/cart" className="link">
@@ -367,7 +367,7 @@ class ReviewOrder extends Component {
           <div className="buttonContainer">
             <Button text="Place Order"
                     className="placeOrderButton"
-                    onClick={this.props.handleSubmit} />
+                    onClick={this.props.handleSubmit}/>
           </div>
         </div>
       </div>
@@ -378,7 +378,7 @@ class ReviewOrder extends Component {
     return (
       <div key={index} className="itemContainer">
         <div className="description">
-          <div className="img" style={this.getThumbnailImage(item)} />
+          <div className="img" style={this.getThumbnailImage(item)}/>
           <div className="item">{item.getFullName()}</div>
         </div>
         <div className="quantity">x {item.getQuantity()}</div>
@@ -410,7 +410,7 @@ class OrderSummary extends Component {
             <p className="item">Shipping</p>
             <p className="item">$2.95</p>
           </div>
-          <div className="horizontalRule" />
+          <div className="horizontalRule"/>
           <div className="cartTotal">
             <p className="total">Total</p>
             <p className="total">${(cart.getCartTotal() + 2.95).toFixed(2)}</p>

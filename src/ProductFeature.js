@@ -20,12 +20,12 @@ class Featured extends Component {
         <div className="productBannerContainer">
           <h2 className="header">Sound like the real thing.</h2>
           <Link to="/products" className="viewLink">
-            <Button text="view all" className="viewAllButton" />
+            <Button text="view all" className="viewAllButton"/>
           </Link>
         </div>
         <div className="featured">
           {map(featured.toArray(), (feature, key) =>
-            <FeaturedItem feature={feature} key={key} />
+            <FeaturedItem feature={feature} key={key}/>
           )}
           <h2 className="header">Proud to be</h2>
           <h2 className="header highlight">&nbsp;Made in the USA.</h2>
@@ -67,7 +67,8 @@ class FeaturedItem extends Component {
               {showDiscount && <p className="discount">${discount}</p>}
             </div>
             <div className="productImgContainer">
-              <div className="productImage" style={this.getBackgroundImage(feature)} />
+              <div className="productImage"
+                   style={this.getBackgroundImage(feature)}/>
             </div>
           </div>
         </Link>
