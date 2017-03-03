@@ -205,6 +205,9 @@
   position: relative;
   width: 100%;
   height: 700px; }
+  @media all and (min-width: 506px) and (max-width: 825px) {
+    .sliderContainer {
+      height: 500px; } }
   @media all and (min-width: 321px) and (max-width: 505px) {
     .sliderContainer {
       height: 250px; } }
@@ -489,6 +492,12 @@
       background-color: rgba(235, 176, 82, 0.4); }
     .featured .header::selection {
       background-color: rgba(235, 176, 82, 0.4); }
+    @media all and (min-width: 321px) and (max-width: 505px) {
+      .featured .header {
+        margin: 20px 0; } }
+    @media all and (max-width: 320px) {
+      .featured .header {
+        margin: 20px 0; } }
     .featured .header.highlight {
       color: #cd8818; }
     @media all and (min-width: 826px) and (max-width: 1200px) {
@@ -3292,11 +3301,15 @@ html, body, main {
     @media all and (min-width: 321px) and (max-width: 505px) {
       .totalsCheckoutContainer .link {
         -ms-flex-item-align: center;
-            align-self: center; } }
+            align-self: center;
+        width: 100%; } }
     @media all and (max-width: 320px) {
       .totalsCheckoutContainer .link {
         -ms-flex-item-align: center;
-            align-self: center; } }
+            align-self: center;
+        width: 100%; } }
+    .totalsCheckoutContainer .link .checkoutButton {
+      width: 100%; }
 .pickerContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4531,7 +4544,7 @@ html, body, main {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  min-height: 500px;
+  min-height: 400px;
   padding: 50px 75px; }
   @media all and (min-width: 321px) and (max-width: 505px) {
     .returningUserContainer, .newUserContainer {
@@ -5121,6 +5134,9 @@ html, body, main {
       transition: -webkit-transform 0.375s ease;
       transition: transform 0.375s ease;
       transition: transform 0.375s ease, -webkit-transform 0.375s ease; }
+    @media all and (min-width: 506px) and (max-width: 825px) {
+      .sectionTitleContainer .chevron {
+        margin: 0 50px; } }
     @media all and (min-width: 321px) and (max-width: 505px) {
       .sectionTitleContainer .chevron {
         width: 30px;
@@ -5156,6 +5172,10 @@ html, body, main {
   .billingFormContainer.showForm, .shippingFormContainer.showForm,
   .paymentFormContainer.showForm, .reviewOrderContainer.showForm {
     max-height: 1000px; }
+  @media all and (min-width: 506px) and (max-width: 825px) {
+    .billingFormContainer, .shippingFormContainer,
+    .paymentFormContainer, .reviewOrderContainer {
+      padding: 0 30px 20px 30px; } }
   @media all and (min-width: 321px) and (max-width: 505px) {
     .billingFormContainer, .shippingFormContainer,
     .paymentFormContainer, .reviewOrderContainer {
@@ -5687,6 +5707,9 @@ html, body, main {
   border-radius: 50%;
   background-color: #ebb052;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.1); }
+  @media all and (min-width: 506px) and (max-width: 825px) {
+    .circle {
+      margin: 0 50px; } }
   @media all and (min-width: 321px) and (max-width: 505px) {
     .circle {
       width: 45px;

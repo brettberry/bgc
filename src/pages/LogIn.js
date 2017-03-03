@@ -151,12 +151,12 @@ class NewAccount extends Component {
                      underlineFocusStyle={styles.underlineStyle}
                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                      onChange={(e) => this.setState({ password: e.target.value })}/>
-         <TextField floatingLabelText="confirm password"
-                    fullWidth={true}
-                    type="password"
-                    underlineFocusStyle={styles.underlineStyle}
-                    floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                    onChange={(e) => this.setState({ confirmPassword: e.target.value })}/>
+          <TextField floatingLabelText="confirm password"
+                     fullWidth={true}
+                     type="password"
+                     underlineFocusStyle={styles.underlineStyle}
+                     floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                     onChange={(e) => this.setState({ confirmPassword: e.target.value })}/>
         </div>
         <Button text="Create Account"
                 className="newAccountButton"

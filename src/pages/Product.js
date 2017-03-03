@@ -7,14 +7,12 @@ import slice from 'lodash/slice';
 import FaChevronRight from 'react-icons/lib/fa/chevron-right';
 import FaChevronLeft from 'react-icons/lib/fa/chevron-left';
 
-import { ProductCollection } from '../models';
-import ProductModel from '../models/ProductModel';
+import { ProductCollection, ProductModel } from '../models';
 import TabletProvider from '../TabletProvider';
 import CartModal from '../CartModal';
 import QuantityPicker from '../QuantityPicker';
 import Button from '../Buttons';
 import data from '../data.json';
-
 import './product.styles.scss';
 
 const products = new ProductCollection(data.products);
@@ -75,9 +73,12 @@ class Images extends Component {
     return (
       <div className="imgContainer">
         <div className="thumbnailsContainer">
-          <div className="thumbnail" style={this.getBackgroundImage(0, product)} onClick={() => this.handleImageClick(0)} />
-          <div className="thumbnail" style={this.getBackgroundImage(1, product)} onClick={() => this.handleImageClick(1)} />
-          <div className="thumbnail" style={this.getBackgroundImage(2, product)} onClick={() => this.handleImageClick(2)} />
+
+        //fix me
+          {/* { for(let i=0, i<=2, i++) {
+              return <div className="thumbnail" style={this.getBackgroundImage(i, product)} onClick={() => this.handleImageClick(i)} />}} */}
+          {/* <div className="thumbnail" style={this.getBackgroundImage(1, product)} onClick={() => this.handleImageClick(1)} />
+          <div className="thumbnail" style={this.getBackgroundImage(2, product)} onClick={() => this.handleImageClick(2)} /> */}
         </div>
         <div className="mainImg" style={this.getBackgroundImage(this.state.activeIndex, product)} />
       </div>
@@ -101,9 +102,7 @@ class Details extends Component {
   }
 
   handleClickAddToCart() {
-    const { product } = this.props;
-    const { quantity } = this.state;
-    this.context.addToCart(product, quantity);
+    this.context.addToCart(this.props.product, this.state.quantity);
     this.setState({ showModal: true });
   }
 
@@ -133,7 +132,7 @@ class Details extends Component {
           </div>
           <Button text="Add To Cart"
                   className="cartButton"
-                  onClick={this.handleClickAddToCart.bind(this)} />
+                  onClick={this.handleClickAddToCart.bind(this)}/>
         </div>
         <div className="descriptionContainer">
           <h3 className="descriptionTitle">Description</h3>
@@ -142,7 +141,7 @@ class Details extends Component {
         <CartModal showModal={this.state.showModal}
                    closeModal={() => this.setState({ showModal: false })}
                    quantity={this.state.quantity}
-                   product={this.props.product} />
+                   product={this.props.product}/>
       </div>
     );
   }

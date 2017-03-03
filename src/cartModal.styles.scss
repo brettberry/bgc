@@ -178,6 +178,7 @@
     align-self: flex-end;
     margin-top: 10px;
     text-decoration: none;
+    min-width: 175px;
 
     @include phone {
       align-self: center;

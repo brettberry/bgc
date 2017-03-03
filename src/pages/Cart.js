@@ -14,7 +14,7 @@ class Cart extends Component {
     if (this.context.cart.length !== 0) {
       return (
         <TabletProvider>
-          <CartRenderer />
+          <CartRenderer/>
         </TabletProvider>
       );
     }

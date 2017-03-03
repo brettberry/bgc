@@ -42,7 +42,7 @@ class CartDetails extends Component {
             <div className="horizontalRule"/>
             <div className="cartTotalContainer">
               <h2 className="cartTotalLabel">Subtotal:&nbsp;</h2>
-              <h2 className="cartSubtotal">${ this.context.cart.getCartTotal().toFixed(2)}</h2>
+              <h2 className="cartSubtotal">${this.context.cart.getCartTotal().toFixed(2)}</h2>
             </div>
           </div>
         </div>
