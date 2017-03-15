@@ -1,0 +1,228 @@
+@import '../constants';
+
+.shoppingContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+
+  .cartQuantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: $bgc-orange;
+    border-radius: 50%;
+    @include default-font;
+    color: white;
+    font-size: 9pt;
+    line-height: 9pt;
+  }
+
+  .searchIcon {
+    width: 28px;
+    height: 28px;
+    fill: $bgc-medium-grey;
+    cursor: pointer;
+
+    &:hover {
+      fill: $bgc-orange;
+    }
+  }
+
+  .cartIcon {
+    width: 30px;
+    height: 30px;
+    fill: $bgc-medium-grey;
+    cursor: pointer;
+
+    &:hover {
+      fill: $bgc-orange;
+    }
+  }
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  background-color: rgba($bgc-medium-grey, 0.5);
+  border: none;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.loginLink {
+  text-decoration: none;
+}
+
+.accountMenu {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.showAccountMenu {
+  .accountMenu {
+    opacity: 1;
+    pointer-events: all;
+    transition: all 0.25s ease;
+  }
+}
+
+.accountItem {
+  @include default-font;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+
+  &:hover {
+    color: $bgc-orange;
+    cursor: pointer;
+  }
+}
+
+.accountMenuContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 99px;
+  right: 0;
+  width: 250px;
+  background: white;
+  border: solid 1px $table-border-color;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.07);
+  padding: 25px;
+
+  .accountOption {
+    @include default-font;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+
+    &:hover {
+      color: $bgc-orange;
+    }
+  }
+}
+
+.cartLink {
+  position: relative;
+  text-decoration: none;
+}
+
+.cartDropDown {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.showCartDropDown {
+  .cartDropDown {
+    opacity: 1;
+    transition: all 0.25s ease;
+    pointer-events: all;
+  }
+}
+
+.cartDropDownContainer {
+  position: absolute;
+  top: 99px;
+  right: 0;
+  width: 350px;
+  background: white;
+  border: solid 1px $table-border-color;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.07);
+  padding: 20px 0;
+}
+
+.productScrollView {
+  max-height: 325px;
+  overflow-y: auto;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.cartActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: solid 1px $table-border-color;
+
+  .link {
+    text-decoration: none;
+  }
+
+  .cartTotal {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 15px 25px 5px 25px;
+
+    @include subheader-font;
+    text-align: right;
+  }
+
+  .cartButton, .checkoutButton {
+    width: 300px;
+    margin-top: 10px;
+  }
+}
+
+.miniCartItemContainer {
+  display: flex;
+
+  .thumbnailImageDiv {
+    width: 75px;
+    height: 75px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 10px;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+  }
+
+  .item {
+    @include default-font;
+    font-weight: 300;
+
+    &:hover {
+      color: $bgc-orange;
+    }
+  }
+
+  .itemLink {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .unitPrice {
+    @include default-font;
+    color: $bgc-medium-grey;
+    font-weight: 200;
+    font-size: 0.85em;
+    margin-top: 5px;
+  }
+
+  .quantity {
+    @include default-font;
+    color: $bgc-medium-grey;
+    font-weight: 200;
+    font-size: 0.85em;
+    margin-top: 2px;
+  }
+
+  .itemTotal {
+    @include subheader-font;
+  }
+}

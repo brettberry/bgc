@@ -37,7 +37,8 @@ module.exports = {
             'node_modules',
             path.resolve(__dirname, './node_modules')
         ],
-        extensions: ['', '.js', '.jsx', '.css', '.scss']
+        extensions: ['', '.js', '.jsx', '.css', '.scss'],
+        alias: { '~': path.resolve('./src') }
     },
     module: {
         loaders: [

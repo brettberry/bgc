@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import RouteProvider from './RouteProvider';
+import RouteProvider from '~/providers/RouteProvider';
 import Promise from 'bluebird';
 import 'source-sans-pro/source-sans-pro.css';
 import 'animate.css/animate.css';

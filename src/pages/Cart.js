@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import CartItemCollection from '../models/CartItemCollection';
-import CartRenderer from '../CartRenderer';
-import TabletProvider from '../TabletProvider';
+import CartItemCollection from '~/models/CartItemCollection';
+import CartRenderer from '~/renderers/CartRenderer';
+import TabletProvider from '~/providers/TabletProvider';
 import './cart.styles.scss';
 
 class Cart extends Component {

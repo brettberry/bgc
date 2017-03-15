@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import TextField from 'material-ui/TextField';
-import Button from '../Buttons';
+import Button from '~/components/Buttons';
 import './login.styles.scss';
 
 class LogIn extends Component {

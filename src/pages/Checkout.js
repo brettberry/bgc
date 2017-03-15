@@ -12,8 +12,8 @@ import FaChevronUp from 'react-icons/lib/fa/chevron-up';
 import FaChevronDown from 'react-icons/lib/fa/chevron-down';
 
 import ShippingInfoModel from '../../shipping/src/models/ShippingInfoModel';
-import CartItemCollection from '../models/CartItemCollection';
-import Button from '../Buttons';
+import CartItemCollection from '~/models/CartItemCollection';
+import Button from '~/components/Buttons';
 import './checkout.styles.scss';
 
 class Checkout extends Component {

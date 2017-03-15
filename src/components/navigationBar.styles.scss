@@ -1,0 +1,226 @@
+@import '../constants';
+
+.mainNavContainer {
+  position: relative;
+  z-index: 1000;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  top: 0;
+  width: 100%;
+  height: 99px;
+  background-color: white;
+
+  @include tabletLandscape {
+    padding: 0 25px;
+  }
+
+  @include tablet {
+    padding: 0 20px;
+  }
+
+  @include phone {
+    padding: 0 15px;
+  }
+
+  @include smallPhone {
+    padding: 0 15px;
+  }
+
+  .iconContainer {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+
+    .hamburger {
+      width: 25px;
+      height: 25px;
+      fill: $bgc-medium-grey;
+      margin: 10px;
+    }
+
+    .condensedCart {
+      width: 25px;
+      height: 25px;
+      fill: $bgc-medium-grey;
+      margin: 10px;
+    }
+  }
+
+  .homeLink {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    text-decoration: none;
+  }
+}
+
+.header {
+  margin: 0;
+}
+
+.menuLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-decoration: none;
+}
+
+.bgc {
+  @include header-font;
+  text-align: left;
+  margin: 0;
+
+  @include tabletLandscape {
+    font-size: 1.75em;
+  }
+
+  @include tablet {
+    font-size: 1.5em;
+  }
+
+  @include phone {
+    font-size: 1.75em
+  }
+
+  @include smallPhone {
+    font-size: 1.5em;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 33%;
+  height: 100%;
+
+  @include tabletLandscape {
+    width: 40%;
+  }
+}
+
+.tabletMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30%;
+  height: 100%;
+}
+
+.menuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .item {
+    @include menu-font;
+  }
+
+  .underline {
+    width: 100%;
+    height: 2px;
+    opacity: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .underline {
+      opacity: 1;
+      background-color: $bgc-orange;
+      transition: all 0.5s ease;
+    }
+
+    .item {
+      color: $bgc-orange;
+      transition: all 0.5s ease;
+    }
+  }
+
+  &.showProductsMenu {
+    .productsMenu {
+      opacity: 1;
+      pointer-events: all;
+      transition: all 0.25s ease;
+    }
+  }
+}
+
+.moreDropDownMenuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .item {
+    @include menu-font;
+  }
+
+  .underline {
+    width: 100%;
+    height: 2px;
+    opacity: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .underline {
+      opacity: 1;
+      background-color: $bgc-orange;
+      transition: all 0.5s ease;
+    }
+
+    .item {
+      color: $bgc-orange;
+      transition: all 0.5s ease;
+    }
+  }
+
+  &.showMoreMenu {
+    .moreDropDown {
+      opacity: 1;
+      pointer-events: all;
+      transition: all 0.25s ease;
+    }
+  }
+}
+
+.alertBar {
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+  top: 99px;
+  width: 100%;
+  height: 36px;
+  z-index: 0;
+  background-color: $bgc-orange;
+}
+
+.alertMessage {
+  @include default-font;
+  color: white;
+  font-weight: 400;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+  padding-right: 25px;
+  margin: 8px;
+
+  @include phone {
+    padding-right: 10px;
+  }
+
+  @include smallPhone {
+    padding-right: 10px;
+  }
+}

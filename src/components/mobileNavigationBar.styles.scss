@@ -1,0 +1,138 @@
+@import '../constants';
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: white;
+
+  @include smallPhone {
+    padding-top: 50px;
+  }
+
+  .exit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    fill: $bgc-medium-grey;
+    margin: 20px;
+    cursor: pointer;
+
+    @include smallPhone {
+      width: 40px;
+      height: 40px;
+      margin: 15px;
+    }
+  }
+
+  .backButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 64px;
+    height: 64px;
+    fill: $bgc-medium-grey;
+    margin: 13px 0;
+
+    @include smallPhone {
+      width: 50px;
+      height: 50px;
+      margin: 10px 0;
+    }
+  }
+
+  .menuContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    height: 100%;
+
+    .horizontalRule {
+      width: 80%;
+      height: 1px;
+      background-color: $bgc-medium-light-grey;
+      margin: 10px;
+    }
+
+    .item {
+      @include menu-font;
+      font-size: 2em;
+      margin: 10px;
+    }
+
+    .link {
+      margin: 0;
+      text-decoration: none;
+    }
+  }
+}
+
+.mobileNavContainer {
+  position: relative;
+  z-index: 1000;
+}
+
+.mobileNavBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  background-color: white;
+  padding: 0 15px;
+
+  .iconContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 30%;
+
+    .cart {
+      width: 25px;
+      height: 25px;
+      fill: $bgc-medium-grey;
+      margin: 10px;
+    }
+
+    .hamburger {
+      width: 25px;
+      height: 25px;
+      fill: $bgc-medium-grey;
+      margin: 10px 0;
+    }
+  }
+
+  .link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-decoration: none;
+    margin: 0;
+
+    .bgc {
+      @include header-font;
+      text-align: left;
+      font-size: 1.75em;
+      margin: 0;
+
+      @include smallPhone {
+        font-size: 1.25em;
+      }
+    }
+  }
+
+  .header {
+    margin: 0;
+  }
+
+  .menuLink {
+    text-decoration: none;
+  }
+}

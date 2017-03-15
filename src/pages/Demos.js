@@ -3,9 +3,9 @@ import { Link } from 'react-router';
 import $ from 'jquery';
 import map from 'lodash/map';
 
-import { DemosCollection } from '../models';
-import data from '../data.json';
-import Button from '../Buttons';
+import { DemosCollection } from '~/models';
+import data from '~/data.json';
+import Button from '~/components/Buttons';
 import './demos.styles.scss';
 
 const videos = new DemosCollection(data.demos);
@@ -13,7 +13,8 @@ const videos = new DemosCollection(data.demos);
 class Demos extends Component {
 
   render() {
-    const titles = ['reeds-demo', 'bugle-demo', 'training-day-2-demo', 'training-day-demo', 'turkey-demo-1', 'turkey-demo-2'];
+    const titles = ['reeds-demo', 'bugle-demo', 'training-day-2-demo', 'training-day-demo',
+                    'turkey-demo-1', 'turkey-demo-2'];
     const demos = videos.findAllByTitles(titles);
 
     return (

@@ -1,0 +1,106 @@
+@import '../constants';
+
+.dropdown {
+  position: absolute;
+  top: 99px;
+  left: 0px;
+  width: 100%;
+  z-index: 100;
+  background-color: white;
+  border: solid 1px $table-border-color;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.productMenuContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.07);
+  padding-top: 25px;
+  padding-bottom: 40px;
+
+  @include tablet {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.group1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 50%;
+
+  @include tabletLandscape {
+    width: 100%;
+  }
+
+  @include tablet {
+    justify-content: center;
+    width: 75%;
+
+    .buglesContainer {
+      width: 50%;
+    }
+
+    .reedsContainer {
+      width: 50%;
+    }
+  }
+}
+
+.group2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
+
+  @include tabletLandscape {
+    width: 100%;
+ }
+
+ @include tablet {
+   justify-content: center;
+   width: 75%;
+
+  .dvdsContainer {
+    width: 50%;
+  }
+
+  .otherContainer {
+    width: 50%;
+  }
+ }
+}
+
+.columnTitle {
+  @include title-font;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  &:hover {
+    color: $bgc-orange;
+    cursor: pointer;
+  }
+}
+
+.productNames {
+  @include default-font;
+  font-size: 1.1em;
+  font-weight: 300;
+  margin: 3px 0 3px 5px;
+  white-space: nowrap;
+
+  &:hover {
+    color: $bgc-orange;
+    cursor: pointer;
+  }
+}
+
+.productsLink {
+  width: 90%;
+  text-decoration: none;
+}

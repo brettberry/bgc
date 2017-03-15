@@ -8,11 +8,11 @@ import FaChevronRight from 'react-icons/lib/fa/chevron-right';
 import FaChevronLeft from 'react-icons/lib/fa/chevron-left';
 
 import { ProductCollection, ProductModel } from '../models';
-import TabletProvider from '../TabletProvider';
-import CartModal from '../CartModal';
-import QuantityPicker from '../QuantityPicker';
-import Button from '../Buttons';
-import data from '../data.json';
+import TabletProvider from '~/providers/TabletProvider';
+import CartModal from '~/pages/CartModal';
+import QuantityPicker from '~/components/QuantityPicker';
+import Button from '~/components/Buttons';
+import data from '~/data.json';
 import './product.styles.scss';
 
 const products = new ProductCollection(data.products);
@@ -23,9 +23,9 @@ export default class Product extends Component {
     const product = products.findByPathName(pathName);
     return (
       <div>
-        <ProductView product={product} />
+        <ProductView product={product}/>
         <TabletProvider>
-          <RelatedItemsRenderer product={product} />
+          <RelatedItemsRenderer product={product}/>
         </TabletProvider>
       </div>
     );
@@ -68,19 +68,17 @@ class Images extends Component {
     });
   }
 
+  //TODO: make a loop??
   render() {
     const product = this.props.product;
     return (
       <div className="imgContainer">
         <div className="thumbnailsContainer">
-
-        //fix me
-          {/* { for(let i=0, i<=2, i++) {
-              return <div className="thumbnail" style={this.getBackgroundImage(i, product)} onClick={() => this.handleImageClick(i)} />}} */}
-          {/* <div className="thumbnail" style={this.getBackgroundImage(1, product)} onClick={() => this.handleImageClick(1)} />
-          <div className="thumbnail" style={this.getBackgroundImage(2, product)} onClick={() => this.handleImageClick(2)} /> */}
+          <div className="thumbnail" style={this.getBackgroundImage(0, product)} onClick={() => this.handleImageClick(0)}/>
+          <div className="thumbnail" style={this.getBackgroundImage(1, product)} onClick={() => this.handleImageClick(1)}/>
+          <div className="thumbnail" style={this.getBackgroundImage(2, product)} onClick={() => this.handleImageClick(2)}/>
         </div>
-        <div className="mainImg" style={this.getBackgroundImage(this.state.activeIndex, product)} />
+        <div className="mainImg" style={this.getBackgroundImage(this.state.activeIndex, product)}/>
       </div>
     );
   }
@@ -188,7 +186,7 @@ class RelatedProducts extends Component {
         <h2 className="subheader">Related Items</h2>
         <div className="relatedInnerDiv">
           { showButtons && <button className="paginationButton left" onClick={this.pageLeft.bind(this)}>
-            <FaChevronLeft className="nextItemsChevron" />
+            <FaChevronLeft className="nextItemsChevron"/>
           </button> }
           <ReactCSSTransitionGroup className={transitionClasses}
                                    transitionName="carousel"
@@ -200,7 +198,7 @@ class RelatedProducts extends Component {
           </ReactCSSTransitionGroup>
           { showButtons && <button className="paginationButton right"
                                    onClick={this.pageRight.bind(this)}>
-            <FaChevronRight className="nextItemsChevron" />
+            <FaChevronRight className="nextItemsChevron"/>
           </button> }
         </div>
       </div>
@@ -218,7 +216,6 @@ class RelatedProducts extends Component {
     const offset = Math.abs(this.state.offset);
     const itemsArray = slice(this.getItems(), offset, offset + 3);
 
-    //TODO: make this it's own component
     return map(itemsArray, (item) =>
       <div key={item.getPathName()} className="relatedItem">
         <Link to={`/products/${item.getCategory()}/${item.getPathName()}`}
@@ -226,7 +223,7 @@ class RelatedProducts extends Component {
           <h3 className="title">{item.getFullName()}</h3>
           <div className="productImgContainer">
             <div className="productImage"
-                 style={this.getBackgroundImage(item)} />
+                 style={this.getBackgroundImage(item)}/>
           </div>
         </Link>
       </div>
@@ -250,7 +247,7 @@ class RelatedItemsRenderer extends Component {
 
   renderTablet() {
     return (
-      <div />
+      <div/>
     );
   }
 
@@ -258,7 +255,7 @@ class RelatedItemsRenderer extends Component {
     const { product } = this.props;
     return (
       <div>
-        <RelatedProducts product={product} />
+        <RelatedProducts product={product}/>
       </div>
     );
   }

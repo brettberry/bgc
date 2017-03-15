@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import ShippingProvider from './ShippingProvider';
-import CartProvider from './CartProvider';
-import AuthProvider from './AuthProvider';
+import { ShippingProvider, CartProvider, AuthProvider } from '~/providers';
 
 export default class AccountApp extends Component {
   render() {

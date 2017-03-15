@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import map from 'lodash/map';
 
 import { ProductCollection } from '../models';
-import SidebarRenderer from '../SidebarRenderer';
-import TabletProvider from '../TabletProvider';
-import ProductGrid from '../ProductGrid';
+import SidebarRenderer from '~/renderers/SidebarRenderer';
+import TabletProvider from '~/providers/TabletProvider';
+import ProductGrid from '~/components/ProductGrid';
 import data from '../data.json';
 
 
