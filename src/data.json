@@ -570,6 +570,14 @@
       "year": "",
       "details": ""
   },
+  {
+      "imageID": "chad-elk-3",
+      "imageURL": "chad-elk-3.jpg",
+      "hunter": "Chad Berry",
+      "species": "Rocky Mountain Elk",
+      "year": "",
+      "details": ""
+  },
  {
       "imageID": "brett-whitetail-1",
       "imageURL": "brett-whitetail-1.jpg",
@@ -642,6 +650,14 @@
         "details": ""
     },
     {
+        "imageID": "glen-elk-4",
+        "imageURL": "glen-elk-4.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-bear-3",
         "imageURL": "glen-bear-3.jpg",
         "hunter": "Glen Berry",
@@ -662,6 +678,14 @@
         "imageURL": "glen-caribou-1.jpg",
         "hunter": "Glen Berry",
         "species": "Caribou",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "chad-elk-2",
+        "imageURL": "chad-elk-2.jpg",
+        "hunter": "Chad Berry",
+        "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
     },
@@ -710,6 +734,14 @@
         "imageURL": "glen-mule-1.jpg",
         "hunter": "Glen Berry",
         "species": "Mule Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-5",
+        "imageURL": "glen-elk-5.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
     },
@@ -770,10 +802,26 @@
         "details": ""
     },
     {
+        "imageID": "glen-elk-6",
+        "imageURL": "glen-elk-6.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-whitetail-2",
         "imageURL": "glen-whitetail-2.jpg",
         "hunter": "Glen Berry",
         "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-7",
+        "imageURL": "glen-elk-7.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
     },
@@ -798,6 +846,14 @@
         "imageURL": "glen-whitetail-4.jpg",
         "hunter": "Glen Berry",
         "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-8",
+        "imageURL": "glen-elk-8.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
     },
@@ -850,6 +906,14 @@
         "details": ""
     },
     {
+        "imageID": "glen-elk-9",
+        "imageURL": "glen-elk-9.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-antelope-5",
         "imageURL": "glen-antelope-5.jpg",
         "hunter": "Glen Berry",
@@ -862,6 +926,14 @@
         "imageURL": "glen-mule-4.jpg",
         "hunter": "Glen Berry",
         "species": "Mule Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-bear-7",
+        "imageURL": "glen-bear-7.jpg",
+        "hunter": "Glen Berry",
+        "species": "Black Bear",
         "year": "",
         "details": ""
     },
@@ -906,6 +978,14 @@
         "details": ""
     },
     {
+        "imageID": "glen-elk-10",
+        "imageURL": "glen-elk-10.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-whitetail-9",
         "imageURL": "glen-whitetail-9.jpg",
         "hunter": "Glen Berry",
@@ -942,6 +1022,14 @@
         "imageURL": "glen-whitetail-11.jpg",
         "hunter": "Glen Berry",
         "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-11",
+        "imageURL": "glen-elk-11.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
     },
