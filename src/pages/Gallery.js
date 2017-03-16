@@ -34,7 +34,14 @@ class PhotoGallery extends Component {
     const { showModal, index } = this.state;
     return (
       <div>
+        <div className="galleryHeaderContainer">
+            <h1 className="galleryHeader">Bowhunting</h1>
+            <h1 className="gallerySubheader">A Family Tradition</h1>
+        </div>
         <div className="photoContainer">{this.getPhotos()}</div>
+        <div className="welcomeContainer">
+            <h1 className="welcomeHeader">Welcome to the family</h1>
+        </div>
         <Modal show={showModal}
                containerClassName="photoModal"
                closeOnOuterClick={false}>

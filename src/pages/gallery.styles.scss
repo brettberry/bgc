@@ -1,5 +1,57 @@
 @import '../constants';
 
+.galleryHeaderContainer, .welcomeContainer {
+    background-color: $bgc-medium-light-grey;
+    padding: 75px;
+
+    @include phone {
+        padding: 35px;
+    }
+
+    @include smallPhone {
+        padding: 20px;
+    }
+}
+
+.galleryHeader {
+    @include header-font;
+    color: $bgc-dark-orange;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 5px 0;
+    white-space: nowrap;
+
+    @include phone {
+        font-size: 1.75em;
+    }
+
+    @include smallPhone {
+        font-size: 1.25em;
+    }
+}
+
+.gallerySubheader, .welcomeHeader {
+    @include header-font;
+    text-align: center;
+    color: $bgc-medium-grey;
+    font-size: 3.75em;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 5px 0;
+
+    @include phone {
+        font-size: 2em;
+    }
+
+    @include smallPhone {
+        font-size: 1.5em;
+    }
+}
+
 .photoCategories {
   display: flex;
   justify-content: space-around;
@@ -15,8 +67,8 @@
   flex-direction: row;
   flex-basis: 25%;
   flex-wrap: wrap;
-  height: 400px;
   width: 100%;
+  background-color: $bgc-medium-light-grey;
 
   @include tabletLandscape {
     flex-basis: 33%;
