@@ -3,7 +3,7 @@
 
 .border {
   border: solid 1px $table-border-color;
-  margin: 20px 50px;
+  margin: 20px 60px;
   padding: 20px;
 
   .cartTotalContainer {
@@ -113,7 +113,7 @@
 .continue {
   font-family: $main-font-family;
   color: $bgc-orange;
-  margin: 50px;
+  margin: 60px;
   margin-top: 15px;
   text-align: right;
   cursor: pointer;
@@ -145,7 +145,7 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     color: black;
-    padding: 50px;
+    padding: 60px;
     padding-bottom: 0;
     margin: 0;
 
@@ -233,7 +233,7 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  padding-right: 50px;
+  padding-right: 60px;
   text-decoration: none;
 }
 

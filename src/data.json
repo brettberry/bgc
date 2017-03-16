@@ -6,10 +6,6 @@
 ],
   "tags": [
     {
-      "tag": "All Products",
-      "path": ""
-    },
-    {
       "tag": "Most Popular",
       "path": "bugles"
     },
@@ -566,11 +562,356 @@
     }
   ],
   "photos": [
-    {
-      "image": "",
-      "hunter": "",
-      "species": "",
+ {
+      "imageID": "brett-whitetail-1",
+      "imageURL": "brett-whitetail-1.jpg",
+      "hunter": "Brett Berry",
+      "species": "Whitetail Deer",
+      "year": "",
       "details": ""
+  },
+  {
+        "imageID": "chad-bull-1",
+        "imageURL": "chad-bull-1.jpg",
+        "hunter": "Chad Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "chad-whitetail-1",
+        "imageURL": "chad-whitetail-1.jpg",
+        "hunter": "Chad Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-antelope-1",
+        "imageURL": "glen-antelope-1.jpg",
+        "hunter": "Glen Berry",
+        "species": "Antelope",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-antelope-2",
+        "imageURL": "glen-antelope-2.jpg",
+        "hunter": "Glen Berry",
+        "species": "Antelope",
+        "details": ""
+    },
+    {
+        "imageID": "glen-bear-1",
+        "imageURL": "glen-bear-1.jpg",
+        "hunter": "Glen Berry",
+        "species": "Black Bear",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-bear-2",
+        "imageURL": "glen-bear-2.jpg",
+        "hunter": "Glen Berry",
+        "species": "Black Bear",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-bear-3",
+        "imageURL": "glen-bear-3.jpg",
+        "hunter": "Glen Berry",
+        "species": "Black Bear",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-cape-buffalo",
+        "imageURL": "glen-cape-buffalo.jpg",
+        "hunter": "Glen Berry",
+        "species": "Cape Buffalo",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-caribou-1",
+        "imageURL": "glen-caribou-1.jpg",
+        "hunter": "Glen Berry",
+        "species": "Caribou",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-caribou-2",
+        "imageURL": "glen-caribou-2.jpg",
+        "hunter": "Glen Berry",
+        "species": "Caribou",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-bear-4",
+        "imageURL": "glen-bear-4.jpg",
+        "hunter": "Glen Berry",
+        "species": "Black Bear",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-bear-4",
+        "imageURL": "glen-bear-4.jpg",
+        "hunter": "Glen Berry",
+        "species": "Black Bear",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-1",
+        "imageURL": "glen-elk-1.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-2",
+        "imageURL": "glen-elk-2.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-3",
+        "imageURL": "glen-elk-3.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-moose",
+        "imageURL": "glen-moose.jpg",
+        "hunter": "Glen Berry",
+        "species": "Moose",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-muley-1",
+        "imageURL": "glen-mule-1.jpg",
+        "hunter": "Glen Berry",
+        "species": "Mule Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-muley-2",
+        "imageURL": "glen-mule-2.jpg",
+        "hunter": "Glen Berry",
+        "species": "Mule Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-turkey-1",
+        "imageURL": "glen-turkey-1.jpg",
+        "hunter": "Glen Berry",
+        "species": "Turkey",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-turkey-2",
+        "imageURL": "glen-turkey-2.jpg",
+        "hunter": "Glen Berry",
+        "species": "Turkey",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-turkey-3",
+        "imageURL": "glen-turkey-3.jpg",
+        "hunter": "Glen Berry",
+        "species": "Turkey",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-waterbuck",
+        "imageURL": "glen-waterbuck.jpg",
+        "hunter": "Glen Berry",
+        "species": "Waterbuck",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-turkey-2",
+        "imageURL": "glen-turkey-2.jpg",
+        "hunter": "Glen Berry",
+        "species": "Turkey",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-whitetail-1",
+        "imageURL": "glen-whitetail-1.jpg",
+        "hunter": "Glen Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-whitetail-2",
+        "imageURL": "glen-whitetail-2.jpg",
+        "hunter": "Glen Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-whitetail-3",
+        "imageURL": "glen-whitetail-3.jpg",
+        "hunter": "Glen Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-whitetail-4",
+        "imageURL": "glen-whitetail-4.jpg",
+        "hunter": "Glen Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-whitetail-5",
+        "imageURL": "glen-whitetail-5.jpg",
+        "hunter": "Glen Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-whitetail-6",
+        "imageURL": "glen-whitetail-6.jpg",
+        "hunter": "Glen Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "brett-whitetail-2",
+        "imageURL": "brett-whitetail-2.jpg",
+        "hunter": "Brett Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "brett-whitetail-2",
+        "imageURL": "brett-whitetail-2.jpg",
+        "hunter": "Brett Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-mule-3",
+        "imageURL": "glen-mule-3.jpg",
+        "hunter": "Glen Berry",
+        "species": "Mule Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-mule-4",
+        "imageURL": "glen-mule-4.jpg",
+        "hunter": "Glen Berry",
+        "species": "Mule Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-sitka-deer",
+        "imageURL": "glen-sitka-deer.jpg",
+        "hunter": "Glen Berry",
+        "species": "Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-sitka-deer-2",
+        "imageURL": "glen-sitka-deer-2.jpg",
+        "hunter": "Glen Berry",
+        "species": "Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-sitka-deer",
+        "imageURL": "glen-sitka-deer.jpg",
+        "hunter": "Glen Berry",
+        "species": "Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-whitetail-8",
+        "imageURL": "glen-whitetail-8.jpg",
+        "hunter": "Glen Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-whitetail-9",
+        "imageURL": "glen-whitetail-9.jpg",
+        "hunter": "Glen Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-whitetail-10",
+        "imageURL": "glen-whitetail-10.jpg",
+        "hunter": "Glen Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-whitetail-11",
+        "imageURL": "glen-whitetail-11.jpg",
+        "hunter": "Glen Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-whitetail-12",
+        "imageURL": "glen-whitetail-12.jpg",
+        "hunter": "Glen Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-whitetail-13",
+        "imageURL": "glen-whitetail-13.jpg",
+        "hunter": "Glen Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-whitetail-14",
+        "imageURL": "glen-whitetail-14.jpg",
+        "hunter": "Glen Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
     }
   ]
 }

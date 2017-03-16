@@ -5,20 +5,12 @@ import map from 'lodash/map';
 import MdClose from 'react-icons/lib/md/close';
 import MDChevronLeft from 'react-icons/lib/md/chevron-left';
 import MDChevronRight from 'react-icons/lib/md/chevron-right';
+
+import BGCPhotoCollection from '~/models/BGCPhotoCollection';
+import data from '~/data.json';
 import './gallery.styles.scss';
 
-const images = ['url(/samplePhotos/deer.jpg)',
-               'url(/samplePhotos/fox.jpg)',
-               'url(/samplePhotos/scenery.jpg)',
-               'url(/samplePhotos/deer.jpg)',
-               'url(/samplePhotos/fox.jpg)',
-               'url(/samplePhotos/scenery.jpg)',
-               'url(/samplePhotos/deer.jpg)',
-               'url(/samplePhotos/fox.jpg)',
-               'url(/samplePhotos/scenery.jpg)',
-               'url(/samplePhotos/deer.jpg)',
-               'url(/samplePhotos/fox.jpg)',
-               'url(/samplePhotos/scenery.jpg)'];
+const photos = new BGCPhotoCollection(data.photos);
 
 class PhotoGallery extends Component {
 
@@ -29,9 +21,9 @@ class PhotoGallery extends Component {
 
   getPhotos() {
     return (
-      map(images, (image, key) =>
+      map(photos.toArray(), (photo, key) =>
         <div className="photo"
-             style={{ backgroundImage: image }}
+             style={{ backgroundImage: `url(/bgcHuntingPhotos/${photo.getImageURL()})` }}
              onClick={() => this.setState({ showModal: true, index: key })}
              key={key}/>)
     );
@@ -48,8 +40,8 @@ class PhotoGallery extends Component {
                closeOnOuterClick={false}>
           <ModalComponent closeModal={() => this.setState({ showModal: false })}
                           index={this.state.index}
-                          photoLeft={() => this.setState({ index: (index - 1) % images.length })}
-                          photoRight={() => this.setState({ index: (index + 1) % images.length })}/>
+                          photoLeft={() => this.setState({ index: (index - 1) % photos.length })}
+                          photoRight={() => this.setState({ index: (index + 1) % photos.length })}/>
         </Modal>
       </div>
     );
@@ -68,7 +60,7 @@ class PhotoModalContents extends Component {
       <div className="modalContainer">
         <MdClose className="exit" onClick={this.props.closeModal}/>
         <div className="modalContents">
-          <div className="photoView" style={{ backgroundImage: images[Math.abs(index)] }}/>
+          <div className="photoView" style={{ backgroundImage: photos[Math.abs(index)] }}/>
           <div className="caption">Sample text</div>
         </div>
         <MDChevronLeft className="photoLeft" onClick={this.props.photoLeft}/>
