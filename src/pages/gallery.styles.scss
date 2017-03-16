@@ -122,12 +122,12 @@
   }
 
   .caption {
-    @include default-font;
-    font-weight: 300;
+    @include menu-font;
+    color: $bgc-orange;
+    font-weight: 400;
     font-size: 1.1em;
-    color: $bgc-light-grey;
     line-height: 1.5;
-    margin: 0;
+    margin: 20px 0;
   }
 
   .photoLeft {

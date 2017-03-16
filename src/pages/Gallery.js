@@ -54,14 +54,30 @@ class PhotoModalContents extends Component {
     this.props.closeModal();
   }
 
+  getPhotoForModal(index) {
+      const photoArray = photos.toArray();
+      const photoURLArray = map(photoArray, (photo, key) =>
+        `url(/bgcHuntingPhotos/${photo.getImageURL()})`
+      );
+      return photoURLArray[Math.abs(index)];
+  }
+
+  getHunterDetails(index) {
+      const photoArray = photos.toArray();
+      const hunterArray = map(photoArray, (photo, key) =>
+        `${photo.getHunter()}`
+      );
+      return hunterArray[Math.abs(index)];
+  }
+
   render() {
     const { index } = this.props;
     return (
       <div className="modalContainer">
         <MdClose className="exit" onClick={this.props.closeModal}/>
         <div className="modalContents">
-          <div className="photoView" style={{ backgroundImage: photos[Math.abs(index)] }}/>
-          <div className="caption">Sample text</div>
+          <div className="photoView" style={{ backgroundImage: this.getPhotoForModal(index) }}/>
+          <div className="caption">{this.getHunterDetails(index)}</div>
         </div>
         <MDChevronLeft className="photoLeft" onClick={this.props.photoLeft}/>
         <MDChevronRight className="photoRight" onClick={this.props.photoRight}/>
