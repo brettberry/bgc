@@ -587,9 +587,25 @@
       "details": ""
   },
   {
+      "imageID": "glen-elk-13",
+      "imageURL": "glen-elk-13.jpg",
+      "hunter": "Glen Berry",
+      "species": "Rocky Mountain Elk",
+      "year": "",
+      "details": ""
+  },
+  {
         "imageID": "chad-bull-1",
         "imageURL": "chad-bull-1.jpg",
         "hunter": "Chad Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-37",
+        "imageURL": "glen-elk-37.jpg",
+        "hunter": "Glen Berry",
         "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
@@ -607,6 +623,14 @@
         "imageURL": "glen-antelope-1.jpg",
         "hunter": "Glen Berry",
         "species": "Antelope",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-23",
+        "imageURL": "glen-elk-23.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
     },
@@ -634,10 +658,26 @@
         "details": ""
     },
     {
+        "imageID": "glen-elk-14",
+        "imageURL": "glen-elk-14.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-turkey-4",
         "imageURL": "glen-turkey-4.jpg",
         "hunter": "Glen Berry",
         "species": "Turkey",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-36",
+        "imageURL": "glen-elk-36.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
     },
@@ -674,6 +714,22 @@
         "details": ""
     },
     {
+        "imageID": "glen-elk-15",
+        "imageURL": "glen-elk-15.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-24",
+        "imageURL": "glen-elk-24.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-caribou-1",
         "imageURL": "glen-caribou-1.jpg",
         "hunter": "Glen Berry",
@@ -694,6 +750,14 @@
         "imageURL": "glen-caribou-2.jpg",
         "hunter": "Glen Berry",
         "species": "Caribou",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-22",
+        "imageURL": "glen-elk-22.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
     },
@@ -730,6 +794,22 @@
         "details": ""
     },
     {
+        "imageID": "glen-elk-25",
+        "imageURL": "glen-elk-25.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-35",
+        "imageURL": "glen-elk-35.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-muley-1",
         "imageURL": "glen-mule-1.jpg",
         "hunter": "Glen Berry",
@@ -754,10 +834,34 @@
         "details": ""
     },
     {
+        "imageID": "glen-elk-21",
+        "imageURL": "glen-elk-21.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-34",
+        "imageURL": "glen-elk-34.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-turkey-1",
         "imageURL": "glen-turkey-1.jpg",
         "hunter": "Glen Berry",
         "species": "Turkey",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-16",
+        "imageURL": "glen-elk-16.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
     },
@@ -778,6 +882,14 @@
         "details": ""
     },
     {
+        "imageID": "glen-elk-26",
+        "imageURL": "glen-elk-26.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-turkey-2",
         "imageURL": "glen-turkey-2.jpg",
         "hunter": "Glen Berry",
@@ -790,6 +902,22 @@
         "imageURL": "glen-whitetail-1.jpg",
         "hunter": "Glen Berry",
         "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-17",
+        "imageURL": "glen-elk-17.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-33",
+        "imageURL": "glen-elk-33.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
     },
@@ -842,6 +970,14 @@
         "details": ""
     },
     {
+        "imageID": "glen-elk-18",
+        "imageURL": "glen-elk-18.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-whitetail-4",
         "imageURL": "glen-whitetail-4.jpg",
         "hunter": "Glen Berry",
@@ -878,6 +1014,22 @@
         "imageURL": "glen-whitetail-6.jpg",
         "hunter": "Glen Berry",
         "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-32",
+        "imageURL": "glen-elk-32.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-27",
+        "imageURL": "glen-elk-27.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
     },
@@ -938,6 +1090,14 @@
         "details": ""
     },
     {
+        "imageID": "glen-elk-28",
+        "imageURL": "glen-elk-28.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-sitka-deer",
         "imageURL": "glen-sitka-deer.jpg",
         "hunter": "Glen Berry",
@@ -958,6 +1118,14 @@
         "imageURL": "glen-sitka-deer.jpg",
         "hunter": "Glen Berry",
         "species": "Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-31",
+        "imageURL": "glen-elk-31.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
     },
@@ -990,6 +1158,14 @@
         "imageURL": "glen-whitetail-9.jpg",
         "hunter": "Glen Berry",
         "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-29",
+        "imageURL": "glen-elk-29.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
     },
@@ -1029,6 +1205,14 @@
         "imageID": "glen-elk-11",
         "imageURL": "glen-elk-11.jpg",
         "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "chad-elk-4",
+        "imageURL": "chad-elk-4.jpg",
+        "hunter": "Chad Berry",
         "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
@@ -1074,10 +1258,58 @@
         "details": ""
     },
     {
+        "imageID": "glen-elk-30",
+        "imageURL": "glen-elk-30.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-bear-5",
         "imageURL": "glen-bear-5.jpg",
         "hunter": "Glen Berry",
         "species": "Black Bear",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-19",
+        "imageURL": "glen-elk-19.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "chad-elk-5",
+        "imageURL": "chad-elk-5.jpg",
+        "hunter": "Chad Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-12",
+        "imageURL": "glen-elk-12.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-elk-20",
+        "imageURL": "glen-elk-20.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "glen-with-hooper",
+        "imageURL": "glen-with-hooper.jpg",
+        "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
     }
