@@ -578,9 +578,9 @@
       "year": "",
       "details": ""
   },
- {
-      "imageID": "brett-whitetail-1",
-      "imageURL": "brett-whitetail-1.jpg",
+  {
+      "imageID": "brett-whitetail-3",
+      "imageURL": "brett-whitetail-3.jpg",
       "hunter": "Brett Berry",
       "species": "Whitetail Deer",
       "year": "",
@@ -594,14 +594,6 @@
       "year": "",
       "details": ""
   },
-  {
-        "imageID": "chad-bull-1",
-        "imageURL": "chad-bull-1.jpg",
-        "hunter": "Chad Berry",
-        "species": "Rocky Mountain Elk",
-        "year": "",
-        "details": ""
-    },
     {
         "imageID": "glen-elk-37",
         "imageURL": "glen-elk-37.jpg",
@@ -682,6 +674,14 @@
         "details": ""
     },
     {
+        "imageID": "chad-elk-6",
+        "imageURL": "chad-elk-6.jpg",
+        "hunter": "Chad Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-bear-2",
         "imageURL": "glen-bear-2.jpg",
         "hunter": "Glen Berry",
@@ -718,6 +718,14 @@
         "imageURL": "glen-elk-15.jpg",
         "hunter": "Glen Berry",
         "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "chad-whitetail-2",
+        "imageURL": "chad-whitetail-2.jpg",
+        "hunter": "Chad Berry",
+        "species": "Whitetail Deer",
         "year": "",
         "details": ""
     },
@@ -770,6 +778,14 @@
         "details": ""
     },
     {
+        "imageID": "chad-elk-7",
+        "imageURL": "chad-elk-7.jpg",
+        "hunter": "Chad Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-elk-2",
         "imageURL": "glen-elk-2.jpg",
         "hunter": "Glen Berry",
@@ -818,6 +834,14 @@
         "details": ""
     },
     {
+        "imageID": "brett-glen-deer",
+        "imageURL": "brett-glen-deer.jpg",
+        "hunter": "Glen and Brett Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-elk-5",
         "imageURL": "glen-elk-5.jpg",
         "hunter": "Glen Berry",
@@ -842,10 +866,26 @@
         "details": ""
     },
     {
+        "imageID": "chad-elk-8",
+        "imageURL": "chad-elk-8.jpg",
+        "hunter": "Chad Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-elk-34",
         "imageURL": "glen-elk-34.jpg",
         "hunter": "Glen Berry",
         "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "brett-whitetail-4",
+        "imageURL": "brett-whitetail-4.jpg",
+        "hunter": "Brett Berry",
+        "species": "Whitetail Deer",
         "year": "",
         "details": ""
     },
@@ -861,6 +901,14 @@
         "imageID": "glen-elk-16",
         "imageURL": "glen-elk-16.jpg",
         "hunter": "Glen Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "chad-elk-9",
+        "imageURL": "chad-elk-9.jpg",
+        "hunter": "Chad Berry",
         "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
@@ -906,6 +954,14 @@
         "details": ""
     },
     {
+          "imageID": "chad-bull-1",
+          "imageURL": "chad-bull-1.jpg",
+          "hunter": "Chad Berry",
+          "species": "Rocky Mountain Elk",
+          "year": "",
+          "details": ""
+    },
+    {
         "imageID": "glen-elk-17",
         "imageURL": "glen-elk-17.jpg",
         "hunter": "Glen Berry",
@@ -938,10 +994,26 @@
         "details": ""
     },
     {
+        "imageID": "brett-bear-2",
+        "imageURL": "brett-bear-2.jpg",
+        "hunter": "Brett Berry",
+        "species": "Black Bear",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-whitetail-2",
         "imageURL": "glen-whitetail-2.jpg",
         "hunter": "Glen Berry",
         "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "chad-elk-10",
+        "imageURL": "chad-elk-10.jpg",
+        "hunter": "Chad Berry",
+        "species": "Rocky Mountain Elk",
         "year": "",
         "details": ""
     },
@@ -958,14 +1030,6 @@
         "imageURL": "glen-whitetail-3.jpg",
         "hunter": "Glen Berry",
         "species": "Whitetail Deer",
-        "year": "",
-        "details": ""
-    },
-    {
-        "imageID": "glen-caribou-3",
-        "imageURL": "glen-caribou-3.jpg",
-        "hunter": "Glen Berry",
-        "species": "Caribou",
         "year": "",
         "details": ""
     },
@@ -1106,16 +1170,16 @@
         "details": ""
     },
     {
+         "imageID": "brett-whitetail-1",
+         "imageURL": "brett-whitetail-1.jpg",
+         "hunter": "Brett Berry",
+         "species": "Whitetail Deer",
+         "year": "",
+         "details": ""
+     },
+    {
         "imageID": "glen-blacktail",
         "imageURL": "glen-blacktail.jpg",
-        "hunter": "Glen Berry",
-        "species": "Deer",
-        "year": "",
-        "details": ""
-    },
-    {
-        "imageID": "glen-sitka-deer",
-        "imageURL": "glen-sitka-deer.jpg",
         "hunter": "Glen Berry",
         "species": "Deer",
         "year": "",
@@ -1298,6 +1362,14 @@
         "details": ""
     },
     {
+         "imageID": "brett-whitetail-4",
+         "imageURL": "brett-whitetail-4.jpg",
+         "hunter": "Brett Berry",
+         "species": "Whitetail Deer",
+         "year": "",
+         "details": ""
+     },
+    {
         "imageID": "glen-elk-20",
         "imageURL": "glen-elk-20.jpg",
         "hunter": "Glen Berry",
@@ -1310,6 +1382,14 @@
         "imageURL": "glen-with-hooper.jpg",
         "hunter": "Glen Berry",
         "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
+        "imageID": "chad-whitetail-3",
+        "imageURL": "chad-whitetail-3.jpg",
+        "hunter": "Chad Berry",
+        "species": "Whitetail Deer",
         "year": "",
         "details": ""
     }
