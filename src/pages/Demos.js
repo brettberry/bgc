@@ -13,8 +13,8 @@ const videos = new DemosCollection(data.demos);
 class Demos extends Component {
 
   render() {
-    const titles = ['reeds-demo', 'bugle-demo', 'training-day-2-demo', 'training-day-demo',
-                    'turkey-demo-1', 'turkey-demo-2'];
+    const titles = ['reeds-demo', 'bugle-demo', 'training-day-2-demo',
+                    'training-day-demo', 'turkey-demo-1', 'turkey-demo-2'];
     const demos = videos.findAllByTitles(titles);
 
     return (

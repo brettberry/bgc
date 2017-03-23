@@ -66,7 +66,7 @@ class MobileNavigationBar extends Component {
 function Alert() {
   return (
     <div className="alertBar">
-      <h3 className="alertMessage right">Flat rate shipping on all orders.</h3>
+      {/* <h3 className="alertMessage right">Flat rate shipping on all orders.</h3> */}
     </div>
   );
 }
