@@ -7,7 +7,38 @@
 .videoOverlay {
   width: 100%;
   height: 100%;
-  background-color: rgba($bgc-orange, 0.5);
   z-index: 1;
   position: absolute;
+  background-color: $bgc-orange;
+  opacity: 0.6;
+  transition: opacity 0.75s ease;
+
+  .bottomStripe {
+    width: 100%;
+    height: 3px;
+    background-color: $bgc-orange;
+    position: absolute;
+    bottom: 0;
+  }
 }
+
+.opaqueOverlay.videoOverlay {
+    opacity: 1;
+}
+
+// .logoImage {
+//   background-position: center;
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   width: 500px;
+//   height: 400px;
+//   position: fixed;
+//   left: calc(50% - 350px);
+//   z-index: 1000;
+// }
+//
+// .logoImage.moveLogo {
+//   transform: scale(0.3);
+//   top: -125px;
+//   left: -150px;
+// }

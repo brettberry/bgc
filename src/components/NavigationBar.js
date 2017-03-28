@@ -25,6 +25,8 @@ class NavigationBar extends Component {
   renderStandardNavBar() {
     return (
     <div className="navBar">
+      <div style={{ backgroundImage: 'url(/images/bgc_logo.png)' }}
+           className="bgcLogoSmall"/>
       <Link to="/" className="homeLink">
         <h1 className="bgc">Berry Game Calls</h1>
       </Link>
@@ -60,7 +62,7 @@ function Menu() {
       <DemosItem/>
       <GalleryItem/>
       {/* <EventsItem/> */}
-      <AboutItem/>
+      {/* <AboutItem/> */}
     </div>
   );
 }

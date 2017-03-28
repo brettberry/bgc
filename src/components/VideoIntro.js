@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classnames from 'classnames';
 import $ from 'jquery';
 import './videoIntro.styles.scss';
 
@@ -6,7 +7,9 @@ class VideoIntro extends Component {
 
   state = {
     frameWidth: 0,
-    frameHeight: 0
+    frameHeight: 0,
+    showOpaqueOverlay: true,
+    moveLogo: false
   }
 
   constructor(props) {
@@ -17,10 +20,14 @@ class VideoIntro extends Component {
   componentDidMount() {
     this.updateDimensions();
     $(window).on('resize', this._updateDimensions);
+    this.timeout = setTimeout(this.hideOpaqueOverlay.bind(this), 3000);
+    this.logoTimout = setTimeout(this.moveLogo.bind(this), 2000);
   }
 
   componentWillUnmount() {
     $(window).off('resize', this._updateDimensions);
+    clearTimeout(this.timeout);
+    clearTimeout(this.logoTimout);
   }
 
   updateDimensions() {
@@ -30,11 +37,23 @@ class VideoIntro extends Component {
     this.setState({ frameWidth, frameHeight });
   }
 
+  moveLogo() {
+    this.setState({ moveLogo: true });
+  }
+
+  hideOpaqueOverlay() {
+    this.setState({ showOpaqueOverlay: false });
+  }
+
   render() {
-    const { frameWidth, frameHeight } = this.state;
+    const { frameWidth, frameHeight, showOpaqueOverlay, moveLogo } = this.state;
     return (
       <div className="videoIntroContainer">
-        <div className="videoOverlay"/>
+        <div style={{ backgroundImage: 'url(/images/bgc_logo.png)' }}
+             className={classnames('logoImage', moveLogo && 'moveLogo')}/>
+        <div className={classnames('videoOverlay', showOpaqueOverlay && 'opaqueOverlay')}>
+          <div className="bottomStripe"/>
+        </div>
         <iframe width={frameWidth}
                 height={frameHeight}
                 src="https://www.youtube.com/embed/aMWR4UQQz5k?autoplay=1&showinfo=0&controls=0&start=46&end=143&loop=1&playlist=aMWR4UQQz5k"

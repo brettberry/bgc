@@ -68,7 +68,6 @@ class Images extends Component {
     });
   }
 
-  //TODO: make a loop??
   render() {
     const product = this.props.product;
     return (

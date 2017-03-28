@@ -1054,7 +1054,7 @@
           justify-content: flex-end;
   top: 99px;
   width: 100%;
-  height: 36px;
+  height: 3px;
   z-index: 0;
   background-color: #ebb052; }
 
@@ -2478,6 +2478,25 @@ html, body, main {
       background-size: contain;
       background-position: center center;
       background-repeat: no-repeat; }
+.videoIntroContainer {
+  position: relative; }
+
+.videoOverlay {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  background-color: rgba(235, 176, 82, 0.5); }
+  .videoOverlay.makeTransparent {
+    background-color: rgba(235, 176, 82, 0.5);
+    -webkit-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease; }
+  .videoOverlay .bottomStripe {
+    width: 100%;
+    height: 3px;
+    background-color: #ebb052;
+    position: absolute;
+    bottom: 0; }
 .bannerContainer {
   display: -webkit-box;
   display: -ms-flexbox;
