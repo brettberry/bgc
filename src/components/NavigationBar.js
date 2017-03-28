@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import classnames from 'classnames';
 import Waypoint from 'react-waypoint';
@@ -12,7 +12,12 @@ import './navigationBar.styles.scss';
 class NavigationBar extends Component {
 
   state = {
-    showResponsiveNavBar: false
+    showResponsiveNavBar: false,
+    showSmallLogo: true
+  }
+
+  static contextTypes = {
+    location: PropTypes.object.isRequired
   }
 
   componentDidMount() {
@@ -22,11 +27,24 @@ class NavigationBar extends Component {
     }
   }
 
+  componentDidUpdate(prevProps, prevState, prevContext) {
+      if (this.context.location !== prevContext.location) {
+        this.checkSmallLogoStatus();
+      }
+  }
+
+  checkSmallLogoStatus() {
+    if (this.context.location.pathname === '/') {
+      return this.setState({ showSmallLogo: false });
+    }
+    this.setState({ showSmallLogo: true });
+  }
+
   renderStandardNavBar() {
     return (
     <div className="navBar">
-      <div style={{ backgroundImage: 'url(/images/bgc_logo.png)' }}
-           className="bgcLogoSmall"/>
+      { this.state.showSmallLogo && <div style={{ backgroundImage: 'url(/images/bgc_logo.png)' }}
+           className="bgcLogoSmall"/>}
       <Link to="/" className="homeLink">
         <h1 className="bgc">Berry Game Calls</h1>
       </Link>
