@@ -12,12 +12,7 @@ import './navigationBar.styles.scss';
 class NavigationBar extends Component {
 
   state = {
-    showResponsiveNavBar: false,
-    showSmallLogo: true
-  }
-
-  static contextTypes = {
-    location: PropTypes.object.isRequired
+    showResponsiveNavBar: false
   }
 
   componentDidMount() {
@@ -27,25 +22,12 @@ class NavigationBar extends Component {
     }
   }
 
-  componentDidUpdate(prevProps, prevState, prevContext) {
-      if (this.context.location !== prevContext.location) {
-        this.checkSmallLogoStatus();
-      }
-  }
-
-  checkSmallLogoStatus() {
-    if (this.context.location.pathname === '/') {
-      return this.setState({ showSmallLogo: false });
-    }
-    this.setState({ showSmallLogo: true });
-  }
-
   renderStandardNavBar() {
     return (
     <div className="navBar">
-      { this.state.showSmallLogo && <div style={{ backgroundImage: 'url(/images/bgc_logo.png)' }}
-           className="bgcLogoSmall"/>}
       <Link to="/" className="homeLink">
+        <div style={{ backgroundImage: 'url(/images/bgc_logo.png)' }}
+             className="bgcLogoSmall"/>
         <h1 className="bgc">Berry Game Calls</h1>
       </Link>
       <Menu/>

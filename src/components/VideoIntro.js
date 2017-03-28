@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import $ from 'jquery';
+import Button from './Buttons';
 import './videoIntro.styles.scss';
 
 class VideoIntro extends Component {
@@ -9,7 +10,7 @@ class VideoIntro extends Component {
     frameWidth: 0,
     frameHeight: 0,
     showOpaqueOverlay: true,
-    moveLogo: false
+    fadeLogo: false
   }
 
   constructor(props) {
@@ -20,8 +21,8 @@ class VideoIntro extends Component {
   componentDidMount() {
     this.updateDimensions();
     $(window).on('resize', this._updateDimensions);
-    this.timeout = setTimeout(this.hideOpaqueOverlay.bind(this), 3000);
-    this.logoTimout = setTimeout(this.moveLogo.bind(this), 2000);
+    this.timeout = setTimeout(this.hideOpaqueOverlay.bind(this), 1000);
+    this.logoTimout = setTimeout(this.fadeLogo.bind(this), 5000);
   }
 
   componentWillUnmount() {
@@ -37,8 +38,8 @@ class VideoIntro extends Component {
     this.setState({ frameWidth, frameHeight });
   }
 
-  moveLogo() {
-    this.setState({ moveLogo: true });
+  fadeLogo() {
+    this.setState({ fadeLogo: true });
   }
 
   hideOpaqueOverlay() {
@@ -46,12 +47,18 @@ class VideoIntro extends Component {
   }
 
   render() {
-    const { frameWidth, frameHeight, showOpaqueOverlay, moveLogo } = this.state;
+    const { frameWidth, frameHeight, fadeLogo } = this.state;
     return (
       <div className="videoIntroContainer">
-        <div style={{ backgroundImage: 'url(/images/bgc_logo.png)' }}
-             className={classnames('logoImage', moveLogo && 'moveLogo')}/>
-        <div className={classnames('videoOverlay', showOpaqueOverlay && 'opaqueOverlay')}>
+        <h1 className="intro">For over three decades,</h1>
+        <h1 className="tagline">Glen Berry and his team of experts have equipped hunters with the calls they need to be successful in the field.</h1>
+        <h1 className="tagline2">For us it's more than hunting, it's a legacy.</h1>
+        <div className="storyButton">
+          <p className="ourStory">This is Our Story</p>
+        </div>
+        {/* <div style={{ backgroundImage: 'url(/images/bgc_logo.png)' }}
+             className={classnames('logoImage', fadeLogo && 'fadeLogo')}/> */}
+        <div className="videoOverlay">
           <div className="bottomStripe"/>
         </div>
         <iframe width={frameWidth}

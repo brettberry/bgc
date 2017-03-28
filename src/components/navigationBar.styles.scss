@@ -10,7 +10,8 @@
   align-items: center;
   justify-content: space-between;
   top: 0;
-  width: calc(100% - 210px);  height: 99px;
+  width: calc(100% - 210px);
+  height: 99px;
   background-color: white;
   margin-left: 180px;
   padding: 0;
@@ -26,22 +27,16 @@
     background-repeat: no-repeat;
     margin: 10px;
     z-index: 10000;
+
+    @include tabletLandscape {
+      width: 140px;
+      height: 110px;
+    }
   }
 
   @include tabletLandscape {
-    padding: 0 25px;
-  }
-
-  @include tablet {
-    padding: 0 20px;
-  }
-
-  @include phone {
-    padding: 0 15px;
-  }
-
-  @include smallPhone {
-    padding: 0 15px;
+    margin-left: 155px;
+    width: calc(100% - 180px);
   }
 
   .iconContainer {

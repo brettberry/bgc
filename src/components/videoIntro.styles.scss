@@ -9,9 +9,9 @@
   height: 100%;
   z-index: 1;
   position: absolute;
-  background-color: $bgc-orange;
+  background-color: $bgc-dark-orange;
   opacity: 0.6;
-  transition: opacity 0.75s ease;
+  transition: opacity 1s ease;
 
   .bottomStripe {
     width: 100%;
@@ -26,19 +26,97 @@
     opacity: 1;
 }
 
-// .logoImage {
-//   background-position: center;
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   width: 500px;
-//   height: 400px;
-//   position: fixed;
-//   left: calc(50% - 350px);
-//   z-index: 1000;
-// }
-//
-// .logoImage.moveLogo {
-//   transform: scale(0.3);
-//   top: -125px;
-//   left: -150px;
-// }
+.logoImage {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  top: 200px;
+  left: calc(50% - 200px);
+  z-index: 100;
+}
+
+.logoImage.fadeLogo {
+  opacity: 0;
+  transition: opacity 0.75s ease;
+}
+
+.intro {
+  @include header-font;
+  color: $bgc-dark-grey;
+  font-weight: 400;
+  font-size: 2.75em;
+  line-height: 1.5em;
+  position: absolute;
+  width: 900px;
+  top: calc(50% - 75px);
+  left: calc(50% - 450px);
+  z-index: 100;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+.tagline {
+  @include header-font;
+  color: $bgc-dark-grey;
+  font-weight: 300;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  position: absolute;
+  width: 700px;
+  top: 50%;
+  left: calc(50% - 350px);
+  z-index: 100;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.tagline2 {
+  @include header-font;
+  color: $bgc-dark-grey;
+  font-weight: 300;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  position: absolute;
+  width: 700px;
+  top: calc(50% + 75px);
+  left: calc(50% - 350px);
+  z-index: 100;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.storyButton {
+  background-color: transparent;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+  width: 300px;
+  height: 60px;
+  position: absolute;
+  top: calc(50% + 150px);
+  left: calc(50% - 150px);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.75;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .ourStory {
+    @include menu-font;
+    color: white;
+    font-size: 1.25em;
+  }
+}

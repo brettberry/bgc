@@ -12,12 +12,8 @@ class Home extends Component {
   render() {
     return (
       <div>
-        {/* <Slider/> */}
         <VideoIntro/>
         <Featured/>
-        {/* <MobileProvider> */}
-          {/* <Banner /> */}
-        {/* </MobileProvider> */}
         <Demo/>
         <TabletProvider>
           <Banner2/>
