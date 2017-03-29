@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import $ from 'jquery';
 import './videoIntro.styles.scss';
 
@@ -37,9 +38,11 @@ class VideoIntro extends Component {
         <h1 className="intro">For over three decades,</h1>
         <h1 className="tagline">Glen Berry and his team of experts have equipped hunters with the calls they need to be successful in the field.</h1>
         <h1 className="tagline2">For us it's more than hunting, it's a legacy.</h1>
-        <div className="storyButton">
-          <p className="ourStory">This is Our Story</p>
-        </div>
+        <Link to="/about" className="storyLink">
+          <div className="storyButton">
+            <p className="ourStory">This is Our Story</p>
+          </div>
+        </Link>
         <div className="videoOverlay">
           <div className="bottomStripe"/>
         </div>
