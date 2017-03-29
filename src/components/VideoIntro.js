@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
-import classnames from 'classnames';
 import $ from 'jquery';
-import Button from './Buttons';
 import './videoIntro.styles.scss';
 
 class VideoIntro extends Component {
 
   state = {
     frameWidth: 0,
-    frameHeight: 0,
-    showOpaqueOverlay: true,
-    fadeLogo: false
+    frameHeight: 0
   }
 
   constructor(props) {
@@ -21,14 +17,10 @@ class VideoIntro extends Component {
   componentDidMount() {
     this.updateDimensions();
     $(window).on('resize', this._updateDimensions);
-    this.timeout = setTimeout(this.hideOpaqueOverlay.bind(this), 1000);
-    this.logoTimout = setTimeout(this.fadeLogo.bind(this), 5000);
   }
 
   componentWillUnmount() {
     $(window).off('resize', this._updateDimensions);
-    clearTimeout(this.timeout);
-    clearTimeout(this.logoTimout);
   }
 
   updateDimensions() {
@@ -38,16 +30,8 @@ class VideoIntro extends Component {
     this.setState({ frameWidth, frameHeight });
   }
 
-  fadeLogo() {
-    this.setState({ fadeLogo: true });
-  }
-
-  hideOpaqueOverlay() {
-    this.setState({ showOpaqueOverlay: false });
-  }
-
   render() {
-    const { frameWidth, frameHeight, fadeLogo } = this.state;
+    const { frameWidth, frameHeight } = this.state;
     return (
       <div className="videoIntroContainer">
         <h1 className="intro">For over three decades,</h1>
@@ -56,8 +40,6 @@ class VideoIntro extends Component {
         <div className="storyButton">
           <p className="ourStory">This is Our Story</p>
         </div>
-        {/* <div style={{ backgroundImage: 'url(/images/bgc_logo.png)' }}
-             className={classnames('logoImage', fadeLogo && 'fadeLogo')}/> */}
         <div className="videoOverlay">
           <div className="bottomStripe"/>
         </div>

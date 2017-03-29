@@ -44,15 +44,9 @@ class MobileExpandedMenu extends Component {
           <Link to="/demos" className="link">
             <h3 className="item" onClick={this.props.onClose}>Demos</h3>
           </Link>
-          <Link to="/about" className="link">
-            <h3 className="item" onClick={this.props.onClose}>About</h3>
-          </Link>
           <Link to="/gallery" className="link">
             <h3 className="item" onClick={this.props.onClose}>Gallery</h3>
           </Link>
-          {/* <Link to="/events" className="link">
-            <h3 className="item" onClick={this.props.onClose}>Events</h3>
-          </Link> */}
         </div>
       </div>
     );

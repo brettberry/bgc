@@ -7,6 +7,7 @@ import FaUser from 'react-icons/lib/fa/user';
 import FaFacebook from 'react-icons/lib/fa/facebook-official';
 import FaYoutube from 'react-icons/lib/fa/youtube-play';
 import FaCopyright from 'react-icons/lib/fa/copyright';
+import TiHeart from 'react-icons/lib/ti/heart';
 
 import Button from './Buttons';
 import './buttons.styles.scss';
@@ -98,8 +99,11 @@ function RightSide() {
 function Copyright() {
   return (
     <div className="copyrightContainer">
+      <p className="copyright">Made with</p>
+      <TiHeart className="heart"/>
+      <p className="copyright">by Brett Berry</p>
       <FaCopyright className="icon"/>
-      <p className="copyright">2016 Brett Berry</p>
+      <p className="copyright">2017</p>
     </div>
   );
 }

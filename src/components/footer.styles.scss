@@ -282,7 +282,7 @@
     border-width: 2px;
     border-radius: 5px;
     border-color: $bgc-light-grey;
-    margin: 8px 0 16px 16px;
+    margin: 8px 8px 16px 16px;
     padding: 5px;
     appearance: none;
     outline: 0;
@@ -329,7 +329,7 @@
     width: 15px;
     height: 15px;
     fill: rgba($bgc-background-color, 0.5);
-    margin: 16px 0 16px 0;
+    margin: 5px;
   }
 
   .copyright {
@@ -339,7 +339,13 @@
     font-weight: 200;
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin-left: 8px;
+  }
+
+  .heart {
+    width: 25px;
+    height: 25px;
+    fill: #d32bb4;
+    margin: 5px;
   }
 }
 

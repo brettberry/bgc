@@ -30,7 +30,11 @@ class NavigationBar extends Component {
              className="bgcLogoSmall"/>
         <h1 className="bgc">Berry Game Calls</h1>
       </Link>
-      <Menu/>
+      <div className="menu">
+        <ProductsItem/>
+        <DemosItem/>
+        <GalleryItem/>
+      </div>
       <ShoppingCenter onSearchClick={this.handleSearchClick.bind(this)}/>
     </div>
    );
@@ -48,23 +52,11 @@ class NavigationBar extends Component {
         <Waypoint scrollableAncestor={window}
                   onLeave={() => this.setState({ showResponsiveNavBar: true })}
                   onEnter={() => this.setState({ showResponsiveNavBar: false })}/>
-        <Alert />
+        <div className="alertBar"/>
         <MiniNavBar showResponsiveNavBar={this.state.showResponsiveNavBar} ref="miniNavBar"/>
       </div>
     );
   }
-}
-
-function Menu() {
-  return (
-    <div className="menu">
-      <ProductsItem/>
-      <DemosItem/>
-      <GalleryItem/>
-      {/* <EventsItem/> */}
-      {/* <AboutItem/> */}
-    </div>
-  );
 }
 
 class ProductsItem extends Component {
@@ -113,17 +105,6 @@ function DemosItem() {
   );
 }
 
-function AboutItem() {
-  return (
-    <div className="menuItem">
-      <Link to="/about" className="menuLink">
-        <h3 className="item">About</h3>
-        <div className="underline"/>
-      </Link>
-    </div>
-  );
-}
-
 function GalleryItem() {
   return (
     <div className="menuItem">
@@ -131,25 +112,6 @@ function GalleryItem() {
         <h3 className="item">Gallery</h3>
         <div className="underline"/>
       </Link>
-    </div>
-  );
-}
-
-function EventsItem() {
-  return (
-    <div className="menuItem">
-      <Link to="/events" className="menuLink">
-        <h3 className="item">Events</h3>
-        <div className="underline"/>
-      </Link>
-    </div>
-  );
-}
-
-function Alert() {
-  return (
-    <div className="alertBar">
-      {/* <h3 className="alertMessage right">Flat rate shipping on all orders.</h3> */}
     </div>
   );
 }
