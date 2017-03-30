@@ -46,7 +46,7 @@ class MobileNavigationBar extends Component {
         <Waypoint scrollableAncestor={window}
                   onLeave={() => this.setState({ showResponsiveNavBar: true })}
                   onEnter={() => this.setState({ showResponsiveNavBar: false })}/>
-        <Alert/>
+        <div className="alertBar"/>
         <MobileMiniNavBar showResponsiveNavBar={this.state.showResponsiveNavBar}/>
         {this.renderMobileMenu()}
       </div>
@@ -61,14 +61,6 @@ class MobileNavigationBar extends Component {
       <MobileExpandedMenu onClose={this.handleBarsClick.bind(this)}/>
     );
   }
-}
-
-function Alert() {
-  return (
-    <div className="alertBar">
-      {/* <h3 className="alertMessage right">Flat rate shipping on all orders.</h3> */}
-    </div>
-  );
 }
 
 export default MobileNavigationBar;

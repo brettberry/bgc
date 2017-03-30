@@ -1,0 +1,125 @@
+@import '../constants';
+
+.photoOverlay {
+  position: absolute;
+  width: 100%;
+  height: 375px;
+  background-color: $bgc-light-grey;
+  opacity: 0.5;
+}
+.galleryInfoContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 375px;
+}
+
+.miniPhotoContainer {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 5%;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: $bgc-medium-light-grey;
+
+  // @include tabletLandscape {
+  //   flex-basis: 33%;
+  // }
+  //
+  // @include tablet {
+  //   flex-basis: 50%;
+  // }
+  //
+  // @include phone {
+  //   flex-basis: 100%;
+  // }
+  //
+  // @include smallPhone {
+  //   flex-basis: 100%;
+  // }
+
+  .miniPhoto {
+    width: 5%;
+    height: 75px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    // @include tabletLandscape {
+    //   width: 33%;
+    // }
+    //
+    // @include tablet {
+    //   width: 50%;
+    // }
+    //
+    // @include phone {
+    //   width: 100%;
+    // }
+    //
+    // @include smallPhone {
+    //   width: 100%;
+    // }
+  }
+}
+
+.photosButton {
+  background-color: transparent;
+  background-color: $bgc-orange;
+  border-radius: 5px;
+  width: 300px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $bgc-dark-orange;
+    transition: all 0.4s ease;
+
+    .chevRight {
+      transform: translateX(2px);
+      transition: all 0.4s ease;
+    }
+
+    .trophyPhotos {
+      transform: translateX(2px);
+      transition: all 0.4s ease;
+    }
+  }
+
+  &:active {
+    transform: translateY(3px);
+  }
+
+  .trophyPhotos {
+    @include menu-font;
+    color: white;
+    font-size: 1.1em;
+    margin-left: 15px;
+  }
+
+  .chevRight {
+    fill: white;
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+  }
+}
+
+.galleryFeatureHeader {
+  @include subheader-font;
+  color: $bgc-dark-grey;
+  text-shadow: 0px 0px 40px white;
+  font-size: 3.5em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 0;
+  margin-bottom: 25px;
+}

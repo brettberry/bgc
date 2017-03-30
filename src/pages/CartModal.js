@@ -65,7 +65,8 @@ class CartModalContents extends Component {
 
   getQuantityMessage() {
     const { quantity } = this.props;
-    return quantity === 1 ? `You just added 1 item to your cart` : `You just added ${quantity} items to your cart`;
+    return quantity === 1 ? `You just added 1 item to your cart` :
+                            `You just added ${quantity} items to your cart`;
   }
 
   render() {

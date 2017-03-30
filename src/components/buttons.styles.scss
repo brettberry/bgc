@@ -25,6 +25,7 @@
   &:hover {
     background-color: $bgc-dark-orange;
     border-color: $bgc-dark-orange;
+    transition: all 0.4s ease;
   }
 
   &:active {

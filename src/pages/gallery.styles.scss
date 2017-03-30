@@ -170,6 +170,7 @@
 
     &:hover {
       fill: $bgc-light-grey;
+      transition: fill 0.4s ease;
     }
   }
 
@@ -213,6 +214,7 @@
 
     &:hover {
       fill: $bgc-light-grey;
+      transition: fill 0.4s ease;
     }
   }
 
@@ -247,6 +249,7 @@
 
     &:hover {
       fill: $bgc-light-grey;
+      transition: fill 0.4s ease;
     }
   }
 }

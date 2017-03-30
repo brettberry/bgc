@@ -27,7 +27,7 @@ class Featured extends Component {
             <FeaturedItem feature={feature} key={key}/>
           )}
           <h2 className="header">Proud to be</h2>
-          <h2 className="header highlight">&nbsp;Made in the USA.</h2>
+          <h2 className="header highlight">&nbsp;Made in the USA</h2>
         </div>
       </div>
     );

@@ -84,7 +84,6 @@ class PhotoModalContents extends Component {
         <MdClose className="exit" onClick={this.props.closeModal}/>
         <div className="modalContents">
           <div className="photoView" style={{ backgroundImage: this.getPhotoForModal(index) }}/>
-          <div className="caption">{this.getHunterDetails(index)}</div>
         </div>
         <MDChevronLeft className="photoLeft" onClick={this.props.photoLeft}/>
         <MDChevronRight className="photoRight" onClick={this.props.photoRight}/>

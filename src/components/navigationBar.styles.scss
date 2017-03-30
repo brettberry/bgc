@@ -211,25 +211,7 @@
   justify-content: flex-end;
   top: 99px;
   width: 100%;
-  height: 3px; //36px
+  height: 3px;
   z-index: 0;
   background-color: $bgc-orange;
-}
-
-.alertMessage {
-  @include default-font;
-  color: white;
-  font-weight: 400;
-  font-size: 0.9em;
-  letter-spacing: 0.5px;
-  padding-right: 25px;
-  margin: 8px;
-
-  @include phone {
-    padding-right: 10px;
-  }
-
-  @include smallPhone {
-    padding-right: 10px;
-  }
 }

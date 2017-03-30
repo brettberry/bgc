@@ -32,6 +32,7 @@
 
     &:hover {
       fill: $bgc-orange;
+      transition: fill 0.4s ease;
     }
   }
 
@@ -43,6 +44,7 @@
 
     &:hover {
       fill: $bgc-orange;
+      transition: fill 0.4s ease;
     }
   }
 }
@@ -83,6 +85,7 @@
   &:hover {
     color: $bgc-orange;
     cursor: pointer;
+    transition: all 0.4s ease;
   }
 }
 

@@ -4,6 +4,7 @@ import Demo from '~/components/HomePageDemo';
 import Slider from '~/components/Slider';
 import Featured from '~/components/ProductFeature';
 import VideoIntro from '~/components/VideoIntro';
+import GalleryFeature from '~/components/GalleryFeature';
 import TabletProvider from '~/providers/TabletProvider';
 import '~/components/buttons.styles.scss';
 import './home.styles.scss';
@@ -14,11 +15,12 @@ class Home extends Component {
       <div>
         <VideoIntro/>
         <Featured/>
+        <GalleryFeature/>
         <Demo/>
         <TabletProvider>
           <Banner2/>
         </TabletProvider>
-        <ShopCategories/>
+        {/* <ShopCategories/> */}
       </div>
     );
   }

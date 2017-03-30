@@ -419,6 +419,7 @@
 
     &:hover svg {
       fill: $bgc-medium-grey;
+      transition: fill 0.4s ease;
     }
   }
 
