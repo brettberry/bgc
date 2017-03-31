@@ -15,17 +15,19 @@ class Featured extends Component {
   render() {
     const featured = products.filterByTag('featured');
     return (
-      <div>
+      <div className="productFeatureContainer">
         <div className="productBannerContainer">
           <h2 className="header">Sound like the real thing</h2>
-          <Link to="/products" className="viewLink">
-            <Button text="view all" className="viewAllButton"/>
-          </Link>
         </div>
         <div className="featured">
           {map(featured.toArray(), (feature, key) =>
             <FeaturedItem feature={feature} key={key}/>
           )}
+        </div>
+        <Link to="/products" className="viewLink">
+          <Button text="view all" className="viewAllButton"/>
+        </Link>
+        <div className="row">
           <h2 className="header">Proud to be</h2>
           <h2 className="header highlight">&nbsp;Made in the USA</h2>
         </div>

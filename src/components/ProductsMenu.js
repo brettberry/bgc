@@ -112,7 +112,7 @@ function Other({ cowCalls, other, onItemClick }) {
           <p className="productNames">{cowCall.getFullName()}</p>
         </Link>)
       }</div>
-      <Link to="/products/tags/other" className="productsLink" onClick={onItemClick}>
+      <Link to="/products/tags/accessories" className="productsLink" onClick={onItemClick}>
         <h3 className="columnTitle">Other</h3>
       </Link>
       <div>{map(other.toArray(), (otherItem, key) =>

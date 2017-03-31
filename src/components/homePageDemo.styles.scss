@@ -8,7 +8,7 @@
   position: relative;
   width: 100%;
   background-color: white;
-  padding: 25px 0;
+  padding: 100px 0;
 
   @include phone {
     padding: 10px 0;
@@ -44,7 +44,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px 50px 50px 50px;
+    padding: 50px;
 
     @include tabletLandscape {
       padding: 20px;
@@ -81,7 +81,7 @@
       line-height: 1.5;
       font-weight: 300;
       font-size: 1.1em;
-      padding: 25px 50px;
+      padding: 50px;
       margin: 0;
 
       @include phone {
