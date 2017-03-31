@@ -15,11 +15,10 @@ export default class Sidebar extends Component {
     return (
       <div className="sidebarContainer">
         <SidebarMenuComponent item={"All Products"} path={"/products"}/>
-        {map(tags.toArray(), tag => {
-            return (<SidebarMenuComponent item={tag.getTag()}
-                                          path={`/products/tags/${tag.getPath()}`}
-                                          key={tag.getTag()}/>);
-        })}
+        {map(tags.toArray(), (tag, key) => <SidebarMenuComponent item={tag.getTag()}
+                                                                 path={`/products/tags/${tag.getTagPath()}`}
+                                                                 key={key}/>
+        )}
       </div>
     );
   }

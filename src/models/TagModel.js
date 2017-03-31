@@ -6,7 +6,7 @@ export default class TagModel extends Model {
         return this.get('tag');
     }
 
-    getPath() {
+    getTagPath() {
         return this.get('path');
     }
 

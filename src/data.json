@@ -43,7 +43,7 @@
     },
     {
       "tag": "Accessories",
-      "path": "other"
+      "path": "accessories"
     }
   ],
   "products": [
@@ -439,8 +439,8 @@
       },
       "description": "This call is easy to use and produces the sounds of a whitetail & blacktail deer.  With the adjustable o-ring you can produce a variety of doe bleats and grunts.  The Berry Buck Grunt and Bleat Call has been proven year after year by expert deer hunters.  Tip: The collapsible tube allows you to change the sound of the call by adjusting the length of the tube.",
       "media": [],
-      "category": "other",
-      "tags": ["other"]
+      "category": "accessories",
+      "tags": ["accessories"]
     },
     {
       "fullName": "Predator Call",
@@ -451,8 +451,8 @@
       },
       "description": "",
       "media": [],
-      "category": "other",
-      "tags": ["other", "sale"]
+      "category": "accessories",
+      "tags": ["accessories", "sale"]
     },
     {
       "fullName": "Berry Reed Holder",
@@ -464,8 +464,8 @@
       "media": ["url(/productPhotos/reed-holder-red.jpg)",
                 "url(/productPhotos/reed-holder-green.jpg)",
                 "url(/productPhotos/reed-holder-brown.jpg)"],
-      "category": "other",
-      "tags": ["other", "big-bull", "golden-dome", "x-series"]
+      "category": "accessories",
+      "tags": ["accessories", "big-bull", "golden-dome", "x-series"]
     },
     {
       "fullName": "Berry Wind Drifter",
@@ -475,8 +475,8 @@
       },
       "description": "The Berry Wind Drifter powder drifts in the slightest breeze. Comes in a1-1/4 oz Round green plastic bottle with a flip top. A must for watching the wind!",
       "media": ["url(/productPhotos/berry-wind-drifter.jpg)", "url(/productPhotos/wind-drifter-back-pkg.jpg)"],
-      "category": "other",
-      "tags": ["other"]
+      "category": "accessories",
+      "tags": ["accessories"]
     },
     {
       "fullName": "Power Arrow Gripper",
@@ -487,20 +487,8 @@
       },
       "description": "",
       "media": [],
-      "category": "other",
-      "tags": ["other", "sale"]
-    },
-    {
-      "fullName": "Berry Fanny Pack",
-      "pathName": "fanny-pack",
-      "price": {
-        "amount": 39.95,
-        "discount": 34.50
-      },
-      "description": "Berry fanny pack with shoulder straps with 10 individual compartments and Arched Design Molded Foam.  Desiged by Glen Berry and used in the Berry Game Calls Hunting Dvds",
-      "media": [],
-      "category": "other",
-      "tags": ["other", "sale"]
+      "category": "accessories",
+      "tags": ["accessories", "sale"]
     }
   ],
   "demos": [

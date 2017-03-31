@@ -573,14 +573,18 @@
     fill: #546e7a;
     cursor: pointer; }
     .shoppingContainer .searchIcon:hover {
-      fill: #ebb052; }
+      fill: #ebb052;
+      -webkit-transition: fill 0.4s ease;
+      transition: fill 0.4s ease; }
   .shoppingContainer .cartIcon {
     width: 30px;
     height: 30px;
     fill: #546e7a;
     cursor: pointer; }
     .shoppingContainer .cartIcon:hover {
-      fill: #ebb052; }
+      fill: #ebb052;
+      -webkit-transition: fill 0.4s ease;
+      transition: fill 0.4s ease; }
 
 .divider {
   width: 1px;
@@ -619,7 +623,9 @@
     background-color: rgba(235, 176, 82, 0.4); }
   .accountItem:hover {
     color: #ebb052;
-    cursor: pointer; }
+    cursor: pointer;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease; }
 
 .accountMenuContainer {
   display: -webkit-box;
@@ -1067,29 +1073,6 @@
   height: 3px;
   z-index: 0;
   background-color: #ebb052; }
-
-.alertMessage {
-  font-family: Source Sans Pro, Avenir Next, Avenir, Helvetica, "sans-serif";
-  color: #546e7a;
-  color: white;
-  font-weight: 400;
-  font-size: 0.9em;
-  letter-spacing: 0.5px;
-  padding-right: 25px;
-  margin: 8px; }
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .alertMessage {
-      -webkit-font-smoothing: antialiased; } }
-  .alertMessage::-moz-selection {
-    background-color: rgba(235, 176, 82, 0.4); }
-  .alertMessage::selection {
-    background-color: rgba(235, 176, 82, 0.4); }
-  @media all and (min-width: 321px) and (max-width: 505px) {
-    .alertMessage {
-      padding-right: 10px; } }
-  @media all and (max-width: 320px) {
-    .alertMessage {
-      padding-right: 10px; } }
 .navBarHeader {
   z-index: 1000; }
 
@@ -1136,7 +1119,9 @@ html, body, main {
       background-color: rgba(235, 176, 82, 0.4); }
   .button:hover {
     background-color: #cd8818;
-    border-color: #cd8818; }
+    border-color: #cd8818;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease; }
   .button:active {
     -webkit-transform: translateY(3px);
             transform: translateY(3px); }
@@ -1836,7 +1821,6 @@ html, body, main {
   position: relative;
   width: 100%;
   background-color: white;
-  box-shadow: 0 0 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
   padding: 25px 0; }
   @media all and (min-width: 321px) and (max-width: 505px) {
     .demoContainer {
@@ -2689,7 +2673,9 @@ html, body, main {
   opacity: 0.6;
   cursor: pointer; }
   .storyButton:hover {
-    opacity: 1; }
+    opacity: 1;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease; }
   @media all and (min-width: 826px) and (max-width: 1200px) {
     .storyButton {
       top: calc(50% + 55px); } }
@@ -2740,6 +2726,126 @@ html, body, main {
 
 .storyLink {
   text-decoration: none; }
+.photoOverlay {
+  position: absolute;
+  width: 100%;
+  height: 375px;
+  background-color: #f2f2f2;
+  opacity: 0.5; }
+
+.galleryInfoContainer {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 375px; }
+
+.miniPhotoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-preferred-size: 5%;
+      flex-basis: 5%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  background-color: #e5e5e5; }
+  .miniPhotoContainer .miniPhoto {
+    width: 5%;
+    height: 75px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer; }
+
+.photosButton {
+  background-color: transparent;
+  background-color: #ebb052;
+  border-radius: 5px;
+  width: 300px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer; }
+  .photosButton:hover {
+    background-color: #cd8818;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease; }
+    .photosButton:hover .chevRight {
+      -webkit-transform: translateX(2px);
+              transform: translateX(2px);
+      -webkit-transition: all 0.4s ease;
+      transition: all 0.4s ease; }
+    .photosButton:hover .trophyPhotos {
+      -webkit-transform: translateX(2px);
+              transform: translateX(2px);
+      -webkit-transition: all 0.4s ease;
+      transition: all 0.4s ease; }
+  .photosButton:active {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px); }
+  .photosButton .trophyPhotos {
+    font-family: Source Sans Pro, Avenir Next, Avenir, Helvetica, "sans-serif";
+    font-weight: 400;
+    font-size: 1em;
+    margin: 0;
+    color: #546e7a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.1em;
+    margin-left: 15px; }
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .photosButton .trophyPhotos {
+        -webkit-font-smoothing: antialiased; } }
+  .photosButton .chevRight {
+    fill: white;
+    width: 35px;
+    height: 35px;
+    margin-left: 10px; }
+
+.galleryFeatureHeader {
+  font-family: Source Sans Pro, Avenir Next, Avenir, Helvetica, "sans-serif";
+  font-weight: lighter;
+  font-size: 1.5em;
+  color: #263238;
+  color: #263238;
+  text-shadow: 0px 0px 40px white;
+  font-size: 3.5em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 0;
+  margin-bottom: 25px; }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .galleryFeatureHeader {
+      -webkit-font-smoothing: antialiased; } }
+  .galleryFeatureHeader::-moz-selection {
+    background-color: rgba(235, 176, 82, 0.4); }
+  .galleryFeatureHeader::selection {
+    background-color: rgba(235, 176, 82, 0.4); }
 .bannerContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3583,17 +3689,17 @@ html, body, main {
           flex-direction: row; }
   .pickerContainer:hover .input {
     border-color: #546e7a;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease; }
   .pickerContainer:hover .up {
     border-color: #546e7a;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
     cursor: pointer; }
   .pickerContainer:hover .down {
     border-color: #546e7a;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
     cursor: pointer; }
   .pickerContainer .input {
     width: 50px;
@@ -4218,7 +4324,9 @@ html, body, main {
     .relatedProductsContainer .paginationButton.right {
       right: -50px; }
     .relatedProductsContainer .paginationButton:hover svg {
-      fill: #546e7a; }
+      fill: #546e7a;
+      -webkit-transition: fill 0.4s ease;
+      transition: fill 0.4s ease; }
   .relatedProductsContainer .nextItemsChevron {
     width: 50px;
     height: 50px;
@@ -4720,7 +4828,9 @@ html, body, main {
     pointer-events: all;
     cursor: pointer; }
     .photoModal .exit:hover {
-      fill: #f2f2f2; }
+      fill: #f2f2f2;
+      -webkit-transition: fill 0.4s ease;
+      transition: fill 0.4s ease; }
   .photoModal .caption {
     font-family: Source Sans Pro, Avenir Next, Avenir, Helvetica, "sans-serif";
     font-weight: 400;
@@ -4763,7 +4873,9 @@ html, body, main {
         height: 50px;
         margin: 0; } }
     .photoModal .photoLeft:hover {
-      fill: #f2f2f2; }
+      fill: #f2f2f2;
+      -webkit-transition: fill 0.4s ease;
+      transition: fill 0.4s ease; }
   .photoModal .photoRight {
     position: fixed;
     top: calc(50% - 50px);
@@ -4790,7 +4902,9 @@ html, body, main {
         height: 50px;
         margin: 0; } }
     .photoModal .photoRight:hover {
-      fill: #f2f2f2; }
+      fill: #f2f2f2;
+      -webkit-transition: fill 0.4s ease;
+      transition: fill 0.4s ease; }
 .loginContainer {
   display: -webkit-box;
   display: -ms-flexbox;

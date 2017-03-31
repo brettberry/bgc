@@ -30,7 +30,7 @@ class ProductsMenu extends Component {
     const reeds = products.filterByCategory('reeds');
     const cowCalls = products.filterByCategory('cow-calls');
     const dvds = products.filterByCategory('dvds');
-    const other = products.filterByCategory('other');
+    const other = products.filterByCategory('accessories');
 
     return (
       <div className={classnames('dropdown', className)}>

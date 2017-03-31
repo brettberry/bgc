@@ -196,6 +196,38 @@
     }
   }
 
+  .tagsContainer {
+    display: flex;
+    margin: 30px 0;
+
+    .tagLink {
+      text-decoration: none;
+    }
+  }
+
+  .tagContainer {
+    background-color:$bgc-orange;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    margin-right: 10px;
+
+    &:hover {
+      background-color: $bgc-dark-orange;
+      transition: all 0.25s ease;
+    }
+
+    .tagTitle {
+      @include default-font;
+      color: white;
+      text-transform: lowercase;
+      letter-spacing: 1px;
+      font-weight: 200;
+    }
+  }
+
   .priceContainer {
     display: flex;
     flex-direction: row;
