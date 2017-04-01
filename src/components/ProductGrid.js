@@ -7,8 +7,7 @@ import '~/pages/products.styles.scss';
 class ProductGrid extends Component {
 
   static propTypes = {
-    product: PropTypes.instanceOf(ProductModel),
-    key: PropTypes.number
+    product: PropTypes.instanceOf(ProductModel)
   }
 
   getBackgroundImage(myProduct) {
@@ -28,7 +27,6 @@ class ProductGrid extends Component {
     return (
       <div className="container">
         <Link to={`/products/${product.getCategory()}/${product.getPathName()}`}
-              key={this.props.key}
               className="link">
             <div className="product">
               <h3 className="title">{name}</h3>

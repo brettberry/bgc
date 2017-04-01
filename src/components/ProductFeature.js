@@ -40,8 +40,7 @@ class Featured extends Component {
 class FeaturedItem extends Component {
 
   static propTypes = {
-    feature: PropTypes.instanceOf(ProductModel),
-    key: PropTypes.number
+    feature: PropTypes.instanceOf(ProductModel)
   }
 
   getBackgroundImage(myProduct) {
@@ -52,7 +51,7 @@ class FeaturedItem extends Component {
   }
 
   render() {
-    const { feature, key } = this.props;
+    const { feature } = this.props;
     const price = feature.getPrice().getAmount().toFixed(2);
     const discount = feature.getPrice().getDiscount() && feature.getPrice().getDiscount().toFixed(2);
     const showDiscount = !!discount;
@@ -60,7 +59,7 @@ class FeaturedItem extends Component {
 
     return (
       <div className="featuredContainer">
-        <Link key={key} to={`/products/${feature.getCategory()}/${feature.getPathName()}`} className="link">
+        <Link to={`/products/${feature.getCategory()}/${feature.getPathName()}`} className="link">
           <div className="featuredDiv">
             <h3 className="title">{feature.getFullName()}</h3>
             <div className="priceContainer">
