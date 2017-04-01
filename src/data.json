@@ -31,7 +31,7 @@
     },
     {
       "tag": "Big Bull Reeds",
-      "path": "big-bull"
+      "path": "big-bull-series"
     },
     {
       "tag": "Cow Calls",
@@ -249,7 +249,7 @@
       "description": "",
       "media": ["url(/productPhotos/big-bull-single-reed.jpg)", "url(/productPhotos/big-bull-reeds-back-pkg.jpg)"],
       "category": "reeds",
-      "tags": ["big-bull", "reeds"]
+      "tags": ["big-bull-series", "reeds"]
     },
     {
       "fullName": "Medium Bull Double Reed",
@@ -260,7 +260,7 @@
       "description": "This call features a thick/thin combination of latex that is stretched and spaced to produce a medium range of calls.",
       "media": ["url(/productPhotos/big-bull-reeds-back-pkg.jpg)"],
       "category": "reeds",
-      "tags": ["big-bull", "reeds"]
+      "tags": ["big-bull-series", "reeds"]
     },
     {
       "fullName": "Large Bull Double Reed",
@@ -271,7 +271,7 @@
       "description": "",
       "media": ["url(/productPhotos/big-bull-large-bull.jpg)", "url(/productPhotos/big-bull-reeds-back-pkg.jpg)"],
       "category": "reeds",
-      "tags": ["big-bull", "reeds"]
+      "tags": ["big-bull-series", "reeds"]
     },
     {
       "fullName": "Berry Deceiver Reed",
@@ -284,7 +284,7 @@
                 "url(/productPhotos/berry-deceiver-reed-package.jpg)",
                 "url(/productPhotos/big-bull-reeds-back-pkg.jpg)"],
       "category": "reeds",
-      "tags": ["big-bull", "reeds"]
+      "tags": ["big-bull-series", "reeds"]
     },
     {
       "fullName": "Sleazy Cow Mouth Reed",
@@ -295,7 +295,7 @@
       "description": "The Sleazy Cow Call Mouth Reed features a single layer of latex for the sound reed,  a 30 thousands gap between the second layer set at 45 degrees this combination produces a raspy cow-in-estrus call. A great hands free Call!",
       "media": ["url(/productPhotos/sleazy-cow-reed.jpg)", "url(/productPhotos/big-bull-reeds-back-pkg.jpg)"],
       "category": "reeds",
-      "tags": ["big-bull", "reeds", "cow-calls"]
+      "tags": ["big-bull-series", "reeds", "cow-calls"]
     },
     {
       "fullName": "Elk Hunters Training Day 2",
@@ -465,7 +465,7 @@
                 "url(/productPhotos/reed-holder-green.jpg)",
                 "url(/productPhotos/reed-holder-brown.jpg)"],
       "category": "accessories",
-      "tags": ["accessories", "big-bull", "golden-dome", "x-series"]
+      "tags": ["accessories"]
     },
     {
       "fullName": "Berry Wind Drifter",

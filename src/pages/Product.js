@@ -138,7 +138,7 @@ class Details extends Component {
             return (
             <Link to={`/products/tags/${tag}`} className="tagLink" key={key}>
               <div className="tagContainer">
-                <span className="tagTitle">{tag}</span>
+                <span className="tagTitle">{tag.replace(/-/g, ' ')}</span>
               </div>
             </Link>
           );
