@@ -19,13 +19,17 @@ class GalleryMenu extends Component {
   }
 
   render() {
-    const { className } = this.props;
+    const { className, onItemClick } = this.props;
     return (
       <div className={classnames('galleryMenuContainer', className)}>
-        <Link to="/gallery" className="galleryLink">
-          <p className="galleryOption">BGC Pro Staff</p>
+        <Link to="/gallery"
+              className="galleryLink"
+              onClick={onItemClick}>
+          <p className="galleryOption">Berry Game Calls Pro Staff</p>
         </Link>
-        <Link to="" className="galleryLink">
+        <Link to="/customer-gallery"
+              className="galleryLink"
+              onClick={onItemClick}>
           <p className="galleryOption">Successful Customers</p>
         </Link>
       </div>

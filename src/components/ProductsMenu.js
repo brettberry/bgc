@@ -25,7 +25,7 @@ class ProductsMenu extends Component {
   }
 
   render() {
-    const { className } = this.props;
+    const { className, onItemClick } = this.props;
     const bugles = products.filterByCategory('bugles');
     const reeds = products.filterByCategory('reeds');
     const cowCalls = products.filterByCategory('cow-calls');
@@ -36,12 +36,12 @@ class ProductsMenu extends Component {
       <div className={classnames('dropdown', className)}>
         <div className="productMenuContainer">
           <div className="group1">
-            <Bugles bugles={bugles} onItemClick={this.props.onItemClick}/>
-            <Reeds reeds={reeds} onItemClick={this.props.onItemClick}/>
+            <Bugles bugles={bugles} onItemClick={onItemClick}/>
+            <Reeds reeds={reeds} onItemClick={onItemClick}/>
           </div>
           <div className="group2">
-            <DVDs dvds={dvds} onItemClick={this.props.onItemClick}/>
-            <Other cowCalls={cowCalls} other={other} onItemClick={this.props.onItemClick}/>
+            <DVDs dvds={dvds} onItemClick={onItemClick}/>
+            <Other cowCalls={cowCalls} other={other} onItemClick={onItemClick}/>
           </div>
         </div>
       </div>

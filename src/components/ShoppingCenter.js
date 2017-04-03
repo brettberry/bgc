@@ -93,7 +93,8 @@ class AccountMenu extends Component {
   render() {
     return (
       <div className={classnames('accountMenuContainer', this.props.className)}>
-        {/* <p className="accountOption">View Account</p> */}
+        <p className="accountOption">Change Account Information</p>
+        <p className="accountOption">View Recent Orders</p>
         <p className="accountOption"
            onClick={this.context.logout}>Log Out</p>
       </div>

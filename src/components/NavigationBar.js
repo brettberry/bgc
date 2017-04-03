@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import classnames from 'classnames';
 import Waypoint from 'react-waypoint';
 import $ from 'jquery';
 
-import ProductsMenu from './ProductsMenu';
+import ProductsItem from './ProductsItem';
+import GalleryItem from './GalleryItem';
 import ShoppingCenter from './ShoppingCenter';
 import MiniNavBar from './MiniNavBar';
-import GalleryMenu from './GalleryMenu';
-import './galleryMenu.styles.scss';
 import './navigationBar.styles.scss';
 
 class NavigationBar extends Component {
@@ -61,41 +59,6 @@ class NavigationBar extends Component {
   }
 }
 
-class ProductsItem extends Component {
-
-  state = {
-    showProductsMenu: false
-  }
-
-  showMenu() {
-    this.setState({ showProductsMenu: true });
-    clearTimeout(this.timeout);
-  }
-
-  closeMenu() {
-    this.timeout = setTimeout(() => {
-      this.setState({ showProductsMenu: false });
-    }, 300);
-  }
-
-  render() {
-    return (
-      <div className={classnames('menuItem', this.state.showProductsMenu && 'showProductsMenu')}
-           onMouseEnter={() => this.showMenu()}
-           onMouseLeave={() => this.closeMenu()}>
-        <Link to="/products"
-              className="menuLink"
-              onClick={() => this.setState({ showProductsMenu: false })}>
-          <h3 className="item">Products</h3>
-          <div className="underline"/>
-        </Link>
-        <ProductsMenu className="productsMenu"
-                      onItemClick={() => this.setState({ showProductsMenu: false })}/>
-      </div>
-    );
-  }
-}
-
 function DemosItem() {
   return (
     <div className="menuItem">
@@ -105,39 +68,6 @@ function DemosItem() {
       </Link>
     </div>
   );
-}
-
-class GalleryItem extends Component {
-
-  state = {
-    showDropDown: false
-  }
-
-  showDropDown() {
-    this.setState({ showDropDown: true });
-    clearTimeout(this.timeout);
-  }
-
-  closeDropDown() {
-    this.timeout = setTimeout(() => {
-      this.setState({ showDropDown: false });
-    }, 300);
-  }
-
-  render() {
-    return (
-      <div className={classnames('menuItem', this.state.showDropDown && 'showGalleryMenu')}
-           onMouseEnter={() => this.showDropDown()}
-           onMouseLeave={() => this.closeDropDown()}>
-        <Link to="/gallery" className="menuLink">
-          <h3 className="item">Gallery</h3>
-          <div className="underline"/>
-        </Link>
-        <GalleryMenu className="galleryMenu"
-                     onItemClick={() => this.setState({ showDropDown: false })}/>
-      </div>
-    );
-  }
 }
 
 export default NavigationBar;

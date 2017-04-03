@@ -10,10 +10,9 @@ import BGCPhotoCollection from '~/models/BGCPhotoCollection';
 import data from '~/data.json';
 import './gallery.styles.scss';
 
-const photos = new BGCPhotoCollection(data.photos);
-// const photos = new BGCPhotoCollection(data.customerPhotos);
+const photos = new BGCPhotoCollection(data.customerPhotos);
 
-class Gallery extends Component {
+class CustomerGallery extends Component {
 
   state = {
     showModal: false,
@@ -93,4 +92,4 @@ class PhotoModalContents extends Component {
   }
 }
 
-export default Gallery;
+export default CustomerGallery;

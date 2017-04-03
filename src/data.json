@@ -1493,5 +1493,15 @@
         "year": "",
         "details": ""
     }
+  ],
+  "customerPhotos": [
+    {
+        "imageID": "chad-whitetail-3",
+        "imageURL": "chad-whitetail-3.jpg",
+        "hunter": "Chad Berry",
+        "species": "Whitetail Deer",
+        "year": "",
+        "details": ""
+    }
   ]
 }
