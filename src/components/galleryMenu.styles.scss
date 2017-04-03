@@ -1,0 +1,41 @@
+@import '../constants';
+
+.galleryMenuContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 99px;
+  background: white;
+  border: solid 1px $table-border-color;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.07);
+  padding: 25px;
+
+  .galleryOption {
+    @include default-font;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+
+    &:hover {
+      color: $bgc-orange;
+    }
+  }
+}
+
+.galleryMenu {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.showGalleryMenu {
+  .galleryMenu {
+    opacity: 1;
+    pointer-events: all;
+    transition: all 0.25s ease;
+  }
+}
+
+.galleryLink {
+  text-decoration: none;
+}

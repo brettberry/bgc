@@ -7,6 +7,8 @@ import $ from 'jquery';
 import ProductsMenu from './ProductsMenu';
 import ShoppingCenter from './ShoppingCenter';
 import MiniNavBar from './MiniNavBar';
+import GalleryMenu from './GalleryMenu';
+import './galleryMenu.styles.scss';
 import './navigationBar.styles.scss';
 
 class NavigationBar extends Component {
@@ -105,15 +107,37 @@ function DemosItem() {
   );
 }
 
-function GalleryItem() {
-  return (
-    <div className="menuItem">
-      <Link to="/gallery" className="menuLink">
-        <h3 className="item">Gallery</h3>
-        <div className="underline"/>
-      </Link>
-    </div>
-  );
+class GalleryItem extends Component {
+
+  state = {
+    showDropDown: false
+  }
+
+  showDropDown() {
+    this.setState({ showDropDown: true });
+    clearTimeout(this.timeout);
+  }
+
+  closeDropDown() {
+    this.timeout = setTimeout(() => {
+      this.setState({ showDropDown: false });
+    }, 300);
+  }
+
+  render() {
+    return (
+      <div className={classnames('menuItem', this.state.showDropDown && 'showGalleryMenu')}
+           onMouseEnter={() => this.showDropDown()}
+           onMouseLeave={() => this.closeDropDown()}>
+        <Link to="/gallery" className="menuLink">
+          <h3 className="item">Gallery</h3>
+          <div className="underline"/>
+        </Link>
+        <GalleryMenu className="galleryMenu"
+                     onItemClick={() => this.setState({ showDropDown: false })}/>
+      </div>
+    );
+  }
 }
 
 export default NavigationBar;
