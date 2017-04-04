@@ -3,7 +3,7 @@ export Products from './Products';
 export Product from './Product';
 export Demos from './Demos';
 export About from './About';
-export Gallery from './Gallery';
+export BGCGallery from './BGCGallery';
 export CustomerGallery from './CustomerGallery';
 export Tags from './Tags';
 export LogIn from './LogIn';

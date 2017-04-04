@@ -59,7 +59,8 @@ class FeaturedItem extends Component {
 
     return (
       <div className="featuredContainer">
-        <Link to={`/products/${feature.getCategory()}/${feature.getPathName()}`} className="link">
+        <Link to={`/products/${feature.getCategory()}/${feature.getPathName()}`}
+              className="link">
           <div className="featuredDiv">
             <h3 className="title">{feature.getFullName()}</h3>
             <div className="priceContainer">

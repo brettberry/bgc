@@ -2,8 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import classnames from 'classnames';
 import map from 'lodash/map';
-// import FaChevronLeft from 'react-icons/lib/fa/chevron-left';
-// import FaChevronRight from 'react-icons/lib/fa/chevron-right';
 import './slider.styles.scss';
 import data from '~/data.json';
 
@@ -16,9 +14,6 @@ class Slider extends Component {
   }
 
   componentDidMount() {
-    // if (this.state.reverse) {
-    //   this.interval = setInterval(this.pageLeft.bind(this), 3500);
-    // }
     this.interval = setInterval(this.pageRight.bind(this), 3500);
   }
 
@@ -47,7 +42,6 @@ class Slider extends Component {
     return (
       <div className="sliderContainer">
         <div className="chevronContainer left" onClick={this.pageLeft.bind(this)}>
-          {/* <FaChevronLeft className= "chevron"/> */}
         </div>
         <ReactCSSTransitionGroup className={transitionClasses}
                                  transitionName="sliderTransition"
@@ -55,9 +49,7 @@ class Slider extends Component {
                                  transitionLeaveTimeout={500}>
             {this.renderObjects()}
         </ReactCSSTransitionGroup>
-        <div className="chevronContainer right" onClick={this.pageRight.bind(this)}>
-          {/* <FaChevronRight className="chevron" /> */}
-        </div>
+        <div className="chevronContainer right" onClick={this.pageRight.bind(this)}/>
       </div>
     );
   }
@@ -78,7 +70,6 @@ class Slide extends Component {
     key: PropTypes.number
   }
 
-  //TODO: Fix dots
   render() {
     return (
       <div className="slider" style={{ backgroundImage: this.props.image }}>

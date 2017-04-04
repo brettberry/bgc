@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 import Waypoint from 'react-waypoint';
 import $ from 'jquery';
 
-import ProductsItem from './ProductsItem';
-import GalleryItem from './GalleryItem';
+import ProductsMenuItem from './ProductsMenuItem';
+import GalleryMenuItem from './GalleryMenuItem';
 import ShoppingCenter from './ShoppingCenter';
 import MiniNavBar from './MiniNavBar';
 import './navigationBar.styles.scss';
@@ -31,9 +31,9 @@ class NavigationBar extends Component {
         <h1 className="bgc">Berry Game Calls</h1>
       </Link>
       <div className="menu">
-        <ProductsItem/>
-        <DemosItem/>
-        <GalleryItem/>
+        <ProductsMenuItem/>
+        <DemosMenuItem/>
+        <GalleryMenuItem/>
       </div>
       <ShoppingCenter onSearchClick={this.handleSearchClick.bind(this)}/>
     </div>
@@ -59,7 +59,7 @@ class NavigationBar extends Component {
   }
 }
 
-function DemosItem() {
+function DemosMenuItem() {
   return (
     <div className="menuItem">
       <Link to="/demos" className="menuLink">

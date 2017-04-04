@@ -4,7 +4,7 @@ import $ from 'jquery';
 import App from '~/App';
 import AccountApp from '~/AccountApp';
 import Footer from '~/components/Footer';
-import { Home, Products, Product, Demos, About, Gallery, CustomerGallery,
+import { Home, Products, Product, Demos, About, BGCGallery, CustomerGallery,
          Events, Tags, LogIn, Cart, Checkout, Success } from '~/pages';
 
 export default function RouteProvider() {
@@ -18,7 +18,7 @@ export default function RouteProvider() {
         <Route path="products/:group"/>
         <Route path="demos" components={{ main: Demos, footer: Footer }}/>
         <Route path="about" components={{ main: About, footer: Footer }}/>
-        <Route path="gallery" components={{ main: Gallery }}/>
+        <Route path="gallery" components={{ main: BGCGallery }}/>
         <Route path="customer-gallery" components={{ main: CustomerGallery }}/>
         <Route path="events" components={{ main: Events, footer: Footer }}/>
         <Route path="cart" components={{ main: Cart }}/>

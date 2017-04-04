@@ -1142,6 +1142,14 @@
         "details": ""
     },
     {
+        "imageID": "chad-berry-2004-montana-elk",
+        "imageURL": "chad-berry-2004-montana-elk.jpg",
+        "hunter": "Chad Berry",
+        "species": "Rocky Mountain Elk",
+        "year": "",
+        "details": ""
+    },
+    {
         "imageID": "glen-bear-6",
         "imageURL": "glen-bear-6.jpg",
         "hunter": "Glen Berry",
@@ -1496,11 +1504,315 @@
   ],
   "customerPhotos": [
     {
-        "imageID": "chad-whitetail-3",
-        "imageURL": "chad-whitetail-3.jpg",
-        "hunter": "Chad Berry",
-        "species": "Whitetail Deer",
-        "year": "",
+        "imageID": "al-cefalo-2011-montana-elk",
+        "imageURL": "al-cefalo-2011-montana-elk.jpg",
+        "hunter": "Al Cefalo",
+        "species": "Rocky Mountain Elk",
+        "year": "2011",
+        "details": ""
+    },
+    {
+        "imageID": "chance-beaubouef-2012-montana-elk",
+        "imageURL": "chance-beaubouef-2012-montana-elk.jpg",
+        "hunter": "Chance Beaubouef",
+        "species":  "Elk",
+        "year": "2012",
+        "details": ""
+    },
+    {
+        "imageID": "shannon-mobbs-2008-washington-roosevelt-elk",
+        "imageURL": "shannon-mobbs-2008-washington-roosevelt-elk.jpg",
+        "hunter": "Shannon Mobbs",
+        "species":  "Elk",
+        "year": "2008",
+        "details": ""
+    },
+    {
+        "imageID": "bert-hafner-2011-washington-elk",
+        "imageURL": "al-cefalo-2011-montana-elk.jpg",
+        "hunter": "Bert Hafner",
+        "species": "Rocky Mountain Elk",
+        "year": "2011",
+        "details": ""
+    },
+    {
+        "imageID": "bob-staples-oregon-2012-elk",
+        "imageURL": "bob-staples-oregon-2012-elk.jpg",
+        "hunter": "Bob Staples",
+        "species":  "Elk",
+        "year": "2012",
+        "details": ""
+    },
+    {
+        "imageID": "brice-vineyard-2007-idaho-elk",
+        "imageURL": "brice-vineyard-2007-idaho-elk.jpg",
+        "hunter": "Brice Vineyard",
+        "species":  "Elk",
+        "year": "2007",
+        "details": ""
+    },
+    {
+        "imageID": "danny-moore-2005-arizona-elk",
+        "imageURL": "danny-moore-2005-arizona-elk.jpg",
+        "hunter": "Danny Moore",
+        "species":  "Elk",
+        "year": "2005",
+        "details": ""
+    },
+    {
+        "imageID": "chance-beaubouef-2011-montana-elk",
+        "imageURL": "chance-beaubouef-2011-montana-elk.jpg",
+        "hunter": "Chance Beaubouef",
+        "species":  "Elk",
+        "year": "2011",
+        "details": ""
+    },
+    {
+        "imageID": "cory-mahan-2009-nevada-turkey",
+        "imageURL": "cory-mahan-2009-nevada-turkey.jpg",
+        "hunter": "Cory Mahan",
+        "species":  "Turkey",
+        "year": "2009",
+        "details": ""
+    },
+    {
+        "imageID": "dallas-smith-2003-arizona-elk",
+        "imageURL": "dallas-smith-2003-arizona-elk.jpg",
+        "hunter": "Dallas Smith",
+        "species":  "Elk",
+        "year": "2003",
+        "details": ""
+    },
+    {
+        "imageID": "cory-mahan-2009-oregon-elk",
+        "imageURL": "cory-mahan-2009-oregon-elk.jpg",
+        "hunter": "Cory Mahan",
+        "species":  "Elk",
+        "year": "2009",
+        "details": ""
+    },
+    {
+        "imageID": "danny-moore-2005-nevada-elk",
+        "imageURL": "danny-moore-2005-nevada-elk.jpg",
+        "hunter": "Danny Moore",
+        "species":  "Elk",
+        "year": "2005",
+        "details": ""
+    },
+    {
+        "imageID": "dave-goitiandia-2010-idaho-elk",
+        "imageURL": "dave-goitiandia-2010-idaho-elk.jpg",
+        "hunter": "Dave Goitiandia",
+        "species":  "Elk",
+        "year": "2010",
+        "details": ""
+    },
+    {
+        "imageID": "dave-stunz-2009-idaho-elk",
+        "imageURL": "dave-stunz-2009-idaho-elk.jpg",
+        "hunter": "Dave Goitiandia",
+        "species":  "Elk",
+        "year": "2009",
+        "details": ""
+    },
+    {
+        "imageID": "donnie-covey-2003-utah-elk",
+        "imageURL": "donnie-covey-2003-utah-elk.jpg",
+        "hunter": "Donnie Covey",
+        "species":  "Elk",
+        "year": "2003",
+        "details": ""
+    },
+    {
+        "imageID": "drew-cefalo-2011-montana-elk",
+        "imageURL": "drew-cefalo-2011-montana-elk.jpg",
+        "hunter": "Drew Cefalo",
+        "species":  "Elk",
+        "year": "2011",
+        "details": ""
+    },
+    {
+        "imageID": "ryan-davenport-2002-washington-elk",
+        "imageURL": "ryan-davenport-2002-washington-elk.jpg",
+        "hunter": "Ryan Davenport",
+        "species":  "Elk",
+        "year": "2002",
+        "details": ""
+    },
+    {
+        "imageID": "jared-riipinen-2009-washington-elk",
+        "imageURL": "jared-riipinen-2009-washington-elk.jpg",
+        "hunter": "Jared Riipinen",
+        "species":  "Elk",
+        "year": "2009",
+        "details": ""
+    },
+    {
+        "imageID": "jason-kosydar-2009-oregon-roosevelt-elk",
+        "imageURL": "jason-kosydar-2009-oregon-roosevelt-elk.jpg",
+        "hunter": "Jason Kosydar",
+        "species":  "Elk",
+        "year": "2009",
+        "details": ""
+    },
+    {
+        "imageID": "danny-moore-2009-utah-elk",
+        "imageURL": "danny-moore-2009-utah-elk.jpg",
+        "hunter": "Danny Moore",
+        "species":  "Elk",
+        "year": "2009",
+        "details": ""
+    },
+    {
+        "imageID": "john-mulligan-2011-montana-elk",
+        "imageURL": "john-mulligan-2011-montana-elk.jpg",
+        "hunter": "John Mulligan",
+        "species":  "Elk",
+        "year": "2011",
+        "details": ""
+    },
+    {
+        "imageID": "ted-kosydar-2010-oregon-roosevelt-elk",
+        "imageURL": "ted-kosydar-2010-oregon-roosevelt-elk.jpg",
+        "hunter": "Ted Kosydar",
+        "species":  "Elk",
+        "year": "2010",
+        "details": ""
+    },
+    {
+        "imageID": "josh-rinard-2004-idaho-elk",
+        "imageURL": "josh-rinard-2004-idaho-elk.jpg",
+        "hunter": "Josh Rinard",
+        "species":  "Elk",
+        "year": "2004",
+        "details": ""
+    },
+    {
+        "imageID": "shannon-mobbs-2008-oregon-roosevelt-elk",
+        "imageURL": "shannon-mobbs-2008-oregon-roosevelt-elk.jpg",
+        "hunter": "Shannon Mobbs",
+        "species":  "Elk",
+        "year": "2008",
+        "details": ""
+    },
+    {
+        "imageID": "justin-bliss-2009-utah-elk",
+        "imageURL": "justin-bliss-2009-utah-elk.jpg",
+        "hunter": "Justin Bliss",
+        "species":  "Elk",
+        "year": "2009",
+        "details": ""
+    },
+    {
+        "imageID": "kevin-krause-2011-montana-elk",
+        "imageURL": "kevin-krause-2011-montana-elk.jpg",
+        "hunter": "Kevin Krause",
+        "species":  "Elk",
+        "year": "2011",
+        "details": ""
+    },
+    {
+        "imageID": "matt-schmitz-2011-washington-roosevelt-elk",
+        "imageURL": "matt-schmitz-2011-washington-roosevelt-elk.jpg",
+        "hunter": "Matt Schmitz",
+        "species":  "Elk",
+        "year": "2011",
+        "details": ""
+    },
+    {
+        "imageID": "phil-gillette-2012-oregon",
+        "imageURL": "phil-gillette-2012-oregon.jpg",
+        "hunter": "Phil Gillette",
+        "species":  "Elk",
+        "year": "2012",
+        "details": ""
+    },
+    {
+        "imageID": "matt-rinard-2002-oregon-elk",
+        "imageURL": "matt-rinard-2002-oregon-elk.jpg",
+        "hunter": "Matt Rinard",
+        "species":  "Elk",
+        "year": "2002",
+        "details": ""
+    },
+    {
+        "imageID": "roy-hampton-2003-arizona-elk",
+        "imageURL": "roy-hampton-2003-arizona-elk.jpg",
+        "hunter": "Roy Hampton",
+        "species":  "Elk",
+        "year": "2003",
+        "details": ""
+    },
+    {
+        "imageID": "ryan-alltus-2011-montana-elk",
+        "imageURL": "ryan-alltus-2011-montana-elk.jpg",
+        "hunter": "Ryan Alltus",
+        "species":  "Elk",
+        "year": "2011",
+        "details": ""
+    },
+    {
+        "imageID": "shannon-mobbs-2006-washington-roosevelt-elk",
+        "imageURL": "shannon-mobbs-2006-washington-roosevelt-elk.jpg",
+        "hunter": "Shannon Mobbs",
+        "species":  "Elk",
+        "year": "2006",
+        "details": ""
+    },
+    {
+        "imageID": "jason-kosydar-2010-oregon-roosevelt-elk",
+        "imageURL": "jason-kosydar-2010-oregon-roosevelt-elk.jpg",
+        "hunter": "Jason Kosydar",
+        "species":  "Elk",
+        "year": "2009",
+        "details": ""
+    },
+    {
+        "imageID": "smokey-crews-1988-oregon-roosevelt-elk",
+        "imageURL": "smokey-crews-1988-oregon-roosevelt-elk.jpg",
+        "hunter": "Smokey Crews",
+        "species":  "Elk",
+        "year": "1988",
+        "details": ""
+    },
+    {
+        "imageID": "tad-sherman-2011-idaho-elk",
+        "imageURL": "tad-sherman-2011-idaho-elk.jpg",
+        "hunter": "Tad Sherman",
+        "species":  "Elk",
+        "year": "2011",
+        "details": ""
+    },
+    {
+        "imageID": "ted-kosydar-2009-oregon-roosevelt-elk",
+        "imageURL": "ted-kosydar-2009-oregon-roosevelt-elk.jpg",
+        "hunter": "Ted Kosydar",
+        "species":  "Elk",
+        "year": "2009",
+        "details": ""
+    },
+    {
+        "imageID": "ty-leary-2012-montana-elk",
+        "imageURL": "ty-leary-2012-montana-elk.jpg",
+        "hunter": "Ty Leary",
+        "species":  "Elk",
+        "year": "2012",
+        "details": ""
+    },
+    {
+        "imageID": "tyler-shelton-2010-washington-elk",
+        "imageURL": "tyler-shelton-2010-washington-elk.jpg",
+        "hunter": "Tyler Shelton",
+        "species":  "Elk",
+        "year": "2010",
+        "details": ""
+    },
+    {
+        "imageID": "shannon-mobbs-2012-washington-elk",
+        "imageURL": "shannon-mobbs-2012-washington-elk.jpg",
+        "hunter": "Shannon Mobbs",
+        "species":  "Elk",
+        "year": "2012",
         "details": ""
     }
   ]
