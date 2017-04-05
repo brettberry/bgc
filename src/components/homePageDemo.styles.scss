@@ -166,11 +166,11 @@
 
     .cartButton {
       @include tabletLandscape {
-        width: 100%;
+        width: 50%;
       }
 
       @include tablet {
-        width: 100%;
+        width: 50%;
       }
 
       @include phone {

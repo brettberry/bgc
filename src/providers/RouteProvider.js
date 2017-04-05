@@ -18,8 +18,8 @@ export default function RouteProvider() {
         <Route path="products/:group"/>
         <Route path="demos" components={{ main: Demos, footer: Footer }}/>
         <Route path="about" components={{ main: About, footer: Footer }}/>
-        <Route path="gallery" components={{ main: BGCGallery }}/>
-        <Route path="customer-gallery" components={{ main: CustomerGallery }}/>
+        <Route path="gallery" components={{ main: BGCGallery, footer: Footer }}/>
+        <Route path="customer-gallery" components={{ main: CustomerGallery, footer: Footer }}/>
         <Route path="events" components={{ main: Events, footer: Footer }}/>
         <Route path="cart" components={{ main: Cart }}/>
       </Route>

@@ -34,7 +34,9 @@ class MobileNavigationBar extends Component {
       <div className="mobileNavContainer">
         <div className="mobileNavBar">
           <Link to="/" className="link">
-            <h1 className="bgc">Berry Game Calls</h1>
+            <div style={{ backgroundImage: 'url(/images/bgc_logo.png)' }}
+                 className="bgcMobileLogo"/>
+            <h1 className="bgcMobile">Berry Game Calls</h1>
           </Link>
           <div className="iconContainer">
             <Link to="/cart">

@@ -70,7 +70,7 @@ class Search extends Component {
           <input className="searchBar"
                  onChange={(e) => this.handleInputChange(e)}
                  onFocus={(e) => this.handleInputChange(e)}
-                 placeholder="Search products"
+                 placeholder="Search by Product Name"
                  autoFocus
                  ref="input" />
           <div className="searchButton">

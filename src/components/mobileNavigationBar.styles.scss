@@ -63,8 +63,9 @@
 
     .item {
       @include menu-font;
-      font-size: 2em;
-      margin: 10px;
+      font-size: 1.5em;
+      margin: 12px;
+      text-align: center;
     }
 
     .link {
@@ -87,7 +88,7 @@
   width: 100%;
   height: 75px;
   background-color: white;
-  padding: 0 15px;
+  padding: 0 10px;
 
   .iconContainer {
     display: flex;
@@ -116,15 +117,53 @@
     text-decoration: none;
     margin: 0;
 
-    .bgc {
+    .bgcMobile {
       @include header-font;
       text-align: left;
-      font-size: 1.75em;
-      margin: 0;
+      font-size: 1.5em;
+      padding-left: 80px;
+      white-space: nowrap;
+
+      @include phone {
+        padding-left: 70px;
+        white-space: nowrap;
+      }
 
       @include smallPhone {
         font-size: 1.25em;
+        padding-left: 75px;
+        white-space: normal;
       }
+    }
+  }
+
+  .homeLink {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    text-decoration: none;
+  }
+
+  .bgcMobileLogo {
+    height: 75px;
+    width: 75px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 7px;
+
+    @include phone {
+      height: 75px;
+      width: 65px;
+    }
+
+    @include smallPhone {
+      height: 75px;
+      width: 65px;
     }
   }
 

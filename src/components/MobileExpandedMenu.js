@@ -45,7 +45,10 @@ class MobileExpandedMenu extends Component {
             <h3 className="item" onClick={this.props.onClose}>Demos</h3>
           </Link>
           <Link to="/gallery" className="link">
-            <h3 className="item" onClick={this.props.onClose}>Gallery</h3>
+            <h3 className="item" onClick={this.props.onClose}>BGC Gallery</h3>
+          </Link>
+          <Link to="/customer-gallery" className="link">
+            <h3 className="item" onClick={this.props.onClose}>Customer Gallery</h3>
           </Link>
         </div>
       </div>
