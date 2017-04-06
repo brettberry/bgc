@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import classnames from 'classnames';
 import map from 'lodash/map';
+import fetch from 'isomorphic-fetch';
+import ActivityIndicator from '~/components/ActivityIndicator'
 
 import RelatedItemsRenderer from '~/components/RelatedProducts';
 import { ProductCollection, ProductModel, TagCollection } from '../models';
@@ -9,22 +11,40 @@ import TabletProvider from '~/providers/TabletProvider';
 import CartModal from '~/pages/CartModal';
 import QuantityPicker from '~/components/QuantityPicker';
 import Button from '~/components/Buttons';
-import data from '~/data.json';
+// import data from '~/data.json';
 import './product.styles.scss';
 
-const products = new ProductCollection(data.products);
+// const products = new ProductCollection(data.products);
 
 export default class Product extends Component {
-  render() {
+
+  state = {
+    product: null
+  }
+
+  componentDidMount() {
     const pathName = this.props.routeParams.productName;
-    const product = products.findByPathName(pathName);
+    fetch(`http://localhost:3000/products/${pathName}`)
+      .then(res => res.json())
+      .then(product => {
+        this.setState({ product: new ProductModel(product) });
+      });
+  }
+
+  render() {
+    const { product } = this.state;
+    if (product) {
+      return (
+        <div>
+          <ProductView product={product}/>
+          <TabletProvider>
+            <RelatedItemsRenderer product={product}/>
+          </TabletProvider>
+        </div>
+      );
+    }
     return (
-      <div>
-        <ProductView product={product}/>
-        <TabletProvider>
-          <RelatedItemsRenderer product={product}/>
-        </TabletProvider>
-      </div>
+      <ActivityIndicator/>
     );
   }
 }
@@ -55,7 +75,7 @@ class Images extends Component {
   getBackgroundImage(index, myProduct) {
     const images = myProduct.getMedia();
     return {
-      backgroundImage: images[index]
+      backgroundImage: images && images[index]
     };
   }
 
@@ -70,9 +90,15 @@ class Images extends Component {
     return (
       <div className="imgContainer">
         <div className="thumbnailsContainer">
-          <div className="thumbnail" style={this.getBackgroundImage(0, product)} onClick={() => this.handleImageClick(0)}/>
-          <div className="thumbnail" style={this.getBackgroundImage(1, product)} onClick={() => this.handleImageClick(1)}/>
-          <div className="thumbnail" style={this.getBackgroundImage(2, product)} onClick={() => this.handleImageClick(2)}/>
+          <div className="thumbnail"
+               style={this.getBackgroundImage(0, product)}
+               onClick={() => this.handleImageClick(0)}/>
+          <div className="thumbnail"
+               style={this.getBackgroundImage(1, product)}
+               onClick={() => this.handleImageClick(1)}/>
+          <div className="thumbnail"
+               style={this.getBackgroundImage(2, product)}
+               onClick={() => this.handleImageClick(2)}/>
         </div>
         <div className="mainImg" style={this.getBackgroundImage(this.state.activeIndex, product)}/>
       </div>
@@ -108,7 +134,7 @@ class Details extends Component {
 
   render() {
     const { product } = this.props;
-    const price = product.getPrice().getAmount().toFixed(2);
+    const price = product.getPrice().getAmount() && product.getPrice().getAmount().toFixed(2);
     const discount = product.getPrice().getDiscount() && product.getPrice().getDiscount().toFixed(2);
     const showDiscount = !!discount;
     const tags = product.getTags();
