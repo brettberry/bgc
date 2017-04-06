@@ -84,8 +84,12 @@
 .bgc {
   @include header-font;
   text-align: left;
-  font-size: 2em;
+  font-size: 2.5em;
   margin: 0;
+
+  @include tabletLandscape {
+    font-size: 2em;
+  }
 
   @include tablet {
     font-size: 1.5em;
