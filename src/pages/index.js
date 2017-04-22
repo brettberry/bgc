@@ -10,3 +10,4 @@ export LogIn from './LogIn';
 export Cart from './Cart';
 export Checkout from './Checkout';
 export Success from './Success';
+export CMSHome from './CMSHome';

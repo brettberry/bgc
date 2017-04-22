@@ -6,15 +6,12 @@ import fetch from 'isomorphic-fetch';
 import ActivityIndicator from '~/components/ActivityIndicator'
 
 import RelatedItemsRenderer from '~/components/RelatedProducts';
-import { ProductCollection, ProductModel, TagCollection } from '../models';
+import { ProductModel, TagCollection } from '../models';
 import TabletProvider from '~/providers/TabletProvider';
 import CartModal from '~/pages/CartModal';
 import QuantityPicker from '~/components/QuantityPicker';
 import Button from '~/components/Buttons';
-// import data from '~/data.json';
 import './product.styles.scss';
-
-// const products = new ProductCollection(data.products);
 
 export default class Product extends Component {
 

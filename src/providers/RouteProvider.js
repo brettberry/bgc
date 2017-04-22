@@ -5,7 +5,7 @@ import App from '~/App';
 import AccountApp from '~/AccountApp';
 import Footer from '~/components/Footer';
 import { Home, Products, Product, Demos, About, BGCGallery, CustomerGallery,
-         Events, Tags, LogIn, Cart, Checkout, Success } from '~/pages';
+         Events, Tags, LogIn, Cart, Checkout, Success, CMSHome } from '~/pages';
 
 export default function RouteProvider() {
   return (
@@ -28,6 +28,7 @@ export default function RouteProvider() {
         <Route path="login" components={{ main: LogIn }}/>
         <Route path="checkout" components={{ main: Checkout }}/>
         <Route path="checkout/success" components={{ main: Success }}/>
+        <Route path="admin" components={{ main: CMSHome }}/>
       </Route>
     </Router>
   );

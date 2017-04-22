@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import data from '~/data.json';
+import fetch from 'isomorphic-fetch';
 import map from 'lodash/map';
 
 import { ProductCollection } from '../models';
@@ -8,11 +8,22 @@ import ProductGrid from '~/components/ProductGrid';
 import SidebarRenderer from '~/renderers/SidebarRenderer';
 import './products.styles.scss';
 
-
-const products = new ProductCollection(data.products);
-
 export default class Products extends Component {
+
+  state = {
+    products: new ProductCollection()
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/products')
+      .then(res => res.json())
+      .then(products => {
+        this.setState({ products: new ProductCollection(products) });
+      });
+  }
+
   render() {
+    const { products } = this.state;
     return (
       <div className="productsContainer">
         <TabletProvider>

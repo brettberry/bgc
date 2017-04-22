@@ -13,7 +13,7 @@ class ProductGrid extends Component {
   getBackgroundImage(myProduct) {
     const images = myProduct.getMedia();
     return {
-      backgroundImage: images[0]
+      backgroundImage: images && images.length && images[0]
     };
   }
 
