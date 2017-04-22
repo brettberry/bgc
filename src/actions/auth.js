@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import Promise from 'bluebird';
 
-const API_URL = 'http://localhost:3000';
+import { API_URL } from './constants';
 
 export function fetchCurrentUser() {
   return Promise.resolve()

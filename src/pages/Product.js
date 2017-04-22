@@ -3,14 +3,15 @@ import { Link } from 'react-router';
 import classnames from 'classnames';
 import map from 'lodash/map';
 import fetch from 'isomorphic-fetch';
-import ActivityIndicator from '~/components/ActivityIndicator'
 
+import ActivityIndicator from '~/components/ActivityIndicator'
 import RelatedItemsRenderer from '~/components/RelatedProducts';
 import { ProductModel, TagCollection } from '../models';
 import TabletProvider from '~/providers/TabletProvider';
 import CartModal from '~/pages/CartModal';
 import QuantityPicker from '~/components/QuantityPicker';
 import Button from '~/components/Buttons';
+import { fetchProductByPathName } from '../actions/products';
 import './product.styles.scss';
 
 export default class Product extends Component {
@@ -21,8 +22,17 @@ export default class Product extends Component {
 
   componentDidMount() {
     const pathName = this.props.routeParams.productName;
-    fetch(`http://localhost:3000/products/${pathName}`)
-      .then(res => res.json())
+    this.loadData(pathName);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.routeParams !== nextProps.routeParams) {
+      this.loadData(nextProps.routeParams.productName);
+    }
+  }
+
+  loadData(pathName) {
+    fetchProductByPathName(pathName)
       .then(product => {
         this.setState({ product: new ProductModel(product) });
       });
