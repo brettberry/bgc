@@ -1,1 +1,0 @@
-export ShippingInfoModel from './ShippingInfoModel';

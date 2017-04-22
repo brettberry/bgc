@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Promise from 'bluebird';
-import User from '../../auth/src/models/User';
+import UserModel from '../models/UserModel';
+import { fetchCurrentUser, login, logout, createUser } from '../actions/auth';
 
 class AuthProvider extends Component {
 
@@ -18,10 +19,9 @@ class AuthProvider extends Component {
   }
 
   static childContextTypes = {
-    user: PropTypes.instanceOf(User),
+    user: PropTypes.instanceOf(UserModel),
     login: PropTypes.func,
     createUser: PropTypes.func,
-    getCurrentUser: PropTypes.func,
     logout: PropTypes.func
   }
 
@@ -35,7 +35,6 @@ class AuthProvider extends Component {
       user: this.state.user,
       login: this.login.bind(this),
       createUser: this.createUser.bind(this),
-      getCurrentUser: this.getCurrentUser.bind(this),
       logout: this.logout.bind(this)
     };
   }
@@ -46,8 +45,11 @@ class AuthProvider extends Component {
       return;
     }
     this.setState({ isLoading: true });
-    this.getUserPromise = this.getCurrentUser()
-      .then(() => this.setState({ isLoading: false }))
+    this.getUserPromise = fetchCurrentUser()
+      .then(user => this.setState({
+        user: new UserModel(user),
+        isLoading: false
+      }))
       .catch(() => {
         this.context.router.push({
           pathname: '/account/login',
@@ -72,69 +74,27 @@ class AuthProvider extends Component {
 
   logout() {
     return Promise.resolve()
-      .then(() => fetch('//localhost:5002/auth/logout', {
-        method: 'POST',
-        credentials: 'include'
-      }))
+      .then(() => logout())
       .then(() => {
         this.setState({ user: null });
         window.location.reload(true);
       });
   }
 
-  login(username, password) {
+  login(email, password) {
     return Promise.resolve()
-      .then(() => fetch('//localhost:5002/auth/login', {
-        method: 'POST',
-        body: JSON.stringify({
-          username: username,
-          password: password
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        credentials: 'include'
-      }))
-      .then(res => res.json())
+      .then(() => login(email, password))
+      .then(() => fetchCurrentUser())
       .then(body => {
-        const user = new User(body);
+        const user = new UserModel(body);
         this.setState({ user: user });
       });
   }
 
-  createUser(username, password) {
-    //FIXME
+  createUser(email, password) {
     return Promise.resolve()
-      .then(() => fetch('//localhost:5002/auth/users', {
-        method: 'POST',
-        body: JSON.stringify({
-          username: username,
-          password: password
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        credentials: 'include'
-      }))
-      .then(() => this.login(username, password));
-  }
-
-  getCurrentUser() {
-    return Promise.resolve()
-      .then(() => fetch('//localhost:5002/auth/users/me', {
-        credentials: 'include'
-      }))
-      .then(res => {
-        if (res.status !== 200) {
-          throw new Error('User not logged in');
-        }
-        return res.json();
-      })
-      .then(body => {
-        const user = new User(body);
-        this.setState({ user: user });
-        return user;
-      });
+      .then(() => createUser(email, password))
+      .then(() => this.login(email, password));
   }
 }
 

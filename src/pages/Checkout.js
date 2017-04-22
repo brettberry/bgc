@@ -9,7 +9,7 @@ import Checkbox from 'material-ui/Checkbox';
 import FaChevronUp from 'react-icons/lib/fa/chevron-up';
 import FaChevronDown from 'react-icons/lib/fa/chevron-down';
 
-import ShippingInfoModel from '../../shipping/src/models/ShippingInfoModel';
+import ShippingInfoModel from '../models/ShippingInfoModel';
 import CartItemCollection from '~/models/CartItemCollection';
 import Button from '~/components/Buttons';
 import './checkout.styles.scss';
@@ -17,7 +17,6 @@ import './checkout.styles.scss';
 class Checkout extends Component {
 
   static contextTypes = {
-    getCurrentUser: PropTypes.func,
     router: PropTypes.object,
     saveShippingInfo: PropTypes.func,
     shippingInfo: PropTypes.instanceOf(ShippingInfoModel),

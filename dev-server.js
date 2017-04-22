@@ -1,5 +1,6 @@
 
 const fs = require('fs');
+const clc = require('cli-color');
 const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
@@ -21,7 +22,8 @@ const app = express();
 const compiler = webpack(config);
 
 app.use(webpackDevMiddleware(compiler, {
-    noInfo: true,
+    noInfo: false,
+    quiet: true,
     publicPath: config.output.publicPath,
     stats: {
         colors: true
@@ -41,5 +43,8 @@ app.listen(devserver.port, (err) => {
     logger.trace(err);
     return;
   }
-  logger.info('Listening at http://localhost:' + devserver.port);
+  const header = fs.readFileSync('./header.txt');
+  const orangify = clc.xterm(208);
+  console.log(orangify(header.toString()));
+  logger.info(orangify('Listening at http://localhost:' + devserver.port));
 });

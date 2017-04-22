@@ -1,8 +1,8 @@
 import { Component, PropTypes } from 'react';
 import Promise from 'bluebird';
 import fetch from 'isomorphic-fetch';
-import User from '../../auth/src/models/User';
-import ShippingInfoModel from '../../shipping/src/models/ShippingInfoModel';
+import UserModel from '../models/UserModel';
+import ShippingInfoModel from '../models/ShippingInfoModel';
 
 class ShippingProvider extends Component {
 
@@ -17,7 +17,7 @@ class ShippingProvider extends Component {
   }
 
   static contextTypes = {
-    user: PropTypes.instanceOf(User)
+    user: PropTypes.instanceOf(UserModel)
   }
 
   state = {
