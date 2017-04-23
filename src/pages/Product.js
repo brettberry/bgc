@@ -82,7 +82,7 @@ class Images extends Component {
   getBackgroundImage(index, myProduct) {
     const images = myProduct.getMedia();
     return {
-      backgroundImage: images && images[index]
+      backgroundImage: images.length > index && `url(${images[index].url})`
     };
   }
 
