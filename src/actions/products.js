@@ -15,3 +15,15 @@ export function fetchProductByPathName(pathName) {
       }
     });
 }
+
+export function fetchProductsByCategory(category) {
+  return Promise.resolve()
+    .then(() => fetch(`${API_URL}/products?category=${category}`))
+    .then(res => {
+      if (res.status === 200) {
+        return res.json();
+      } else {
+        throw new Error('Failed to fetch products');
+      }
+    });
+}

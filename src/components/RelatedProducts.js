@@ -7,22 +7,42 @@ import { Link } from 'react-router';
 import classnames from 'classnames';
 import map from 'lodash/map';
 
+import { fetchProductsByCategory } from '../actions/products';
 import { ProductCollection } from '../models';
-import data from '~/data.json';
-
-
-const products = new ProductCollection(data.products);
 
 class RelatedProducts extends Component {
 
   state = {
+    products: new ProductCollection(),
     offset: 0,
     reverse: false
   }
 
+  componentDidMount() {
+    const { product } = this.props;
+    const category = product.getCategory();
+    fetchProductsByCategory(category)
+      .then(products => {
+        this.setState({ products: new ProductCollection(products) });
+      });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { product } = nextProps;
+    const category = product.getCategory();
+    fetchProductsByCategory(category)
+      .then(products => {
+        this.setState({
+          products: new ProductCollection(products),
+          offset: 0,
+          reverse: false
+        });
+      });
+  }
+
   pageLeft() {
-    const { offset } = this.state;
-    const length = this.getItems().length;
+    const { offset, products } = this.state;
+    const length = products.length;
     this.setState({
       offset: (offset - 3) % length,
       reverse: true
@@ -30,23 +50,16 @@ class RelatedProducts extends Component {
   }
 
   pageRight() {
-    const { offset } = this.state;
-    const length = this.getItems().length;
+    const { offset, products } = this.state;
+    const length = products.length;
     this.setState({
       offset: (offset + 3) % length,
       reverse: false
     });
   }
 
-  getItems() {
-    const { product } = this.props;
-    const category = product.getCategory();
-    const items = products.filterByCategory(category);
-    return items.toArray();
-  }
-
   render() {
-    const length = this.getItems().length;
+    const length = this.state.products.length;
     const showButtons = length > 3;
     const transitionClasses = classnames('carousel', this.state.reverse ? 'left' : 'right');
     return (
@@ -76,13 +89,13 @@ class RelatedProducts extends Component {
   getBackgroundImage(myProduct) {
     const images = myProduct.getMedia();
     return {
-      backgroundImage: images[0]
+      backgroundImage: `url(${images[0]})`
     };
   }
 
   renderItems() {
     const offset = Math.abs(this.state.offset);
-    const itemsArray = slice(this.getItems(), offset, offset + 3);
+    const itemsArray = slice(this.state.products.toArray(), offset, offset + 3);
 
     return map(itemsArray, (item) =>
       <div key={item.getPathName()} className="relatedItem">
