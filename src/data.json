@@ -1,9 +1,4 @@
 {
-  "sliderImages": [
-  "url(/sliderImages/gold-banner.jpg)",
-  "url(/sliderImages/seminar-flyer.jpg)",
-  "url(/sliderImages/seminar-flyer-2.jpg)"
-],
   "tags": [
     {
       "tag": "Most Popular",

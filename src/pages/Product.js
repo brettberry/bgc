@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import classnames from 'classnames';
 import map from 'lodash/map';
-import fetch from 'isomorphic-fetch';
 
 import ActivityIndicator from '~/components/ActivityIndicator'
 import RelatedItemsRenderer from '~/components/RelatedProducts';
@@ -82,7 +81,7 @@ class Images extends Component {
   getBackgroundImage(index, myProduct) {
     const images = myProduct.getMedia();
     return {
-      backgroundImage: images.length > index && `url(${images[index].url})`
+      backgroundImage: images.length > index && `url(${images[index]})`
     };
   }
 
